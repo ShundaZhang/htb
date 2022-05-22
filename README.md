@@ -1,2 +1,2 @@
 # htb
-htb_machines
+htb machines
