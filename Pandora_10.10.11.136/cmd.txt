@@ -1699,6 +1699,31 @@ matt@pandora:/home/matt$ ls -la /usr/bin/pandora_backup
 ls -la /usr/bin/pandora_backup
 -rwsr-x--- 1 root matt 16816 Dec  3 15:58 /usr/bin/pandora_backup
 
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Pandora_10.10.11.136# strings pandora_backup
+/lib64/ld-linux-x86-64.so.2
+puts
+setreuid
+system
+getuid
+geteuid
+__cxa_finalize
+__libc_start_main
+libc.so.6
+GLIBC_2.2.5
+_ITM_deregisterTMCloneTable
+__gmon_start__
+_ITM_registerTMCloneTable
+u/UH
+[]A\A]A^A_
+PandoraFMS Backup Utility
+Now attempting to backup PandoraFMS client
+tar -cvf /root/.backup/pandora-backup.tar.gz /var/www/pandora/pandora_console/*
+Backup failed!
+Check your permissions!
+Backup successful!
+
+OR ltrace it.
+
 matt@pandora:/home/matt$ /usr/bin/pandora_backup
 /usr/bin/pandora_backup
 PandoraFMS Backup Utility

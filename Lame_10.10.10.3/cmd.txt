@@ -411,4 +411,14 @@ vnc.log
 cat root.txt
 c38448a0168617de218041bee4c36e5c
 
+cd /home
+ls
+ftp
+makis
+service
+user
+find . -name user.txt
+./makis/user.txt
+cat ./makis/user.txt
+f67f91763acdbe4aa8582949711db4b9
 
