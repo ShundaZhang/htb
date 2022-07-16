@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Get Pumped LTD 💪</title>
+    <link rel='shortcut icon' href='/static/favicon.png' type="image/png"  />
+    <meta name='author' content='makelaris, makelarisjr'>
+</head>
+
+<body>
+    <style>
+        .content-row{
+            height: 600px;
+            background-color: #d6d5d5;
+        }
+
+
+        .header-row {
+            background-color: black;
+            height: 100px;
+        }
+        .logo {
+            max-height: 100px;
+            max-width: 100%;
+        }
+        
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+        body {
+        margin-bottom: 60px; /* Margin bottom by footer height */
+        font-family: 'Roboto', sans-serif;
+        }
+        .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px; /* Set the fixed height of the footer here */
+        line-height: 60px; /* Vertically center the text there */
+        background-color: #d6d5d5;
+        text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            font-size: 20px;
+        }
+
+        ul li:before {
+            content: '✓';
+        }
+
+    </style>
+
+    <div class="container-fluid">
+        <div class="row header-row">
+            <div class="col-sm-12 text-center">
+                <a href="/">
+                    <img class="logo" src="{{url_for('static', filename='/images/logo.png')}}">
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container">
+        <a href="/program">
+            <img src="{{url_for('static', filename='/images/promo.png')}}" class="img-fluid">
+        </a>
+    </div>
+
+
+
+    <div class="container">
+        <div class = "row mt-5">
+            <div class="col-sm-12 text-center">
+                <h5 style="font-weight: 600;" >YOU WILL EXPERIENCE:</h5>
+            </div>
+        </div>
+
+
+        <div class = "row mt-3">
+            <div class="col-sm-12 text-center">
+                <ul>
+                    <li>How to Get Shredded to 6-9% Body Fat with EASE</li>
+                    <li>The Perfect PPL Routine to Build Perfect Muscle Proportion</li>
+                    <li>How to Bust Through Your Strength Plateau's and Feel Like Hulk</li>
+                    <li>The Most Enjoyable & Satisfying Diet to get Lean & Still Enjoy CTF Marathons</li>
+                    <li>How to Get into Your Best Shape 24/7 and 365 Days a Year</li>
+                    <li>Becoming a Powerful & Strong Man in your Prime</li>
+                  </ul>
+            </div>
+        </div>
+
+
+
+        <div class = "row mt-5">
+            <div class="col-sm-12 text-center">
+                <h5 style="font-weight: 600;" >CLIENT TRANSFORMATIONS</h5>
+            </div>
+        </div>
+
+
+        <div class = "row mt-5">
+                <div class="col-md-4 text-center">
+                    <div class = "row">
+                        <img src="{{url_for('static', filename='/images/tr1.jpg')}}" class="img-fluid">
+                    </div>
+                    <div class = "row">
+                        <h5 style="font-weight: 400;" >W3TH4NDS</h5>
+                    </div>
+                    <div class = "row">
+                        <p>Not only did he slice off 20+ pounds of fat, 
+                            w3th4nds gained some solid strength & muscle. 
+                            From soft to carved out of granite, in 2 months. 
+                             What’s better? He finally learned heap.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class = "row">
+                        <img src="{{url_for('static', filename='/images/tr2.jpg')}}" class="img-fluid">
+                    </div>
+                    <div class = "row">
+                        <h5 style="font-weight: 400;" >TRX</h5>
+                    </div>
+                    <div class = "row">
+                        <p> 25+ Pounds of muscle gains in 1 year! Body fat is down too. 
+                            TRX gained 20 lbs of solid muscle while staying super lean 
+                            on our Swole Eagle Program all while studying for his university 12 hours per day!
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class = "row">
+                        <img src="{{url_for('static', filename='/images/tr3.png')}}" class="img-fluid">
+                    </div>
+                    <div class = "row">
+                        <h5 style="font-weight: 400;" >MAKELARIS</h5>
+                    </div>
+                    <div class = "row">
+                        <p> From decent shape to a sick shape in just 1.5 years on our program. 
+                            Whether it’s adding one rep, increasing weight, building up to one arm push
+                                up or getting his 10k steps in — 
+                            Makelaris loves the focus and the wins he gets each week while all the other
+                            guys 'mire his physique.
+                        </p>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class = "row pb-5 mt-5">
+            <div class="col-sm-12 text-center">
+                <a href ="/register">
+                    <button type="button" class="btn btn-outline-dark btn-lg">Become a member</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="container-fluid">
+          <span class="text-muted">
+                  © 2021 Copyright:
+            <a class="text-dark" href="https://www.hackthebox.gainz/">hackthebox.gainz</a>
+          </span>
+        </div>
+      </footer>
+</body>
+</html>

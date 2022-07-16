@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <title>Get Pumped LTD 💪</title>
+        <link rel='shortcut icon' href='/static/favicon.png' type="image/png"  />
+        <meta name='author' content='makelaris, makelarisjr'>
+    </head>
+
+
+    <body>
+        <style>
+            .header-row {
+                background-color: black;
+                height: 100px;
+            }
+            .logo {
+                max-height: 100px;
+                max-width: 100%;
+            }
+            
+            html {
+                position: relative;
+                min-height: 100%;
+            }
+            body {
+            margin-bottom: 60px; /* Margin bottom by footer height */
+            font-family: 'Roboto', sans-serif;
+            }
+            .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px; /* Set the fixed height of the footer here */
+            line-height: 60px; /* Vertically center the text there */
+            background-color: #d6d5d5;
+            text-align: center;
+            }
+            
+
+        .offer-col {
+             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+        }
+        ul {
+            list-style: none;
+        }
+            
+        ul li:before {
+            content: '✅ ';
+        }
+
+        .upper-promo {
+            background-color: #eff0eb;
+        }
+        </style>
+
+
+        <div class="container-fluid">
+            <div class="row header-row">
+                <div class="col-sm-12 text-center">
+                  <a href="/">
+                    <img class="logo" src="{{url_for('static', filename='/images/logo.png')}}">
+                  </a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class = "container">
+            <div id='alerts'></div>
+            <div class = "row mt-5 justify-content-center">
+                <div class="col-md-6 offer-col">
+                    <div class="upper-promo">
+                        <div class="row mt-2 justify-content-center text-center">
+                            <p style="font-size: 20px">Access The Bodyweight & Complete Gym Training Program</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row justify-content-center text-center">
+                        <p style="font-size: 15px;"> Four Phase Weight Training</p>
+                    </div>
+                    <hr>
+                    <div class="row justify-content-center text-center">
+                        <p style="font-size: 15px;"> 30 Day Nutrition Plan</p>
+                    </div>
+                    <hr>
+                    <div class="row justify-content-center text-center">
+                        <p style="font-size: 15px;"> FULL 30 Day Yolked Bodyweight Training Program</p>
+                    </div>
+                    <hr>
+                    <div class="row justify-content-center text-center">
+                        <p style="font-size: 15px;"> Advanced Cardio & Abs Workout</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        
+
+        <div class="container">
+            <div class="row justify-content-center align-items-center mt-5">
+                <div class="col-md-6 col-lg-6 col-sm-6">
+                    <form method="post" id='form'>
+                      <div class="form-group">
+                          <label for="inputUsername">Username</label>
+                          <input type="username" class="form-control" id="inputUsername" placeholder="Enter username">
+                       </div>
+                        <div class="form-group">
+                            <label for="inputEmail">Email address</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword">Password</label>
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                        </div>
+                      <button type="submit" class="btn btn-lg w-100 btn-primary">Register</button>  
+                    </form>
+                </div>
+            </div> 
+        </div>
+
+
+        
+
+        <footer class="footer">
+            <div class="container-fluid">
+            <span class="text-muted">
+                    © 2021 Copyright:
+                <a class="text-dark" href="https://www.hackthebox.gainz/">hackthebox.gainz</a>
+            </span>
+            </div>
+        </footer>
+    </body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="/static/js/main.js"></script>
+</html>
