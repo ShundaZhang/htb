@@ -1,0 +1,35 @@
+From: IT Department <it@cloudcompany.com>
+To: j.smith@sheesh.gov.edu
+Subject: Confirm your identity
+
+Hello there,
+
+You have recently changed the password for your CloudCompany account.
+
+Please verify your account using the link below to confirm your identity:
+
+https://ccloud.cloudcompany.co/confirm-identity/5912031940529412
+
+Below are some common reasons for unwanted or irregular activity:
+
+- Unauthorized or unexpected resource activity - An unpatched CloudCompany
+  Elastic Compute Cloud (CCEC2) instance could be infected and become a botnet
+  agent.
+- Exposed credentials or access keys.
+- Unintentional misuse - An end user of a service provided by an CloudCompany
+  customer might post malware files to a public S1 bucket.
+- False complaints - Sometimes Internet users falsely report legitimate
+  activities as misuse.
+
+Thank you for your patience while we work on this case.
+
+We appreciate your feedback. Please share your experience by rating this
+correspondence using the CloudCompany Support Center link at the bottom of this
+correspondence. Each correspondence can also be rated by selecting the stars in
+the upper right corner of each correspondence in the CloudCompany Support
+Center.
+
+Best regards,
+CloudCompany
+
+<img width=396 height=129 id="1" src="cid:Logo.jpg">

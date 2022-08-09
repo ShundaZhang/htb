@@ -13,16 +13,16 @@ def bitflip(c,buf,index,padding,io):
 		io.sendline(x)
 		rbuf = io.recvuntil('Your option:')
 		if 'Message successfully sent!' in rbuf:
-			print '================================='
-			print 'index: ',index
-			print 'Hit!: ', b
-			print 'keybits: ', hex(i^fib[0])[2:].zfill(2)
+			print('=================================')
+			print('index: ',index)
+			print('Hit!: ', b)
+			print('keybits: ', hex(i^fib[0])[2:].zfill(2))
 			return hex(i^fib[0])[2:].zfill(2)
 		else:
-			print index,i
+			print(index,i)
 
-ip,port = '206.189.21.202',31254
-#ip,port = '127.0.0.1',1337
+#ip,port = '206.189.21.202',31254
+ip,port = '127.0.0.1',1337
 io = remote(ip, port)
 
 io.recvuntil('Your option:')
@@ -53,8 +53,8 @@ c1 = c[64:96]
 p2 = 'Ng_w0nT_s4v3_y0u'
 c1 = xor(c1.decode('hex'),p2,a2).encode('hex')
 
-#print buf
-#print iv
+#print(buf)
+#print(iv)
 
 padding = ''
 keystream = ''
@@ -66,20 +66,20 @@ for index in range(1,17,1):
 	if( index < 16 ):
 		for j in range(index):
 			padding += hex(int(keystream[2*j:2*j+2],16)^(fib[j+1]))[2:].zfill(2)
-	print '-----------------------------------'
-	print 'keystream: ',keystream
-	print 'padding: ',padding
+	print('-----------------------------------')
+	print('keystream: ',keystream)
+	print('padding: ',padding)
 
 #xor(keystream,iv)
 
-print '**************************************'
-print iv
-print keystream
+print('**************************************')
+print(iv)
+print(keystream)
 
 flag = ''
 for i in range(16):
 	flag += chr(int(keystream[2*i:2*i+2],16)^int(iv[2*i:2*i+2],16))
-print flag
+print(flag)
 
 '''
 **************************************
