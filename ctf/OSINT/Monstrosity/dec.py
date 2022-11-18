@@ -6,6 +6,7 @@ git clone https://github.com/x0rz/tweets_analyzer
 python tweets_analyzer.py -n miounster --limit 3000 -s
 python prettyJSON.py tweets/miounster/2018–01–10_17–12–13.json | grep -A 2 "coordinates \": \ \["| grep" \. "| sed 's /, // g' | sed 's / // g' | rs 0 2 | sed 's / /, /' > muestra.txt
 
+gpsvisualizer:
 https://www.gpsvisualizer.com/map_input?form=data
 
 407180f14EBB5D998E0083034ED9A21B
