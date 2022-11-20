@@ -1,3 +1,9 @@
+#https://ctftime.org/writeup/31460
+#https://platypwnies.de/writeups/2021/htb-uni-quals/crypto/oracle-leaks/
+#https://github.com/mimoo/RSA_PKCS1v1_5_attacks
+#https://link.springer.com/content/pdf/10.1007%2FBFb0055716.pdf
+#https://link.springer.com/content/pdf/10.1007/3-540-44647-8_14.pdf
+
 #!/usr/bin/python3
 
 import logging
@@ -172,12 +178,16 @@ def lower(num):
     return 2**((num-1)*8) 
 
 #
+
+ip = '134.209.19.24'
+port = 30973
+
 if __name__ == "__main__":
     logging.basicConfig()
     logger = logging.getLogger()
     logger.setLevel(logging.DEBUG)
     #p = process(["python3", "chall.py"])
-    p = remote('209.97.179.123',32489)
+    p = remote(ip, port)
     started = p.recvuntil(">")
     p.sendline("1")
     p.recvuntil("(n,e): (")
