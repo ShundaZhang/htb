@@ -60,7 +60,8 @@ class RSA:
 
 
 def main():
-	FLAG = b'HTB{dummyflag}'
+	#FLAG = b'HTB{dummyflag}'
+	FLAG = b'HTB{m4ng3r5_4tt4ck_15_c001_4nd_und3rv4lu3d}'
 	print(get_length(bytes_to_long(FLAG)))
 	size = 1024
 	tmp = RSA(size)
