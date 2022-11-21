@@ -1,3 +1,8 @@
+#RSA_PKCS1v1_5 attacks!!!
+
+#The server side will close connection in 3 minutes! Connection from PRC and US will be closed, as the latency is too high!
+#Found HTB is using Digital Ocean London, so by a VPC in London can resolve this issue!!
+
 #https://ctftime.org/writeup/31460
 #https://platypwnies.de/writeups/2021/htb-uni-quals/crypto/oracle-leaks/
 #https://github.com/mimoo/RSA_PKCS1v1_5_attacks
@@ -179,8 +184,7 @@ def lower(num):
 
 #
 
-ip = '134.209.19.24'
-port = 30973
+ip, port = "134.209.19.24", 30140
 
 if __name__ == "__main__":
     logging.basicConfig()
@@ -203,3 +207,12 @@ if __name__ == "__main__":
     text = text.decode("utf-8").strip()
     ct = int(text, 16)
     Manger(1024, n, e, ct, p, logger)
+
+'''
+root@ubuntu-s-1vcpu-1gb-lon1-01:~/htb/ctf/crypto/OracleLeaks# python2
+Python 2.7.18 (default, Sep 12 2022, 15:58:04)
+[GCC 12.2.0] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> ('0'+hex(7142021928104790007219007127486191800406098549214233731419885073119784531054272060561639866217267567068389346952550013180229447536223058905081582877135305958480405524559464339500830216101809393916903720951076992051114120426900760850855647377114035724429375918801957502699546636070570248038913368694941309)[2:-1]).decode('hex')
+'\x02\x9a\x89\xf6\xd8O\x94i\x80Z\x9e\x9c:\xa0\xfd)B\x85\x16VM>\xdco\xe5\r\xcf\xdd\x1c\x1f\x05\x04\x9b\tr\xad\x84\xe5\xccO\xd9\xf3\xd2\x9dZ\xad[\x160\x02|\xe0\x9b/\xa7\xb3\xb7\xb8&0\xfd\x0e\xe1h\xb9\x86\xc6\xc8\xa8\x1b\xa7QM\x94\xe8\x18\x00HTB{m4ng3r5_4tt4ck_15_c001_4nd_und3rv4lu3d_341m3f}'
+'''

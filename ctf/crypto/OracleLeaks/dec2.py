@@ -11,7 +11,7 @@ def int_to_bytes(val):
 		
 
 #p = process(["python3", "chall.py"])
-p = remote("134.209.19.24", 31983)
+p = remote("134.209.19.24", 30140)
 
 started = p.recvuntil(">")
 p.sendline("1")
@@ -161,3 +161,4 @@ for z in range(60):
 	if minimum +2 > maximum:
 		break
 #print(trial_reduce(ct))
+#HTB{m4ng3r5_4tt4ck_15_c001_4nd_und3rv4lu3d_341m3f}
