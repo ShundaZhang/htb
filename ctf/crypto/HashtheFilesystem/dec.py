@@ -1,4 +1,6 @@
 #!/usr/bin/env python3.9
+
+import re
 from pwn import *
 from Crypto.Cipher import AES
 from Crypto.Util import Counter
@@ -187,7 +189,8 @@ if __name__ == "__main__":
 	p.recvuntil(">")
 	p.sendline("admim")
 	p.recvuntil("Your token is:")
-	token_ct = p.recvline().split()[3]
+	#print(p.recvline().split()[0].strip())
+	token_ct = p.recvline().split()[0].strip().decode()
 	x = xor('m', chr(bytes.fromhex(token_ct)[18]), 'n')
 	token_ct2 = bytes.fromhex(token_ct)[:18]+x+bytes.fromhex(token_ct)[19:]
 	print(token_ct2.hex())
@@ -195,13 +198,22 @@ if __name__ == "__main__":
 	p.recvuntil(">")
 	p.sendline("2")
 	p.recvuntil("Submit your token.")
-	token = '{"token": '+token_ct2.hex()+'}'
+	token = '{"token": '+'"'+token_ct2.hex()+'"}'
 	p.sendline(token)
-	print(p.recvline())
-	print(p.recvline())
-	print(p.recvline())
-	print(p.recvline())
-	print(p.recvline())
-	print(p.recvline())
-	print(p.recvline())
-	
+	#b'{"files": ["69a20345a9b57143", "41366612f2cb848", "ff41cb1c380af30f27", "ffaa373a0d221ade2", "523cddcc9704f1ce"]}\n'
+	p.recvuntil("{\"files\":")
+	matchObj = re.match(r' \["(.*)", "(.*)", "(.*)", "(.*)", "(.*)"\].*',p.recvline().decode())
+	files = []
+	for i in range(1,6,1):
+		files.append(matchObj.group(i))
+	print(files)
+
+	for file in files:
+		token2 = token[:-1]+', \"passphrase\": \"'+file+'\"}'
+		print(token2)
+
+		p.recvuntil(">")
+		p.sendline("3")
+		p.recvuntil("Submit your token and passphrase.")
+		p.sendline(token2)
+		print(p.recvline())
