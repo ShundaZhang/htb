@@ -1,3 +1,5 @@
+#!/usr/bin/python3.6
+
 '''
 https://tellnotales.xyz/posts/ca2022_htb_writeup/#crypto--find-marhers-secret-68-solves
 
@@ -11,6 +13,14 @@ https://github.com/jvdsn/crypto-attacks/blob/master/attacks/rc4/fms.py
 
 from collections import Counter
 from pwn import *
+
+def encrypt_oracle(iv, pt):
+	payload = json.dumps({"option": "encrypt", "iv": iv.hex(), "pt": pt})
+	io.sendline(payload)
+	resp = json.loads(io.recvline().rstrip())
+	ct = bytes.fromhex(resp['ct'])
+	return ct
+	
 
 def possible_key_bit(key, c):
 	s = [i for i in range(256)]
@@ -41,4 +51,11 @@ def attack(encrypt_oracle, key_len):
 
 	return key[3:]
 
+ip, port = "167.99.206.87", 30399
 
+io = remote(ip, port)
+
+key = attack(encrypt_oracle, 27)
+io.recvuntil(b'> ')
+io.sendline(json.dumps({"option": "claim", "key": key.hex()}))
+print(io.recvline())
