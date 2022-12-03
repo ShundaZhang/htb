@@ -13,11 +13,14 @@ https://github.com/jvdsn/crypto-attacks/blob/master/attacks/rc4/fms.py
 
 from collections import Counter
 from pwn import *
+import json
 
 def encrypt_oracle(iv, pt):
-	payload = json.dumps({"option": "encrypt", "iv": iv.hex(), "pt": pt})
+	payload = json.dumps({"option": "encrypt", "iv": iv, "pt": pt})
+	print(payload)
 	io.sendline(payload)
 	resp = json.loads(io.recvline().rstrip())
+	print(resp)
 	ct = bytes.fromhex(resp['ct'])
 	return ct
 	
@@ -45,7 +48,7 @@ def attack(encrypt_oracle, key_len):
 		possible = Counter()
 		for x in range(256):
 			key[2] = x
-			c = encrypt_oracle(key[:3], b"\x00")
+			c = encrypt_oracle(key[:3].hex(), "00")
 			possible[possible_key_bit(key, c)] += 1
 		key.append(possible.most_common(1)[0][0])
 
