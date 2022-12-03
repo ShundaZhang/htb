@@ -1,5 +1,3 @@
-ip, port = "167.99.206.87", 30399
-
 from collections import Counter
 from pwn import *
 import json
@@ -38,6 +36,7 @@ def attack(key_len):
         key.append(possible.most_common(1)[0][0])
     return key[3:]
 
+ip, port = "167.99.206.87", 30399
 
 io = remote(ip, port)
 # key = '1fec0787bd1a52ade63a379a203c2be92b981eb117dac4034ecce0'

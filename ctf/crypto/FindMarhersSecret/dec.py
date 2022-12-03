@@ -1,5 +1,5 @@
 #!/usr/bin/python3.6
-
+#### RC4 FMS attack!!
 '''
 https://tellnotales.xyz/posts/ca2022_htb_writeup/#crypto--find-marhers-secret-68-solves
 
@@ -16,6 +16,7 @@ from pwn import *
 import json
 
 def encrypt_oracle(iv, pt):
+	io.recvuntil(b'> ')
 	payload = json.dumps({"option": "encrypt", "iv": iv, "pt": pt})
 	print(payload)
 	io.sendline(payload)
@@ -48,7 +49,7 @@ def attack(encrypt_oracle, key_len):
 		possible = Counter()
 		for x in range(256):
 			key[2] = x
-			c = encrypt_oracle(key[:3].hex(), "00")
+			c = encrypt_oracle(key[:3].hex(), '00')
 			possible[possible_key_bit(key, c)] += 1
 		key.append(possible.most_common(1)[0][0])
 
@@ -62,3 +63,5 @@ key = attack(encrypt_oracle, 27)
 io.recvuntil(b'> ')
 io.sendline(json.dumps({"option": "claim", "key": key.hex()}))
 print(io.recvline())
+
+#HTB{7h3_FMS_@tt3ck_br0k3_@_l0t_0f_th17gs_i7_w1f1!!}
