@@ -54,63 +54,40 @@ def myhash(x):
 	for i in range(len(x)):
 		lane = x[i]
 		acc += lane * _PyHASH_XXPRIME_2
-		#print("============================")
-		#print(acc)
 		acc %= UINT64
 		acc = _PyHASH_XXROTATE(acc)
-		#print("============================")
-		#print(acc)
 		acc *= _PyHASH_XXPRIME_1
-		#print("============================")
-		#print(acc)
 		acc %= UINT64
 
 	acc += len(x) ^ (_PyHASH_XXPRIME_5 ^ 3527539)
-	#print("****************************")
-	#print(acc)
 	acc %= UINT64
 	if acc >= INT64:
 		acc -= UINT64 
 	return acc
 
-print(hash(tuple([0])))
-print(myhash(tuple([0])))
+#print(hash(tuple([0])))
+#print(myhash(tuple([0])))
 #print(hash(tuple([1])))
 #print(myhash(tuple([1])))
-#print(hash(tuple([1,2,3])))
-#print(myhash(tuple([1,2,3])))
+print(hash(tuple([1,2,3])))
+print(myhash(tuple([1,2,3])))
 #print(hash(tuple([0,1,2,5,9,0])))
 #print(myhash(tuple([0,1,2,5,9,0])))
 
-#529344067295497451
-'''
-acc = _PyHASH_XXPRIME_5
-lane = 2
-acc += lane * _PyHASH_XXPRIME_2
-acc &= UINT64W
-acc = _PyHASH_XXROTATE(acc)
-acc *= _PyHASH_XXPRIME_1
-acc &= UINT64W
-print(acc)
+x0= 529344067295497451
 
-x = 529344067295497451 - (2^(_PyHASH_XXPRIME_5 ^ 3527539))
-f = 0
-for k in range(10000000):
-	if (x + k*UINT64)%_PyHASH_XXPRIME_1 == 0:
-		x = (x + k*UINT64)/_PyHASH_XXPRIME_1
-		f = 1
-		break
-if f == 0:
-	print("FAIL!!!")
-f = 0
+for i in [2,3]:
+	acc = _PyHASH_XXPRIME_5
+	lane = i
+	acc += lane * _PyHASH_XXPRIME_2
+	acc %= UINT64
+	acc = _PyHASH_XXROTATE(acc)
+	acc *= _PyHASH_XXPRIME_1
+	acc %= UINT64
+
+x = x0 - (3^(_PyHASH_XXPRIME_5 ^ 3527539))
+x = x*pow(_PyHASH_XXPRIME_1, -1, UINT64)%UINT64
 x = _PyHASH_XXROTATE(x)
-x -= _PyHASH_XXPRIME_5
-for k in range(10000000):
-        if (x + k*UINT64)%_PyHASH_XXPRIME_2 == 0:
-                x = (x + k*UINT64)/_PyHASH_XXPRIME_2
-                f = 1
-                break
-if f == 0:
-	print("FAIL2!!!")
+x -= acc
+x = x*pow(_PyHASH_XXPRIME_2, -1, UINT64)%UINT64
 print(x)
-'''
