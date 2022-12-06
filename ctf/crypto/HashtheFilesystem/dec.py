@@ -274,8 +274,14 @@ if __name__ == "__main__":
 
 	for file in files:
 		h = recover_number(file)
-		r100 = reverse_hash(h,100)
-		a100 = [2**64]*99+[r100]
+
+		while l < 10000:
+			r100 = reverse_hash(x0,l)
+			if r100 <= 2**61-2:
+				break
+			l += 1
+
+		a100 = [2**64]*(l-1)+[r100]
 		token2 = token[:-1]+', "passphrase": '+str(a100)+'}'
 		print(token2)
 

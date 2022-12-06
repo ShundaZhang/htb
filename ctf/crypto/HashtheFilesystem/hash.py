@@ -111,11 +111,18 @@ print(reverse_hash(x0,l))
 #302715549475208033
 
 #x0 = 0x69a20345a9b57143
-x0 = 0x41c1cb1fc46801e9
-l = 100
-r100 = reverse_hash(x0,l)
+x0 = 0x41366612f2cb848
+#x0 = 0x41c1cb1fc46801e9
+l = 2
 print(hex(x0))
-a100 = [2**64]*99+[r100]
+while l < 10000:
+	r100 = reverse_hash(x0,l)
+	if r100 <= 2**61-2:
+		print("Found!")
+		break
+	l += 1
+	
+a100 = [2**64]*(l-1)+[r100]
 print(hex(hash(tuple(a100))))
 
 
