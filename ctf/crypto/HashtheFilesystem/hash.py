@@ -1,5 +1,7 @@
 #!/usr/bin/python3.9
 
+import json
+
 '''
 
 #define _PyHASH_XXPRIME_1 ((Py_uhash_t)11400714785074694791ULL)
@@ -97,6 +99,11 @@ def reverse_hash(x0, l):
 	#3
 	return x
 
+def recover_number(x):
+	if x[:2] == 'ff':
+		return 0-int(x[2:],16)
+	else:
+		return int(x,16)
 
 x0 = 529344067295497451
 l = 3
@@ -109,3 +116,13 @@ r100 = reverse_hash(x0,l)
 print(hex(x0))
 a100 = [2**64]*99+[r100]
 print(hex(hash(tuple(a100))))
+
+
+r = ["69a20345a9b57143", "41366612f2cb848", "ff41cb1c380af30f27", "ffaa373a0d221ade2", "523cddcc9704f1ce"]
+for i in r:
+	print(recover_number(i))
+
+token = '{"token":"xxxxxxxxxxxxxxxx"}'
+token2 = token[:-1]+', "passphrase": '+str(a100)+'}'
+x = json.loads(token2)
+print(x["passphrase"])
