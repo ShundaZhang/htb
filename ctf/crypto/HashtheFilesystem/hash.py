@@ -71,23 +71,41 @@ def myhash(x):
 #print(myhash(tuple([1])))
 print(hash(tuple([1,2,3])))
 print(myhash(tuple([1,2,3])))
+print(hash(tuple([2**64,2**64,302715549475208033])))
+#print(hash(tuple([2,3,])))
 #print(hash(tuple([0,1,2,5,9,0])))
 #print(myhash(tuple([0,1,2,5,9,0])))
 
-x0= 529344067295497451
 
-for i in [2,3]:
+def reverse_hash(x0, l):
 	acc = _PyHASH_XXPRIME_5
-	lane = i
-	acc += lane * _PyHASH_XXPRIME_2
-	acc %= UINT64
-	acc = _PyHASH_XXROTATE(acc)
-	acc *= _PyHASH_XXPRIME_1
-	acc %= UINT64
+	#for i in [1, 2]:
+	for i in [2**64]*(l-1):
+		lane = hash(i)
+		acc += lane * _PyHASH_XXPRIME_2
+		acc %= UINT64
+		acc = _PyHASH_XXROTATE(acc)
+		acc *= _PyHASH_XXPRIME_1
+		acc %= UINT64
 
-x = x0 - (3^(_PyHASH_XXPRIME_5 ^ 3527539))
-x = x*pow(_PyHASH_XXPRIME_1, -1, UINT64)%UINT64
-x = _PyHASH_XXROTATE(x)
-x -= acc
-x = x*pow(_PyHASH_XXPRIME_2, -1, UINT64)%UINT64
-print(x)
+	x = x0 - ((l)^(_PyHASH_XXPRIME_5 ^ 3527539))
+	x = x*pow(_PyHASH_XXPRIME_1, -1, UINT64)%UINT64
+	x = _PyHASH_XXROTATE_R(x)
+	x -= acc
+	x = x*pow(_PyHASH_XXPRIME_2, -1, UINT64)%UINT64
+	#print(x)
+	#3
+	return x
+
+
+x0 = 529344067295497451
+l = 3
+print(reverse_hash(x0,l))
+#302715549475208033
+
+x0 = 0x69a20345a9b57143
+l = 100
+r100 = reverse_hash(x0,l)
+print(hex(x0))
+a100 = [2**64]*99+[r100]
+print(hex(hash(tuple(a100))))
