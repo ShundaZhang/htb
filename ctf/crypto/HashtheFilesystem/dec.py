@@ -12,6 +12,70 @@ import time
 import os
 import json
 
+_PyHASH_XXPRIME_1=11400714785074694791
+_PyHASH_XXPRIME_2=14029467366897019727
+_PyHASH_XXPRIME_5=2870177450012600261
+UINT64W=0xFFFFFFFFFFFFFFFF
+UINT64=UINT64W+1
+INT64=UINT64/2
+
+def _PyHASH_XXROTATE(x):
+        return (((x << 31) & UINT64W) | (x >> 33))
+
+def _PyHASH_XXROTATE_R(x):
+        return (((x << 33) & UINT64W) | (x >> 31))
+
+
+def myhash(x):
+        acc = _PyHASH_XXPRIME_5
+        for i in range(len(x)):
+                lane = x[i]
+                acc += lane * _PyHASH_XXPRIME_2
+                acc %= UINT64
+                acc = _PyHASH_XXROTATE(acc)
+                acc *= _PyHASH_XXPRIME_1
+                acc %= UINT64
+
+        acc += len(x) ^ (_PyHASH_XXPRIME_5 ^ 3527539)
+        acc %= UINT64
+        if acc >= INT64:
+                acc -= UINT64
+        return acc
+
+def reverse_hash(x0, l):
+        acc = _PyHASH_XXPRIME_5
+        #for i in [1, 2]:
+        for i in [2**64]*(l-1):
+                lane = hash(i)
+                acc += lane * _PyHASH_XXPRIME_2
+                acc %= UINT64
+                acc = _PyHASH_XXROTATE(acc)
+                acc *= _PyHASH_XXPRIME_1
+                acc %= UINT64
+
+        x = x0 - ((l)^(_PyHASH_XXPRIME_5 ^ 3527539))
+        x = x*pow(_PyHASH_XXPRIME_1, -1, UINT64)%UINT64
+        x = _PyHASH_XXROTATE_R(x)
+        x -= acc
+        x = x*pow(_PyHASH_XXPRIME_2, -1, UINT64)%UINT64
+        #print(x)
+        #3
+        return x
+
+def recover_number(x):
+        if x[:2] == 'ff':
+                return 0-int(x[2:],16)
+        else:
+                return int(x,16)
+
+'''
+token = '{"token":"xxxxxxxxxxxxxxxx"}'
+token2 = token[:-1]+', "passphrase": '+str(a100)+'}'
+x = json.loads(token2)
+print(x["passphrase"])
+
+'''
+
 file_record = {}
 
 
@@ -209,7 +273,10 @@ if __name__ == "__main__":
 	print(files)
 
 	for file in files:
-		token2 = token[:-1]+', \"passphrase\": \"'+file+'\"}'
+		h = recover_number(file)
+		r100 = reverse_hash(h,100)
+		a100 = [2**64]*99+[r100]
+		token2 = token[:-1]+', "passphrase": '+str(a100)+'}'
 		print(token2)
 
 		p.recvuntil(">")
