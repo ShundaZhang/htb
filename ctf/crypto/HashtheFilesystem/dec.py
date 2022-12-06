@@ -226,7 +226,7 @@ def main():
 	server = ReusableTCPServer(("0.0.0.0", 1337), incoming)
 	server.serve_forever()
 
-ip, port = "134.209.186.13", 32656
+ip, port = "206.189.123.231", 30659
 
 if __name__ == "__main__":
 	'''
@@ -283,4 +283,7 @@ if __name__ == "__main__":
 		p.sendline("3")
 		p.recvuntil("Submit your token and passphrase.")
 		p.sendline(token2)
+		print(p.recvline())
+		print(p.recvline())
+		print(p.recvline())
 		print(p.recvline())

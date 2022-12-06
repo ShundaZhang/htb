@@ -110,7 +110,8 @@ l = 3
 print(reverse_hash(x0,l))
 #302715549475208033
 
-x0 = 0x69a20345a9b57143
+#x0 = 0x69a20345a9b57143
+x0 = 0x41c1cb1fc46801e9
 l = 100
 r100 = reverse_hash(x0,l)
 print(hex(x0))
