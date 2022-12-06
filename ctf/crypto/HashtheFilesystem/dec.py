@@ -274,9 +274,9 @@ if __name__ == "__main__":
 
 	for file in files:
 		h = recover_number(file)
-
+		l = 2
 		while l < 10000:
-			r100 = reverse_hash(x0,l)
+			r100 = reverse_hash(h,l)
 			if r100 <= 2**61-2:
 				break
 			l += 1
@@ -293,3 +293,8 @@ if __name__ == "__main__":
 		print(p.recvline())
 		print(p.recvline())
 		print(p.recvline())
+
+'''
+bytes.fromhex('4854427b66316e64316e395f323332305f643479355f316e5f70793768306e5f31355f66756e7d0a')
+b'HTB{f1nd1n9_2320_d4y5_1n_py7h0n_15_fun}\n'
+'''
