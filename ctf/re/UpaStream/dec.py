@@ -71,5 +71,42 @@ public class Challenge {
     }
 }
 '''
+from functools import reduce
 
+flag = 'FLAG1'
 
+list1 = map(lambda x: chr(ord(x)-1), flag)
+for i in range(0,len(list1),2):
+	try:
+		list1[i],list1[i+1] = list1[i+1],list1[i]
+	except:
+		continue
+
+print list1
+
+list2 = map(lambda x: ord(x) if ord(x)%2 == 0 else ord(x)**2, list1)
+print list2
+
+list3 = map(lambda x: x << 1, list2)
+print list3
+
+list4 = map(lambda x: (x/2, x*2)[((((x + 2) * 4) % 87) ^ 3) == 17362], list3)
+print list4
+
+list5 = map(lambda x: x/2+x, list4)
+print list5
+
+list6 = map(lambda x: hex(x)[2:], list5)
+list6 = ''.join(list6)
+print list6
+
+list7 = []
+for i in range(0, len(list6), 2):
+	try:
+		list7.append(list6[i])
+		list7.append(list6[i+1])
+		list7.append('O')
+	except:
+		continue
+list7 = ''.join(list7)
+print list7
