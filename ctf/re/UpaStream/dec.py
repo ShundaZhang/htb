@@ -76,15 +76,25 @@ from functools import reduce
 target = 'b71bO12cO156O6e43Od8O69c3O5cd3O144Oe4O6e43O37cbOf6O69c3O1e7bO156O3183O69c3O6cO8b3bOc0O1e7bO156OfcO50bbO69c3Oc0O102O6e43OdeOb14bOc6OfcOd8O'
 
 def enc(flag):
-	list1 = map(lambda x: chr((ord(x)-1)%256), flag)
+	list1 = map(lambda x: str(ord(x)-1), flag)
 	#list1 = flag
 	for i in range(0,len(list1),2):
 		try:
 			list1[i],list1[i+1] = list1[i+1],list1[i]
 		except:
 			continue
-
+	list1 = ''.join(list1)
 	#print list1
+
+	'''
+	list10 = []
+	for i in range(0,len(list1),2):
+		try:
+			list10.append(list1[i]+list1[i+1])
+		except:
+			continue
+	print list10
+	'''
 
 	list2 = map(lambda x: ord(x) if ord(x)%2 == 0 else ord(x)**2, list1)
 	#print list2
@@ -114,6 +124,7 @@ def enc(flag):
 	#print list7
 	return list7
 
+#print enc('HTB{7357_f419!}')
 
 for i in range(32,127,1):
 	for j in range(32,127,1):
@@ -123,4 +134,3 @@ for i in range(32,127,1):
 		if s in target:
 			#print s
 			print flag
-
