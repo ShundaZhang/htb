@@ -12,4 +12,6 @@ for i in range(32):
 	flag += io.recv(1024)[i]
 	print flag
 	io.close()
+	time.sleep(1)
 
+#HTB{d4nz4_kudur0r0r0}
