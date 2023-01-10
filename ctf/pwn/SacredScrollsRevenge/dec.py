@@ -4,7 +4,7 @@ from pwn import *
 from os import system
 
 # Pre-made payload to avoid `/` characters in it
-# Payload: + padding + RBP + POP_RDI + GOT[system] + PLT[puts] + RET + RET + MAIN + padding
+# Payload: the 7 bytes magic number + padding + RBP + POP_RDI + GOT[system] + PLT[puts] + RET + RET + MAIN + padding
 # RPB = 0
 # RET + RET and final padding is used to change the base64 output to avoid `/`
 # 2 RET instructions are used to keep the stack alignment
