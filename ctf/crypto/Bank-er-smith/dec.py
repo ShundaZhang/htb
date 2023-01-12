@@ -17,3 +17,24 @@ m = pow(c, d, n)
 print hex(m)[2:].decode('hex')
 
 #horcrux_horcrux_Helga_Hufflepuff's_cup
+
+'''
+************** Welcome to the Gringatts Bank. **************
+*                                                          *
+*                  Fortius Quo Fidelius                    *
+*                                                          *
+************************************************************
+
+Hello, what would you like to do?
+
+[1] Get public certificate.
+[2] Calculate Hint.
+[3] Unlock Vault.
+
+> 3
+
+Which vault would you like to open: vault_68
+Enter the passphrase: horcrux_horcrux_Helga_Hufflepuff's_cup
+
+HTB{c00p325m17h_15_57111_m491c!}
+'''
