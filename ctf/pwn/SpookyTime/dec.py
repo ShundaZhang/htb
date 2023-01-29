@@ -1,4 +1,6 @@
 '''
+Format String + ROP
+
 gdb-peda$ x/20 $rbp
 0x7fffffffe240: 0x0000000000000001      0x00007ffff7dbdd90
 0x7fffffffe250: 0x0000000000000000      0x00005555555553c0
