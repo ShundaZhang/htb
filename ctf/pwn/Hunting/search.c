@@ -1,4 +1,4 @@
-//gcc -m32 -o search search.c
+//gcc -m32 -c -o search search.c
 //ndisasm -b 32 search
 //objdump -D search > search.asm
 
@@ -8,7 +8,7 @@
 #include <unistd.h>
 
 void search()
-{
+{	
 	for(uint32_t addr = 0x60000000; addr <= 0xf7000000; addr += 4096)
 	{
 		for( uint32_t offset = 0; offset < 4096; offset += 4)
@@ -24,9 +24,4 @@ void search()
 
 		}
 	}
-}
-
-int main()
-{
-	search();
 }
