@@ -4,7 +4,7 @@ import marshal
 import struct
 import sys
 import time
-import uncompyle6
+#import uncompyle6
 
 def _pack_uint32(val):
     """ Convert integer to 32-bit little-endian bytes """
@@ -69,5 +69,5 @@ with open(path, 'rb') as handle:
         out.write(pyc)
 
 # Use uncompyle6 to decompile the bytecode and write it to disk alongside the .pyc
-with open(pythonFile, 'w') as decompiled:
-    uncompyle6.main.decompile_file(pycFile, decompiled)
+#with open(pythonFile, 'w') as decompiled:
+#    uncompyle6.main.decompile_file(pycFile, decompiled)

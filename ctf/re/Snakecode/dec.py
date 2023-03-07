@@ -1,32 +1,22 @@
 #uncompyle6 chall.pyc >> dec.py
 
-import marshal
+import marshal, os
 
 ll_bin = ('YwEAAAABAAAABQAAAEMAAABzNAAAAHQAAGoBAHQCAGoDAHQEAGQBAIMBAGoFAHwAAGoGAGQCAIMB\nAIMBAIMBAHQHAIMAAIMCAFMoAwAAAE50BAAAAHpsaWJ0BgAAAGJhc2U2NCgIAAAAdAUAAAB0eXBl\nc3QMAAAARnVuY3Rpb25UeXBldAcAAABtYXJzaGFsdAUAAABsb2Fkc3QKAAAAX19pbXBvcnRfX3QK\nAAAAZGVjb21wcmVzc3QGAAAAZGVjb2RldAcAAABnbG9iYWxzKAEAAAB0AQAAAHMoAAAAACgAAAAA\ncwcAAAA8c3RkaW4+dAoAAABsb2FkTGFtYmRhAQAAAHQAAAAA\n').decode('base64')
-ll_bin = marshal.dump(marshal.loads(ll_bin))
 
 with open('ll.bin','wb') as f:
 	f.write(ll_bin)
 
 '''
-xxd ll.bin
-00000000: 6301 0000 0001 0000 0005 0000 0043 0000  c............C..
-00000010: 0073 3400 0000 7400 006a 0100 7402 006a  .s4...t..j..t..j
-00000020: 0300 7404 0064 0100 8301 006a 0500 7c00  ..t..d.....j..|.
-00000030: 006a 0600 6402 0083 0100 8301 0083 0100  .j..d...........
-00000040: 7407 0083 0000 8302 0053 2803 0000 004e  t........S(....N
-00000050: 7404 0000 007a 6c69 6274 0600 0000 6261  t....zlibt....ba
-00000060: 7365 3634 2808 0000 0074 0500 0000 7479  se64(....t....ty
-00000070: 7065 7374 0c00 0000 4675 6e63 7469 6f6e  pest....Function
-00000080: 5479 7065 7407 0000 006d 6172 7368 616c  Typet....marshal
-00000090: 7405 0000 006c 6f61 6473 740a 0000 005f  t....loadst...._
-000000a0: 5f69 6d70 6f72 745f 5f74 0a00 0000 6465  _import__t....de
-000000b0: 636f 6d70 7265 7373 7406 0000 0064 6563  compresst....dec
-000000c0: 6f64 6574 0700 0000 676c 6f62 616c 7328  odet....globals(
-000000d0: 0100 0000 7401 0000 0073 2800 0000 0028  ....t....s(....(
-000000e0: 0000 0000 7307 0000 003c 7374 6469 6e3e  ....s....<stdin>
-000000f0: 740a 0000 006c 6f61 644c 616d 6264 6101  t....loadLambda.
-00000100: 0000 0074 0000 0000                      ...t....
+uncompyle6 ll.bin.pyc
+# uncompyle6 version 3.9.0
+# Python bytecode version base 2.7 (62211)
+# Decompiled from: Python 3.7.5 (default, Dec  9 2021, 17:04:37)
+# [GCC 8.4.0]
+# Embedded file name: <stdin>
+# Compiled at: 2023-03-07 10:32:50
+return types.FunctionType(marshal.loads(__import__('zlib').decompress(s.decode('base64'))), globals())
+# okay decompiling ll.bin.pyc
 '''
 
 import zlib
@@ -64,3 +54,13 @@ m0 = ll('eJw1jTELwjAUhC9Jq/0VzhldBAfr4u7i6mYpFFSKCXRJp/7x3rsi5L5Avnsvrx0AS8PcmNQ
 m1 = ll('eJw1zUEKAjEMBdCfdMQreIRuRwU3Mhv3bjzCDAOCitCAm7rqxU1+cZGX0v408wbAvy5e5eQYUAUm\nqAnNHdASvsJLhSVUBpryoPG6Km5ZfPaah/hBnXXf29jbsbdDjl0W2Tdd6IN+6JwdkLJ1zsWW+2vi\n/HOMRIklkJ38AF2QGOk=\n')
 m2 = ll('eJxNjj8LAjEMxV96fz+Fk0NHdT5c3F1cD5c7BEHlsAWXdrov7kuKICS/0LyXpFMP4JcnZrgSEUgM\nQXJIDVKLtcHokAWZKvsVUm0eGjr1rC3GCplBW/03Xpy2hM5bj4sXnjh7p4cUz30pO6+fiKouxtn6\ny8MehcH4MU7GtydgCB0xhDjfX8ey8mAzrYqyka18AW5IIKw=\n')
 
+for i in range(gi):
+	os.system('python marshal-to-pyc.py '+str(i)+'.bin')
+	print os.popen('uncompyle6 '+str(i)+'.bin.pyc').read()
+
+f = ['H', 'T', 'B', '{', 'S', 'u', 'P', '3', 'r', '_', 'S', '3', 'C', 'R', 't', '_', 'S', 'n', '4', 'k', '3', 'c', '0', 'd', '3', '}'] 
+
+print ''.join(f)
+
+os.system('rm -f *.bin')
+os.system('rm -f *.bin.pyc')
