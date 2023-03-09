@@ -1,6 +1,6 @@
 #Search _MEIPASS2, found pyinstaller
 #python3.8 pyinstxtractor.py auth
-#uncompyle6 auth.pyc #with errors
+#uncompyle6 auth.pyc #with errors but actually should work...
 #pydisasm auth_extracted/auth.pyc > auth.py.asm
 
 '''
