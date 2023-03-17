@@ -85,6 +85,8 @@ phiq = 1014374811322654562310175874837014173218487130578545705443340494206905771
 dp = gmpy2.invert(e, phip)
 dq = gmpy2.invert(e, phiq)
 
+#dn % phip == dp
+#dn % phiq == dq
 dn = crt([dp, phip], [dq, phiq])
 
 G = EC.multiply(P, dn)
@@ -95,6 +97,7 @@ PP = EC.multiply(G, e)
 #print P
 
 key = md5(str(G.x).encode()).digest()
+#key = md5('5982300893075105285714788320867642191331423383958247274862913259667307456410716681429992603187869704081787952336751972653886731152659743384341972005634976').digest()
 iv = '3a0b1cd88e2fe007f6c0332e8ba119da'.decode('hex')
 cipher = AES.new(key,AES.MODE_CBC,iv)
 enc_flag = '74fcb664d32387c53e4d99d0d55ddc0ac7c330001551e53872f0d386cd820a411c15d2f9bf8f851b24bb0301c4b51d3a9a58ef76b7988065d6dcf4915ce4cfd0'.decode('hex')
