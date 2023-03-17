@@ -1,0 +1,29 @@
+'''
+Now that we have all the components of the curve, we can calculate G. The problem is that we don’t know the order of the curve mod n and that we be annoying to calculate since it isn’t a prime number. However, we know its primes factors so we calculate G to each of the prime factors.
+
+We know that the point we are given for ECRSA A is the following: A = e*G. In RSA, the powers are calculated mod phi(n) however, for elliptic curves, the equivalent would be to calculate mod Order(n). Thus we can easily inverse e mod p and q to get the value of G for these moduli.
+
+We know gx mod p and gx mod q so we can just use the Chinese Reminder Theorem to calculate the key.
+'''
+
+x = 5903637122809662755515021947736995168754672287426805126843989912574589122079777575988540257962741079681243265687009173675236168275983715754009469653492135
+y = 5749847131051177758569673850930018781121249835620885862595195976699669230352665565625560358291679473334581067739487729131754729527524453233132962213708391
+n = 10289562578458710424274507194086829817050984240222547592851639332572470430240639824743454077987245642008922463955822593313437272156555953825628000442680061
+p = 101437481132265456231017587483701417322155986175910603561924998386321564339543
+q = 101437481132265456231017587483701417322155986175910603561924998386321564346827
+a = 187671739687187487459110533011668125000
+b = 330391735621396279531716147204646987441
+e = 298097965081551050186524405801901300093
+
+P = GF(p)
+Q = GF(q)
+#N = GF(n) #error n is not a prime number
+
+ECP = EllipticCurve(P, [a,b])
+ECQ = EllipticCurve(Q, [a,b])
+
+OP = ECP.order()
+OQ = ECQ.order()
+
+print(OP)
+print(OQ)
