@@ -11,8 +11,7 @@ def qrimage( lines, fname ):
 	draw = ImageDraw.Draw(image)
 	y = 0
 	for line in lines:
-		#line = line.decode('utf-8', 'backslashreplace')
-		line = line.encode('hex')
+		line = line.hex()
 		#line = re.sub(r'^\s*', '', line)
 		line = re.sub(r'^20', '', line)
 		line = re.sub(r'^09', '', line)
@@ -74,6 +73,6 @@ f = qrdecode(imagename)
 s = calc(f)
 
 io.recvuntil('Decoded string:')
-io.sendline(str(s))
+io.sendline(str(s).encode())
 print(io.recvall())
 
