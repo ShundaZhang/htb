@@ -11,10 +11,15 @@ def qrimage( lines, fname ):
 	draw = ImageDraw.Draw(image)
 	y = 0
 	for line in lines:
-		line = line.decode('utf-8', 'backslashreplace')
-		line = re.sub(r'^\s*', '', line)
-		line = re.sub(r'\[41m \[0m', '*', line)
-		line = re.sub(r'\[7m \[0m', '-', line)
+		#line = line.decode('utf-8', 'backslashreplace')
+		line = line.encode('hex')
+		#line = re.sub(r'^\s*', '', line)
+		line = re.sub(r'^20', '', line)
+		line = re.sub(r'^09', '', line)
+		#line = re.sub(r'\x1b[41m \x1b[0m', '*', line)
+		line = re.sub(r'1b5b34316d20201b5b306d', '*', line)
+		#line = re.sub(r'\x1b[7m \x1b[0m', '-', line)
+		line = re.sub(r'1b5b376d20201b5b306d', '-', line)
 
 		x = 0
 		for c in line:
@@ -31,7 +36,7 @@ def qrdecode( fname ):
 	qr = qrtools.QR()
 	if qr.decode(fname):
 		ret = qr.data
-	print(f'{ret}')
+	print(ret)
 	return ret
 
 def calc( f ):
@@ -39,12 +44,12 @@ def calc( f ):
 	f = re.sub('=', '', f)
 	f = re.sub(r'^\s*', '', f)
 	f = re.sub(r'\s*$', '', f)
-	print(f'{f}')
+	print(f)
 	ret = eval(f)
-	print(f'{ret}')
+	print(ret)
 	return ret
 
-ip, port = '134.209.185.255', 30494
+ip, port = '165.22.112.49', 31659
 io = remote(ip, port)
 
 context.log_level = 'debug'
@@ -69,6 +74,6 @@ f = qrdecode(imagename)
 s = calc(f)
 
 io.recvuntil('Decoded string:')
-io.sendline(str(s).encode())
+io.sendline(str(s))
 print(io.recvall())
 
