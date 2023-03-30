@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from pwn import *
 from PIL import ImageFont
 from PIL import Image
@@ -48,7 +50,7 @@ def calc( f ):
 	print(ret)
 	return ret
 
-ip, port = '165.22.112.49', 31659
+ip, port = '161.35.170.39', 30013
 io = remote(ip, port)
 
 context.log_level = 'debug'
@@ -75,4 +77,4 @@ s = calc(f)
 io.recvuntil('Decoded string:')
 io.sendline(str(s).encode())
 print(io.recvall())
-
+#HTB{@lriGh7_1_tH1nK_y0u`r3_QuickR_s0ldi3r}
