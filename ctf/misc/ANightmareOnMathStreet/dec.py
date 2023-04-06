@@ -80,4 +80,6 @@ while True:
     s = s.replace(')', ' )')
     print(s)
     result=change_opt(s)
-    io.sendline(get_value(result))
+    io.sendline(str(get_value(result)))
+
+#HTB{tH0s3_4r3_s0m3_k1llEr_m4th_5k1llz}
