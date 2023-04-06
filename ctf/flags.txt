@@ -1,0 +1,98 @@
+rope.htb user deb9b4de27071d829962124c1cd0ae1d root 1c773343b3c60c6778b9eefc4da84dff
+playertwo.htb user CDE09DC7E49C92C78ECAC1535E241251 root 73DAEF0B9D5A1328C6B40460E2A7D8C5
+fatty.htb user 7fab2c31fc7173a86872db45ae922073 root ee982fa19b413415391ed4a17b2bd9c7
+multimaster.htb user 96407652d0ca80f4ce6aa5cf8f27c06d root 41b89a341efbd4ce67c12d98508ee919
+registry.htb user ytc0ytdmnzywnzgxngi0zte0otm3ywzi root ntrkzgnkotaxyju0ntrinda4yzbkztgw
+oouch.htb user e6b4d7a3d54598e5905af68d00bcddf9 root e049b8877803d78434cc315a9c44957e
+control.htb user d8782dd01fb15b72c4b5ba77ef2d472b root 8f8613f5b4da391f36ef11def4cec1b1
+patents.htb user 79375f91601f388919fd7fdc67966479 root d63b0264ce60afb62a3dc8ddeff8e9ac
+sniper.htb user 21f4d0f29fc4dd867500c1ad716cf56e root 5624caf363e2750e994f6be0b7436c15
+mango.htb user 79bf31c6c6eb38a8567832f7f8b47e92 root 8a8ef79a7a2fbb01ea81688424e9ab15
+obscurity.htb user e4493782066b55fe2755708736ada2d7 root 512fd4429f33a113a44d5acde23609e3
+resolute.htb user 0c3be45fcfe249796ccbee8d3a978540 root e1d94876a506850d0c20edb5405e619c
+monteverde.htb user 4961976bd7d8f4eeb2ce3705e2f212f2 root 12909612d25c8dcf6e5a07d1a804a0bc
+book.htb user 51c1d4b5197fa30e3e5d37f8778f95bc root 84da92adf998a1c7231297f70dd89714
+forest.htb user e5e4e47ae7022664cda6eb013fb0d9ed root f048153f202bbb2f82622b04d79129cc
+traverxec.htb user 7db0b48469606a42cec20750d9782f3d root 9aa36a6d76f785dfd320a478f6e0d906
+openadmin.htb user c9b2cf07d40807e62af62660f0c81b5f root 2f907ed450b361b2c2bf4e8795d5b561
+nest.htb user cf71b25404be5d84fd827e05f426e987 root 6594c2eb084bc0f08a42f0b94b878c41
+sauna.htb user 1b5520b98d97cf17f24122a55baf70cf root f3ee04965c68257382e31502cc5e881f
+traceback.htb user c24349701ae38c33ffbf0cceb2c46020 root ccda9e554daa04f6f56d822a357585d6
+remote.htb execute command: psexec.py Administrator:\!R3m0te\!@10.10.10.180
+cascade.htb execute command: psexec.py Administrator:baCT3r1aN00dles@10.10.10.182
+Bombs Landed HTB{younevergoingtofindme}
+Impossible Password HTB{40b949f92b86b18}
+Find The Secret Flag HTB{decoder_stefano118_!!_}
+Debugme HTB{Tr0lling_Ant1_D3buGGeR_trickz_R_fun!}
+DSYM HTB{y0u_r34lly_g0t_m3}
+Headache HTB{l4yl3_w4s_h3r3!}
+Headache 2 HTB{r4j_1s_My_Senp4i!}
+Baby RE HTB{B4BY_R3V_TH4TS_EZ}
+Bypass HTB{SuP3rC00lFL4g}
+Poly HTB{7h1s_3LF_15_A_Po1yGl0T}
+Keys HTB{N0t_A_Fl1g!}
+Mission Impossible HTB{wh0_1s_Th1s_bl3ichenb3Cker_f3ll4}
+Bank heist HTB{GORETIREMENTFUND!!}
+Call HTB{IKNOWTHINGSLIKEDTMF}
+Decode Me!! HTB{U_g0t_th1$}
+August HTB{Dv0r4k_1z_MyD00D}
+Optimus Prime HTB{3uc1id_w4z_th3_pr1me_h4x0r}
+Walzer HTB{D3r //4LZ3r 1$7 31 p44r74Z 1//\ 3/4-74|<7. }
+Templed HTB{M0Nks_kN3w!}
+RsaCtfTool HTB{pl4y1ng_w1th_pr1m3s_1s_fun!}
+Digital Cube HTB{QR_!snt_d34d}
+Forest HTB{AmAz1nGsKilLzZBr0}
+Pusheen Loves Graphs HTB{fUn_w17h_CFGz}
+Retro HTB{r3tr0-1s-4l1v3}
+Senseless Behaviour HTB{blindasabat}
+Not Art HTB{I_tOlD_yOu_ThAt_ThIs_WaS_nOt_ArT_nOr_PiEt!!}
+Massacre HTB{m4k3_p1xels_n0t_war!}
+Image Processing 101 HTB{Scr!pt_K!dd!e_Pr00f_DFT}
+Unprintable HTB{c0mpr3ss3d_RL3_br41nfuck_1s_n0t_fun}
+BlackSquare HTB{LE4RNMOR5ECOOO00D3}
+Ropme HTB{r0p_m3_if_y0u_c4n!}
+Little Tommy HTB{I_am_so_heaped_up_right_now}
+Dream Diary: Chapter 1 HTB{Singl3?_NO!_D0ubl3?_NO!_Tr1pl3_Unsaf3_Unlink}
+Dream Diary: Chapter 2 HTB{wh@t_Th3_fuck_!s_NULL_byt3_p01sOn!ng???}
+Dream Diary: Chapter 3 HTB{m0d3rN_Nu11_bYT3+s3cC0mP_b1@Ck1i5t1Ng=>n0t_s0_S@f3!!!}
+Old Bridge HTB{q4i1q3_i1i3_p0a_a01}
+ropmev2 HTB{r0t_r0p_4nd_p0p}
+Kernel Adventures: Part 1 HTB{C0ngr4ts_y0u_3xpl0it3d_A_D0uBlE-FeTcH}
+You know 0xDiablos HTB{0ur_Buff3r_1s_not_healthy}
+I know Mag1k HTB{Padd1NG_Or4cl3z_AR3_WaY_T0o_6en3r0ys_ArenT_tHey???}
+Grammar HTB{TypejugAlingSOulS}
+Lernaean HTB{l1k3_4_b0s5_s0n}
+Emdee five for life HTB{N1c3_ScrIpt1nG_B0i!}
+Fuzzy HTB{h0t_fuzz3r}
+Freelancer HTB{s4ff_3_1_w33b_fr4__l33nc_3}
+ezpz HTB{T0oE4syP34syL4m3SQLiF!lt3rs}
+Interdimensional Internet HTB{d1d_y0u_h4v3_FuN_c4lcul4t1nG_Th3_d4rK_m4tt3r?!}
+Under Construction HTB{d0n7_3xp053_y0ur_publ1ck3y}
+Console HTB{PhP!Cons0lE@ByTh3K+FoUnd+}
+0ld is g0ld HTB{R1PSAMU3LM0RS3}
+misDIRection HTB{DIR3ctLy_1n_Pl41n_Si7e}
+Eternal loop HTB{z1p_and_unz1p_ma_bruddahs}
+longbottom's Locker HTB{n3v1LL3_Da_burM3s3-pyth0n_sL4y3r}
+Blackhole HTB{N3veR_l3T_tH3_b4sTaRd5_G3t_Y0u_d0wN}
+Matrioshka HTB{S4vv4M4mont0v}
+Crooked Croockford HTB{allthosenumbers}
+ExploitedStream HTB{0fbuSc4t1ng_1s_N0t_s3curE,1s_IT???}
+M0rsarchive HTB{D0_y0u_L1k3_m0r53??}
+Crime HTB{Wh0_w4nt5_t0_l34rn_4n4Ly71c_g30m3try?}
+Reminiscent HTB{$_j0G_y0uR_M3m0rY_$}
+Blue Shadow HTB{A862BC50162B5BFA6ED8167898E843E4}
+MarketDump HTB{DonTRuNAsRoOt!MESsEdUpMarket}
+Took the Byte HTB{27AjFDkqi1wJ}
+USB Ripper HTB{mychemicalromance}
+Obscure HTB{pr0tect_y0_shellZ}
+Illumination HTB{v3rsi0n_c0ntr0l_am_I_right?}
+oBfsC4t10n HTB{g0_G3t_th3_ph1sh3R}
+S3cr3t_R3c1p3 HTB{5e59025ae4e2173cc372b7a890dddc75}
+Forget me not HTB{W3lL_i_KN0w_mY_M3m0RY_i5_5h4tT3R3d}
+Cryptohorrific HTB{%SoC00l_H4ckTh3b0xbyBs3cur31stCh4ll3ng3!!Cr4zY%}
+Cat HTB{ThisBackupIsUnprotected}
+Easy phish HTB{RIP_SPF_Always_2nd_F1ddl3_2_DMARC}
+Infiltration HTB{Y0ur_Enum3rat10n_1s_Str0ng_Y0ung_0ne}
+We have a leak HTB{Sav3_The_Startup_Sav3_The_W0rld#Hiro}
+Breach HTB{P4ssw0rd_Br3ach3s_C4n_B3_A_Tr3asur3_Trov3_0f_Inf0rmati0n}
+Kryptic Ransomware HTB{Stop_Ge0tagg1ng_your_Phot0s}

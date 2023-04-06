@@ -18,12 +18,15 @@ e = 298097965081551050186524405801901300093
 P = GF(p)
 Q = GF(q)
 #N = GF(n) #error n is not a prime number
+N = Zmod(n)
 
 ECP = EllipticCurve(P, [a,b])
 ECQ = EllipticCurve(Q, [a,b])
+EC = EllipticCurve(N, [a,b])
 
 OP = ECP.order()
 OQ = ECQ.order()
+#O = EC.order()  #error no order
 
 print(OP)
 print(OQ)
