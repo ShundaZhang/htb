@@ -1,0 +1,1 @@
+I removed the password hashes in the file I gave you. They're not supposed to be 0.
