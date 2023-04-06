@@ -1,6 +1,9 @@
-#!/usr/bin/python3
+s = ''.join(['14 ', '* ', '(23 ', '+ ', '6 ', '+ ', '67 ', '* ', '30 ', '* ', '25)'])
+print(s)
 
-from pwn import *
+s = s.replace('(', '( ')
+s = s.replace(')', ' )')
+print(s)
 
 def change_opt(opt):
     result = []  
@@ -65,19 +68,8 @@ def method(num1,num2,j):
         res=num1 / num2
     return res
 
-context.log_level = 'debug'
-
-ip, port = '139.59.174.176', 30781
-io = remote(ip, port)
-
-while True:
-    io.recvuntil(']: ')
-    buf = io.recvline()
-    print(buf.decode())
-    print(buf.decode()[:-5])
-    s = buf.decode()[:-5]
-    s = s.replace('(', '( ')
-    s = s.replace(')', ' )')
-    print(s)
-    result=change_opt(s)
-    io.sendline(get_value(result))
+if __name__ == '__main__':
+    #opt = "9 + ( 3 - 1 ) * 3 + 10 / 2"
+    opt = s
+    result=change_opt(opt)
+    print(get_value(result))
