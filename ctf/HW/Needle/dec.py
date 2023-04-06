@@ -1,0 +1,2 @@
+#binwalk -e firmware.bin
+
