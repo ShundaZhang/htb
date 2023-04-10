@@ -1,3 +1,5 @@
+https://hack-the-flag.koyeb.app/challenges/
+
 rope.htb user deb9b4de27071d829962124c1cd0ae1d root 1c773343b3c60c6778b9eefc4da84dff
 playertwo.htb user CDE09DC7E49C92C78ECAC1535E241251 root 73DAEF0B9D5A1328C6B40460E2A7D8C5
 fatty.htb user 7fab2c31fc7173a86872db45ae922073 root ee982fa19b413415391ed4a17b2bd9c7
@@ -157,3 +159,5 @@ Ebola Virus
 HTB{W3_kN0w_hOw_to_c0nTr0l_Eb0l4}
 Please Don't Share:
 HTB{s3Cr3t_Sh4r1ng_1s_Aw3s0mE!}
+Outrun HTB{h4ck1n9_c425_15_n07_7h47_h42d_4f732411!}
+Bounty Head HTB{00h 42.7m, +41° 16′}
