@@ -1,50 +1,64 @@
-import matplotlib.pyplot as plt
-import pyshark
+#!/usr/bin/python3
+#https://drive.google.com/file/d/1hgn5Z7khdKXZjg4hdHlX5MKiLYjCe6Ut/view
+#https://gist.github.com/MightyPork/6da26e382a7ad91b5496ee55fdc73db2?permalink_comment_id=4339074#gistcomment-4339074
 
-mousePosX = 0
-mousePosY = 0
+import json
 
-X = []
-Y = []
+k={
+	"04":"A",
+	"05":"B",
+	"06":"C",
+	"07":"D",
+	"08":"E",
+	"09":"F",
+	"0a":"G",
+	"0b":"H",
+	"0c":"I",
+	"0d":"J",
+	"0e":"K",
+	"0f":"L",
+	"10":"M",
+	"11":"N",
+	"12":"O",
+	"13":"P",
+	"14":"Q",
+	"15":"R",
+	"16":"S",
+	"17":"T",
+	"18":"U",
+	"19":"V",
+	"1a":"W",
+	"1b":"X",
+	"1c":"Y",
+	"1d":"Z",
+	"1e":"1",
+	"1f":"2",
+	"20":"3",
+	"21":"4",
+	"22":"5",
+	"23":"6",
+	"24":"7",
+	"25":"8",
+	"26":"9",
+	"27":"0",
+	"2d":"_",
+	"2f":"{",
+	"30":"}"
+}
 
-f = pyshark.FileCapture('mitm.log', display_filter="btl2cap")
 
-for p in f:
-	data = p['btl2cap'].payload.split(":")
-	proto = int(data[0],16)
-	mouse = int(data[1],16)
-	if proto == 0xa1 and mouse == 2:
-		press = int(data[2],16)
-		x_disp = int(data[3],16)
-		y_disp = int(data[4],16)
+fileData = open("data.json","r")
+data=fileData.read()
+JSONdata=json.loads(data)
+for i in range (7,len(JSONdata)):
+	c = JSONdata[i]["_source"]["layers"]["btl2cap"]
+	if(c["btl2cap.length"]!="7"):
+		try:
+			lower=c["btl2cap.payload"][6:8]
+			if(lower=="02"):
+				print(k[c["btl2cap.payload"][12:14]],end="")
+			else:
+				print(k[c["btl2cap.payload"][12:14]].lower(),end="")
 
-		# disp is a signed char
-		if x_disp > 127:
-			x_disp -= 256
-		if y_disp > 127:
-			y_disp -= 256
-
-		mousePosX += x_disp
-		mousePosY += y_disp
-		
-		if press:
-			X.append(mousePosX)
-			Y.append(-mousePosY)
-	
-	elif proto == 0xa1 and mouse == 1:
-		modify = int(data[2],16)
-		key = []
-		key.append(modify)
-		for i in range(3, 3+6):
-			key.append(int(data[i],16))
-		#print(key)
-
-#print(X)
-#print(Y)
-#plt.plot(X, Y)
-#plt.show()
-
-fig = plt.figure()
-ax1 = fig.add_subplot(111)
-ax1.scatter(X, Y)
-plt.show()
+		except:
+			print("",end="")
