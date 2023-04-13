@@ -23,7 +23,7 @@ if __name__ == '__main__':
     req = requests.post(url+'/api/purchase', data={'item': 'A1'})
     cookie = req.cookies['session']
     ps = []
-    for x in range(16):
+    for x in range(32):
         p = Process(target=race, args=(cookie, ))
         ps.append(p)
 
@@ -32,9 +32,6 @@ if __name__ == '__main__':
 
     for p in ps:
         p.join()
-
-    req = requests.post(url+'/api/purchase', data={'item': 'B5'}, headers={'Cookie': f'session={cookie}'})
-    print(req.text)
 
     req = requests.post(url+'/api/purchase', data={'item': 'C8'}, headers={'Cookie': f'session={cookie}'})
     print(req.text)
