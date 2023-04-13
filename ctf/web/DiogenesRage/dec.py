@@ -23,7 +23,7 @@ if __name__ == '__main__':
     req = requests.post(url+'/api/purchase', data={'item': 'C8'})
     cookie = req.cookies['session']
     ps = []
-    for x in range(16):
+    for x in range(40):
         p = Process(target=race, args=(cookie, ))
         ps.append(p)
 
