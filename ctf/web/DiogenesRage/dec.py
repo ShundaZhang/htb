@@ -1,3 +1,6 @@
+#https://b3cl4ssy.tistory.com/m/481
+#https://github.com/lex1010/blog/blob/b32cb0922026cf81e4b67dbdc99add152049ca31/docs/HTB/Web/diogenes_rage.md
+
 # Python program to illustrate
 # the concept of race condition
 # in multiprocessing
@@ -55,3 +58,5 @@ if __name__ == "__main__":
 		res = get_flag(s, u)
 		time.sleep(1)
 		print("\n\n")
+
+#HTB{r4c3_w3b_d3f34t_c0nsum3r1sm}
