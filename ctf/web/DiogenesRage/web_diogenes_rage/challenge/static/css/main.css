@@ -1,0 +1,731 @@
+/*
+ Yeah, a notebook full of raps by the end of every class
+ Yeah, it's my formula for life, not the formula to math, like
+*/
+
+ body {
+     min-width: 1330px;
+     width: 100%;
+     height: 100%;
+     background-color: black;
+}
+ .relative {
+     position: relative;
+     width: 100%;
+     height: 100%;
+}
+ #dabox {
+     height: 600px;
+     width: 500px;
+     margin-left: 250px;
+     z-index: 999;
+}
+ #daboxwrapper {
+     position: relative;
+     height: 100%;
+     width: 100%;
+     background-color: black;
+     padding-top: 100px;
+     z-index: 999;
+}
+ #afterdabox{
+     height: 200px;
+     width: 100%;
+     background-color: red;
+     margin: 0 auto;
+     background: url(/static/images/road.png);
+     background-size: cover;
+     background-repeat: no-repeat;
+}
+ #pavement{
+     height: 29px;
+     width: 100%;
+     background-color: red;
+     margin: 0 auto;
+     background: url(/static/images/pavement.png);
+     background-repeat: repeat;
+}
+ #walls {
+     position: absolute;
+     bottom: 0;
+     height: 500px;
+     width: 100%;
+     background: url(/static/images/brickwall.png);
+     background-repeat: repeat;
+     z-index: -1;
+}
+ #sky {
+     position: absolute;
+     top: 0;
+     height: 200px;
+     width: 100%;
+     background: url(/static/images/sky.jpg);
+     background-size: contain;
+     z-index: -1;
+}
+ #narrator {
+     position: absolute;
+     bottom: 0;
+     height: 580px;
+     z-index: -1;
+     margin-left: 800px;
+}
+ #cat {
+     position: absolute;
+     bottom: 0;
+     height: 110px;
+     z-index: -1;
+     margin-left: 50px;
+}
+ #vending-wrapper {
+     position: relative;
+     height: 100%;
+     width: 100%;
+     --border: 2px solid #623434;
+}
+ #vending-wrapper::after {
+     content: '';
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     height: 10px;
+     background: #514d4d;
+}
+ #vinside-wrap1 {
+     height: 100%;
+     width: 98%;
+     background-color: #9a2944;
+     border-top: 2px transparent;
+     margin-left: 5px;
+}
+ #advert-panel-absolute{
+     position: absolute;
+     background: black;
+     top: 45px;
+     right: 25px;
+     height: 60px;
+     width: 155px;
+}
+ #advert-panel-absolute::before {
+     content: '';
+     position: absolute;
+     top: 5px;
+     left: -5px;
+     width: 5px;
+     height: 50px;
+     background: black;
+}
+ #advert-panel-absolute::after {
+     content: '';
+     position: absolute;
+     top: 5px;
+     right: -5px;
+     width: 5px;
+     height: 50px;
+     background: black;
+}
+ #advert {
+     color: lime;
+     word-break: break-word;
+     font-size: 11px;
+     font-family: 'Press Start 2P', cursive;
+     text-align: center;
+     padding-top: 5px;
+}
+ #vinside-wrap1::before{
+     position: absolute;
+     content: '';
+     bottom: 0px;
+     left: 0px;
+     height:593px;
+     width: 5px;
+     background: #6f3838;
+}
+ #vinside-wrap1::after{
+     position: absolute;
+     content: '';
+     bottom: 0px;
+     right: 0px;
+     height:593px;
+     width: 5px;
+     background: #6f3838;
+}
+ #right-panel-absolute {
+     position: absolute;
+     height: 342px;
+     width: 155px;
+     background-color: #baa1a7;
+     left: 321px;
+     top: 126px;
+}
+ #right-panel-absolute::before{
+     position: absolute;
+     content: '';
+     top: 7px;
+     left: -5px;
+     height:330px;
+     width: 6px;
+     background: #baa1a7;
+}
+ #right-panel-absolute::after{
+     position: absolute;
+     content: '';
+     top: 7px;
+     right: -5px;
+     height:330px;
+     width: 6px;
+     background: #baa1a7;
+}
+ #screen {
+     position: absolute;
+     top: 20px;
+     left: 7px;
+     width: 90%;
+     height: 30px;
+     background: #99df99;
+}
+ #screen::before {
+     content: '';
+     position: absolute;
+     top: 4px;
+     left: -4px;
+     height: 22px;
+     width: 5px;
+     background: #99df99;
+}
+ #screen::after {
+     content: '';
+     position: absolute;
+     top: 5px;
+     right: -4px;
+     height: 22px;
+     width: 5px;
+     background: #99df99;
+}
+ #screen > span {
+     display: block;
+     padding-top: 8px;
+     padding-left: 4px;
+     color: white;
+     font-size: 9px;
+     font-family: 'Press Start 2P', cursive;
+     overflow:hidden;
+}
+ #buttons-container-absolute {
+     position: absolute;
+     top : 60px;
+     left: 23px;
+     width: 70%;
+     height: auto;
+}
+ .btn-row {
+     display: block;
+     padding: 0;
+     margin: 0;
+     margin-top: 5px;
+}
+ .vending-btns {
+     position: relative;
+     display: inline-block;
+     width: 30px;
+     height: 30px;
+     margin-left: 3px;
+     padding-left: 2px;
+     background-color: #7aa6b3;
+     text-align: center;
+     padding-top: 4px;
+     color: white;
+     cursor: pointer;
+     font-size: 15px;
+     font-family: 'Press Start 2P', cursive;
+     cursor: pointer;
+}
+ .vending-btns::after {
+     position: absolute;
+     content: '';
+     left: 0;
+     top: 0;
+     width: 3px;
+     height: 100%;
+     background-color: #c4cbcd;
+}
+ #reset-btn-absolute{
+     position: absolute;
+     top: 214px;
+     left: 68px;
+     height: 20px;
+     width: 20px;
+     border-radius: 15px;
+     background-color: #f46d6d;
+     border: 2px solid #afb6b8;
+     cursor: pointer;
+}
+ #reset-btn-absolute::after {
+     content: '';
+     position: absolute;
+     bottom: 0;
+     left: 0px;
+     width: 100%;
+     border-radius: 10px;
+     height: 30px;
+     border-bottom: 2px solid #cc5f5f;
+}
+ #reset-btn-absolute:hover::after {
+     border:none;
+}
+ #coin-panel-absolute {
+     position: absolute;
+     top: 245px;
+     left: 37px;
+     height: 80px;
+     width: 80px;
+     background-color: #793c4c;
+}
+ #coin-panel-absolute::after {
+     position: absolute;
+     content: '';
+     top: 0;
+     left: 0;
+     height: 80px;
+     width: 4px;
+     background-color: #93475b;
+}
+ #coin-in-area {
+     position: absolute;
+     background : #d2d2d2;
+     width: 50px;
+     height: 50px;
+     top: 15px;
+     left: 15px;
+}
+ #coin-slot {
+     position: absolute;
+     top: 10px;
+     left: 23px;
+     height: 28px;
+     width: 5px;
+     background: #793c4c;
+}
+ #coin-slot::after {
+     position: absolute;
+     content: '';
+     top: 0;
+     left: 0;
+     height: 28px;
+     width: 2px;
+     background-color: #93475b;
+}
+ #snacks-panel-absolute {
+     position: absolute;
+     height: 403px;
+     width: 278px;
+     background-color: #d8eed3;
+     left: 20px;
+     top: 46px;
+}
+ .snack-row-bar {
+     width: 100%;
+     height: 40px;
+     background: #9a2944;
+}
+ .r1 {
+     position: absolute;
+     top: 100px;
+}
+ .r1::before{
+     content: '';
+     position: absolute;
+     top: -5px;
+     left: 0;
+     height: 5px;
+     width: 5px;
+     background: #9a2944;
+}
+ .r1::after{
+     content: '';
+     position: absolute;
+     top: -5px;
+     right: 0;
+     height: 5px;
+     width: 5px;
+     background: #9a2944;
+}
+ .r2 {
+     position: absolute;
+     top: 240px;
+}
+ .r2::before{
+     content: '';
+     position: absolute;
+     top: -5px;
+     left: 0;
+     height: 5px;
+     width: 5px;
+     background: #9a2944;
+}
+ .r2::after{
+     content: '';
+     position: absolute;
+     top: -5px;
+     right: 0;
+     height: 5px;
+     width: 5px;
+     background: #9a2944;
+}
+ .r3 {
+     position: absolute;
+     top: 380px;
+}
+ .r3::before{
+     content: '';
+     position: absolute;
+     top: -5px;
+     left: 0;
+     height: 5px;
+     width: 5px;
+     background: #9a2944;
+}
+ .r3::after{
+     content: '';
+     position: absolute;
+     top: -5px;
+     right: 0;
+     height: 5px;
+     width: 5px;
+     background: #9a2944;
+}
+ .snack-row-bar > p {
+     position: absolute;
+     font-family: 'Press Start 2P', cursive;
+     font-weight: bold;
+     font-size: 9px;
+     text-align: center;
+     width: 90px;
+     color: white;
+     margin-top: 5px;
+}
+ .snack-row-bar > p:nth-child(1) {
+     left: 5px;
+}
+ .snack-row-bar > p:nth-child(2) {
+     left: 92px;
+}
+ .snack-row-bar > p:nth-child(3) {
+     left: 180px;
+}
+ .snack > img {
+     position: absolute;
+     opacity: 0.5;
+}
+ .snack > img{
+     height: 65px;
+     margin-left: 14px;
+     margin-top: 5px;
+}
+ .snacks-r1 {
+     position: absolute;
+     top: 30px;
+}
+ .snacks-r2 {
+     position: absolute;
+     top: 170px;
+}
+ .snacks-r3 {
+     position: absolute;
+     top: 310px;
+}
+
+#A3 {
+    left: 192px;
+}
+
+#A2 {
+    left: 91px;
+    height: 70px;
+    margin-top: 0px;
+}
+
+#A1 {
+    left: 10px;
+    height: 52px;
+    top: 13px;
+}
+
+
+#B6 {
+    left: 184px;
+    height: 56px;
+    margin-top: 15px;
+}
+
+
+#B5 {
+    left: 94px;
+    height: 60px;
+    margin-top: 10px;
+}
+
+#B4 {
+    left: 9px;
+}
+
+#C9 {
+    left: 182px;
+}
+
+#C8 {
+    left: 95px;
+    margin-top: 5px;
+    height: 34px;
+    top: 31px;
+}
+
+#C7 {
+    left: 3px;
+}
+
+ #bottom-panel-absolute {
+     position: absolute;
+     bottom: 35px;
+     left: 20px;
+     height: 100px;
+     width: 280px;
+     background: #baa1a7;
+     border: 5px solid #d2d2d2;
+     border-left: 0px;
+     border-right: 0px;
+}
+ #bottom-panel-absolute::before {
+     content: '';
+     position: absolute;
+     top: 0px;
+     left: -5px;
+     height: 90px;
+     width: 5px;
+     background: #d2d2d2;
+}
+ #bottom-panel-absolute::after {
+     content: '';
+     position: absolute;
+     top: 0px;
+    ;
+     right: -5px;
+     height: 90px;
+     width: 5px;
+     background: #d2d2d2;
+}
+ #bottom-panel-flicker {
+     cursor: move;
+     cursor: grab;
+     cursor: -moz-grab;
+     cursor: -webkit-grab;
+     position: absolute;
+     bottom: 0;
+     height: 40px;
+     width: 100%;
+     background: #baa1a7;
+     overflow: hidden;
+}
+ #bottom-panel-flicker:hover {
+     position: absolute;
+     bottom: 0;
+     height: 40px;
+     width: 100%;
+     background: #93475b;
+     overflow: hidden;
+}
+ #bottom-panel-flicker:hover::before {
+     position: absolute;
+     content: '';
+     bottom: 0;
+     left: -32px;
+     height: 50px;
+     width: 40px;
+     background-color: #baa1a7;
+     transform: rotate(20deg);
+}
+ #bottom-panel-flicker:hover::after {
+     position: absolute;
+     content: '';
+     bottom: 0;
+     right: -32px;
+     height: 50px;
+     width: 40px;
+     background-color: #baa1a7;
+     transform: rotate(-20deg);
+}
+ #bottom-panel-flicker-active {
+     position: absolute;
+     bottom: 0;
+     height: 40px;
+     width: 100%;
+     background: #93475b;
+     overflow: hidden;
+     z-index: 1;
+}
+ #bottom-panel-flicker-active::before {
+     position: absolute;
+     content: '';
+     bottom: 0;
+     left: -32px;
+     height: 50px;
+     width: 40px;
+     background-color: #baa1a7;
+     transform: rotate(20deg);
+}
+ #bottom-panel-flicker-active::after {
+     position: absolute;
+     content: '';
+     bottom: 0;
+     right: -32px;
+     height: 50px;
+     width: 40px;
+     background-color: #baa1a7;
+     transform: rotate(-20deg);
+}
+ .snack-price-bar {
+     width: 100%;
+     height: 10px;
+}
+ .pr1 {
+     position: absolute;
+     top: -3px;
+}
+ .pr1::before{
+     content: '';
+     position: absolute;
+     top: 0px;
+     left: 0;
+     height: 10px;
+     width: 5px;
+     background: #9a2944;
+}
+ .pr1::after{
+     content: '';
+     position: absolute;
+     top: 0;
+     right: 0;
+     height: 10px;
+     width: 5px;
+     background: #9a2944;
+}
+ .pr2 {
+     position: absolute;
+     top: 136px;
+}
+ .pr2::before{
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 10px;
+     width: 5px;
+     background: #9a2944;
+}
+ .pr2::after{
+     content: '';
+     position: absolute;
+     top: 0;
+     right: 0;
+     height: 10px;
+     width: 5px;
+     background: #9a2944;
+}
+ .pr3 {
+     position: absolute;
+     top: 275px;
+}
+ .pr3::before{
+     content: '';
+     position: absolute;
+     top: -0;
+     left: 0;
+     height: 10px;
+     width: 5px;
+     background: #9a2944;
+}
+ .pr3::after{
+     content: '';
+     position: absolute;
+     top: 0px;
+     right: 0;
+     height: 10px;
+     width: 5px;
+     background: #9a2944;
+}
+ .snack-price-bar > p {
+     position: absolute;
+     top: 3px;
+     font-family: 'Press Start 2P', cursive;
+     font-weight: bold;
+     font-size: 8px;
+     text-align: center;
+     width: 60px;
+     padding-top: 5px;
+     padding-bottom: 2px;
+     color: #111;
+     background: #fff;
+}
+ .snack-price-bar > p:first-child {
+     left: 21px;
+}
+ .snack-price-bar > p:nth-child(2) {
+     left:107px;
+}
+ .snack-price-bar > p:nth-child(3) {
+     left: 194px;
+}
+ #coupon {
+     position: absolute;
+     height: 50px;
+     bottom: 50px;
+     left: 600px;
+     cursor: move;
+     cursor: grab;
+     cursor: -moz-grab;
+     cursor: -webkit-grab;
+}
+ .floating {
+     animation-name: floating;
+     animation-duration: 3s;
+     animation-iteration-count: infinite;
+     animation-timing-function: ease-in-out;
+     margin-top: 5px;
+}
+ @keyframes floating {
+     0% {
+         transform: translate(0, 0px);
+    }
+     50% {
+         transform: translate(0, 15px);
+    }
+     100% {
+         transform: translate(0, -0px);
+    }
+}
+ #bat-box {
+     position: absolute;
+     width: 100%;
+     max-width: 100%;
+     top: 0px;
+}
+ #bat {
+     height: 100px;
+}
+ #receivable-item {
+     position: absolute;
+     top: 10px;
+     left: 100px;
+     height: 70px;
+     z-index: 2;
+     cursor: move;
+     cursor: grab;
+     cursor: -moz-grab;
+     cursor: -webkit-grab;
+}
+ @media only screen and (min-width: 1330px) {
+     html, body {
+         overflow: hidden;
+    }
+}
+ 
