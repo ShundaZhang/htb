@@ -1,0 +1,25 @@
+{
+	"name": "web_abusehumandb",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js"
+	},
+	"keywords": [],
+	"authors": [
+		"itsahobby",
+		"rayhan0x01",
+		"makelaris jr.",
+		"makelaris"
+	],
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.17.1",
+		"puppeteer": "^10.4.0",
+		"sqlite-async": "1.1.3"
+	},
+	"devDependencies": {
+		"nodemon": "^1.19.1"
+	}
+}

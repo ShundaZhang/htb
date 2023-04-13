@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AbuseHumanDB</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+	<link rel="icon" href="/static/img/favicon.png">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+  	<a class="navbar-brand" href="#">
+    <img src="/static/img/favicon.png" width="30" height="30" alt=""> AbuseHumanDB
+  </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Public Entries
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container mt-3 mb-3">
+	<div class="card text-white bg-secondary mb-3 card-ovrwr">
+		<div class="card-body">
+			<div class="row">
+			<div class="col-md-10">
+				<input type="text" class="form-control" id="searchQuery" placeholder="Search Query">
+			</div>
+			<div class="col-md-2">
+					<button type="button" id="searchBtn" class="btn btn-secondary">Search</button>
+			</div>
+		</div>
+		<p class="card-text mt-2" id="resp-msg"></p>
+		</div>
+	</div>
+</div>
+<div class="container mt-3" id="entries-container">
+	
+</div>
+<script src="/static/js/jquery-3.6.0.min.js"></script>
+<script src="/static/js/entries.js"></script>
+<script src="/static/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

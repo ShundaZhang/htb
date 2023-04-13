@@ -1,0 +1,60 @@
+body {
+background: #134E5E;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #71B280, #134E5E);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0E571E, #222); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+
+@media screen and (max-width: 767px) {
+  input[type=text] {
+   margin-bottom: 2pt;
+  }
+   button {
+   margin-top: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #searchBtn {
+    width: 100%;
+  }
+}
+
+.entryview {
+  width: 100%;
+  overflow: none;
+  height: 200px;
+}
+
+#resp-msg, #loading-container {
+  display: none;
+}
+
+#progressbar {
+  width: 0%;
+}
+
+.bg-glassy {
+  --bs-bg-opacity: 1;
+  background-color: #495b4d !important;
+}
+.floating {
+     animation-name: floating;
+     animation-duration: 3s;
+     animation-iteration-count: infinite;
+     animation-timing-function: ease-in-out;
+     margin-top: 5px;
+}
+ @keyframes floating {
+     0% {
+         transform: translate(0, 0px);
+    }
+     50% {
+         transform: translate(0, 15px);
+    }
+     100% {
+         transform: translate(0, -0px);
+    }
+}
