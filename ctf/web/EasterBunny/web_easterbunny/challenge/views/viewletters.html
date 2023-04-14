@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1 class="title" style="margin: 0">Viewing letter #<span id="letter-id">1</span></h1>
+  <h2 class="title" id="error-message" style="visibility: hidden;">&nbsp;</h2>
+  {% include "letter.html" %}
+  
+  <div class="letter letter-small">
+    <div class="letter-inner letter-inner-small">
+        <a href="/">Write New Letter</a>
+    </div>
+  </div>
+  
+  <div id="previous" class="sign-post">
+    <div class="sign-post-text">
+      <a href="#">View previous<br><br>letter</a>
+    </div>
+  </div>
+
+  <div id="next" class="sign-post flipped">
+    <div class="sign-post-text">
+      <a href="#">View next<br><br>letter</a>
+    </div>
+  </div>
+
+  <script src="viewletter.js"></script>
+{% endblock %}

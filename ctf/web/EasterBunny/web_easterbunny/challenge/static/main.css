@@ -1,0 +1,232 @@
+html {
+  height: 100vh;
+  background-image: url("background.png");
+  background-size: cover;
+}
+
+.title {
+  text-align: center;
+  color: white;
+  font-family: "Secular One", sans-serif;
+}
+
+a {
+  color: white;
+}
+
+.letter {
+  width: 800px;
+  height: 500px;
+  background-color: #f7f7f7;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-family: Caveat;
+  margin: auto;
+}
+
+.letter-inner {
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  border: 5px solid transparent;
+  border-image: 16
+    repeating-linear-gradient(45deg, red 0, red 1em, transparent 0, transparent 2em, #58a 0, #58a 3em, transparent 0, transparent 4em);
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+}
+
+.letter-left {
+  display: flex;
+  font-size: 30px;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  border-right: 2px solid black;
+  margin: 60px 0px;
+  text-align: center;
+}
+
+.letter-right {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.letter-small {
+  width: 210px;
+  height: 120px;
+  position: fixed;
+  transform: rotate(-5deg);
+  font-size: 35px;
+  text-align: center;
+  top: 30px;
+  left: 30px;
+}
+
+.letter-small:hover {
+  animation: shake 0.75s;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(-5deg);
+  }
+  10% {
+    transform: rotate(-6deg);
+  }
+  20% {
+    transform: rotate(-4deg);
+  }
+  30% {
+    transform: rotate(-5deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(-6deg);
+  }
+  60% {
+    transform: rotate(-5deg);
+  }
+  70% {
+    transform: rotate(-6deg);
+  }
+  80% {
+    transform: rotate(-4deg);
+  }
+  90% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(-6deg);
+  }
+}
+
+.letter-inner-small {
+  border-image: 16
+    repeating-linear-gradient(
+      45deg,
+      red 0,
+      red 0.25em,
+      transparent 0,
+      transparent 0.5em,
+      #58a 0,
+      #58a 0.75em,
+      transparent 0,
+      transparent 1em
+    );
+}
+
+.letter-inner-small a {
+  color: black;
+}
+
+.stamp-container {
+  width: 80px;
+  border: 2px solid black;
+  height: 90px;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.stamp-container.stamped {
+  cursor: auto;
+}
+
+.stamp-here-label {
+  font-family: serif;
+  text-align: center;
+  margin-top: 25px;
+  height: 20px;
+}
+
+.stamp-container.stamped .stamp-here-label {
+  display: none;
+}
+
+.stamp {
+  background-color: rgb(247, 96, 96);
+  border: 2px solid white;
+  transform: rotate(-8deg) scale(1.1);
+  color: white;
+  font-family: serif;
+  font-size: 26px;
+  text-align: center;
+  animation: 1.25s ease 0s 1 normal none running size;
+  display: none;
+}
+
+.stamp > img {
+  width: 80%;
+  margin: 4px;
+}
+
+.stamp-container.stamped .stamp {
+  display: block;
+}
+
+.stamp-textarea-container {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.stamp-textarea {
+  width: 288px;
+  height: 316px;
+  font-family: Caveat;
+  font-size: 24px;
+  background-color: transparent;
+  border: 0px;
+  resize: none;
+  background-image: linear-gradient(transparent, transparent calc(3ch - 2px), #000 0px);
+  background-size: 100% 3ch;
+  font-weight: bold;
+  line-height: 3ch;
+}
+
+@keyframes size {
+  0% {
+    transform: rotate(-2deg) scale(1.4);
+  }
+  100% {
+    transform: rotate(-8deg) scale(1.1);
+  }
+}
+
+.sign-post {
+  position: fixed;
+  height: 300px;
+  bottom: -10px;
+  transform: rotate(4deg);
+  left: 0;
+  background-image: url("sign-post.png");
+  width: 300px;
+  background-size: cover;
+  font-size: 30px;
+  text-align: center;
+  font-family: "Secular One";
+  line-height: 20px;
+}
+
+.flipped {
+  left: unset;
+  right: 0;
+  transform: rotate(-4deg) scaleX(-1);
+}
+
+.sign-post-text {
+  margin-top: 55px;
+  margin-left: 35px;
+}
+
+.sign-post-text a {
+  color: #6e350e;
+  text-decoration: none;
+}
+
+.flipped .sign-post-text {
+  transform: scaleX(-1);
+}

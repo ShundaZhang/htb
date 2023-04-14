@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1 class="title" style="margin: 0">Write a virtual letter to Easter Bunny!</h1>
+  <p class="title">Write your letter down below and click the stamp square to send your letter!</p>
+
+  <h2 class="title" id="send-message" style="display: none;"></h2>
+  {% include "letter.html" %}
+
+  <div id="next" class="sign-post flipped">
+    <div class="sign-post-text">
+      <a href="/letters">View other<br><br>letters</a>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+{% endblock %}
