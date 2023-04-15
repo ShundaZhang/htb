@@ -1,6 +1,10 @@
 #!/usr/bin/python
 
 #https://drt.sh/posts/htb-cop/
+#https://davidhamann.de/2020/04/05/exploiting-python-pickle/
+
+#https://0xpranav.hashnode.dev/cop-hackthebox
+#pickle.loads(base64.b64decode(s))
 
 import sys
 import base64
