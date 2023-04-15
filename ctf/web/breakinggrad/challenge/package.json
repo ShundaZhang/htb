@@ -1,0 +1,22 @@
+{
+	"name": "breaking-grad",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"nodeVersion": "v12.18.1",
+	"scripts": {
+		"start": "node index.js",
+		"dev": "nodemon .",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"authors": [
+		"makelaris",
+		"makelarisjr"
+	],
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"express": "^4.17.1",
+		"randomatic": "^3.1.1"
+	}
+}
