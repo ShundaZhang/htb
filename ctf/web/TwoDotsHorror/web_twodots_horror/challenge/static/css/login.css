@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+ html, body {
+     height: 100%;
+}
+ body {
+     font-family: VT323, monospace;
+     font-size: 16pt;
+     color: #fff;
+     background-color: #1f1f2d;
+}
+ p {
+     text-align: center;
+     margin: 0 auto;
+}
+ .main-logo {
+     display: flex;
+     min-width: 180px;
+     width: 180px;
+     margin: 0 auto;
+     padding-top: 2rem;
+}
+ .login-form {
+     display: flex;
+     min-width: 400px;
+     width: 400px;
+     margin: 0 auto;
+     margin-top: 20px;
+     flex-direction: column;
+}
+ .login-form>input {
+     margin-bottom: 1.5rem;
+}
+ .submit-btns {
+     width: 100%;
+     text-align: center;
+}
+ .submit-btns>button {
+     width: 45%;
+}
+ .submit-btn.is-primary {
+     background-color: #494d7e !important;
+     border-color: #fff !important;
+}
+ .submit-btn.is-primary::after {
+     box-shadow:inset -4px -4px #404070 !important;
+}
+ .submit-btn.is-primary:hover::after {
+     box-shadow:inset -6px -6px #404070 !important;
+}
+ .submit-btn.is-primary:focus {
+     box-shadow:0 0 0 3px #494d7e !important;
+}
+
+
+/* query-msg */
+
+ #resp-msg {
+     display: none;
+     margin-top: 2rem;
+}
+ .alert {
+     position: relative;
+     padding: .50rem 1.25rem;
+     margin-bottom: 1rem;
+     border: 1px solid transparent;
+     border-radius: .25rem;
+}
+ .alert-success {
+     color: #155724;
+     background-color: #d4edda;
+     border-color: #c3e6cb;
+}
+ .alert-danger {
+     color: #721c24;
+     background-color: #f8d7da;
+     border-color: #f5c6cb;
+}
+ .alert-info {
+     color: #0c5460;
+     background-color: #d1ecf1;
+     border-color: #bee5eb;
+}

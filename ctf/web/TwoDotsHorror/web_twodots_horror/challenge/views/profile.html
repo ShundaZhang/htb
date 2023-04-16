@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>TwoDots Horror™ - Profile</title>
+        <link rel="icon" href="/static/images/favicon.png" />
+        <link rel="stylesheet" type="text/css" href="/static/css/nes-core.min.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+    </head>
+    <body>
+        <div class="parent-container">
+            <div class="sidebar">
+                <img class="main-logo" src="/static/images/logo.gif" />
+                <p class="title-p">TwoDots Horror™<br /></p>
+                <ul class="nav-bar">
+                    <li><a href="/feed" class="nes-btn is-primary nav-li">Feed</a></li>
+                    <li><a href="#" class="nes-btn is-primary nav-li">Profile</a></li>
+                    <li><a href="/logout" class="nes-btn is-primary nav-li">Logout</a></li>
+                </ul>
+            </div>
+            <div class="main-area">
+                <div class="nes-container is-centered profile-area">
+                    <p class="title" id="username">{{ user.username }}</p>
+                    <img class="nes-avatar is-rounded profile-avatar" src="/api/avatar/{{ user.username }}?t={{ range(1111, 9999)|random }}" /><br />
+                    <div class="up-arrangement">
+                        <label class="nes-btn upload-input">
+                            <span id="file-label">Select profile avatar...</span>
+                            <input type="file" id="avatarFile" name="avatarFile" />
+                        </label>
+                        <button type="button" class="nes-btn upload-submit" id="upload-btn">upload</button>
+                        <br />
+                        <p id="resp-msg">Must be a JPEG and minimum size : 120x120</p>
+                    </div>
+                </div>
+                <dir class="nes-container history-feed">
+                    <p class="title">Your Submissions</p>
+                    <p>( ‘◇’)? It's lonely down here, your submissions approved by admin will be listed here...</p>
+                </dir>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="/static/js/jquery-3.6.0.slim.min.js"></script>
+        <script type="text/javascript" src="/static/js/profile.js"></script>
+    </body>
+</html>

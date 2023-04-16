@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>TwoDots Horror™ - Feed</title>
+        <link rel="icon" href="/static/images/favicon.png" />
+        <link rel="stylesheet" type="text/css" href="/static/css/nes-core.min.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+    </head>
+    <body>
+        <div class="parent-container">
+            <div class="sidebar">
+                <img class="main-logo" src="/static/images/logo.gif" />
+                <p class="title-p">TwoDots Horror™<br /></p>
+                <ul class="nav-bar">
+                    <li><a href="#" class="nes-btn is-primary nav-li">Feed</a></li>
+                    <li><a href="/profile" class="nes-btn is-primary nav-li">Profile</a></li>
+                    <li><a href="/logout" class="nes-btn is-primary nav-li">Logout</a></li>
+                </ul>
+            </div>
+            <div class="main-area">
+                <label for="content-box" id="resp">Submit Your Story</label>
+                <textarea id="content-box" class="nes-textarea is-dark postbox-area"></textarea>
+                <button type="button" class="nes-btn submit-btn" id="submit-btn">Submit</button>
+
+                {% for post in feed %}
+                <div class="post-arrangement">
+                    <div class="vote-icons">
+                        <p><span>▲</span><span>▼</span></p>
+                    </div>
+                    <div class="nes-container is-post with-title">
+                        <p class="title">
+                            <span>{{ post.author }}</span>
+                            <span>{{ post.created_at }}</span>
+                        </p>
+                        <p>{{ post.content|safe }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <script type="text/javascript" src="/static/js/jquery-3.6.0.slim.min.js"></script>
+        <script type="text/javascript" src="/static/js/feed.js"></script>
+    </body>
+</html>

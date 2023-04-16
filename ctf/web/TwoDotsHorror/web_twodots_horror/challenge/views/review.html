@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>TwoDots Horror™ - Review Submissions</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/nes-core.min.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+    </head>
+    <body>
+        <div class="parent-container">
+            <div class="sidebar">
+                <img class="main-logo" src="/static/images/logo.gif" />
+                <p class="title-p">TwoDots Horror™<br /></p>
+            </div>
+            <div class="main-area">
+                {% for post in feed %}
+                <div class="nes-container is-post with-title">
+                    <p class="title"><span class="title1">{{ post.author }}</span><span class="title1">{{ post.created_at }}</span></p>
+                    <p>{{ post.content|safe }}</p>
+                </div>
+                <button class="nes-btn is-primary">Approve</button> <button class="nes-btn is-error">Delete</button><br />
+                <br />
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>
