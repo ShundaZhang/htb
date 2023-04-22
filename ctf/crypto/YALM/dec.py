@@ -11,7 +11,7 @@ def detect(x):
 	io.recvuntil('Option:')
 	io.sendline('2')
 	io.recvuntil('Plaintext:')
-	io.sendline(str(x))
+	io.sendline(hex(x))
 	buf = io.recvline().strip()
 	if 'Thanks for the message!' in buf:
 		return True
