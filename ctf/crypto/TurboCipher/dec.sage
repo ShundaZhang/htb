@@ -41,7 +41,8 @@ io.sendline(b'2')
 io.recvuntil('pt = ')
 pt1 = 2^512-1
 io.sendline(long_to_bytes(pt1))
-c1 = int(io.recvline().decode().strip().split(' ')[2])
+io.recvuntil('ct ')
+c1 = int(io.recvline().decode().strip().split(' ')[1])
 
 io.recvuntil('>')
 io.sendline(b'2')
