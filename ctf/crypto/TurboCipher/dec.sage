@@ -39,15 +39,14 @@ cf = int(io.recvline().decode().strip().split(' ')[2])
 io.recvuntil('>')
 io.sendline(b'2')
 io.recvuntil('pt = ')
-pt1 = 2^512-1
+pt1 = 2^512-2
 io.sendline(long_to_bytes(pt1))
-io.recvuntil('ct ')
-c1 = int(io.recvline().decode().strip().split(' ')[1])
+c1 = int(io.recvline().decode().strip().split(' ')[2])
 
 io.recvuntil('>')
 io.sendline(b'2')
 io.recvuntil('pt = ')
-pt2 = 2^512-2
+pt2 = 2^512-4
 io.sendline(long_to_bytes(pt2))
 c2 = int(io.recvline().decode().strip().split(' ')[2])
 
