@@ -26,6 +26,6 @@ m = m^n
 result = m*vector([x0, x1])
 
 io.recvuntil('OTP:')
-io.sendline(str(result[0]))
+io.sendline(str(result[0]).encode())
 
 print(io.recvall())
