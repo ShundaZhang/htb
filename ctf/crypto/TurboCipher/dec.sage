@@ -5,18 +5,18 @@ context.log_level = 'debug'
 ip,port='144.126.228.151',31590
 
 io = remote(ip,port)
-print(io.recvline())
+
 io.recvuntil('p = ')
-p = int(io.recvline().strip())
+p = int(io.recvline().decode().strip())
 
 io.recvuntil('b = ')
-b = int(io.recvline().strip())
+b = int(io.recvline().decode().strip())
 
 io.recvuntil('c = ')
-c = int(io.recvline().strip())
+c = int(io.recvline().decode().strip())
 
 io.recvuntil('Please, use nonce = ')
-n = int(io.recvline().split(' ')[0])
+n = int(io.recvline().decode().split(' ')[0])
 
 m = matrix(GF(p), [[0,1], [c,b]])
 x0 = 0
