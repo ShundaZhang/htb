@@ -56,3 +56,4 @@ mx = ((c1-c2)*gmpy2.invert(pt1-pt2, p))%p
 flag = ((cf-c1)*gmpy2.invert(mx, p)%p + pt1)%p
 
 print(bytes.fromhex(hex(flag)[2:]))
+#b'HTB{C4lcU1u5_m33t5_Cryp70_c4n_y0u_8e1i3ve_17???}'
