@@ -4,7 +4,7 @@ import gmpy2
 
 context.log_level = 'debug'
 
-ip,port='144.126.228.151',31590
+ip,port='144.126.228.151',31801
 
 io = remote(ip,port)
 
@@ -45,8 +45,9 @@ c1 = int(io.recvline().decode().strip().split(' ')[2])
 
 io.recvuntil('>')
 io.sendline(b'2')
+io.recvuntil('pt = ')
 pt2 = 2^512-2
-io.sendline(long_to_bytes(pt1))
+io.sendline(long_to_bytes(pt2))
 c2 = int(io.recvline().decode().strip().split(' ')[2])
 
 mx = ((c1-c2)*gmpy2.invert(pt1-pt2, p))%p
