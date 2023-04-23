@@ -39,14 +39,16 @@ cf = int(io.recvline().decode().strip().split(' ')[2])
 io.recvuntil('>')
 io.sendline(b'2')
 io.recvuntil('pt = ')
-pt1 = 2^512-2
+#pt1 = 2^512-2
+pt1 = bytes_to_long(b"Z_JUST_NEED_TO_PUT_A_SENTENCE_FOR_THE_TEST_CASE")
 io.sendline(long_to_bytes(pt1))
 c1 = int(io.recvline().decode().strip().split(' ')[2])
 
 io.recvuntil('>')
 io.sendline(b'2')
 io.recvuntil('pt = ')
-pt2 = 2^512-4
+#pt2 = 2^512-4
+pt2 = bytes_to_long(b"X_JUST_NEED_TO_PUT_A_SENTENCE_FOR_THE_TEST_CASE")
 io.sendline(long_to_bytes(pt2))
 c2 = int(io.recvline().decode().strip().split(' ')[2])
 
