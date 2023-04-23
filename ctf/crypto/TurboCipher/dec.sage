@@ -1,4 +1,4 @@
-from pwn import *.
+from pwn import *
 from Crypto.Util.number import bytes_to_long, long_to_bytes
 import gmpy2
 
