@@ -26,8 +26,18 @@ G = EC(Gx, Gy)
 Q = EC(Qx, Qy)
 
 primes = [7,10903,5290657,10833080827,22921299619447,41245443549316649091297836755593555342121]
+#primes = primes[:-1] #3262827136301000405966
+primes = primes[:-2]  #3262827136301000405966
+#primes = primes[:-3] #Error 63994675020
 dlogs = []
 
+'''
+factor: 7, Discrete Log: 3
+factor: 10903, Discrete Log: 7155
+factor: 5290657, Discrete Log: 4178605
+factor: 10833080827, Discrete Log: 6268212901
+factor: 22921299619447, Discrete Log: 8239490016515
+'''
 for fac in primes:
 	#t = int(G.order())//int(fac)
 	t = 4135431758475578407984678036024568137640761304218723702974166807307342139253//fac
@@ -37,3 +47,4 @@ for fac in primes:
 
 private_key = crt(dlogs, primes)
 print(private_key)
+#3262827136301000405966
