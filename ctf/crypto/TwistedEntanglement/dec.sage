@@ -26,6 +26,7 @@ G = EC(Gx, Gy)
 Q = EC(Qx, Qy)
 
 primes = [7,10903,5290657,10833080827,22921299619447,41245443549316649091297836755593555342121]
+#We don't need to use all the primes! Usually we drop the last 1/2 longest one. Otherwise it will take too much time...
 #primes = primes[:-1] #3262827136301000405966
 primes = primes[:-2]  #3262827136301000405966
 #primes = primes[:-3] #Error 63994675020
