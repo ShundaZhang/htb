@@ -209,3 +209,12 @@ print("INFO: Key 2 as hex", key_2.hex())
 print()
 print("INFO: Key 1 as plain", key)
 print("INFO: Key 2 as plain", key_2)
+
+'''
+INFO: Key 1 as hex 8222bcb6eec112ea450dc9078842850e57842d01e574fd14b4b5dadb6095747e
+INFO: Key 2 as hex 4854427b773431542e2e2e697427355f346c6c5f4c316e3334723f3f3f3f3f7d
+
+INFO: Key 1 as plain b'\x82"\xbc\xb6\xee\xc1\x12\xeaE\r\xc9\x07\x88B\x85\x0eW\x84-\x01\xe5t\xfd\x14\xb4\xb5\xda\xdb`\x95t~'
+INFO: Key 2 as plain b"HTB{w41T...it'5_4ll_L1n34r?????}"
+
+'''
