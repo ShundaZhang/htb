@@ -33,7 +33,7 @@ print(key)
 io.recvuntil('>')
 io.sendline('1')
 
-flag = [[]]
+flag = []
 for i in range(64):
 	buf = io.recvline().strip()
 	#print(buf)
