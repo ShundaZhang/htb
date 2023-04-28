@@ -42,3 +42,5 @@ for i in range(64):
 		x = int(x[1:])
 		y = int(y[:-1])
 		flag.append([x,y])
+
+print(flag)
