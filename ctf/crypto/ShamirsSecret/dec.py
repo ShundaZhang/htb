@@ -16,6 +16,8 @@ io = remote(ip,port)
 
 io.recvuntil('>')
 io.sendline('2')
+io.recvuntil('Input message as hex:')
+io.sendline('00')  #any even number should be OK, observe the result, odd -> even is not in key
 
 for _ in range(64):
 	buf = io.recvline().strip()
