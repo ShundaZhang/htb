@@ -21,4 +21,8 @@ io.sendline('00')  #any even number should be OK, observe the result, odd -> eve
 
 for _ in range(64):
 	buf = io.recvline().strip()
-	print(buf)
+	#print(buf)
+	x,y = buf.decode().split(', ')
+	x = int(x[1:])
+	y = int(y[:-1])
+	print(x,y)
