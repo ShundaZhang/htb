@@ -3,7 +3,7 @@
 from pwn import *
 import gmpy2
 
-context.log_level = 'debug'
+#context.log_level = 'debug'
 
 #Input message as hex: 00
 N = 2**1024
