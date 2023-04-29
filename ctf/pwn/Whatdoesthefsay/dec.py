@@ -4,7 +4,7 @@ context.log_level = 'debug'
 
 def detect(io):
 	for i in range(100):
-		if i == 9:
+		if i+1 == 9:
 			continue
 		svar = '%'+str(i+1)+'$p'
 		io.recvuntil('2. Space food')
