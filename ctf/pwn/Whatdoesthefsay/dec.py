@@ -1,6 +1,6 @@
 from pwn import *
 
-#context.log_level = 'debug'
+context.log_level = 'debug'
 
 def detect(io):
 	for i in range(100):
