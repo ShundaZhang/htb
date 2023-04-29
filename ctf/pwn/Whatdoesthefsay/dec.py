@@ -10,3 +10,7 @@ def detect(io):
 		buf = io.recvline().strip()
 		print str(i+1)+' : '+buf
 
+ip, port = '142.93.34.45', 30123
+io = remote(ip, port)
+
+detect(io)
