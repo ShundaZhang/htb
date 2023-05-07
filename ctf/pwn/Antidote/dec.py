@@ -1,4 +1,8 @@
 '''
+ARM overflow !!
+ARM ROP !!
+ARM Ret2csu !!
+
 apt install qemu
 apt install qemu-user-static kpartx
 apt install gdb-multiarch
