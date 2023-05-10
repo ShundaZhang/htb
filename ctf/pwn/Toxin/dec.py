@@ -36,9 +36,9 @@ def edit_toxin(index,data):
 	io.sendline(data)
 	io.recv()
 
-ip, port = '165.232.42.8',30003
-io = remote(ip, port)
-#io = process('./toxin')
+#ip, port = '165.232.42.8',30003
+#io = remote(ip, port)
+io = process('./toxin')
 
 elf = ELF('./toxin')
 libc = ELF('./lib/libc.so.6')
