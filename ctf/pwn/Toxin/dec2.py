@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 from pwn import *
-HOST = '165.232.42.8'
+HOST = '159.65.16.219'
 PORT = 30003
 EXE  = './toxin'
 LIBC = './lib/libc.so.6'
