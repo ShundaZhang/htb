@@ -144,4 +144,4 @@ def leak_printf_got(start_main_addr):
 	print("[!!!] Leaked libc printf : " + libc_printf)
 	return int(libc_printf,16)
 
-print(leak_print_got(start_main_addr))
+print(leak_printf_got(start_main_addr))
