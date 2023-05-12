@@ -4,7 +4,7 @@
 from pwn import *
 from struct import *
 
-ip, port = '167.99.205.156', 30184
+ip, port = '167.71.139.119', 32617
 #io = remote(ip, port)
 
 def detect():
