@@ -2,7 +2,7 @@
 
 from pwn import *
 
-ip, port = '165.22.122.247', 31683
+ip, port = '178.128.46.49', 32460
 #io = remote(ip, port)
 
 def detect():
