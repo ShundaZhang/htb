@@ -18,7 +18,7 @@ elf='./loginsim'
 e=ELF(elf)
 #context.log_level = 'debug'
 #context.arch=e.arch
-ip_port=['167.99.205.117',30301]
+ip_port=['165.227.232.214', 31650]
 
 debug=lambda : gdb.attach(p) if local_mote==1 else None
 
