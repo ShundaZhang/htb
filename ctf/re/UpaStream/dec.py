@@ -1,3 +1,4 @@
+#Failed, use Main.java...
 '''
 jadx
 
@@ -124,7 +125,9 @@ def enc(flag):
 	#print list7
 	return list7
 
-#print enc('HTB{7357_f419!}')
+print enc('HTB')
+print enc('HTB{')
+print enc('HTB{F')
 
 for i in range(32,127,1):
 	for j in range(32,127,1):
