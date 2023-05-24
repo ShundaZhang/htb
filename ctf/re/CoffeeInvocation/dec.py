@@ -3,6 +3,8 @@
 #Java
 #java
 
+#https://platypwnies.de/writeups/2020/htb-uni-quals/reversing/coffee_invocation/
+
 #LD_LIBRARY_PATH=/usr/lib/jvm/java-18-openjdk-amd64/lib/server/ ./coffee_invocation
 #binwalk --run-as=root -D='.*' ./coffee_invocation
 
@@ -106,6 +108,65 @@ public class Verify2
     }
 }
 '''
+'''
+https://platypwnies.de/writeups/2020/htb-uni-quals/reversing/coffee_invocation/
+https://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/functions.html#wp5833
+
+const struct JNINativeInterface ... = {
+
+pcVar1 = *(code **)(*param_1 + 0x560);
+0x560/8 == 127
+search in java doc (2nd link above), got NewObjectArray
+
+Update solve.py
+python solve.py
+
+./coffee_invocation 1_c4nt_c4ptur3_fl4g5_unt17_1v3_h4d_a1l_my_0xCAFEBABE
+__ __ __ __ __ __ __ __ __ __
 
 
-#HTB{th3_s3cr3t3_r3c1p3_1s_23_h0ur5_str41ght_0f_r34d1ng_J4v4_d0cs}
+____ ____ ____ ____ ____ ____
+|    |  | |___ |___ |___ |___
+|___ |__| |    |    |___ |___
+
+         Machine 3000    v1.2
+__ __ __ __ __ __ __ __ __ __
+
+ 1. Normal Coffee
+ 2. Espresso
+ 3. [REDACTED]
+ 4. Exit
+
+3
+Verifying user is of terrestrial origin...
+Verifying user has authorization...
+Access granted.
+                              @@
+                             @@
+                           @@@
+                        @@@:      ,@
+                     @@@:    :@@
+                  @@@@     @@:
+                 @@@     @@@@
+                  @@,     @@@@
+                    @@     @@@@
+                      *+    @@@
+              ;@@           @         :  @@@+
+        @@@@                     +@@        @@
+               +:,@@@,:;,                   @@
+             @@                           @@
+             :@@@@@@@@@@@@@@@@@@@,    ,@
+
+              @@@@@;      *@@@@@
+          +*      @@@@@@@@@@@+
+    @@@                                   @
+     +@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@:       ,@
+                                   ,@@@@@
+Enjoy!
+==================================================
+Also here is your flag: HTB{1_c4nt_c4ptur3_fl4g5_unt17_1v3_h4d_a1l_my_0xCAFEBABE}
+==================================================
+
+
+'''
+
