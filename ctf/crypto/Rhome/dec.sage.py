@@ -1,8 +1,10 @@
 '''
+base^x == value
+x = discrete_log(value, base)
 
 p = 2*q*r + 1
 g = h^(2*r)%p
-
+this will cause more than 1 root can satisify the condition g^a mod p == A, which means a small `a` will als work (the a we caculate is not the real rand self.a)!
 '''
 
 
@@ -35,4 +37,5 @@ key = sha256(long_to_bytes(ss)).digest()[:_sage_const_16 ]
 cipher = AES.new(key, AES.MODE_ECB)
 flag = cipher.decrypt(encrypted)
 print(flag)
+#HTB{00ps_wh4t_4_sm411_0rd3r}
 

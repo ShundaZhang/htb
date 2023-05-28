@@ -1,8 +1,10 @@
 '''
+base^x == value
+x = discrete_log(value, base)
 
 p = 2*q*r + 1
 g = h^(2*r)%p
-
+this will cause more than 1 root can satisify the condition g^a mod p == A, which means a small `a` will als work (the a we caculate is not the real rand self.a)!
 '''
 from Crypto.Util.number import isPrime, long_to_bytes, getPrime
 from Crypto.Cipher import AES
