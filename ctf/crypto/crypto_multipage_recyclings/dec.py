@@ -1,0 +1,23 @@
+from pwn import *
+'''
+ct = b25bc89662197c6462188e5960eea4fbef11424b8ebdcd6b45c8f4240d64f5d1981aab0e299ff75ce9fba3d5d78926543e5e8c262b81090aef60518ee241ab131db902d2582a36618f3b9a85a35f52352d5499861b4a878fac1380f520fe13deb1ca50c64f30e98fa6fdc070d02e148f
+r = 3
+phrases = ['5fe633e7071e690fbe58a9dace6f3606', '501ccdc4600bc2dcf350c6b77fcf2681']
+'''
+ct = 'b25bc89662197c6462188e5960eea4fbef11424b8ebdcd6b45c8f4240d64f5d1981aab0e299ff75ce9fba3d5d78926543e5e8c262b81090aef60518ee241ab131db902d2582a36618f3b9a85a35f52352d5499861b4a878fac1380f520fe13deb1ca50c64f30e98fa6fdc070d02e148f'.decode('hex')
+EC3 = '5fe633e7071e690fbe58a9dace6f3606'.decode('hex')
+C4 = ct[16*4:16*5]
+
+EC4 = '501ccdc4600bc2dcf350c6b77fcf2681'.decode('hex')
+C5 = ct[16*5:16*6]
+
+print xor(EC3,C4)
+print xor(EC4,C5)
+
+
+'''
+B_15_4_n1c3_m0d3
+}HTB{AES_CFB_15_
+
+HTB{AES_CFB_15_4_n1c3_m0d3}
+'''
