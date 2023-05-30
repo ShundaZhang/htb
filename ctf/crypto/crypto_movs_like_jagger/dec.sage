@@ -65,4 +65,7 @@ secret_point = nQ * P
 print(hex(secret_point[0]))
 print(hex(secret_point[1]))
 
+#0x4a62f988d83fcad92a8df83d2
+#0x2ba9851fe3ae865ee4ce09842
+
 #HTB{sh0w_m3_y0ur_sp@cip_MOVs_Klaus!}
