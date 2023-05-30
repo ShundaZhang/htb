@@ -66,5 +66,3 @@ secret_point = nQ * P
 print(hex(secret_point[_sage_const_0 ]))
 print(hex(secret_point[_sage_const_1 ]))
 
-
-
