@@ -46,3 +46,7 @@ soln = franklinreiter(c2, c1, e, n1, 1 << ((256-93)*8), bg + delta1 - (delta1 <<
 print(int_to_bytes(int(soln)))
 soln = franklinreiter(c4, c3, e, n2, 1 << ((256-93)*8), bg + delta2 - (delta2 << ((256-93)*8))) - delta2
 print(int_to_bytes(int(soln)))
+
+#b'HTB{You_were_supposed_to_find_the_gcd_trick_then_search_and_find_the_ACSC_writeup_learn_some_'
+#b'interesting_stuff_and_solve_the_challege_but_I_forgot_about_the_most_basic_thing_I_m_sorry:(}'
+#HTB{You_were_supposed_to_find_the_gcd_trick_then_search_and_find_the_ACSC_writeup_learn_some_interesting_stuff_and_solve_the_challege_but_I_forgot_about_the_most_basic_thing_I_m_sorry:(}

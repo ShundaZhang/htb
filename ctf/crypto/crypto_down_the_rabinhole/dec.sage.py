@@ -53,3 +53,7 @@ print(int_to_bytes(int(soln)))
 soln = franklinreiter(c4, c3, e, n2, _sage_const_1  << ((_sage_const_256 -_sage_const_93 )*_sage_const_8 ), bg + delta2 - (delta2 << ((_sage_const_256 -_sage_const_93 )*_sage_const_8 ))) - delta2
 print(int_to_bytes(int(soln)))
 
+#b'HTB{You_were_supposed_to_find_the_gcd_trick_then_search_and_find_the_ACSC_writeup_learn_some_'
+#b'interesting_stuff_and_solve_the_challege_but_I_forgot_about_the_most_basic_thing_I_m_sorry:(}'
+#HTB{You_were_supposed_to_find_the_gcd_trick_then_search_and_find_the_ACSC_writeup_learn_some_interesting_stuff_and_solve_the_challege_but_I_forgot_about_the_most_basic_thing_I_m_sorry:(}
+
