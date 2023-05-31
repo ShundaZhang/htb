@@ -27,10 +27,10 @@ e = _sage_const_2
 B = coeff
 delta1 = (B + n1) >> _sage_const_1 
 delta2 = (B + n2) >> _sage_const_1 
-c1 = (c1 + delta1**_sage_const_2 ) % n
-c2 = (c2 + delta1**_sage_const_2 ) % n
-c3 = (c3 + delta2**_sage_const_2 ) % n
-c4 = (c4 + delta2**_sage_const_2 ) % n
+c1 = (c1 + delta1**_sage_const_2 ) % n1
+c2 = (c2 + delta1**_sage_const_2 ) % n1
+c3 = (c3 + delta2**_sage_const_2 ) % n2
+c4 = (c4 + delta2**_sage_const_2 ) % n2
 
 # Source: https://github.com/ashutosh1206/Crypton/blob/master/RSA-encryption/Attack-Franklin-Reiter/exploit.sage
 def gcd(a, b):
