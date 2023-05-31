@@ -1,3 +1,8 @@
+#https://www.hackthebox.com/blog/business-ctf-2022-400-curves-write-up
+#ECC
+#Invalid curve attack
+#400 Curves
+
 from Crypto.Util.number import long_to_bytes
 from pwn import *
 
@@ -70,3 +75,6 @@ def pwn():
 ip, port = '144.126.206.29',31283
 r = remote(ip, port)
 pwn()
+
+#May need to try several times...
+#b'HTB{1nv411d_cu2v3_4774cks_ftw!!}'
