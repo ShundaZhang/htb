@@ -19,6 +19,10 @@ ec_order = _sage_const_434252269029337012720086440208
 E = EllipticCurve(GF(p), [a, b])
 #print(E.order())
 
+'''
+The basic idea of this attack is that the discrete logarithm problem can be moved from an elliptic curve defined over Fp (finite field) to the multiplicative group of the finite field Fpk when p is divided by pk-1. If k is small enough (k < 6), the discrete log becomes easier to calculate than on the curve.
+'''
+
 #k = 1
 #while (p**k - 1) % E.order():
 #    k += 1
@@ -65,4 +69,6 @@ secret_point = nQ * P
 
 print(hex(secret_point[_sage_const_0 ]))
 print(hex(secret_point[_sage_const_1 ]))
+
+#HTB{sh0w_m3_y0ur_sp@cip_MOVs_Klaus!}
 
