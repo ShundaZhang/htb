@@ -1,4 +1,19 @@
+#homomorphic
 #!/usr/bin/env python3
+#https://7rocky.github.io/en/ctf/htb-challenges/crypto/homomurphys-law/
+#https://github.com/7Rocky/HackTheBox-scripts/blob/main/Challenges/Crypto/Homomurphy's%20Law/README.md
+#https://en.wikipedia.org/wiki/Goldwasser%E2%80%93Micali_cryptosystem
+
+'''
+python3 dec.py 206.189.120.154:32373
+[+] Opening connection to 206.189.120.154 on port 32373: Done
+[+] PIN seed: 114
+[+] Sending key index: Done
+[+] OBF pin: [1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1]
+[*] Zero key: b'\xc9\xbc\xeeq\x12\x98\xdf\x7f9K\xb4\x046\xc1R\x1b'
+[+] AES key: 13ac6164903991ced058cd2d91c36809
+[+] Flag: HTB{d4n9320u5_p20p327135_c4n_134d_70_d3c2yp71n9_3v32y7h1n9}
+'''
 
 from pwn import log, re, remote, sys
 from random import seed, randint, shuffle
