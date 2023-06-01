@@ -1,3 +1,4 @@
+#Franklin Reiter Attack
 #https://richardfan1126.medium.com/cyber-apocalypse-ctf-2022-writeup-down-the-rabinhole-3fd2940aca45
 #https://hackmd.io/@amyriad/acsc#Two-Rabin-crypto-Score-360-20-Solves
 #https://chovid99.github.io/posts/cyber-apocalypse-ctf-2022/
@@ -41,15 +42,13 @@ def franklinreiter(C1, C2, e, N, a, b):
      g2 = X^e - C2
      result = -gcd(g1, g2).coefficients()[0]
      return result
-def int_to_bytes(x: int) -> bytes:
-     return x.to_bytes((x.bit_length() + 7) // 8, 'big')
 
 bg = bytes_to_long(b'\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3\xa3')
 
 soln = franklinreiter(c2, c1, e, n1, 1 << ((256-93)*8), bg + delta1 - (delta1 << ((256-93)*8))) - delta1
-print(int_to_bytes(int(soln)))
+print(long_to_bytes(int(soln)))
 soln = franklinreiter(c4, c3, e, n2, 1 << ((256-93)*8), bg + delta2 - (delta2 << ((256-93)*8))) - delta2
-print(int_to_bytes(int(soln)))
+print(long_to_bytes(int(soln)))
 
 #b'HTB{You_were_supposed_to_find_the_gcd_trick_then_search_and_find_the_ACSC_writeup_learn_some_'
 #b'interesting_stuff_and_solve_the_challege_but_I_forgot_about_the_most_basic_thing_I_m_sorry:(}'
