@@ -15,12 +15,12 @@ c1 = buf.decode('hex')
 io.recvuntil(message)
 b1 = message+'\x00'*6
 b2 = b1+xor(c1, b1)
-io.sendline('\x00'*6+xor(c1, b1))
+io.sendline('00'*6+xor(c1, b1).encode('hex'))
 buf = io.recvline().strip()
 c2 = buf.decode('hex')
 
 io.recvuntil(message)
-io.sendline('\x00'*6+xor(c1,b1)+xor(c2,b2))
+io.sendline('00'*6+xor(c1,b1).encode('hex')+xor(c2,b2).encode('hex'))
 flag = io.recvline()
 
 print flag
