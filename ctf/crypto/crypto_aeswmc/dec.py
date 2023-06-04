@@ -18,6 +18,7 @@ b2 = b1+xor(c1, b1)
 io.sendline('00'*6+xor(c1, b1).encode('hex'))
 buf = io.recvline().strip()
 c2 = buf.decode('hex')
+c2 = xor(c2, c1)
 
 io.recvuntil(message)
 io.sendline('00'*6+xor(c1,b1).encode('hex')+xor(c2,b2).encode('hex'))
