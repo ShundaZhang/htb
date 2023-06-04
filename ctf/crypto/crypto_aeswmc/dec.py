@@ -25,3 +25,4 @@ io.sendline('00'*6+xor(c1,b1).encode('hex')+xor(c2,b2).encode('hex'))
 flag = io.recvline()
 
 print flag
+#HTB{AES_cu570m_m0d35_4nd_hm4cs_423_fun}
