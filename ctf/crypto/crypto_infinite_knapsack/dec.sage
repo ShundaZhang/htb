@@ -1,8 +1,6 @@
 #https://7rocky.github.io/en/ctf/htb-challenges/crypto/infinite-knapsack/
 #https://github.com/7Rocky/HackTheBox-scripts/blob/main/Challenges/Crypto/Infinite%20Knapsack/solve_lll.py
 
-#!/usr/bin/env python3
-
 from pwn import log, random, string
 
 def decrypt(r, ciphertext):
@@ -45,7 +43,6 @@ def attack(a_i, b_i):
 
 def bin2dec(b):
     return int(''.join(map(str, b)), 2)
-
 
 
 with open('out.txt') as f:
