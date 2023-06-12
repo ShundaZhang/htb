@@ -86,10 +86,10 @@ lcg = LCG(M, a, s, c, s0)
 try:
     for y in Y:
         assert y == lcg.next()
-    except AssertionError:
-        log.warning('LCG failed. Trying again...')
-        io.close()
-	exit(0)
+except AssertionError:
+    log.warning('LCG failed. Trying again...')
+    io.close()
+    exit(0)
 
 log.success('LCG cracked')
 player_health, wizard_health = 90, 200
