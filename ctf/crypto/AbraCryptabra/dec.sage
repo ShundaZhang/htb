@@ -4,6 +4,8 @@
 #Lattice
 #Hidden Number Problem
 #Knapsack problem
+#Merkle-Hellman knapsack cryptosystem
+#https://en.wikipedia.org/wiki/Merkle%E2%80%93Hellman_knapsack_cryptosystem
 
 from pwn import *
 from Crypto.Cipher import AES
@@ -106,3 +108,4 @@ while wizard_health:
 
 prog.success(f'Player: {player_health} | Wizard {wizard_health}')
 
+print(io.recvall())
