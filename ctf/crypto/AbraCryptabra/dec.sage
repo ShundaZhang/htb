@@ -71,7 +71,6 @@ class LCG:
         self.state = (self.a * self.state + self.c) % self.m
         return self.state >> (self.k - self.s)
 
-'''
 def knapsack(a_i, b):
     M = matrix(ZZ, len(a_i) + 1, len(a_i) + 1)
 
@@ -86,32 +85,6 @@ def knapsack(a_i, b):
     for u_i in B.rows():
         if all(u in {0, 1} for u in u_i[:-1]) and b == sum(a * u for a, u in zip(a_i, u_i)):  
             return u_i[:-1]
-'''
-def knapsack(a_i, b_i):
-    M = matrix(ZZ, len(a_i) + 1, len(a_i) + 1)
-
-    for i, a in enumerate(a_i):
-        M[i, i] = 1
-        M[i, -1] = a
-
-    p_i = []
-
-    prog = log.progress('Index')
-
-    for k, b in enumerate(b_i):
-        M[-1, -1] = -b
-        prog.status(f'{k + 1} / {len(b_i)}')
-        B = M.LLL()
-
-        for u_i in B.rows():
-            if b == sum(a * u for a, u in zip(a_i, u_i)):
-                p_i.append(bin2dec(u_i[:-1]))
-                break
-
-    prog.success(f'{len(b_i)} / {len(b_i)}')
-
-    return p_i
-
 
 def bin2dec(b):
     return int(''.join(map(str, b)), 2)
