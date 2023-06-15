@@ -71,6 +71,25 @@ class LCG:
         self.state = (self.a * self.state + self.c) % self.m
         return self.state >> (self.k - self.s)
 
+def knapsack(a_i, b):
+    M = matrix(ZZ, len(a_i) + 1, len(a_i) + 1)
+
+    for i, a in enumerate(a_i):
+        M[i, i] = 1
+        M[i, -1] = a
+
+    M[-1, -1] = -b
+
+    B = M.LLL()
+
+    for u_i in B.rows():
+        if all(u in {0, 1} for u in u_i[:-1]) and b == sum(a * u for a, u in zip(a_i, u_i)):  
+            return u_i[:-1]
+
+
+def bin2dec(b):
+    return int(''.join(map(str, b)), 2)
+
 host, port = sys.argv[1].split(':')
 io = remote(host, int(port))
 
@@ -108,4 +127,40 @@ while wizard_health:
 
 prog.success(f'Player: {player_health} | Wizard {wizard_health}')
 
-print(io.recvall())
+#print(io.recvall())
+
+length = int(io.recvline().decode())
+log.info(f'Flag length: {length // 8}')
+public_key = []
+
+for i in range(length):
+    if i % 8:
+        public_key.append(int(io.recvline().decode()))
+    else:
+        io.recvline()
+
+enc_message = bytes.fromhex(io.recvline().decode())
+io.close()
+
+for _ in range(player_health - 1):
+    lcg.next()
+
+key = md5(str(lcg.next()).encode()).digest()
+cipher = AES.new(key, AES.MODE_CBC)
+
+try:
+    message = unpad(cipher.decrypt(enc_message), AES.block_size)
+except ValueError:
+    log.warning('Padding error. Trying again...')
+    exit(0)
+
+log.info(f'Encrypted message: {message}')
+
+enc_flag = int(message.split(b'Harry, ')[1].decode(), 16)
+
+if (r := knapsack(public_key, enc_flag)):
+    flag = [bin2dec([0, *r[i: i + 7]]) for i in range(0, len(r), 7)]
+    log.success('HTB{' + ''.join(map(chr, flag)) + '}')
+else:
+    log.warning('Knapsack failed. Trying again...')
+    exit(0)
