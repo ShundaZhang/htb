@@ -1,4 +1,5 @@
 //https://7rocky.github.io/en/ctf/htb-challenges/crypto/bfd56/
+//http://practicalcryptography.com/cryptanalysis/stochastic-searching/cryptanalysis-bifid-cipher/
 
 // gcc solve.c -O3 -o bifid -lm
 
