@@ -134,11 +134,11 @@ def main():
     public_key = []
     
     for i in range(length):
-        #if i % 8:
-        #    public_key.append(int(io.recvline().decode()))
-        #else:
-        #    io.recvline()
-        public_key.append(int(io.recvline().decode()))
+        if i % 8:
+            public_key.append(int(io.recvline().decode()))
+        else:
+            io.recvline()
+        #public_key.append(int(io.recvline().decode())) #ascii < 0x7f, so the highest bit should be 0, related pub key can be ignored
     
     enc_message = bytes.fromhex(io.recvline().decode())
     io.close()
