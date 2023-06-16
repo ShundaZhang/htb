@@ -14,16 +14,3 @@ if simmgr.found:
 	print("")
 
 #0x6e,0x63,0x7b,0x89,0x0,0x10,0x4,0x2
-
-'''
-# Compress exploit
-gzip exploit
-# Convert to base64 locally and copy the output from output.txt
-cat exploit.gz | base64 > output.txt
-# On remote convert base64 to gz file
-cd /tmp && echo "base64" | base64 -d > exploit.gz
-# Extract exploit
-gzip -d expoit.gz
-# Run the exploit
-chmod +x exploit && ./exploit
-'''
