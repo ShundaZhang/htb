@@ -17,5 +17,6 @@ dmesg -n 1
 chmod -R 777 /tmp/
 
 cd /home/user
+setsid cttyhack setuidgid 0 /bin/sh
 cttyhack su -s /bin/sh user
 poweroff -f
