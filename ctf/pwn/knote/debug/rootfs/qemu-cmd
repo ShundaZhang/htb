@@ -1,0 +1,13 @@
+#!/bin/bash
+
+timeout --foreground 35 qemu-system-x86_64 \
+  -m 128M \
+  -nographic \
+  -kernel /home/ctf/bzImage \
+  -append 'console=ttyS0 loglevel=3 oops=panic panic=1 kaslr' \
+  -monitor /dev/null \
+  -initrd /home/ctf/rootfs.img \
+  -no-kvm \
+  -cpu qemu64 \
+  -smp cores=2
+
