@@ -1,0 +1,29 @@
+disassemble main 
+disassemble check
+disassemble puts
+disassemble main
+b main
+r
+disassemble main 
+b *0x000000000040182d
+c
+q
+disassemble main 
+b *0x000000000040182d
+c
+c
+r
+jump *0x000000000040183c
+c
+r
+s
+disassemble main 
+b *0x0000000000401828
+r
+jump *0x0000000000401832
+b main
+r
+disassemble 0x450ec7
+disassemble *0x450ec7
+disassemble 0x450ec7
+b
