@@ -5,6 +5,15 @@ init
 setsid cttyhack setuidgid 0 /bin/sh #add this line to see the symbol addresses
 cttyhack su -s /bin/sh user
 
+checksec --file vmlinux
+[*] '/root/github/htb/ctf/pwn/knote/debug/vmlinux'
+    Arch:     amd64-64-little
+    RELRO:    No RELRO
+    Stack:    No canary found
+    NX:       NX disabled
+    PIE:      No PIE (0xffffffff81000000)
+    RWX:      Has RWX segments
+
 /home/user # grep -E 'prepare_kernel_cred|commit_creds' /proc/kallsyms
 ffffffff81053a30 T commit_creds
 ffffffff81053c50 T prepare_kernel_cred
@@ -26,5 +35,6 @@ ffffffffa00023c0 b knotes       [knote]
 ffffffffa0002140 d __this_module        [knote]
 ffffffffa0000020 t knote_decrypt        [knote]
 ffffffffa0000000 t knote_encrypt        [knote]
+
 
 '''
