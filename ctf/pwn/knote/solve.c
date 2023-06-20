@@ -15,7 +15,7 @@ typedef struct {
         size_t len;
 } req_t;
 
-int fd;
+int fd, seq_fd;
 
 long create(unsigned long idx, char* data, size_t len) {
         req_t req = { .idx = idx, .data = data, .len = len };
