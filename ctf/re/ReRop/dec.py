@@ -2,6 +2,7 @@
 gdb-pwndbg rerop
 
 debug, and found (x+offset)^0x5 == rax
+bypass ptrace first...
 
 >>> chr((0x6e^0x05)-0x19)
 'R'
