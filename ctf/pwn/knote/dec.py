@@ -1,4 +1,5 @@
 #https://7rocky.github.io/en/ctf/htb-challenges/pwn/knote/
+#https://lkmidas.github.io/posts/20210123-linux-kernel-pwn-part-1/
 
 '''
 init
@@ -36,5 +37,40 @@ ffffffffa0002140 d __this_module        [knote]
 ffffffffa0000020 t knote_decrypt        [knote]
 ffffffffa0000000 t knote_encrypt        [knote]
 
+$ sh go.sh
+$ gdb -q vmlinux
+Reading symbols from vmlinux...
+(No debugging symbols found in vmlinux)
+gef➤  gef-remote localhost 1234
+0xffffffff810177c5 in ?? ()
+[!] Command 'gef-remote' failed to execute properly, reason: Remote I/O error: Function not implemented
 
+gef➤  grep asdf
+[+] Searching 'asdf' in memory
+[+] In (0x400000-0x405000), permission=r--
+  0x40308d - 0x403091  →   "asdf"
+  0x40408d - 0x404091  →   "asdf"
+[+] In (0xffff88800009b000-0xffff888001000000), permission=rw-
+  0xffff8880003e008d - 0xffff8880003e0091  →   "asdf"
+[+] In (0xffff8880018d2000-0xffff88800750b000), permission=rw-
+  0xffff8880074b6d98 - 0xffff8880074b6d9c  →   "asdf[...]"
+gef➤  grep 0xffff8880074b6d98
+[+] Searching '\x98\x6d\x4b\x07\x80\x88\xff\xff' in memory
+[+] In (0xffff888000000000-0xffff888000099000), permission=rw-
+  0xffff888000093c00 - 0xffff888000093c20  →   "\x98\x6d\x4b\x07\x80\x88\xff\xff[...]"
+[+] In (0xffff888007514000-0xffff888007fe0000), permission=rw-
+  0xffff888007f33040 - 0xffff888007f33060  →   "\x98\x6d\x4b\x07\x80\x88\xff\xff[...]"
+gef➤  x/4gx 0xffff888000093c00
+0xffff888000093c00:     0xffff8880074b6d98      0x0000000000000004
+0xffff888000093c10:     0xffffffffa0000000      0xffffffffa0000020
+gef➤  grep continue
+Continuing.
+
+gef➤  x/4gx 0xffff888000093c00
+0xffff888000093c00:     0xffff88800008c290      0x0000000000000010
+0xffff888000093c10:     0xffffffffa0000000      0xffffffffa0000020
+gef➤  x/s 0xffff88800008c290
+0xffff88800008c290:     "fdsafdsafdsafdsa.init.text"
+
+"fdsafdsafdsafdsa" is stored in the current structure (overwriting the pointer to "asdf")
 '''
