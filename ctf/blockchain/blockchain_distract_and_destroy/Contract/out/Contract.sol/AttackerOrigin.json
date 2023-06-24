@@ -1,0 +1,416 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "attack2",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "creature",
+      "outputs": [
+        {
+          "internalType": "contract Creature",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x6080604052600a60405161001290610062565b6040518091039082f090508015801561002f573d6000803e3d6000fd5b50600080546001600160a01b0319166001600160a01b039290921691909117905534801561005c57600080fd5b5061006f565b61023e8061018083390190565b6101028061007e6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c80639fcec698146037578063dac13f6d14603f575b600080fd5b603d606d565b005b6000546051906001600160a01b031681565b6040516001600160a01b03909116815260200160405180910390f35b60005460405163326ec48d60e11b81526103e860048201526001600160a01b03909116906364dd891a90602401600060405180830381600087803b15801560b357600080fd5b505af115801560c6573d6000803e3d6000fd5b5050505056fea26469706673582212203b29f595197533565c3cd3f9f57eb564b8dbc3ebede1cc346c9e16832aa46e1464736f6c6343000814003360806040526103e8600055610225806100196000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c806341c2132f1461005157806364dd891a146100815780639b7b2ab014610096578063d21d2cd11461009e575b600080fd5b600154610064906001600160a01b031681565b6040516001600160a01b0390911681526020015b60405180910390f35b61009461008f3660046101af565b6100b5565b005b61009461012f565b6100a760005481565b604051908152602001610078565b6001546001600160a01b03166100d857600180546001600160a01b031916331790555b3332141580156100f357506001546001600160a01b03163314155b15610114578060008082825461010991906101c8565b9091555061012c9050565b600080600082825461012691906101c8565b90915550505b50565b600054156101835760405162461bcd60e51b815260206004820152601860248201527f4372656174757265206973207374696c6c20616c697665210000000000000000604482015260640160405180910390fd5b60405133904780156108fc02916000818181858888f1935050505015801561012c573d6000803e3d6000fd5b6000602082840312156101c157600080fd5b5035919050565b818103818111156101e957634e487b7160e01b600052601160045260246000fd5b9291505056fea26469706673582212208979c8159d5a4d8b3bce6c49f7d521ece81de838669e9920bc12119c15f34f3964736f6c63430008140033",
+    "sourceMap": "91:139:19:-:0;;;164:2;144:25;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;117:52:19;;;-1:-1:-1;;;;;;117:52:19;-1:-1:-1;;;;;117:52:19;;;;;;;;;;91:139;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c80639fcec698146037578063dac13f6d14603f575b600080fd5b603d606d565b005b6000546051906001600160a01b031681565b6040516001600160a01b03909116815260200160405180910390f35b60005460405163326ec48d60e11b81526103e860048201526001600160a01b03909116906364dd891a90602401600060405180830381600087803b15801560b357600080fd5b505af115801560c6573d6000803e3d6000fd5b5050505056fea26469706673582212203b29f595197533565c3cd3f9f57eb564b8dbc3ebede1cc346c9e16832aa46e1464736f6c63430008140033",
+    "sourceMap": "91:139:19:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;173:55;;;:::i;:::-;;117:52;;;;;-1:-1:-1;;;;;117:52:19;;;;;;-1:-1:-1;;;;;196:32:23;;;178:51;;166:2;151:18;117:52:19;;;;;;;173:55;203:8;;:21;;-1:-1:-1;;;203:21:19;;219:4;203:21;;;397:25:23;-1:-1:-1;;;;;203:8:19;;;;:15;;370:18:23;;203:21:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;173:55::o",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "attack2()": "9fcec698",
+    "creature()": "dac13f6d"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"attack2\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"creature\",\"outputs\":[{\"internalType\":\"contract Creature\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/Contract.sol\":\"AttackerOrigin\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"src/Contract.sol\":{\"keccak256\":\"0xc82965ae142c31c7f4c83fdb9c2cb1d4b7e71303205e21d466b466f4317b0f0d\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://f7f863ab25fc93588ceaa01c228c74a7909db892d908b40daa84ac531534295e\",\"dweb:/ipfs/QmY7euETkTuQCwZmDYDwUq2VjAm7kpNm8D3R2ACRoXVcFB\"]},\"src/Creature.sol\":{\"keccak256\":\"0x6cac50acc39f1b95d064c5d57eccc0638106760d8b67c48648df97ed1c186590\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://09ba0bf4512b25176c3bbd0da7af7b45fed440ce6ba2ddfb14be6aa9c1269c5e\",\"dweb:/ipfs/QmUizNhWHhBQ6jhnqT9Ck1PSJL5ThHT5zfHJV25RHh1KpU\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.20+commit.a1b79de6"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "attack2"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "creature",
+          "outputs": [
+            {
+              "internalType": "contract Creature",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        ":ds-test/=lib/forge-std/lib/ds-test/src/",
+        ":forge-std/=lib/forge-std/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/Contract.sol": "AttackerOrigin"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/Contract.sol": {
+        "keccak256": "0xc82965ae142c31c7f4c83fdb9c2cb1d4b7e71303205e21d466b466f4317b0f0d",
+        "urls": [
+          "bzz-raw://f7f863ab25fc93588ceaa01c228c74a7909db892d908b40daa84ac531534295e",
+          "dweb:/ipfs/QmY7euETkTuQCwZmDYDwUq2VjAm7kpNm8D3R2ACRoXVcFB"
+        ],
+        "license": "UNLICENSED"
+      },
+      "src/Creature.sol": {
+        "keccak256": "0x6cac50acc39f1b95d064c5d57eccc0638106760d8b67c48648df97ed1c186590",
+        "urls": [
+          "bzz-raw://09ba0bf4512b25176c3bbd0da7af7b45fed440ce6ba2ddfb14be6aa9c1269c5e",
+          "dweb:/ipfs/QmUizNhWHhBQ6jhnqT9Ck1PSJL5ThHT5zfHJV25RHh1KpU"
+        ],
+        "license": "UNLICENSED"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/Contract.sol",
+    "id": 29423,
+    "exportedSymbols": {
+      "AttackerOrigin": [
+        29422
+      ],
+      "Creature": [
+        29532
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "39:192:19",
+    "nodes": [
+      {
+        "id": 29401,
+        "nodeType": "PragmaDirective",
+        "src": "39:24:19",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".13"
+        ]
+      },
+      {
+        "id": 29402,
+        "nodeType": "ImportDirective",
+        "src": "65:24:19",
+        "nodes": [],
+        "absolutePath": "src/Creature.sol",
+        "file": "./Creature.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 29423,
+        "sourceUnit": 29533,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 29422,
+        "nodeType": "ContractDefinition",
+        "src": "91:139:19",
+        "nodes": [
+          {
+            "id": 29411,
+            "nodeType": "VariableDeclaration",
+            "src": "117:52:19",
+            "nodes": [],
+            "constant": false,
+            "functionSelector": "dac13f6d",
+            "mutability": "mutable",
+            "name": "creature",
+            "nameLocation": "133:8:19",
+            "scope": 29422,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_Creature_$29532",
+              "typeString": "contract Creature"
+            },
+            "typeName": {
+              "id": 29404,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 29403,
+                "name": "Creature",
+                "nameLocations": [
+                  "117:8:19"
+                ],
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 29532,
+                "src": "117:8:19"
+              },
+              "referencedDeclaration": 29532,
+              "src": "117:8:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Creature_$29532",
+                "typeString": "contract Creature"
+              }
+            },
+            "value": {
+              "arguments": [],
+              "expression": {
+                "argumentTypes": [],
+                "expression": {
+                  "argumentTypes": [],
+                  "id": 29407,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": false,
+                  "lValueRequested": false,
+                  "nodeType": "NewExpression",
+                  "src": "144:12:19",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_function_creation_payable$__$returns$_t_contract$_Creature_$29532_$",
+                    "typeString": "function () payable returns (contract Creature)"
+                  },
+                  "typeName": {
+                    "id": 29406,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 29405,
+                      "name": "Creature",
+                      "nameLocations": [
+                        "148:8:19"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 29532,
+                      "src": "148:8:19"
+                    },
+                    "referencedDeclaration": 29532,
+                    "src": "148:8:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Creature_$29532",
+                      "typeString": "contract Creature"
+                    }
+                  }
+                },
+                "id": 29409,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": false,
+                "lValueRequested": false,
+                "names": [
+                  "value"
+                ],
+                "nodeType": "FunctionCallOptions",
+                "options": [
+                  {
+                    "hexValue": "3130",
+                    "id": 29408,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "164:2:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_10_by_1",
+                      "typeString": "int_const 10"
+                    },
+                    "value": "10"
+                  }
+                ],
+                "src": "144:23:19",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_function_creation_payable$__$returns$_t_contract$_Creature_$29532_$value",
+                  "typeString": "function () payable returns (contract Creature)"
+                }
+              },
+              "id": 29410,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": false,
+              "kind": "functionCall",
+              "lValueRequested": false,
+              "nameLocations": [],
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "144:25:19",
+              "tryCall": false,
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Creature_$29532",
+                "typeString": "contract Creature"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 29421,
+            "nodeType": "FunctionDefinition",
+            "src": "173:55:19",
+            "nodes": [],
+            "body": {
+              "id": 29420,
+              "nodeType": "Block",
+              "src": "199:29:19",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "hexValue": "31303030",
+                        "id": 29417,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "219:4:19",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_1000_by_1",
+                          "typeString": "int_const 1000"
+                        },
+                        "value": "1000"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_1000_by_1",
+                          "typeString": "int_const 1000"
+                        }
+                      ],
+                      "expression": {
+                        "id": 29414,
+                        "name": "creature",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 29411,
+                        "src": "203:8:19",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Creature_$29532",
+                          "typeString": "contract Creature"
+                        }
+                      },
+                      "id": 29416,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "212:6:19",
+                      "memberName": "attack",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 29495,
+                      "src": "203:15:19",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256) external"
+                      }
+                    },
+                    "id": 29418,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "203:21:19",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 29419,
+                  "nodeType": "ExpressionStatement",
+                  "src": "203:21:19"
+                }
+              ]
+            },
+            "functionSelector": "9fcec698",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "attack2",
+            "nameLocation": "182:7:19",
+            "parameters": {
+              "id": 29412,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "189:2:19"
+            },
+            "returnParameters": {
+              "id": 29413,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "199:0:19"
+            },
+            "scope": 29422,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "AttackerOrigin",
+        "contractDependencies": [
+          29532
+        ],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          29422
+        ],
+        "name": "AttackerOrigin",
+        "nameLocation": "100:14:19",
+        "scope": 29423,
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "license": "UNLICENSED"
+  },
+  "id": 19
+}
