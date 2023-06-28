@@ -46,7 +46,7 @@ c=bytes.fromhex(ch)
 def aes_ecb_decrypt(key, ciphertext):
 	cipher = AES.new(key, AES.MODE_ECB)
 	plaintext = cipher.decrypt(ciphertext)
-	return plaintext
+	return unpad(plaintext, 16)
 
 decrypted = aes_ecb_decrypt(key, c)
 
@@ -55,6 +55,7 @@ decrypted = aes_ecb_decrypt(key, c)
 patch = bytes.fromhex('34373235343f363548777249487772492c1312253837122b487752657c7372490875b08bf4b7740f0875b08bf4b7740f467d787f467570770a778dd0c9ee4e0b')
 
 p2 = xor(patch, b'6507')
+#print(p2)
 
 rom = bytearray(decrypted)
 
