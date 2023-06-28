@@ -23,7 +23,7 @@ while high - low >= _sage_const_0 :
 		break
 	mid = (high + low)//_sage_const_2 
 	io.sendlineafter(b'> ', b'1')
-	io.sendlineafter(b'x: ', str(mid).encode())
+	io.sendlineafter(b'x : ', str(mid).encode())
 	out = io.recvline()
 	if b'greater' in out:
 		high = mid

@@ -18,7 +18,7 @@ while high - low >= 0:
 		break
 	mid = (high + low)//2
 	io.sendlineafter(b'> ', b'1')
-	io.sendlineafter(b'x: ', str(mid).encode())
+	io.sendlineafter(b'x : ', str(mid).encode())
 	out = io.recvline()
 	if b'greater' in out:
 		high = mid
