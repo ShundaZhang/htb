@@ -8,6 +8,7 @@ context.log_level = 'debug'
 ip, port = '159.65.52.96', 32060
 io = remote(ip, port)
 
+'''
 high = 2**256
 low = 2**255
 
@@ -28,9 +29,9 @@ p = high
 
 print(f'recovered p = {p}')
 '''
-#91720173941422125335466921700213991383508377854521057423162397714341988797837
+#98807859381918657537428263421507671098277046895420042063839316200156326157051
 
-p = 91720173941422125335466921700213991383508377854521057423162397714341988797837
+p = 98807859381918657537428263421507671098277046895420042063839316200156326157051
 
 #1. Setup Point
 #2. Receive new point
@@ -78,7 +79,7 @@ def attack(G, P):
 
 def setup_point(x):
 	io.sendlineafter(b'> ', b'1')
-	io.sendlineafter(b'x: ', str(x).encode())
+	io.sendlineafter(b'x : ', str(x).encode())
 	_, x1, y1 = eval(io.recvline().strip())
 	return x1, y1
 
@@ -116,4 +117,4 @@ io.sendlineafter(b'> ', b'3')
 io.sendlineafter(b'x: ', str(prediction_point[0]).encode())
 io.sendlineafter(b'y: ', str(prediction_point[1]).encode())
 print(io.recvall())
-'''
+#b"You have confirmed the location. However, It's dangerous to go alone. Take this:  HTB{th1s_4tt4ck_w4s_r3411y___SM4RT!}\n"
