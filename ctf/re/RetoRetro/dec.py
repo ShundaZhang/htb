@@ -34,9 +34,9 @@ md5[8] = ord('c')
 md5[9] = ord('\v')
 md5[0xa] = ord('k')
 
-#for i in md5:
-#	print(hex(i)[2:].zfill(2),end='')
-#print('')
+for i in md5:
+	print(hex(i)[2:].zfill(2),end='')
+print('')
 
 key=bytes.fromhex('e7d52842cbe43040630b6b1e01093bc4')
 #key=bytes.fromhex('8d93d9819942f8e443fdde4fc2d67bc2') #test NES and compare the result to make sure our solution is correct
@@ -50,12 +50,12 @@ def aes_ecb_decrypt(key, ciphertext):
 
 decrypted = aes_ecb_decrypt(key, c)
 
-#print(decrypted.hex())
+print(decrypted.hex())
 
 patch = bytes.fromhex('34373235343f363548777249487772492c1312253837122b487752657c7372490875b08bf4b7740f0875b08bf4b7740f467d787f467570770a778dd0c9ee4e0b')
 
 p2 = xor(patch, b'6507')
-#print(p2)
+print(p2)
 
 rom = bytearray(decrypted)
 
