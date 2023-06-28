@@ -8,7 +8,7 @@ _sage_const_32060 = Integer(32060); _sage_const_2 = Integer(2); _sage_const_256 
 
 from pwn import *
 
-context.log_level = 'debug'
+#context.log_level = 'debug'
 
 ip, port = '159.65.52.96', _sage_const_32060 
 io = remote(ip, port)
