@@ -5,13 +5,12 @@ from pwn import *
 
 context.log_level = 'debug'
 
-ip, port = '68.183.37.122', 30347
+ip, port = '159.65.52.96', 32060
 io = remote(ip, port)
 
 high = 2**256
 low = 2**255
 
-'''
 while high - low >= 0:
 	print(f'high, low = {high, low}')
 	print(f'diff = {high - low}')
@@ -117,4 +116,4 @@ io.sendlineafter(b'> ', b'3')
 io.sendlineafter(b'x: ', str(prediction_point[0]).encode())
 io.sendlineafter(b'y: ', str(prediction_point[1]).encode())
 print(io.recvall())
-#HTB{0Racl3_AS_a_f3A7Ur3_0n_W3aK_CURV3_aND_PRN9??_7H3_s3cur17Y_0F_0uR_CRyP70Sys73M_w1LL_c0LLAp53!!!}
+'''
