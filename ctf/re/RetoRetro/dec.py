@@ -126,3 +126,8 @@ rom[0x155] = p2[0x3f]
 
 rom = bytes(rom)
 print(rom)
+
+#python dump.py > flag.txt
+#refer to flag.txt
+#Axisymmetric flip up and down!
+#HTB{6e96d8e04404a6b51f0cdce1718a0eeb}
