@@ -4,10 +4,10 @@ from web3.gas_strategies.rpc import rpc_gas_price_strategy
 
 
 x = {
-    "PrivateKey": "0xeae38bb2bebe1cb2f87bc971f3c4f28d0675a85d4a40a745eeea8091ed31e60b",
-    "Address": "0x1381875734c09Efe644DfdC6E43eDBfb6DbA5815",
-    "TargetAddress": "0x081C5aF8B8BF9810Fe2AD53aaA4101aeeE15D042",
-    "setupAddress": "0xd8D835ea5B7d706CC37e769912B44a38ECE6B968"
+    "PrivateKey": "0x07fff58288b4e8d5bfad161a0527c7b65c91ebd28458737456eaa2e3ec7275bc",
+    "Address": "0x4cDCC735fF1389b23472495581766812131072e9",
+    "TargetAddress": "0x10761b158335Df4ED8d1bd3881Fd77B17c36e9d1",
+    "setupAddress": "0x4D58517a43F259118a8F2Efba11459daCB69FDb0"
 }
 
 PrivateKey =    x["PrivateKey"]
@@ -19,7 +19,7 @@ url = 'http://209.97.176.174:30060/rpc'
 
 w3 = Web3(Web3.HTTPProvider(url))
 block_number = w3.eth.block_number
-block = web3.eth.getBlock(block_number)
+block = w3.eth.getBlock(block_number)
 print(block.timestamp)
 
 account_address = Address
