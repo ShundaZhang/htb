@@ -42,7 +42,7 @@ print(balance)
 #solcjs --abi --bin Setup.sol #generate .abi .bin
 with open('Setup_sol_Setup.abi','r') as f:
        abi = json.load(f)
-
+'''
 contract_instance = w3.eth.contract(address=SetupContract, abi=abi)
 
 account_from = {
@@ -129,3 +129,4 @@ contract_instance = w3.eth.contract(address=SetupContract, abi=abi)
 number = contract_instance.functions.isSolved().call()
 
 print(f'The current number stored is: { number } ')
+'''
