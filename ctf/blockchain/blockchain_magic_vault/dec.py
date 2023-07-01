@@ -1,13 +1,13 @@
 from web3 import Web3
 import json
 from web3.gas_strategies.rpc import rpc_gas_price_strategy
-
+from pwn import *
 
 x = {
-    "PrivateKey": "0x07fff58288b4e8d5bfad161a0527c7b65c91ebd28458737456eaa2e3ec7275bc",
-    "Address": "0x4cDCC735fF1389b23472495581766812131072e9",
-    "TargetAddress": "0x10761b158335Df4ED8d1bd3881Fd77B17c36e9d1",
-    "setupAddress": "0x4D58517a43F259118a8F2Efba11459daCB69FDb0"
+    "PrivateKey": "0x111573ec6b84119a5681b883c550b028d88b5161c0c7f5d99fff004c079aa31f",
+    "Address": "0x5b384f9c6e4b34B7A9e5402392955D79dbC0824C",
+    "TargetAddress": "0xE20FEC2D2B809187618337815Bb7E0d369C01b07",
+    "setupAddress": "0xD955dddB2bc7699F51837a2fD5820BE6A0C9359D"
 }
 
 PrivateKey =    x["PrivateKey"]
@@ -15,23 +15,35 @@ Address =       x["Address"]
 TargetContract = x["TargetAddress"]
 SetupContract =  x["setupAddress"]
 
-url = 'http://209.97.176.174:30060/rpc'
+url = 'http://209.97.176.174:30965/rpc'
 
 w3 = Web3(Web3.HTTPProvider(url))
 block_number = w3.eth.block_number
 block = w3.eth.getBlock(block_number)
 print(block.timestamp)
+print(block.number)
+print(block_number)
+
+'''
+block_number_or_hash = 'latest'
+block = w3.eth.getBlock(block_number_or_hash)
+print(block.number)
+sleep(5)
+block_number = w3.eth.block_number
+print(block_number)
+'''
 
 account_address = Address
 balance = w3.eth.get_balance(account_address)
 print(balance)
 
-'''
-#solcjs --abi --bin Setup.sol #generate .abi .bin
-#with open('Setup_sol_Setup.abi','r') as f:
-#       abi = json.load(f)
 
-#contract_instance = w3.eth.contract(address=SetupContract, abi=abi)
+
+#solcjs --abi --bin Setup.sol #generate .abi .bin
+with open('Setup_sol_Setup.abi','r') as f:
+       abi = json.load(f)
+
+contract_instance = w3.eth.contract(address=SetupContract, abi=abi)
 
 account_from = {
         'private_key': PrivateKey,
@@ -117,4 +129,3 @@ contract_instance = w3.eth.contract(address=SetupContract, abi=abi)
 number = contract_instance.functions.isSolved().call()
 
 print(f'The current number stored is: { number } ')
-'''
