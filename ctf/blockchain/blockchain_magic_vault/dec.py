@@ -2,19 +2,21 @@ from web3 import Web3
 import json
 from web3.gas_strategies.rpc import rpc_gas_price_strategy
 from Crypto.Util.number import bytes_to_long, long_to_bytes
+from pwn import *
 
 x = {
-    "PrivateKey": "0xade2664e4d55716c08ba2976228b11b0eaaa734d3c1d6c725313a872a07cbb19",
-    "Address": "0x5A010ce84C7aAe5485e989E5f5E59E6C69540926",
-    "TargetAddress": "0xE899b2370FCeF34bc480bE52cd4f49861a30dd75",
-    "setupAddress": "0x7DBefbad1b21b153026EFCc403Ae48bcc724229f"
+    "PrivateKey": "0xbed49dfb41f80d7e18ab97b7e21fdb84b5301077c20889715694e08ac37657d8",
+    "Address": "0x0f7B6c74a859BBbDBcaCf8C3458E890d715e9dA1",
+    "TargetAddress": "0xbA74012A417Fc99CD0Ae662ca951EF7773Eea774",
+    "setupAddress": "0x1f62246F40cBFfC38Cdbee477EFbD95140629B65"
 }
+
 PrivateKey =    x["PrivateKey"]
 Address =       x["Address"] 
 TargetContract = x["TargetAddress"]
 SetupContract =  x["setupAddress"]
 
-url = 'http://209.97.176.174:30965/rpc'
+url = 'http://46.101.78.65:31809/rpc'
 
 w3 = Web3(Web3.HTTPProvider(url))
 
@@ -37,6 +39,8 @@ print(balance)
 #with open('Setup_sol_Setup.abi','r') as f:
 #	abi = json.load(f)
 
+
+
 #contract_instance = w3.eth.contract(address=SetupContract, abi=abi)
 
 account_from = {
@@ -48,6 +52,9 @@ account_from = {
 #	{
 #		'from': account_from['address'],
 #		'nonce': w3.eth.get_transaction_count(account_from['address']),
+#		"gasPrice": w3.to_wei(50, 'gwei'),
+#		"gas": 21000,
+#		"value": w3.to_wei(1, 'ether')
 #	}
 #)
 
@@ -56,16 +63,14 @@ account_from = {
 #tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
 
 
-block_number_new = w3.eth.block_number
-
 #    function _generateKey(uint256 _reductor) private returns (uint256 ret) {
 #        ret = uint256(keccak256(abi.encodePacked(uint256(blockhash(block.number - _reductor)) + nonce)));
 #        nonce++;
 #    }
 
 def _generateKey(block_number, _reductor, nonce):
-	block = w3.eth.getBlock(block_number - _reductor)
-	return bytes_to_long(Web3.solidityKeccak(['uint256'], [bytes_to_long(block.hash) + nonce]))
+	#block = w3.eth.getBlock(block_number - _reductor)
+	return bytes_to_long(Web3.solidityKeccak(['uint256'], [nonce]))
 
 #  function _magicPassword() private returns (bytes8) {
 #        uint256 _key1 = _generateKey(block.timestamp % 2 + 1);
@@ -75,61 +80,62 @@ def _generateKey(block_number, _reductor, nonce):
 #    }
 
 def _magicPassword(block, passphrase):
-	_key1 = _generateKey(block.number, block.timestamp % 2 + 1, 0)
-	_key2 = _generateKey(block.number, 2, 1) & (2**128-1)
+	nonce = 4
+	_key1 = _generateKey(block.number, block.timestamp % 2 + 1, nonce)
+	_key2 = _generateKey(block.number, 2, nonce+1) & (2**128-1)
 	_secret = (((passphrase ^ _key1) >> 128) ^ _key2) >> 64
 	return (_secret >> 32 | _secret << 16) & (2**64 - 1)
 
-for block_number in range(block_number_new-30, block_number_new+30, 1):
-	block = w3.eth.getBlock(block_number)
-	print(block.timestamp)
-	print(block.number)
+#for block_number in range(block_number_new-30, block_number_new+30, 1):
+block_number = w3.eth.block_number
+block = w3.eth.getBlock(block_number)
+print(block.timestamp)
+print(block.number)
 
-	#passphrase = bytes32(keccak256(abi.encodePacked(uint256(blockhash(block.timestamp)))));
-	passphrase = bytes_to_long(Web3.solidityKeccak(['uint256'], [0]))
+#sleep(256)
 
-	pwd = _magicPassword(block, passphrase)
+#passphrase = bytes32(keccak256(abi.encodePacked(uint256(blockhash(block.timestamp)))));
+passphrase = bytes_to_long(Web3.solidityKeccak(['uint256'], [0]))
 
-	addr = ((0x5A010ce84C7aAe5485e989E5f5E59E6C69540926 & (2**64-1)) << 64) + pwd
-	password = long_to_bytes(addr)
+pwd = _magicPassword(block, passphrase)
 
-	with open('Vault_sol_Vault.abi','r') as f:
-		abi = json.load(f)
+addr = ((int(Address, 16) & (2**64-1)) << 64) + pwd
+password = long_to_bytes(addr)
 
-	try:	
-		contract_instance2 = w3.eth.contract(address=TargetContract, abi=abi)
-		
-		construct_txn = contract_instance2.functions.unlock(password).build_transaction(
-			{
-				'from': account_from['address'],
-				'nonce': w3.eth.get_transaction_count(account_from['address']),
-				'chainId': w3.eth.chain_id,
-				#'value' : 1
-				#"gasPrice": w3.to_wei(50, 'gwei'),
-				#"gas": 21000,
-				#"value": w3.to_wei("0", "ether"),
-			}
-		)
-	except:
-		pass
-	else:
-		tx_create = w3.eth.account.sign_transaction(construct_txn, account_from['private_key'])
-		tx_hash = w3.eth.send_raw_transaction(tx_create.rawTransaction)
-		tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
-		print(f'Tx successful with hash: { tx_receipt.transactionHash.hex() }')
+with open('Vault_sol_Vault.abi','r') as f:
+	abi = json.load(f)
 
-		contract_instance2 = w3.eth.contract(address=TargetContract, abi=abi)
-		construct_txn = contract_instance2.functions.claimContent().build_transaction(
-			{
-				'from': account_from['address'],
-				'nonce': w3.eth.get_transaction_count(account_from['address']),
-				'chainId': w3.eth.chain_id,
-			}
-		)
-		tx_create = w3.eth.account.sign_transaction(construct_txn, account_from['private_key'])
-		tx_hash = w3.eth.send_raw_transaction(tx_create.rawTransaction)
-		tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
-		print(f'Tx successful with hash: { tx_receipt.transactionHash.hex() }')
+contract_instance2 = w3.eth.contract(address=TargetContract, abi=abi)
+
+construct_txn = contract_instance2.functions.unlock(password).build_transaction(
+	{
+		'from': account_from['address'],
+		'nonce': w3.eth.get_transaction_count(account_from['address']),
+		'chainId': w3.eth.chain_id,
+		#'value' : 1
+		#"gasPrice": w3.to_wei(50, 'gwei'),
+		#"gas": 21000,
+		#"value": w3.to_wei("0", "ether"),
+	}
+)
+
+tx_create = w3.eth.account.sign_transaction(construct_txn, account_from['private_key'])
+tx_hash = w3.eth.send_raw_transaction(tx_create.rawTransaction)
+tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
+print(f'Tx successful with hash: { tx_receipt.transactionHash.hex() }')
+
+contract_instance2 = w3.eth.contract(address=TargetContract, abi=abi)
+construct_txn = contract_instance2.functions.claimContent().build_transaction(
+	{
+		'from': account_from['address'],
+		'nonce': w3.eth.get_transaction_count(account_from['address']),
+		'chainId': w3.eth.chain_id,
+	}
+)
+tx_create = w3.eth.account.sign_transaction(construct_txn, account_from['private_key'])
+tx_hash = w3.eth.send_raw_transaction(tx_create.rawTransaction)
+tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
+print(f'Tx successful with hash: { tx_receipt.transactionHash.hex() }')
 
 
 with open('Setup_sol_Setup.abi','r') as f:
