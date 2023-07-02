@@ -5,7 +5,7 @@ import "./Vault.sol";
 
 
 contract Contract{
-        address public YOUR_CHALLENGE_CONTRACT_ADDRESS = address(0x31d449b682Ee3A0D16f18456A9F9EEBF3a78Ce12);
+        address public YOUR_CHALLENGE_CONTRACT_ADDRESS = address(0xc8d36A3b105fB53aBdaa26Df1661264fbAe2B42E);
 
         address public owner;
         bytes32 private passphrase;
@@ -14,8 +14,11 @@ contract Contract{
 
         Vault public creature = Vault(YOUR_CHALLENGE_CONTRACT_ADDRESS);
 
-        function attack2() external {
+	constructor() {
                 owner = address(this);
+	}
+
+        function attack2() external {
                 passphrase = bytes32(keccak256(abi.encodePacked(uint256(blockhash(block.timestamp)))));
 
                 uint128 _secretKey = uint128(bytes16(_magicPassword()) >> 64);

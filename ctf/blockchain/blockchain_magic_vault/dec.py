@@ -4,10 +4,10 @@ from web3.gas_strategies.rpc import rpc_gas_price_strategy
 
 
 x = {
-    "PrivateKey": "0x99558400ac194666dadd51557d76f937776c10d50f3a00e63a4c4718073ddf9d",
-    "Address": "0x31d449b682Ee3A0D16f18456A9F9EEBF3a78Ce12",
-    "TargetAddress": "0xb5Dc77aBd46D2100162b62Bf0D852129D1394276",
-    "setupAddress": "0x14322A4b36643E22A7cD2Ba5F25191413d38fEE3"
+    "PrivateKey": "0xfa3daf3872c4f80dcba08d7528a24f6eb6a00d780fc7f1ebc3cbe0c4e8314ced",
+    "Address": "0xd44C694e6280032dA55cEF6715aA3d89c1AD4836",
+    "TargetAddress": "0xc8d36A3b105fB53aBdaa26Df1661264fbAe2B42E",
+    "setupAddress": "0x439c8a7099bdc7Fd924C9F3eB1915223B4f1A57A"
 }
 
 PrivateKey =    x["PrivateKey"]
@@ -15,10 +15,10 @@ Address =       x["Address"]
 TargetContract = x["TargetAddress"]
 SetupContract =  x["setupAddress"]
 
-Target2Address = "0x31d449b682Ee3A0D16f18456A9F9EEBF3a78Ce12"
-Target2Contract = "0x63E87c1468b1Ed76C9644119e58Cd9d2A72960FD"
+Target2Address = "0xd44C694e6280032dA55cEF6715aA3d89c1AD4836"
+Target2Contract = "0x62FbabBC31bA7103ae0Ee3276eA383d3818b4CC2"
 
-url = 'http://159.65.52.96:31940/rpc'
+url = 'http://46.101.78.65:31716/rpc'
 
 w3 = Web3(Web3.HTTPProvider(url))
 block_number = w3.eth.block_number
@@ -93,7 +93,7 @@ forge create src/Contract.sol:Contract --rpc-url http://209.97.176.174:31323/rpc
 [⠒] Solc 0.8.20 finished in 40.18ms
 Compiler run successful!
 Deployer: 0x31d449b682Ee3A0D16f18456A9F9EEBF3a78Ce12
-Deployed to: 0x63E87c1468b1Ed76C9644119e58Cd9d2A72960FD
+Deployed to: 0x62FbabBC31bA7103ae0Ee3276eA383d3818b4CC2
 Transaction hash: 0xfcbc1aca59dc9b42ce5c917c38d28b7ba60488ab115b25aa9c425ac6513709e0
 
 
