@@ -5,10 +5,10 @@ from Crypto.Util.number import bytes_to_long, long_to_bytes
 from pwn import *
 
 x = {
-    "PrivateKey": "0xbed49dfb41f80d7e18ab97b7e21fdb84b5301077c20889715694e08ac37657d8",
-    "Address": "0x0f7B6c74a859BBbDBcaCf8C3458E890d715e9dA1",
-    "TargetAddress": "0xbA74012A417Fc99CD0Ae662ca951EF7773Eea774",
-    "setupAddress": "0x1f62246F40cBFfC38Cdbee477EFbD95140629B65"
+    "PrivateKey": "0x99558400ac194666dadd51557d76f937776c10d50f3a00e63a4c4718073ddf9d",
+    "Address": "0x31d449b682Ee3A0D16f18456A9F9EEBF3a78Ce12",
+    "TargetAddress": "0xb5Dc77aBd46D2100162b62Bf0D852129D1394276",
+    "setupAddress": "0x14322A4b36643E22A7cD2Ba5F25191413d38fEE3"
 }
 
 PrivateKey =    x["PrivateKey"]
@@ -16,7 +16,7 @@ Address =       x["Address"]
 TargetContract = x["TargetAddress"]
 SetupContract =  x["setupAddress"]
 
-url = 'http://46.101.78.65:31809/rpc'
+url = 'http://159.65.52.96:31940/rpc'
 
 w3 = Web3(Web3.HTTPProvider(url))
 
@@ -80,11 +80,11 @@ def _generateKey(block_number, _reductor, nonce):
 #    }
 
 def _magicPassword(block, passphrase):
-	nonce = 4
+	nonce = 0
 	_key1 = _generateKey(block.number, block.timestamp % 2 + 1, nonce)
 	_key2 = _generateKey(block.number, 2, nonce+1) & (2**128-1)
-	_secret = (((passphrase ^ _key1) >> 128) ^ _key2) >> 64
-	return (_secret >> 32 | _secret << 16) & (2**64 - 1)
+	_secret = bytes_to_long(long_to_bytes(bytes_to_long(long_to_bytes(passphrase ^ _key1).ljust(32,'\x00')[:16]) ^ _key2).ljust(16,'\x00')[:8])
+	return bytes_to_long(long_to_bytes(_secret >> 32 | _secret << 16)[:8])
 
 #for block_number in range(block_number_new-30, block_number_new+30, 1):
 block_number = w3.eth.block_number
@@ -95,12 +95,12 @@ print(block.number)
 #sleep(256)
 
 #passphrase = bytes32(keccak256(abi.encodePacked(uint256(blockhash(block.timestamp)))));
-passphrase = bytes_to_long(Web3.solidityKeccak(['uint256'], [0]))
+passphrase = bytes_to_long(Web3.solidityKeccak(['uint256'], [0]).ljust(32,'\x00'))
 
 pwd = _magicPassword(block, passphrase)
 
-addr = ((int(Address, 16) & (2**64-1)) << 64) + pwd
-password = long_to_bytes(addr)
+addr = long_to_bytes(int(Address, 16) & (2**64-1)).ljust(8,'\x00')
+password = addr + long_to_bytes.ljust(8,'\x00')
 
 with open('Vault_sol_Vault.abi','r') as f:
 	abi = json.load(f)
