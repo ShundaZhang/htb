@@ -83,7 +83,7 @@ def _magicPassword(block, passphrase):
 	nonce = 0
 	_key1 = _generateKey(block.number, block.timestamp % 2 + 1, nonce)
 	_key2 = _generateKey(block.number, 2, nonce+1) & (2**128-1)
-	_secret = bytes_to_long(long_to_bytes(bytes_to_long(long_to_bytes(passphrase ^ _key1).ljust(32,'\x00')[:16]) ^ _key2).ljust(16,'\x00')[:8])
+	_secret = bytes_to_long(long_to_bytes(bytes_to_long(long_to_bytes(passphrase ^ _key1).ljust(32, b'\x00')[:16]) ^ _key2).ljust(16, b'\x00')[:8])
 	return bytes_to_long(long_to_bytes(_secret >> 32 | _secret << 16)[:8])
 
 #for block_number in range(block_number_new-30, block_number_new+30, 1):
@@ -95,12 +95,12 @@ print(block.number)
 #sleep(256)
 
 #passphrase = bytes32(keccak256(abi.encodePacked(uint256(blockhash(block.timestamp)))));
-passphrase = bytes_to_long(Web3.solidityKeccak(['uint256'], [0]).ljust(32,'\x00'))
+passphrase = bytes_to_long(Web3.solidityKeccak(['uint256'], [0]).ljust(32, b'\x00'))
 
 pwd = _magicPassword(block, passphrase)
 
-addr = long_to_bytes(int(Address, 16) & (2**64-1)).ljust(8,'\x00')
-password = addr + long_to_bytes.ljust(8,'\x00')
+addr = long_to_bytes(int(Address, 16) & (2**64-1)).ljust(8, b'\x00')
+password = addr + long_to_bytes(pwd).ljust(8, b'\x00')
 
 with open('Vault_sol_Vault.abi','r') as f:
 	abi = json.load(f)
