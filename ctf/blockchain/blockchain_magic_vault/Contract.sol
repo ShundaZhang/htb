@@ -22,8 +22,7 @@ contract Contract{
                 passphrase = bytes32(keccak256(abi.encodePacked(uint256(blockhash(block.timestamp)))));
 
                 uint128 _secretKey = uint128(bytes16(_magicPassword()) >> 64);
-
-                _password = bytes16( (uint64(uint160(owner)) << 64) | _secretKey );
+                _password = bytes16( (uint128(uint64(uint160(owner))) << 64) | _secretKey );
 
                 creature.unlock(_password);
                 creature.claimContent();

@@ -16,7 +16,7 @@ TargetContract = x["TargetAddress"]
 SetupContract =  x["setupAddress"]
 
 Target2Address = "0xd44C694e6280032dA55cEF6715aA3d89c1AD4836"
-Target2Contract = "0x62FbabBC31bA7103ae0Ee3276eA383d3818b4CC2"
+Target2Contract = "0x28aD9639a0a1C0092746232a99bD23421ef3DBE1"
 
 url = 'http://46.101.78.65:31716/rpc'
 
@@ -92,8 +92,8 @@ forge create src/Contract.sol:Contract --rpc-url http://209.97.176.174:31323/rpc
 [⠔] Compiling 1 files with 0.8.20
 [⠒] Solc 0.8.20 finished in 40.18ms
 Compiler run successful!
-Deployer: 0x31d449b682Ee3A0D16f18456A9F9EEBF3a78Ce12
-Deployed to: 0x62FbabBC31bA7103ae0Ee3276eA383d3818b4CC2
+Deployer: 0xd44C694e6280032dA55cEF6715aA3d89c1AD4836
+Deployed to: 0x28aD9639a0a1C0092746232a99bD23421ef3DBE1
 Transaction hash: 0xfcbc1aca59dc9b42ce5c917c38d28b7ba60488ab115b25aa9c425ac6513709e0
 
 
