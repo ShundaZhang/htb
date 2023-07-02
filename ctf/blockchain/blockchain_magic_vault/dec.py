@@ -16,7 +16,7 @@ TargetContract = x["TargetAddress"]
 SetupContract =  x["setupAddress"]
 
 Target2Address = "0xd44C694e6280032dA55cEF6715aA3d89c1AD4836"
-Target2Contract = "0x28aD9639a0a1C0092746232a99bD23421ef3DBE1"
+Target2Contract = "0x855ad55752bCE030B8D8875d671494eE3F51B1e7"
 
 url = 'http://46.101.78.65:31716/rpc'
 
@@ -80,7 +80,7 @@ number = contract_instance.functions.isSolved().call()
 
 print(f'The current number stored is: { number } ')
 
-
+#HTB{3ve2yth1n9_15_pu811c_1n_7h3_810ckch41n}
 '''
 https://ctftime.org/writeup/31583
 https://0xsage.medium.com/ethernaut-lvl-4-walkthrough-how-to-abuse-tx-origin-msg-sender-ef37d6751c8
@@ -93,7 +93,7 @@ forge create src/Contract.sol:Contract --rpc-url http://209.97.176.174:31323/rpc
 [⠒] Solc 0.8.20 finished in 40.18ms
 Compiler run successful!
 Deployer: 0xd44C694e6280032dA55cEF6715aA3d89c1AD4836
-Deployed to: 0x28aD9639a0a1C0092746232a99bD23421ef3DBE1
+Deployed to: 0x855ad55752bCE030B8D8875d671494eE3F51B1e7
 Transaction hash: 0xfcbc1aca59dc9b42ce5c917c38d28b7ba60488ab115b25aa9c425ac6513709e0
 
 

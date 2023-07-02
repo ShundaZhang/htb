@@ -15,7 +15,8 @@ contract Contract{
         Vault public creature = Vault(YOUR_CHALLENGE_CONTRACT_ADDRESS);
 
 	constructor() {
-                owner = address(this);
+                //owner = address(msg.sender);
+		owner = address(0x439c8a7099bdc7Fd924C9F3eB1915223B4f1A57A);  //Setup
 	}
 
         function attack2() external {
