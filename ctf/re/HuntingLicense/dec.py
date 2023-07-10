@@ -1,0 +1,11 @@
+from pwn import *
+
+print "PasswordNumeroUno"
+
+t = [0x30,0x77,0x54,0x64,0x72,0x30,0x77,0x73,0x73,0x34,0x50]
+rt = t[::-1]
+
+print ''.join([chr(i) for i in rt])
+
+print xor('477b7a6177527d77557a7d727f32323213'.decode('hex'), 0x13)
+
