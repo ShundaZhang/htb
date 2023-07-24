@@ -4,10 +4,10 @@ from web3.gas_strategies.rpc import rpc_gas_price_strategy
 from solcx import compile_source, install_solc, compile_files
 
 x = {
-    "PrivateKey": "0xd784c3254bb14442f7048fdca79635a9ce22aa319c0f21f2c25d6d75e3cb5008",
-    "Address": "0x6b2D5Ccae6393C0a2902f47d71CDBD7ccBC2E8AB",
-    "TargetAddress": "0x78a595485a155f595b22f727cC657cb90279698a",
-    "setupAddress": "0x0B73F6DeF9EC18495Af5A51f676aab70D23BaD11"
+    "PrivateKey": "0x83ffaa8bbe7c0b30f83264d84094097700ab9267ad12f4dfd30881da825fd43c",
+    "Address": "0x0C54eD36684B7520945d64f7F63336f96fa1eCc6",
+    "TargetAddress": "0x91e13CcFF3cdC5B2Ae9a86aDC5d5D6c8609c260f",
+    "setupAddress": "0x7a5aB50d83b0C0D995fa383FC1d001aF90824c92"
 }
 
 PrivateKey =    x["PrivateKey"]
@@ -15,9 +15,13 @@ Address =       x["Address"]
 TargetContract = x["TargetAddress"]
 SetupContract =  x["setupAddress"]
 
-url = 'http://143.110.169.131:32371/rpc'
+url = 'http://144.126.206.249:31429/rpc'
 
 w3 = Web3(Web3.HTTPProvider(url))
+chain_id = w3.eth.chain_id
+print(chain_id)
+account = w3.eth.accounts
+print(account)
 block_number = w3.eth.block_number
 print(block_number)
 
@@ -30,7 +34,8 @@ install_solc("0.8.13")
 compiled = compile_files(["Rivals.sol"], output_values=["abi"], solc_version="0.8.13")
 abi = compiled['Rivals.sol:Rivals']['abi']
 
-key = bytes.fromhex(PrivateKey[2:])
+#key = bytes.fromhex(PrivateKey[2:])
+key = b'\x00'*32
 
 contract_instance2 = w3.eth.contract(address=TargetContract, abi=abi)
 construct_txn = contract_instance2.functions.talk(key).transact()
