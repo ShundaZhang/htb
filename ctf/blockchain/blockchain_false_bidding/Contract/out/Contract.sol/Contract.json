@@ -1,0 +1,592 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "YOUR_CHALLENGE_CONTRACT_ADDRESS",
+      "outputs": [
+        {
+          "internalType": "address payable",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "attack2",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "creature",
+      "outputs": [
+        {
+          "internalType": "contract AuctionHouse",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x6080604052600080546001600160a01b031990811673cc9796ac26ee093b3a29d44b69b68c35836c886e1791829055600180549091166001600160a01b039290921691909117905534801561005357600080fd5b5061014a806100636000396000f3fe6080604052600436106100345760003560e01c80635fb95d1814610039578063cff5c44f1461006a578063dac13f6d14610089575b600080fd5b34801561004557600080fd5b5061004e61009e565b604080516001600160a01b039092168252519081900360200190f35b6100876004803603602081101561008057600080fd5b50356100ad565b005b34801561009557600080fd5b5061004e610105565b6000546001600160a01b031681565b600080546040516001600160a01b039091169183919081818185875af1925050503d80600081146100fa576040519150601f19603f3d011682016040523d82523d6000602084013e6100ff565b606091505b50505050565b6001546001600160a01b03168156fea2646970667358221220f31de315d197391fe713ac20dd31196372fb34d61fcb5904c9776a66c9c2158e64736f6c63430007060033",
+    "sourceMap": "95:380:1:-:0;;;122:117;;;-1:-1:-1;;;;;;122:117:1;;;195:42;122:117;;;;;;242:76;;;;;-1:-1:-1;;;;;286:31:1;;;;242:76;;;;;;95:380;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x6080604052600436106100345760003560e01c80635fb95d1814610039578063cff5c44f1461006a578063dac13f6d14610089575b600080fd5b34801561004557600080fd5b5061004e61009e565b604080516001600160a01b039092168252519081900360200190f35b6100876004803603602081101561008057600080fd5b50356100ad565b005b34801561009557600080fd5b5061004e610105565b6000546001600160a01b031681565b600080546040516001600160a01b039091169183919081818185875af1925050503d80600081146100fa576040519150601f19603f3d011682016040523d82523d6000602084013e6100ff565b606091505b50505050565b6001546001600160a01b03168156fea2646970667358221220f31de315d197391fe713ac20dd31196372fb34d61fcb5904c9776a66c9c2158e64736f6c63430007060033",
+    "sourceMap": "95:380:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;122:117;;;;;;;;;;;;;:::i;:::-;;;;-1:-1:-1;;;;;122:117:1;;;;;;;;;;;;;;322:150;;;;;;;;;;;;;;;;-1:-1:-1;322:150:1;;:::i;:::-;;242:76;;;;;;;;;;;;;:::i;122:117::-;;;-1:-1:-1;;;;;122:117:1;;:::o;322:150::-;406:31;;;:55;;-1:-1:-1;;;;;406:31:1;;;;450:6;;406:55;;:31;:55;450:6;406:31;:55;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;322:150;:::o;242:76::-;;;-1:-1:-1;;;;;242:76:1;;:::o",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "YOUR_CHALLENGE_CONTRACT_ADDRESS()": "5fb95d18",
+    "attack2(uint256)": "cff5c44f",
+    "creature()": "dac13f6d"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"YOUR_CHALLENGE_CONTRACT_ADDRESS\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"attack2\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"creature\",\"outputs\":[{\"internalType\":\"contract AuctionHouse\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/Contract.sol\":\"Contract\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"src/AuctionHouse.sol\":{\"keccak256\":\"0x869dd023a7a1d373de3d3da1e2334072d8bf1d8219ca9b6f144094a84353fba9\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://e075ce0fac061532a25e0d3f34b14883525f37d41175da3c75bcee67221f6d99\",\"dweb:/ipfs/QmRARdEivdhqw61JDBT6FiBoZNcvSA9ZjaNz5ubkgmnD9M\"]},\"src/Contract.sol\":{\"keccak256\":\"0x84283766c4f97713049dbc9e4e8fe36ffd80e87171b9e2c298b9cafb68dea27b\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://a07066b47787300207de79f5e499a71e3064efd159999a6e97387734d48286f9\",\"dweb:/ipfs/QmfTwL9F3k4F1DMv3epzmcxNCrDrUvoaSvDpS9ZMr4zJ47\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.7.6+commit.7338295f"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "YOUR_CHALLENGE_CONTRACT_ADDRESS",
+          "outputs": [
+            {
+              "internalType": "address payable",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "payable",
+          "type": "function",
+          "name": "attack2"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "creature",
+          "outputs": [
+            {
+              "internalType": "contract AuctionHouse",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        ":ds-test/=lib/forge-std/lib/ds-test/src/",
+        ":forge-std/=lib/forge-std/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/Contract.sol": "Contract"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/AuctionHouse.sol": {
+        "keccak256": "0x869dd023a7a1d373de3d3da1e2334072d8bf1d8219ca9b6f144094a84353fba9",
+        "urls": [
+          "bzz-raw://e075ce0fac061532a25e0d3f34b14883525f37d41175da3c75bcee67221f6d99",
+          "dweb:/ipfs/QmRARdEivdhqw61JDBT6FiBoZNcvSA9ZjaNz5ubkgmnD9M"
+        ],
+        "license": "UNLICENSED"
+      },
+      "src/Contract.sol": {
+        "keccak256": "0x84283766c4f97713049dbc9e4e8fe36ffd80e87171b9e2c298b9cafb68dea27b",
+        "urls": [
+          "bzz-raw://a07066b47787300207de79f5e499a71e3064efd159999a6e97387734d48286f9",
+          "dweb:/ipfs/QmfTwL9F3k4F1DMv3epzmcxNCrDrUvoaSvDpS9ZMr4zJ47"
+        ],
+        "license": "UNLICENSED"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/Contract.sol",
+    "id": 313,
+    "exportedSymbols": {
+      "AuctionHouse": [
+        280
+      ],
+      "Contract": [
+        312
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "39:438:1",
+    "nodes": [
+      {
+        "id": 282,
+        "nodeType": "PragmaDirective",
+        "src": "39:23:1",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.7",
+          ".0"
+        ]
+      },
+      {
+        "id": 283,
+        "nodeType": "ImportDirective",
+        "src": "64:28:1",
+        "nodes": [],
+        "absolutePath": "src/AuctionHouse.sol",
+        "file": "./AuctionHouse.sol",
+        "scope": 313,
+        "sourceUnit": 281,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 312,
+        "nodeType": "ContractDefinition",
+        "src": "95:380:1",
+        "nodes": [
+          {
+            "id": 292,
+            "nodeType": "VariableDeclaration",
+            "src": "122:117:1",
+            "nodes": [],
+            "constant": false,
+            "functionSelector": "5fb95d18",
+            "mutability": "mutable",
+            "name": "YOUR_CHALLENGE_CONTRACT_ADDRESS",
+            "scope": 312,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address_payable",
+              "typeString": "address payable"
+            },
+            "typeName": {
+              "id": 284,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "122:15:1",
+              "stateMutability": "payable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address_payable",
+                "typeString": "address payable"
+              }
+            },
+            "value": {
+              "arguments": [
+                {
+                  "arguments": [
+                    {
+                      "hexValue": "307843433937393641633236454530393342334132396434344236396236384333353833364338383645",
+                      "id": 289,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "195:42:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      },
+                      "value": "0xCC9796Ac26EE093B3A29d44B69b68C35836C886E"
+                    }
+                  ],
+                  "expression": {
+                    "argumentTypes": [
+                      {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    ],
+                    "id": 288,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "nodeType": "ElementaryTypeNameExpression",
+                    "src": "187:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_type$_t_address_$",
+                      "typeString": "type(address)"
+                    },
+                    "typeName": {
+                      "id": 287,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "187:7:1",
+                      "typeDescriptions": {}
+                    }
+                  },
+                  "id": 290,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "typeConversion",
+                  "lValueRequested": false,
+                  "names": [],
+                  "nodeType": "FunctionCall",
+                  "src": "187:51:1",
+                  "tryCall": false,
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                ],
+                "id": 286,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "lValueRequested": false,
+                "nodeType": "ElementaryTypeNameExpression",
+                "src": "179:8:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_type$_t_address_payable_$",
+                  "typeString": "type(address payable)"
+                },
+                "typeName": {
+                  "id": 285,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "179:8:1",
+                  "stateMutability": "payable",
+                  "typeDescriptions": {}
+                }
+              },
+              "id": 291,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "typeConversion",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "179:60:1",
+              "tryCall": false,
+              "typeDescriptions": {
+                "typeIdentifier": "t_address_payable",
+                "typeString": "address payable"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 297,
+            "nodeType": "VariableDeclaration",
+            "src": "242:76:1",
+            "nodes": [],
+            "constant": false,
+            "functionSelector": "dac13f6d",
+            "mutability": "mutable",
+            "name": "creature",
+            "scope": 312,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_AuctionHouse_$280",
+              "typeString": "contract AuctionHouse"
+            },
+            "typeName": {
+              "id": 293,
+              "name": "AuctionHouse",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 280,
+              "src": "242:12:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_AuctionHouse_$280",
+                "typeString": "contract AuctionHouse"
+              }
+            },
+            "value": {
+              "arguments": [
+                {
+                  "id": 295,
+                  "name": "YOUR_CHALLENGE_CONTRACT_ADDRESS",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 292,
+                  "src": "286:31:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                ],
+                "id": 294,
+                "name": "AuctionHouse",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 280,
+                "src": "273:12:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_type$_t_contract$_AuctionHouse_$280_$",
+                  "typeString": "type(contract AuctionHouse)"
+                }
+              },
+              "id": 296,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": false,
+              "kind": "typeConversion",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "273:45:1",
+              "tryCall": false,
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_AuctionHouse_$280",
+                "typeString": "contract AuctionHouse"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 311,
+            "nodeType": "FunctionDefinition",
+            "src": "322:150:1",
+            "nodes": [],
+            "body": {
+              "id": 310,
+              "nodeType": "Block",
+              "src": "372:100:1",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "hexValue": "",
+                        "id": 307,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "458:2:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
+                          "typeString": "literal_string \"\""
+                        },
+                        "value": ""
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
+                          "typeString": "literal_string \"\""
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
+                            "typeString": "literal_string \"\""
+                          }
+                        ],
+                        "expression": {
+                          "id": 302,
+                          "name": "YOUR_CHALLENGE_CONTRACT_ADDRESS",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 292,
+                          "src": "406:31:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "id": 304,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "call",
+                        "nodeType": "MemberAccess",
+                        "src": "406:36:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_barecall_payable$_t_bytes_memory_ptr_$returns$_t_bool_$_t_bytes_memory_ptr_$",
+                          "typeString": "function (bytes memory) payable returns (bool,bytes memory)"
+                        }
+                      },
+                      "id": 306,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "names": [
+                        "value"
+                      ],
+                      "nodeType": "FunctionCallOptions",
+                      "options": [
+                        {
+                          "id": 305,
+                          "name": "amount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 299,
+                          "src": "450:6:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "src": "406:51:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_barecall_payable$_t_bytes_memory_ptr_$returns$_t_bool_$_t_bytes_memory_ptr_$value",
+                        "typeString": "function (bytes memory) payable returns (bool,bytes memory)"
+                      }
+                    },
+                    "id": 308,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "406:55:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_bool_$_t_bytes_memory_ptr_$",
+                      "typeString": "tuple(bool,bytes memory)"
+                    }
+                  },
+                  "id": 309,
+                  "nodeType": "ExpressionStatement",
+                  "src": "406:55:1"
+                }
+              ]
+            },
+            "functionSelector": "cff5c44f",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "attack2",
+            "parameters": {
+              "id": 300,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 299,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 311,
+                  "src": "339:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 298,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "339:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "338:16:1"
+            },
+            "returnParameters": {
+              "id": 301,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "372:0:1"
+            },
+            "scope": 312,
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          312
+        ],
+        "name": "Contract",
+        "scope": 313
+      }
+    ],
+    "license": "UNLICENSED"
+  },
+  "id": 1
+}
