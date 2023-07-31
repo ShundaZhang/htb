@@ -4,10 +4,10 @@ from web3.gas_strategies.rpc import rpc_gas_price_strategy
 from solcx import compile_source, install_solc, compile_files
 
 x = {
-    "PrivateKey": "0xeb6ad9a126323f3f2f0e5949cb11903758426eabe97c334a3c4509bf93c8aa6a",
-    "Address": "0x1d90dafF0cBC880dfb579A985b17a17B47809414",
-    "TargetAddress": "0x8ee01E91eA96Ca640A68410b315700F1fB0cC534",
-    "setupAddress": "0xA7339751A2A26050941b8478ec90a39dcabE6Eb9"
+    "PrivateKey": "0x9b8c0603e1fb57ef6ddf46b85c9b6f95b534805003783ce049ce828cdd7f67df",
+    "Address": "0x9DAB843384Ac6C64e2e0CFcdf6F17F795fcb000D",
+    "TargetAddress": "0x669E601b9b2072a76452497883dfA5a48d70BDBf",
+    "setupAddress": "0x0E13111ac5aF61564Ac5Cf822608956a240AD00E"
 }
 
 PrivateKey =    x["PrivateKey"]
@@ -17,7 +17,7 @@ SetupContract =  x["setupAddress"]
 
 Target2Contract = "0xB5217F29141bd7527432eF291fF12A9838760332"
 
-url = 'http://206.189.120.31:32097/rpc'
+url = 'http://167.172.62.51:30595/rpc'
 
 YEAR = 31556926
 
