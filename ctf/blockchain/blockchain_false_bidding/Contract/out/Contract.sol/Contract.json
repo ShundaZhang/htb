@@ -32,12 +32,12 @@
     }
   ],
   "bytecode": {
-    "object": "0x6080604052600080546001600160a01b031990811673cc9226ab913a9ede76cb3b828c97169121e78aeb1791829055600180549091166001600160a01b039290921691909117905534801561005357600080fd5b5061011b806100636000396000f3fe60806040526004361060295760003560e01c80635fb95d18146087578063dac13f6d1460b5576082565b36608257600080546040516001600160a01b039091169134919081818185875af1925050503d80600081146078576040519150601f19603f3d011682016040523d82523d6000602084013e607d565b606091505b505050005b600080fd5b348015609257600080fd5b50609960c7565b604080516001600160a01b039092168252519081900360200190f35b34801560c057600080fd5b50609960d6565b6000546001600160a01b031681565b6001546001600160a01b03168156fea26469706673582212209f4fe322ee68030b290344f06da78e955023761e31c801c194b72679f7aa758364736f6c63430007060033",
+    "object": "0x6080604052600080546001600160a01b0319908116735648359ed2b9bfffdf96e484adfc77cc5f3273e81791829055600180549091166001600160a01b039290921691909117905534801561005357600080fd5b5061011b806100636000396000f3fe60806040526004361060295760003560e01c80635fb95d18146087578063dac13f6d1460b5576082565b36608257600080546040516001600160a01b039091169134919081818185875af1925050503d80600081146078576040519150601f19603f3d011682016040523d82523d6000602084013e607d565b606091505b505050005b600080fd5b348015609257600080fd5b50609960c7565b604080516001600160a01b039092168252519081900360200190f35b34801560c057600080fd5b50609960d6565b6000546001600160a01b031681565b6001546001600160a01b03168156fea26469706673582212208346f434dbfb7e4bdca5ac6247ee8ec5bcc18f788e9b172a38eac4314450e10364736f6c63430007060033",
     "sourceMap": "95:415:1:-:0;;;122:117;;;-1:-1:-1;;;;;;122:117:1;;;195:42;122:117;;;;;;242:76;;;;;-1:-1:-1;;;;;286:31:1;;;;242:76;;;;;;95:415;;;;;;;;;;;;;;;;",
     "linkReferences": {}
   },
   "deployedBytecode": {
-    "object": "0x60806040526004361060295760003560e01c80635fb95d18146087578063dac13f6d1460b5576082565b36608257600080546040516001600160a01b039091169134919081818185875af1925050503d80600081146078576040519150601f19603f3d011682016040523d82523d6000602084013e607d565b606091505b505050005b600080fd5b348015609257600080fd5b50609960c7565b604080516001600160a01b039092168252519081900360200190f35b34801560c057600080fd5b50609960d6565b6000546001600160a01b031681565b6001546001600160a01b03168156fea26469706673582212209f4fe322ee68030b290344f06da78e955023761e31c801c194b72679f7aa758364736f6c63430007060033",
+    "object": "0x60806040526004361060295760003560e01c80635fb95d18146087578063dac13f6d1460b5576082565b36608257600080546040516001600160a01b039091169134919081818185875af1925050503d80600081146078576040519150601f19603f3d011682016040523d82523d6000602084013e607d565b606091505b505050005b600080fd5b348015609257600080fd5b50609960c7565b604080516001600160a01b039092168252519081900360200190f35b34801560c057600080fd5b50609960d6565b6000546001600160a01b031681565b6001546001600160a01b03168156fea26469706673582212208346f434dbfb7e4bdca5ac6247ee8ec5bcc18f788e9b172a38eac4314450e10364736f6c63430007060033",
     "sourceMap": "95:415:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;438:31;;;:58;;-1:-1:-1;;;;;438:31:1;;;;482:9;;438:58;;:31;:58;482:9;438:31;:58;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;95:415;;;;;122:117;;;;;;;;;;;;;:::i;:::-;;;;-1:-1:-1;;;;;122:117:1;;;;;;;;;;;;;;242:76;;;;;;;;;;;;;:::i;122:117::-;;;-1:-1:-1;;;;;122:117:1;;:::o;242:76::-;;;-1:-1:-1;;;;;242:76:1;;:::o",
     "linkReferences": {}
   },
@@ -45,7 +45,7 @@
     "YOUR_CHALLENGE_CONTRACT_ADDRESS()": "5fb95d18",
     "creature()": "dac13f6d"
   },
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"YOUR_CHALLENGE_CONTRACT_ADDRESS\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"creature\",\"outputs\":[{\"internalType\":\"contract AuctionHouse\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/Contract.sol\":\"Contract\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"src/AuctionHouse.sol\":{\"keccak256\":\"0x869dd023a7a1d373de3d3da1e2334072d8bf1d8219ca9b6f144094a84353fba9\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://e075ce0fac061532a25e0d3f34b14883525f37d41175da3c75bcee67221f6d99\",\"dweb:/ipfs/QmRARdEivdhqw61JDBT6FiBoZNcvSA9ZjaNz5ubkgmnD9M\"]},\"src/Contract.sol\":{\"keccak256\":\"0x7ef25e3bf6edec4cd185dfb67d74305459a10e2d294be51882efbd8ba5e0920f\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://91a73874b760e7e8a99253ea8b32d4535614b858dc39f0a2c98042c88358bb31\",\"dweb:/ipfs/Qmb6gqvHGHpdooZYEBPp5uedivqz93efjd737Luewd1Tdy\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"YOUR_CHALLENGE_CONTRACT_ADDRESS\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"creature\",\"outputs\":[{\"internalType\":\"contract AuctionHouse\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/Contract.sol\":\"Contract\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"src/AuctionHouse.sol\":{\"keccak256\":\"0xfee806a02344cce5c821a0bf24ea8424fbf76deae90825b04a0d72a7b4d97374\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://68bd87b40133dced0e84854f6214f3f5f35c1558f12fc46aadd56f3cf63af374\",\"dweb:/ipfs/QmNWAqzP97WEvm6LHz4BMBescf8L1bJzEcgKK4B77iG6hp\"]},\"src/Contract.sol\":{\"keccak256\":\"0x2dbc5ee2328e717cfc60bd2e52a6bfc51f5cfb186f891b24e5a60439a98c9977\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://bfb78b13fdbc3db330de680e520edeb93586ab9d77d4c6680f971fa53f7f1ed7\",\"dweb:/ipfs/QmReKeuWSjiTrgMfDf29KZ1XEkxJ9TFxpjsDHasXGk6LXC\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.7.6+commit.7338295f"
@@ -115,18 +115,18 @@
     },
     "sources": {
       "src/AuctionHouse.sol": {
-        "keccak256": "0x869dd023a7a1d373de3d3da1e2334072d8bf1d8219ca9b6f144094a84353fba9",
+        "keccak256": "0xfee806a02344cce5c821a0bf24ea8424fbf76deae90825b04a0d72a7b4d97374",
         "urls": [
-          "bzz-raw://e075ce0fac061532a25e0d3f34b14883525f37d41175da3c75bcee67221f6d99",
-          "dweb:/ipfs/QmRARdEivdhqw61JDBT6FiBoZNcvSA9ZjaNz5ubkgmnD9M"
+          "bzz-raw://68bd87b40133dced0e84854f6214f3f5f35c1558f12fc46aadd56f3cf63af374",
+          "dweb:/ipfs/QmNWAqzP97WEvm6LHz4BMBescf8L1bJzEcgKK4B77iG6hp"
         ],
         "license": "UNLICENSED"
       },
       "src/Contract.sol": {
-        "keccak256": "0x7ef25e3bf6edec4cd185dfb67d74305459a10e2d294be51882efbd8ba5e0920f",
+        "keccak256": "0x2dbc5ee2328e717cfc60bd2e52a6bfc51f5cfb186f891b24e5a60439a98c9977",
         "urls": [
-          "bzz-raw://91a73874b760e7e8a99253ea8b32d4535614b858dc39f0a2c98042c88358bb31",
-          "dweb:/ipfs/Qmb6gqvHGHpdooZYEBPp5uedivqz93efjd737Luewd1Tdy"
+          "bzz-raw://bfb78b13fdbc3db330de680e520edeb93586ab9d77d4c6680f971fa53f7f1ed7",
+          "dweb:/ipfs/QmReKeuWSjiTrgMfDf29KZ1XEkxJ9TFxpjsDHasXGk6LXC"
         ],
         "license": "UNLICENSED"
       }
@@ -208,7 +208,7 @@
                 {
                   "arguments": [
                     {
-                      "hexValue": "307843633932323641623931334139656465373643423342383238633937313639313231653738614562",
+                      "hexValue": "307835363438333539654432423942466666646639366534383461646663373743633566333237334538",
                       "id": 289,
                       "isConstant": false,
                       "isLValue": false,
@@ -221,7 +221,7 @@
                         "typeIdentifier": "t_address_payable",
                         "typeString": "address payable"
                       },
-                      "value": "0xCc9226Ab913A9ede76CB3B828c97169121e78aEb"
+                      "value": "0x5648359eD2B9BFffdf96e484adfc77Cc5f3273E8"
                     }
                   ],
                   "expression": {

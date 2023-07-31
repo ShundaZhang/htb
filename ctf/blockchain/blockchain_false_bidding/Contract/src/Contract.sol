@@ -5,7 +5,7 @@ import "./AuctionHouse.sol";
 
 
 contract Contract{
-        address payable public YOUR_CHALLENGE_CONTRACT_ADDRESS = payable(address(0xCc9226Ab913A9ede76CB3B828c97169121e78aEb));
+        address payable public YOUR_CHALLENGE_CONTRACT_ADDRESS = payable(address(0x5648359eD2B9BFffdf96e484adfc77Cc5f3273E8));
 	AuctionHouse public creature = AuctionHouse(YOUR_CHALLENGE_CONTRACT_ADDRESS);
 
 	receive() external payable {

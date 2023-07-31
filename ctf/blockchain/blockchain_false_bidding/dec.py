@@ -4,10 +4,10 @@ from web3.gas_strategies.rpc import rpc_gas_price_strategy
 from solcx import compile_source, install_solc, compile_files
 
 x = {
-    "PrivateKey": "0x9773a58df93ea20773af4e992075672fb50680fdf42cde3df38067eeb7e0260a",
-    "Address": "0x25202da1b2c4430EC558Fb5CB4a6373Ec1E8ca14",
-    "TargetAddress": "0xCc9226Ab913A9ede76CB3B828c97169121e78aEb",
-    "setupAddress": "0x28541E7c29299F52e41a7A255e7485B95f67E523"
+    "PrivateKey": "0xe18ab404adc897a79ce1737780753f3fa94ff93dcfe567ad39df2a1dec544cca",
+    "Address": "0x7158F7d140aB76B9F3eEAbC6f76Bb09430BDE334",
+    "TargetAddress": "0x5648359eD2B9BFffdf96e484adfc77Cc5f3273E8",
+    "setupAddress": "0xc3d11B354464FD2E69B7457114C1C261ec0A1c2E"
 }
 
 PrivateKey =    x["PrivateKey"]
@@ -15,7 +15,7 @@ Address =       x["Address"]
 TargetContract = x["TargetAddress"]
 SetupContract =  x["setupAddress"]
 
-Target2Contract = "0x35506d0131E4Df20d18AD2dc7CFB29f31BE0a3B9"
+Target2Contract = "0x430D6C8F5A8DE97ecF2AB61C9E07ab7d01A7CF23"
 
 url = 'http://167.172.62.51:30058/rpc'
 
@@ -65,7 +65,7 @@ for i in range(index//2 + 1):
 	print(f'value = {value}')
 	print(contract_instance.functions.topBidder().call())
 	print(contract_instance.functions.timeout().call())
-	print(contract_instance.functions.keyOwner().call())
+	#print(contract_instance.functions.keyOwner().call())
 
 	value = values[ii]
 	ii += 1
@@ -76,7 +76,7 @@ for i in range(index//2 + 1):
 	print(f'value = {value}')
 	print(contract_instance.functions.topBidder().call())
 	print(contract_instance.functions.timeout().call())
-	print(contract_instance.functions.keyOwner().call())
+	#print(contract_instance.functions.keyOwner().call())
 
 contract_instance.functions.claimPrize().call()
 
