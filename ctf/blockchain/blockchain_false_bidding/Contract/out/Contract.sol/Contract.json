@@ -27,25 +27,33 @@
       "type": "function"
     },
     {
+      "inputs": [],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
       "stateMutability": "payable",
       "type": "receive"
     }
   ],
   "bytecode": {
-    "object": "0x6080604052600080546001600160a01b0319908116735648359ed2b9bfffdf96e484adfc77cc5f3273e81791829055600180549091166001600160a01b039290921691909117905534801561005357600080fd5b5061011b806100636000396000f3fe60806040526004361060295760003560e01c80635fb95d18146087578063dac13f6d1460b5576082565b36608257600080546040516001600160a01b039091169134919081818185875af1925050503d80600081146078576040519150601f19603f3d011682016040523d82523d6000602084013e607d565b606091505b505050005b600080fd5b348015609257600080fd5b50609960c7565b604080516001600160a01b039092168252519081900360200190f35b34801560c057600080fd5b50609960d6565b6000546001600160a01b031681565b6001546001600160a01b03168156fea26469706673582212208346f434dbfb7e4bdca5ac6247ee8ec5bcc18f788e9b172a38eac4314450e10364736f6c63430007060033",
-    "sourceMap": "95:415:1:-:0;;;122:117;;;-1:-1:-1;;;;;;122:117:1;;;195:42;122:117;;;;;;242:76;;;;;-1:-1:-1;;;;;286:31:1;;;;242:76;;;;;;95:415;;;;;;;;;;;;;;;;",
+    "object": "0x6080604052600080546001600160a01b0319908116731af67842c2f3f59ee85af65ffbfd542c074814d21791829055600180549091166001600160a01b039290921691909117905534801561005357600080fd5b506101b4806100636000396000f3fe6080604052600436106100385760003560e01c80633ccfd60b146100995780635fb95d18146100b0578063dac13f6d146100e157610094565b3661009457600080546040516001600160a01b039091169134919081818185875af1925050503d806000811461008a576040519150601f19603f3d011682016040523d82523d6000602084013e61008f565b606091505b505050005b600080fd5b3480156100a557600080fd5b506100ae6100f6565b005b3480156100bc57600080fd5b506100c5610160565b604080516001600160a01b039092168252519081900360200190f35b3480156100ed57600080fd5b506100c561016f565b600160009054906101000a90046001600160a01b03166001600160a01b03166363d82a6d6040518163ffffffff1660e01b8152600401600060405180830381600087803b15801561014657600080fd5b505af115801561015a573d6000803e3d6000fd5b50505050565b6000546001600160a01b031681565b6001546001600160a01b03168156fea264697066735822122041273bc83ea662ec08c40afcf8e08f9e4f3a93515269de404099836503855c1d64736f6c63430007060033",
+    "sourceMap": "95:486:1:-:0;;;122:117;;;-1:-1:-1;;;;;;122:117:1;;;195:42;122:117;;;;;;242:76;;;;;-1:-1:-1;;;;;286:31:1;;;;242:76;;;;;;95:486;;;;;;;;;;;;;;;;",
     "linkReferences": {}
   },
   "deployedBytecode": {
-    "object": "0x60806040526004361060295760003560e01c80635fb95d18146087578063dac13f6d1460b5576082565b36608257600080546040516001600160a01b039091169134919081818185875af1925050503d80600081146078576040519150601f19603f3d011682016040523d82523d6000602084013e607d565b606091505b505050005b600080fd5b348015609257600080fd5b50609960c7565b604080516001600160a01b039092168252519081900360200190f35b34801560c057600080fd5b50609960d6565b6000546001600160a01b031681565b6001546001600160a01b03168156fea26469706673582212208346f434dbfb7e4bdca5ac6247ee8ec5bcc18f788e9b172a38eac4314450e10364736f6c63430007060033",
-    "sourceMap": "95:415:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;438:31;;;:58;;-1:-1:-1;;;;;438:31:1;;;;482:9;;438:58;;:31;:58;482:9;438:31;:58;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;95:415;;;;;122:117;;;;;;;;;;;;;:::i;:::-;;;;-1:-1:-1;;;;;122:117:1;;;;;;;;;;;;;;242:76;;;;;;;;;;;;;:::i;122:117::-;;;-1:-1:-1;;;;;122:117:1;;:::o;242:76::-;;;-1:-1:-1;;;;;242:76:1;;:::o",
+    "object": "0x6080604052600436106100385760003560e01c80633ccfd60b146100995780635fb95d18146100b0578063dac13f6d146100e157610094565b3661009457600080546040516001600160a01b039091169134919081818185875af1925050503d806000811461008a576040519150601f19603f3d011682016040523d82523d6000602084013e61008f565b606091505b505050005b600080fd5b3480156100a557600080fd5b506100ae6100f6565b005b3480156100bc57600080fd5b506100c5610160565b604080516001600160a01b039092168252519081900360200190f35b3480156100ed57600080fd5b506100c561016f565b600160009054906101000a90046001600160a01b03166001600160a01b03166363d82a6d6040518163ffffffff1660e01b8152600401600060405180830381600087803b15801561014657600080fd5b505af115801561015a573d6000803e3d6000fd5b50505050565b6000546001600160a01b031681565b6001546001600160a01b03168156fea264697066735822122041273bc83ea662ec08c40afcf8e08f9e4f3a93515269de404099836503855c1d64736f6c63430007060033",
+    "sourceMap": "95:486:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;438:31;;;:58;;-1:-1:-1;;;;;438:31:1;;;;482:9;;438:58;;:31;:58;482:9;438:31;:58;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;95:486;;;;;511:67;;;;;;;;;;;;;:::i;:::-;;122:117;;;;;;;;;;;;;:::i;:::-;;;;-1:-1:-1;;;;;122:117:1;;;;;;;;;;;;;;242:76;;;;;;;;;;;;;:::i;511:67::-;544:8;;;;;;;;;-1:-1:-1;;;;;544:8:1;-1:-1:-1;;;;;544:28:1;;:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;511:67::o;122:117::-;;;-1:-1:-1;;;;;122:117:1;;:::o;242:76::-;;;-1:-1:-1;;;;;242:76:1;;:::o",
     "linkReferences": {}
   },
   "methodIdentifiers": {
     "YOUR_CHALLENGE_CONTRACT_ADDRESS()": "5fb95d18",
-    "creature()": "dac13f6d"
+    "creature()": "dac13f6d",
+    "withdraw()": "3ccfd60b"
   },
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"YOUR_CHALLENGE_CONTRACT_ADDRESS\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"creature\",\"outputs\":[{\"internalType\":\"contract AuctionHouse\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/Contract.sol\":\"Contract\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"src/AuctionHouse.sol\":{\"keccak256\":\"0xfee806a02344cce5c821a0bf24ea8424fbf76deae90825b04a0d72a7b4d97374\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://68bd87b40133dced0e84854f6214f3f5f35c1558f12fc46aadd56f3cf63af374\",\"dweb:/ipfs/QmNWAqzP97WEvm6LHz4BMBescf8L1bJzEcgKK4B77iG6hp\"]},\"src/Contract.sol\":{\"keccak256\":\"0x2dbc5ee2328e717cfc60bd2e52a6bfc51f5cfb186f891b24e5a60439a98c9977\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://bfb78b13fdbc3db330de680e520edeb93586ab9d77d4c6680f971fa53f7f1ed7\",\"dweb:/ipfs/QmReKeuWSjiTrgMfDf29KZ1XEkxJ9TFxpjsDHasXGk6LXC\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"YOUR_CHALLENGE_CONTRACT_ADDRESS\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"creature\",\"outputs\":[{\"internalType\":\"contract AuctionHouse\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/Contract.sol\":\"Contract\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"src/AuctionHouse.sol\":{\"keccak256\":\"0xfee806a02344cce5c821a0bf24ea8424fbf76deae90825b04a0d72a7b4d97374\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://68bd87b40133dced0e84854f6214f3f5f35c1558f12fc46aadd56f3cf63af374\",\"dweb:/ipfs/QmNWAqzP97WEvm6LHz4BMBescf8L1bJzEcgKK4B77iG6hp\"]},\"src/Contract.sol\":{\"keccak256\":\"0x3d16a5022d0844bb7844af03f570f99625f391be1da185d124db63eae2288886\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://02f45c0df848d5d23899c38df88eb412e9d740bf6b0df81b01247f1fedd60064\",\"dweb:/ipfs/QmaDQoEwRjvuEgfP32bHqjepEHvReRAjJyjrvFUyn8bpjN\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.7.6+commit.7338295f"
@@ -78,6 +86,12 @@
               "type": "address"
             }
           ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "withdraw"
         },
         {
           "inputs": [],
@@ -123,10 +137,10 @@
         "license": "UNLICENSED"
       },
       "src/Contract.sol": {
-        "keccak256": "0x2dbc5ee2328e717cfc60bd2e52a6bfc51f5cfb186f891b24e5a60439a98c9977",
+        "keccak256": "0x3d16a5022d0844bb7844af03f570f99625f391be1da185d124db63eae2288886",
         "urls": [
-          "bzz-raw://bfb78b13fdbc3db330de680e520edeb93586ab9d77d4c6680f971fa53f7f1ed7",
-          "dweb:/ipfs/QmReKeuWSjiTrgMfDf29KZ1XEkxJ9TFxpjsDHasXGk6LXC"
+          "bzz-raw://02f45c0df848d5d23899c38df88eb412e9d740bf6b0df81b01247f1fedd60064",
+          "dweb:/ipfs/QmaDQoEwRjvuEgfP32bHqjepEHvReRAjJyjrvFUyn8bpjN"
         ],
         "license": "UNLICENSED"
       }
@@ -135,17 +149,17 @@
   },
   "ast": {
     "absolutePath": "src/Contract.sol",
-    "id": 312,
+    "id": 321,
     "exportedSymbols": {
       "AuctionHouse": [
         280
       ],
       "Contract": [
-        311
+        320
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "39:473:1",
+    "src": "39:544:1",
     "nodes": [
       {
         "id": 282,
@@ -166,15 +180,15 @@
         "nodes": [],
         "absolutePath": "src/AuctionHouse.sol",
         "file": "./AuctionHouse.sol",
-        "scope": 312,
+        "scope": 321,
         "sourceUnit": 281,
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "id": 311,
+        "id": 320,
         "nodeType": "ContractDefinition",
-        "src": "95:415:1",
+        "src": "95:486:1",
         "nodes": [
           {
             "id": 292,
@@ -185,7 +199,7 @@
             "functionSelector": "5fb95d18",
             "mutability": "mutable",
             "name": "YOUR_CHALLENGE_CONTRACT_ADDRESS",
-            "scope": 311,
+            "scope": 320,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -208,7 +222,7 @@
                 {
                   "arguments": [
                     {
-                      "hexValue": "307835363438333539654432423942466666646639366534383461646663373743633566333237334538",
+                      "hexValue": "307831616636373834326332463366353965453835616636354666424644353432633037343831346432",
                       "id": 289,
                       "isConstant": false,
                       "isLValue": false,
@@ -221,7 +235,7 @@
                         "typeIdentifier": "t_address_payable",
                         "typeString": "address payable"
                       },
-                      "value": "0x5648359eD2B9BFffdf96e484adfc77Cc5f3273E8"
+                      "value": "0x1af67842c2F3f59eE85af65FfBFD542c074814d2"
                     }
                   ],
                   "expression": {
@@ -319,7 +333,7 @@
             "functionSelector": "dac13f6d",
             "mutability": "mutable",
             "name": "creature",
-            "scope": 311,
+            "scope": 320,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -537,8 +551,93 @@
               "parameters": [],
               "src": "349:0:1"
             },
-            "scope": 311,
+            "scope": 320,
             "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 319,
+            "nodeType": "FunctionDefinition",
+            "src": "511:67:1",
+            "nodes": [],
+            "body": {
+              "id": 318,
+              "nodeType": "Block",
+              "src": "540:38:1",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "id": 313,
+                        "name": "creature",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 297,
+                        "src": "544:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_AuctionHouse_$280",
+                          "typeString": "contract AuctionHouse"
+                        }
+                      },
+                      "id": 315,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "withdrawFromAuction",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 205,
+                      "src": "544:28:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$__$returns$__$",
+                        "typeString": "function () external"
+                      }
+                    },
+                    "id": 316,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "544:30:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 317,
+                  "nodeType": "ExpressionStatement",
+                  "src": "544:30:1"
+                }
+              ]
+            },
+            "functionSelector": "3ccfd60b",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "withdraw",
+            "parameters": {
+              "id": 311,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "528:2:1"
+            },
+            "returnParameters": {
+              "id": 312,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "540:0:1"
+            },
+            "scope": 320,
+            "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
@@ -549,10 +648,10 @@
         "contractKind": "contract",
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          311
+          320
         ],
         "name": "Contract",
-        "scope": 312
+        "scope": 321
       }
     ],
     "license": "UNLICENSED"
