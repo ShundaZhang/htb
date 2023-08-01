@@ -5,7 +5,7 @@ import "./AuctionHouse.sol";
 
 
 contract Contract{
-        address payable public YOUR_CHALLENGE_CONTRACT_ADDRESS = payable(address(0x1af67842c2F3f59eE85af65FfBFD542c074814d2));
+        address payable public YOUR_CHALLENGE_CONTRACT_ADDRESS = payable(address(0x9CD3Fc15a9A963274Fe569b9bdaFcC9E1c0678eA));
 	AuctionHouse public creature = AuctionHouse(YOUR_CHALLENGE_CONTRACT_ADDRESS);
 
 	receive() external payable {
@@ -18,6 +18,11 @@ contract Contract{
 	function withdraw() external {
 		creature.withdrawFromAuction();
 	}
+
+	function claim() external {
+                creature.claimPrize();
+        }
+
 
 }
 

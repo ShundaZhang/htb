@@ -15,6 +15,13 @@
     },
     {
       "inputs": [],
+      "name": "claim",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
       "name": "creature",
       "outputs": [
         {
@@ -39,21 +46,22 @@
     }
   ],
   "bytecode": {
-    "object": "0x6080604052600080546001600160a01b0319908116731af67842c2f3f59ee85af65ffbfd542c074814d21791829055600180549091166001600160a01b039290921691909117905534801561005357600080fd5b506101b4806100636000396000f3fe6080604052600436106100385760003560e01c80633ccfd60b146100995780635fb95d18146100b0578063dac13f6d146100e157610094565b3661009457600080546040516001600160a01b039091169134919081818185875af1925050503d806000811461008a576040519150601f19603f3d011682016040523d82523d6000602084013e61008f565b606091505b505050005b600080fd5b3480156100a557600080fd5b506100ae6100f6565b005b3480156100bc57600080fd5b506100c5610160565b604080516001600160a01b039092168252519081900360200190f35b3480156100ed57600080fd5b506100c561016f565b600160009054906101000a90046001600160a01b03166001600160a01b03166363d82a6d6040518163ffffffff1660e01b8152600401600060405180830381600087803b15801561014657600080fd5b505af115801561015a573d6000803e3d6000fd5b50505050565b6000546001600160a01b031681565b6001546001600160a01b03168156fea264697066735822122041273bc83ea662ec08c40afcf8e08f9e4f3a93515269de404099836503855c1d64736f6c63430007060033",
-    "sourceMap": "95:486:1:-:0;;;122:117;;;-1:-1:-1;;;;;;122:117:1;;;195:42;122:117;;;;;;242:76;;;;;-1:-1:-1;;;;;286:31:1;;;;242:76;;;;;;95:486;;;;;;;;;;;;;;;;",
+    "object": "0x6080604052600080546001600160a01b0319908116739cd3fc15a9a963274fe569b9bdafcc9e1c0678ea1791829055600180549091166001600160a01b039290921691909117905534801561005357600080fd5b50610224806100636000396000f3fe6080604052600436106100435760003560e01c80633ccfd60b146100a45780634e71d92d146100bb5780635fb95d18146100d0578063dac13f6d146101015761009f565b3661009f57600080546040516001600160a01b039091169134919081818185875af1925050503d8060008114610095576040519150601f19603f3d011682016040523d82523d6000602084013e61009a565b606091505b505050005b600080fd5b3480156100b057600080fd5b506100b9610116565b005b3480156100c757600080fd5b506100b9610180565b3480156100dc57600080fd5b506100e56101d0565b604080516001600160a01b039092168252519081900360200190f35b34801561010d57600080fd5b506100e56101df565b600160009054906101000a90046001600160a01b03166001600160a01b03166363d82a6d6040518163ffffffff1660e01b8152600401600060405180830381600087803b15801561016657600080fd5b505af115801561017a573d6000803e3d6000fd5b50505050565b600160009054906101000a90046001600160a01b03166001600160a01b03166370740ac96040518163ffffffff1660e01b8152600401600060405180830381600087803b15801561016657600080fd5b6000546001600160a01b031681565b6001546001600160a01b03168156fea2646970667358221220e0fd3ed7f575b3248440699da0740bc6ef270a50c499ff154f3d16eed91313cc64736f6c63430007060033",
+    "sourceMap": "95:566:1:-:0;;;122:117;;;-1:-1:-1;;;;;;122:117:1;;;195:42;122:117;;;;;;242:76;;;;;-1:-1:-1;;;;;286:31:1;;;;242:76;;;;;;95:566;;;;;;;;;;;;;;;;",
     "linkReferences": {}
   },
   "deployedBytecode": {
-    "object": "0x6080604052600436106100385760003560e01c80633ccfd60b146100995780635fb95d18146100b0578063dac13f6d146100e157610094565b3661009457600080546040516001600160a01b039091169134919081818185875af1925050503d806000811461008a576040519150601f19603f3d011682016040523d82523d6000602084013e61008f565b606091505b505050005b600080fd5b3480156100a557600080fd5b506100ae6100f6565b005b3480156100bc57600080fd5b506100c5610160565b604080516001600160a01b039092168252519081900360200190f35b3480156100ed57600080fd5b506100c561016f565b600160009054906101000a90046001600160a01b03166001600160a01b03166363d82a6d6040518163ffffffff1660e01b8152600401600060405180830381600087803b15801561014657600080fd5b505af115801561015a573d6000803e3d6000fd5b50505050565b6000546001600160a01b031681565b6001546001600160a01b03168156fea264697066735822122041273bc83ea662ec08c40afcf8e08f9e4f3a93515269de404099836503855c1d64736f6c63430007060033",
-    "sourceMap": "95:486:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;438:31;;;:58;;-1:-1:-1;;;;;438:31:1;;;;482:9;;438:58;;:31;:58;482:9;438:31;:58;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;95:486;;;;;511:67;;;;;;;;;;;;;:::i;:::-;;122:117;;;;;;;;;;;;;:::i;:::-;;;;-1:-1:-1;;;;;122:117:1;;;;;;;;;;;;;;242:76;;;;;;;;;;;;;:::i;511:67::-;544:8;;;;;;;;;-1:-1:-1;;;;;544:8:1;-1:-1:-1;;;;;544:28:1;;:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;511:67::o;122:117::-;;;-1:-1:-1;;;;;122:117:1;;:::o;242:76::-;;;-1:-1:-1;;;;;242:76:1;;:::o",
+    "object": "0x6080604052600436106100435760003560e01c80633ccfd60b146100a45780634e71d92d146100bb5780635fb95d18146100d0578063dac13f6d146101015761009f565b3661009f57600080546040516001600160a01b039091169134919081818185875af1925050503d8060008114610095576040519150601f19603f3d011682016040523d82523d6000602084013e61009a565b606091505b505050005b600080fd5b3480156100b057600080fd5b506100b9610116565b005b3480156100c757600080fd5b506100b9610180565b3480156100dc57600080fd5b506100e56101d0565b604080516001600160a01b039092168252519081900360200190f35b34801561010d57600080fd5b506100e56101df565b600160009054906101000a90046001600160a01b03166001600160a01b03166363d82a6d6040518163ffffffff1660e01b8152600401600060405180830381600087803b15801561016657600080fd5b505af115801561017a573d6000803e3d6000fd5b50505050565b600160009054906101000a90046001600160a01b03166001600160a01b03166370740ac96040518163ffffffff1660e01b8152600401600060405180830381600087803b15801561016657600080fd5b6000546001600160a01b031681565b6001546001600160a01b03168156fea2646970667358221220e0fd3ed7f575b3248440699da0740bc6ef270a50c499ff154f3d16eed91313cc64736f6c63430007060033",
+    "sourceMap": "95:566:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;438:31;;;:58;;-1:-1:-1;;;;;438:31:1;;;;482:9;;438:58;;:31;:58;482:9;438:31;:58;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;95:566;;;;;511:67;;;;;;;;;;;;;:::i;:::-;;581:76;;;;;;;;;;;;;:::i;122:117::-;;;;;;;;;;;;;:::i;:::-;;;;-1:-1:-1;;;;;122:117:1;;;;;;;;;;;;;;242:76;;;;;;;;;;;;;:::i;511:67::-;544:8;;;;;;;;;-1:-1:-1;;;;;544:8:1;-1:-1:-1;;;;;544:28:1;;:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;511:67::o;581:76::-;625:8;;;;;;;;;-1:-1:-1;;;;;625:8:1;-1:-1:-1;;;;;625:19:1;;:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;122:117;;;-1:-1:-1;;;;;122:117:1;;:::o;242:76::-;;;-1:-1:-1;;;;;242:76:1;;:::o",
     "linkReferences": {}
   },
   "methodIdentifiers": {
     "YOUR_CHALLENGE_CONTRACT_ADDRESS()": "5fb95d18",
+    "claim()": "4e71d92d",
     "creature()": "dac13f6d",
     "withdraw()": "3ccfd60b"
   },
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"YOUR_CHALLENGE_CONTRACT_ADDRESS\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"creature\",\"outputs\":[{\"internalType\":\"contract AuctionHouse\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/Contract.sol\":\"Contract\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"src/AuctionHouse.sol\":{\"keccak256\":\"0xfee806a02344cce5c821a0bf24ea8424fbf76deae90825b04a0d72a7b4d97374\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://68bd87b40133dced0e84854f6214f3f5f35c1558f12fc46aadd56f3cf63af374\",\"dweb:/ipfs/QmNWAqzP97WEvm6LHz4BMBescf8L1bJzEcgKK4B77iG6hp\"]},\"src/Contract.sol\":{\"keccak256\":\"0x3d16a5022d0844bb7844af03f570f99625f391be1da185d124db63eae2288886\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://02f45c0df848d5d23899c38df88eb412e9d740bf6b0df81b01247f1fedd60064\",\"dweb:/ipfs/QmaDQoEwRjvuEgfP32bHqjepEHvReRAjJyjrvFUyn8bpjN\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"YOUR_CHALLENGE_CONTRACT_ADDRESS\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"claim\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"creature\",\"outputs\":[{\"internalType\":\"contract AuctionHouse\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/Contract.sol\":\"Contract\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"src/AuctionHouse.sol\":{\"keccak256\":\"0xfee806a02344cce5c821a0bf24ea8424fbf76deae90825b04a0d72a7b4d97374\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://68bd87b40133dced0e84854f6214f3f5f35c1558f12fc46aadd56f3cf63af374\",\"dweb:/ipfs/QmNWAqzP97WEvm6LHz4BMBescf8L1bJzEcgKK4B77iG6hp\"]},\"src/Contract.sol\":{\"keccak256\":\"0x8c50faa61b1bb6ddc3d5da0997cd8fafd251ff4ec40d7aecb70f15311d6e8921\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://fe617c81e101dd125d5d55e38108a6ebbd9a3c8302489893846be18d543febff\",\"dweb:/ipfs/QmcrN4vHRNHeBMmxkLnGDb58m9tHXAsGUZL3sVL1iVcGQF\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.7.6+commit.7338295f"
@@ -73,6 +81,12 @@
               "type": "address"
             }
           ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "claim"
         },
         {
           "inputs": [],
@@ -137,10 +151,10 @@
         "license": "UNLICENSED"
       },
       "src/Contract.sol": {
-        "keccak256": "0x3d16a5022d0844bb7844af03f570f99625f391be1da185d124db63eae2288886",
+        "keccak256": "0x8c50faa61b1bb6ddc3d5da0997cd8fafd251ff4ec40d7aecb70f15311d6e8921",
         "urls": [
-          "bzz-raw://02f45c0df848d5d23899c38df88eb412e9d740bf6b0df81b01247f1fedd60064",
-          "dweb:/ipfs/QmaDQoEwRjvuEgfP32bHqjepEHvReRAjJyjrvFUyn8bpjN"
+          "bzz-raw://fe617c81e101dd125d5d55e38108a6ebbd9a3c8302489893846be18d543febff",
+          "dweb:/ipfs/QmcrN4vHRNHeBMmxkLnGDb58m9tHXAsGUZL3sVL1iVcGQF"
         ],
         "license": "UNLICENSED"
       }
@@ -149,17 +163,17 @@
   },
   "ast": {
     "absolutePath": "src/Contract.sol",
-    "id": 321,
+    "id": 330,
     "exportedSymbols": {
       "AuctionHouse": [
         280
       ],
       "Contract": [
-        320
+        329
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "39:544:1",
+    "src": "39:624:1",
     "nodes": [
       {
         "id": 282,
@@ -180,15 +194,15 @@
         "nodes": [],
         "absolutePath": "src/AuctionHouse.sol",
         "file": "./AuctionHouse.sol",
-        "scope": 321,
+        "scope": 330,
         "sourceUnit": 281,
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "id": 320,
+        "id": 329,
         "nodeType": "ContractDefinition",
-        "src": "95:486:1",
+        "src": "95:566:1",
         "nodes": [
           {
             "id": 292,
@@ -199,7 +213,7 @@
             "functionSelector": "5fb95d18",
             "mutability": "mutable",
             "name": "YOUR_CHALLENGE_CONTRACT_ADDRESS",
-            "scope": 320,
+            "scope": 329,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -222,7 +236,7 @@
                 {
                   "arguments": [
                     {
-                      "hexValue": "307831616636373834326332463366353965453835616636354666424644353432633037343831346432",
+                      "hexValue": "307839434433466331356139413936333237344665353639623962646146634339453163303637386541",
                       "id": 289,
                       "isConstant": false,
                       "isLValue": false,
@@ -235,7 +249,7 @@
                         "typeIdentifier": "t_address_payable",
                         "typeString": "address payable"
                       },
-                      "value": "0x1af67842c2F3f59eE85af65FfBFD542c074814d2"
+                      "value": "0x9CD3Fc15a9A963274Fe569b9bdaFcC9E1c0678eA"
                     }
                   ],
                   "expression": {
@@ -333,7 +347,7 @@
             "functionSelector": "dac13f6d",
             "mutability": "mutable",
             "name": "creature",
-            "scope": 320,
+            "scope": 329,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -551,7 +565,7 @@
               "parameters": [],
               "src": "349:0:1"
             },
-            "scope": 320,
+            "scope": 329,
             "stateMutability": "payable",
             "virtual": false,
             "visibility": "external"
@@ -636,7 +650,92 @@
               "parameters": [],
               "src": "540:0:1"
             },
-            "scope": 320,
+            "scope": 329,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 328,
+            "nodeType": "FunctionDefinition",
+            "src": "581:76:1",
+            "nodes": [],
+            "body": {
+              "id": 327,
+              "nodeType": "Block",
+              "src": "607:50:1",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "id": 322,
+                        "name": "creature",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 297,
+                        "src": "625:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_AuctionHouse_$280",
+                          "typeString": "contract AuctionHouse"
+                        }
+                      },
+                      "id": 324,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "claimPrize",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 240,
+                      "src": "625:19:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$__$returns$__$",
+                        "typeString": "function () external"
+                      }
+                    },
+                    "id": 325,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "625:21:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 326,
+                  "nodeType": "ExpressionStatement",
+                  "src": "625:21:1"
+                }
+              ]
+            },
+            "functionSelector": "4e71d92d",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "claim",
+            "parameters": {
+              "id": 320,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "595:2:1"
+            },
+            "returnParameters": {
+              "id": 321,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "607:0:1"
+            },
+            "scope": 329,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
@@ -648,10 +747,10 @@
         "contractKind": "contract",
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          320
+          329
         ],
         "name": "Contract",
-        "scope": 321
+        "scope": 330
       }
     ],
     "license": "UNLICENSED"

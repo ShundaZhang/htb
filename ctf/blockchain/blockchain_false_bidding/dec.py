@@ -4,10 +4,10 @@ from web3.gas_strategies.rpc import rpc_gas_price_strategy
 from solcx import compile_source, install_solc, compile_files
 
 x = {
-    "PrivateKey": "0x1ad4734dfe6cf1ecf589902d3309839d1f0a75a6c48895aa293acfb0b8a7c99e",
-    "Address": "0x186473a28a55655d3f135a1C460CB2fBEA01A824",
-    "TargetAddress": "0x1af67842c2F3f59eE85af65FfBFD542c074814d2",
-    "setupAddress": "0xB7F7b2B0b3375026979d653637dabeF5512EDa89"
+    "PrivateKey": "0x4447c67fe4186a19ccb3b9e97487a63c0cc47a5389aba21472e9bb07d078fc3f",
+    "Address": "0xc9C371e1Df726BB42d849bCE59674543df0915f9",
+    "TargetAddress": "0x9CD3Fc15a9A963274Fe569b9bdaFcC9E1c0678eA",
+    "setupAddress": "0xabe05B68843dA39b0C88DDF9cBbF8a71846F8581"
 }
 
 PrivateKey =    x["PrivateKey"]
@@ -15,9 +15,9 @@ Address =       x["Address"]
 TargetContract = x["TargetAddress"]
 SetupContract =  x["setupAddress"]
 
-Target2Contract = "0x70939db114A23e3Bb400ab73E84A402a26783c02"
+Target2Contract = "0xF40E9f7387474d0744072B1A1E36B9081A747d5C"
 
-url = 'http://157.245.43.189:30964/rpc'
+url = 'http://167.172.62.51:30904/rpc'
 
 YEAR = 31556926
 
@@ -66,8 +66,8 @@ for i in range(index//2 + 1):
 	t = contract_instance.functions.timeout().call()
 	print(contract_instance.functions.topBidder().call())
 	print(t)
-	if t == 0:
-		break
+	#if t == 0:
+	#	break
 	#print(contract_instance.functions.keyOwner().call())
 
 	value = values[ii]
@@ -81,9 +81,16 @@ for i in range(index//2 + 1):
 	print(contract_instance.functions.timeout().call())
 	#print(contract_instance.functions.keyOwner().call())
 
-contract_instance2.functions.withdraw().call()
-contract_instance.functions.claimPrize().call()
+#contract_instance2.functions.withdraw().call()
+#contract_instance2.functions.claim().call()
+print(contract_instance.functions.topBidder().call())
+print(addr)
+print(contract_instance.functions.keyOwner().call())
 
+print(w3.eth.get_block("latest").timestamp)
+print(contract_instance.functions.timeout().call())
+
+contract_instance.functions.claimPrize().call()
 
 
 compiled = compile_files(["Setup.sol"], output_values=["abi"], solc_version="0.7.0")
