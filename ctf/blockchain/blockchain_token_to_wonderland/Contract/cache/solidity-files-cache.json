@@ -894,8 +894,8 @@
       }
     },
     "src/Contract.sol": {
-      "lastModificationDate": 1689859198624,
-      "contentHash": "9643ba26eb3d24bc9487ec14f3cf610d",
+      "lastModificationDate": 1691042547560,
+      "contentHash": "61c45bca8cc90dc589a0037d35262bc7",
       "sourceName": "src/Contract.sol",
       "solcConfig": {
         "settings": {
@@ -972,6 +972,48 @@
       "artifacts": {
         "Counter": {
           "0.8.20+commit.a1b79de6.Linux.gcc": "Counter.sol/Counter.json"
+        }
+      }
+    },
+    "src/Shop.sol": {
+      "lastModificationDate": 1689894786587,
+      "contentHash": "e0637ee2c6e4c9529836ac9a0c163528",
+      "sourceName": "src/Shop.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "src/SilverCoin.sol"
+      ],
+      "versionRequirement": "^0.7.0",
+      "artifacts": {
+        "Shop": {
+          "0.7.6+commit.7338295f.Linux.gcc": "Shop.sol/Shop.json"
         }
       }
     },

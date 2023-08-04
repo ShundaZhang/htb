@@ -5,11 +5,11 @@ import "./SilverCoin.sol";
 
 
 contract Contract{
-        address public YOUR_CHALLENGE_CONTRACT_ADDRESS = address(0x8ee01E91eA96Ca640A68410b315700F1fB0cC534);
-	address public source = address(0x1d90dafF0cBC880dfb579A985b17a17B47809414);
+        //address public YOUR_CHALLENGE_CONTRACT_ADDRESS = address(0x8ee01E91eA96Ca640A68410b315700F1fB0cC534);
+	address public source = address(0x60352Bad99B50E66B7213cB6097ed17296Ed449C);
 	SilverCoin public creature;
 	constructor() {
-		creature = new SilverCoin();
+		creature = SilverCoin(0x60352Bad99B50E66B7213cB6097ed17296Ed449C);
         }
 
 	function attack2() external {
