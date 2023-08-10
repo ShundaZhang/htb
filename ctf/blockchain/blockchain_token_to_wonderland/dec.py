@@ -4,12 +4,7 @@ from web3.gas_strategies.rpc import rpc_gas_price_strategy
 from solcx import compile_source, install_solc, compile_files
 from Crypto.Util.number import bytes_to_long
 
-x = {
-    "PrivateKey": "0x3f634dab2f7c090bf64cb7117935ff88ae6c44fbc035b07ae86d4be2e0be0483",
-    "Address": "0x2d33136fDAD7675E58331f31570f1bF0850AAfd2",
-    "TargetAddress": "0x8f5459322De05399a43600a35b1967621ABd1249",
-    "setupAddress": "0x772141E204660A20845478Fb85eC6809Adbc372f"
-}
+x = 
 
 PrivateKey =    x["PrivateKey"]
 Address =       x["Address"] 
@@ -19,7 +14,7 @@ SetupContract =  x["setupAddress"]
 Target2Contract = "0x52407e7C2B378cF51FFE63d0BD2dd060f33230E0"
 Target3Contract = "0xE5cdce3D62618aB54a70a8123da9cBE3D66FeAa3"
 
-url = 'http://157.245.37.125:32740/rpc'
+url = 'http://157.245.43.189:31472/rpc'
 
 w3 = Web3(Web3.HTTPProvider(url))
 block_number = w3.eth.block_number
@@ -68,8 +63,8 @@ abi = compiled['SilverCoin.sol:SilverCoin']['abi']
 
 contract_instance3 = w3.eth.contract(address=Target3Contract, abi=abi)
 
-contract_instance3.functions.approve(SetupContract, 28_000_000).transact()
-contract_instance3.functions.transferFrom(SetupContract, Address, 26_000_000).transact()
+#contract_instance3.functions.approve(Address, 28_000_000).transact()
+contract_instance3.functions.transfer(Address, 26_000_000).transact()
 '''
 construct_txn = contract_instance3.functions.transfer(Address, 26_000_000).build_transaction(
 	{
