@@ -238,20 +238,20 @@
   },
   "ast": {
     "absolutePath": "src/Shop.sol",
-    "id": 190,
+    "id": 226,
     "exportedSymbols": {
       "Shop": [
-        189
+        225
       ],
       "SilverCoin": [
-        727
+        763
       ]
     },
     "nodeType": "SourceUnit",
     "src": "0:1063:1",
     "nodes": [
       {
-        "id": 47,
+        "id": 83,
         "nodeType": "PragmaDirective",
         "src": "0:23:1",
         "nodes": [],
@@ -263,18 +263,18 @@
         ]
       },
       {
-        "id": 49,
+        "id": 85,
         "nodeType": "ImportDirective",
         "src": "25:44:1",
         "nodes": [],
         "absolutePath": "src/SilverCoin.sol",
         "file": "./SilverCoin.sol",
-        "scope": 190,
-        "sourceUnit": 728,
+        "scope": 226,
+        "sourceUnit": 764,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 48,
+              "id": 84,
               "name": "SilverCoin",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
@@ -286,12 +286,12 @@
         "unitAlias": ""
       },
       {
-        "id": 189,
+        "id": 225,
         "nodeType": "ContractDefinition",
         "src": "71:991:1",
         "nodes": [
           {
-            "id": 56,
+            "id": 92,
             "nodeType": "StructDefinition",
             "src": "91:86:1",
             "nodes": [],
@@ -299,11 +299,11 @@
             "members": [
               {
                 "constant": false,
-                "id": 51,
+                "id": 87,
                 "mutability": "mutable",
                 "name": "name",
                 "nodeType": "VariableDeclaration",
-                "scope": 56,
+                "scope": 92,
                 "src": "113:11:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -312,7 +312,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 50,
+                  "id": 86,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "113:6:1",
@@ -325,11 +325,11 @@
               },
               {
                 "constant": false,
-                "id": 53,
+                "id": 89,
                 "mutability": "mutable",
                 "name": "price",
                 "nodeType": "VariableDeclaration",
-                "scope": 56,
+                "scope": 92,
                 "src": "134:13:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -338,7 +338,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 52,
+                  "id": 88,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "134:7:1",
@@ -351,11 +351,11 @@
               },
               {
                 "constant": false,
-                "id": 55,
+                "id": 91,
                 "mutability": "mutable",
                 "name": "owner",
                 "nodeType": "VariableDeclaration",
-                "scope": 56,
+                "scope": 92,
                 "src": "157:13:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -364,7 +364,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 54,
+                  "id": 90,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "157:7:1",
@@ -378,11 +378,11 @@
               }
             ],
             "name": "Item",
-            "scope": 189,
+            "scope": 225,
             "visibility": "public"
           },
           {
-            "id": 59,
+            "id": 95,
             "nodeType": "VariableDeclaration",
             "src": "183:19:1",
             "nodes": [],
@@ -390,90 +390,90 @@
             "functionSelector": "bfb231d2",
             "mutability": "mutable",
             "name": "items",
-            "scope": 189,
+            "scope": 225,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_array$_t_struct$_Item_$56_storage_$dyn_storage",
+              "typeIdentifier": "t_array$_t_struct$_Item_$92_storage_$dyn_storage",
               "typeString": "struct Shop.Item[]"
             },
             "typeName": {
               "baseType": {
-                "id": 57,
+                "id": 93,
                 "name": "Item",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 56,
+                "referencedDeclaration": 92,
                 "src": "183:4:1",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Item_$56_storage_ptr",
+                  "typeIdentifier": "t_struct$_Item_$92_storage_ptr",
                   "typeString": "struct Shop.Item"
                 }
               },
-              "id": 58,
+              "id": 94,
               "nodeType": "ArrayTypeName",
               "src": "183:6:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_array$_t_struct$_Item_$56_storage_$dyn_storage_ptr",
+                "typeIdentifier": "t_array$_t_struct$_Item_$92_storage_$dyn_storage_ptr",
                 "typeString": "struct Shop.Item[]"
               }
             },
             "visibility": "public"
           },
           {
-            "id": 61,
+            "id": 97,
             "nodeType": "VariableDeclaration",
             "src": "208:21:1",
             "nodes": [],
             "constant": false,
             "mutability": "mutable",
             "name": "silverCoin",
-            "scope": 189,
+            "scope": 225,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_SilverCoin_$727",
+              "typeIdentifier": "t_contract$_SilverCoin_$763",
               "typeString": "contract SilverCoin"
             },
             "typeName": {
-              "id": 60,
+              "id": 96,
               "name": "SilverCoin",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 727,
+              "referencedDeclaration": 763,
               "src": "208:10:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SilverCoin_$727",
+                "typeIdentifier": "t_contract$_SilverCoin_$763",
                 "typeString": "contract SilverCoin"
               }
             },
             "visibility": "internal"
           },
           {
-            "id": 112,
+            "id": 148,
             "nodeType": "FunctionDefinition",
             "src": "236:305:1",
             "nodes": [],
             "body": {
-              "id": 111,
+              "id": 147,
               "nodeType": "Block",
               "src": "276:265:1",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
-                    "id": 70,
+                    "id": 106,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 66,
+                      "id": 102,
                       "name": "silverCoin",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 61,
+                      "referencedDeclaration": 97,
                       "src": "286:10:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_SilverCoin_$727",
+                        "typeIdentifier": "t_contract$_SilverCoin_$763",
                         "typeString": "contract SilverCoin"
                       }
                     },
@@ -482,11 +482,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 68,
+                          "id": 104,
                           "name": "_silverCoinAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 63,
+                          "referencedDeclaration": 99,
                           "src": "310:18:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -501,18 +501,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 67,
+                        "id": 103,
                         "name": "SilverCoin",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 727,
+                        "referencedDeclaration": 763,
                         "src": "299:10:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_SilverCoin_$727_$",
+                          "typeIdentifier": "t_type$_t_contract$_SilverCoin_$763_$",
                           "typeString": "type(contract SilverCoin)"
                         }
                       },
-                      "id": 69,
+                      "id": 105,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -523,17 +523,17 @@
                       "src": "299:30:1",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_SilverCoin_$727",
+                        "typeIdentifier": "t_contract$_SilverCoin_$763",
                         "typeString": "contract SilverCoin"
                       }
                     },
                     "src": "286:43:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_SilverCoin_$727",
+                      "typeIdentifier": "t_contract$_SilverCoin_$763",
                       "typeString": "contract SilverCoin"
                     }
                   },
-                  "id": 71,
+                  "id": 107,
                   "nodeType": "ExpressionStatement",
                   "src": "286:43:1"
                 },
@@ -544,7 +544,7 @@
                         "arguments": [
                           {
                             "hexValue": "4469616d6f6e64204e65636b6c616365",
-                            "id": 76,
+                            "id": 112,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -560,7 +560,7 @@
                           },
                           {
                             "hexValue": "315f3030305f303030",
-                            "id": 77,
+                            "id": 113,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -577,14 +577,14 @@
                           {
                             "arguments": [
                               {
-                                "id": 80,
+                                "id": 116,
                                 "name": "this",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": -28,
                                 "src": "394:4:1",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_contract$_Shop_$189",
+                                  "typeIdentifier": "t_contract$_Shop_$225",
                                   "typeString": "contract Shop"
                                 }
                               }
@@ -592,11 +592,11 @@
                             "expression": {
                               "argumentTypes": [
                                 {
-                                  "typeIdentifier": "t_contract$_Shop_$189",
+                                  "typeIdentifier": "t_contract$_Shop_$225",
                                   "typeString": "contract Shop"
                                 }
                               ],
-                              "id": 79,
+                              "id": 115,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -608,14 +608,14 @@
                                 "typeString": "type(address)"
                               },
                               "typeName": {
-                                "id": 78,
+                                "id": 114,
                                 "name": "address",
                                 "nodeType": "ElementaryTypeName",
                                 "src": "386:7:1",
                                 "typeDescriptions": {}
                               }
                             },
-                            "id": 81,
+                            "id": 117,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -646,18 +646,18 @@
                               "typeString": "address"
                             }
                           ],
-                          "id": 75,
+                          "id": 111,
                           "name": "Item",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 56,
+                          "referencedDeclaration": 92,
                           "src": "350:4:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_Item_$56_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_Item_$92_storage_ptr_$",
                             "typeString": "type(struct Shop.Item storage pointer)"
                           }
                         },
-                        "id": 82,
+                        "id": 118,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -668,7 +668,7 @@
                         "src": "350:50:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Item_$56_memory_ptr",
+                          "typeIdentifier": "t_struct$_Item_$92_memory_ptr",
                           "typeString": "struct Shop.Item memory"
                         }
                       }
@@ -676,23 +676,23 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_Item_$56_memory_ptr",
+                          "typeIdentifier": "t_struct$_Item_$92_memory_ptr",
                           "typeString": "struct Shop.Item memory"
                         }
                       ],
                       "expression": {
-                        "id": 72,
+                        "id": 108,
                         "name": "items",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 59,
+                        "referencedDeclaration": 95,
                         "src": "339:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_array$_t_struct$_Item_$56_storage_$dyn_storage",
+                          "typeIdentifier": "t_array$_t_struct$_Item_$92_storage_$dyn_storage",
                           "typeString": "struct Shop.Item storage ref[] storage ref"
                         }
                       },
-                      "id": 74,
+                      "id": 110,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -701,11 +701,11 @@
                       "nodeType": "MemberAccess",
                       "src": "339:10:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Item_$56_storage_$returns$__$",
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Item_$92_storage_$returns$__$",
                         "typeString": "function (struct Shop.Item storage ref)"
                       }
                     },
-                    "id": 83,
+                    "id": 119,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -720,7 +720,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 84,
+                  "id": 120,
                   "nodeType": "ExpressionStatement",
                   "src": "339:62:1"
                 },
@@ -731,7 +731,7 @@
                         "arguments": [
                           {
                             "hexValue": "416e6369656e742053746f6e65",
-                            "id": 89,
+                            "id": 125,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -747,7 +747,7 @@
                           },
                           {
                             "hexValue": "37305f303030",
-                            "id": 90,
+                            "id": 126,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -764,14 +764,14 @@
                           {
                             "arguments": [
                               {
-                                "id": 93,
+                                "id": 129,
                                 "name": "this",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": -28,
                                 "src": "460:4:1",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_contract$_Shop_$189",
+                                  "typeIdentifier": "t_contract$_Shop_$225",
                                   "typeString": "contract Shop"
                                 }
                               }
@@ -779,11 +779,11 @@
                             "expression": {
                               "argumentTypes": [
                                 {
-                                  "typeIdentifier": "t_contract$_Shop_$189",
+                                  "typeIdentifier": "t_contract$_Shop_$225",
                                   "typeString": "contract Shop"
                                 }
                               ],
-                              "id": 92,
+                              "id": 128,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -795,14 +795,14 @@
                                 "typeString": "type(address)"
                               },
                               "typeName": {
-                                "id": 91,
+                                "id": 127,
                                 "name": "address",
                                 "nodeType": "ElementaryTypeName",
                                 "src": "452:7:1",
                                 "typeDescriptions": {}
                               }
                             },
-                            "id": 94,
+                            "id": 130,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -833,18 +833,18 @@
                               "typeString": "address"
                             }
                           ],
-                          "id": 88,
+                          "id": 124,
                           "name": "Item",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 56,
+                          "referencedDeclaration": 92,
                           "src": "422:4:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_Item_$56_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_Item_$92_storage_ptr_$",
                             "typeString": "type(struct Shop.Item storage pointer)"
                           }
                         },
-                        "id": 95,
+                        "id": 131,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -855,7 +855,7 @@
                         "src": "422:44:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Item_$56_memory_ptr",
+                          "typeIdentifier": "t_struct$_Item_$92_memory_ptr",
                           "typeString": "struct Shop.Item memory"
                         }
                       }
@@ -863,23 +863,23 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_Item_$56_memory_ptr",
+                          "typeIdentifier": "t_struct$_Item_$92_memory_ptr",
                           "typeString": "struct Shop.Item memory"
                         }
                       ],
                       "expression": {
-                        "id": 85,
+                        "id": 121,
                         "name": "items",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 59,
+                        "referencedDeclaration": 95,
                         "src": "411:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_array$_t_struct$_Item_$56_storage_$dyn_storage",
+                          "typeIdentifier": "t_array$_t_struct$_Item_$92_storage_$dyn_storage",
                           "typeString": "struct Shop.Item storage ref[] storage ref"
                         }
                       },
-                      "id": 87,
+                      "id": 123,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -888,11 +888,11 @@
                       "nodeType": "MemberAccess",
                       "src": "411:10:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Item_$56_storage_$returns$__$",
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Item_$92_storage_$returns$__$",
                         "typeString": "function (struct Shop.Item storage ref)"
                       }
                     },
-                    "id": 96,
+                    "id": 132,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -907,7 +907,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 97,
+                  "id": 133,
                   "nodeType": "ExpressionStatement",
                   "src": "411:56:1"
                 },
@@ -918,7 +918,7 @@
                         "arguments": [
                           {
                             "hexValue": "476f6c64656e204b6579",
-                            "id": 102,
+                            "id": 138,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -934,7 +934,7 @@
                           },
                           {
                             "hexValue": "32355f3030305f303030",
-                            "id": 103,
+                            "id": 139,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -951,14 +951,14 @@
                           {
                             "arguments": [
                               {
-                                "id": 106,
+                                "id": 142,
                                 "name": "this",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": -28,
                                 "src": "527:4:1",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_contract$_Shop_$189",
+                                  "typeIdentifier": "t_contract$_Shop_$225",
                                   "typeString": "contract Shop"
                                 }
                               }
@@ -966,11 +966,11 @@
                             "expression": {
                               "argumentTypes": [
                                 {
-                                  "typeIdentifier": "t_contract$_Shop_$189",
+                                  "typeIdentifier": "t_contract$_Shop_$225",
                                   "typeString": "contract Shop"
                                 }
                               ],
-                              "id": 105,
+                              "id": 141,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -982,14 +982,14 @@
                                 "typeString": "type(address)"
                               },
                               "typeName": {
-                                "id": 104,
+                                "id": 140,
                                 "name": "address",
                                 "nodeType": "ElementaryTypeName",
                                 "src": "519:7:1",
                                 "typeDescriptions": {}
                               }
                             },
-                            "id": 107,
+                            "id": 143,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -1020,18 +1020,18 @@
                               "typeString": "address"
                             }
                           ],
-                          "id": 101,
+                          "id": 137,
                           "name": "Item",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 56,
+                          "referencedDeclaration": 92,
                           "src": "488:4:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_struct$_Item_$56_storage_ptr_$",
+                            "typeIdentifier": "t_type$_t_struct$_Item_$92_storage_ptr_$",
                             "typeString": "type(struct Shop.Item storage pointer)"
                           }
                         },
-                        "id": 108,
+                        "id": 144,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1042,7 +1042,7 @@
                         "src": "488:45:1",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Item_$56_memory_ptr",
+                          "typeIdentifier": "t_struct$_Item_$92_memory_ptr",
                           "typeString": "struct Shop.Item memory"
                         }
                       }
@@ -1050,23 +1050,23 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_Item_$56_memory_ptr",
+                          "typeIdentifier": "t_struct$_Item_$92_memory_ptr",
                           "typeString": "struct Shop.Item memory"
                         }
                       ],
                       "expression": {
-                        "id": 98,
+                        "id": 134,
                         "name": "items",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 59,
+                        "referencedDeclaration": 95,
                         "src": "477:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_array$_t_struct$_Item_$56_storage_$dyn_storage",
+                          "typeIdentifier": "t_array$_t_struct$_Item_$92_storage_$dyn_storage",
                           "typeString": "struct Shop.Item storage ref[] storage ref"
                         }
                       },
-                      "id": 100,
+                      "id": 136,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1075,11 +1075,11 @@
                       "nodeType": "MemberAccess",
                       "src": "477:10:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Item_$56_storage_$returns$__$",
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Item_$92_storage_$returns$__$",
                         "typeString": "function (struct Shop.Item storage ref)"
                       }
                     },
-                    "id": 109,
+                    "id": 145,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1094,7 +1094,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 110,
+                  "id": 146,
                   "nodeType": "ExpressionStatement",
                   "src": "477:57:1"
                 }
@@ -1105,16 +1105,16 @@
             "modifiers": [],
             "name": "",
             "parameters": {
-              "id": 64,
+              "id": 100,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63,
+                  "id": 99,
                   "mutability": "mutable",
                   "name": "_silverCoinAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 112,
+                  "scope": 148,
                   "src": "248:26:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1123,7 +1123,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 62,
+                    "id": 98,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "248:7:1",
@@ -1139,81 +1139,81 @@
               "src": "247:28:1"
             },
             "returnParameters": {
-              "id": 65,
+              "id": 101,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "276:0:1"
             },
-            "scope": 189,
+            "scope": 225,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           },
           {
-            "id": 162,
+            "id": 198,
             "nodeType": "FunctionDefinition",
             "src": "547:333:1",
             "nodes": [],
             "body": {
-              "id": 161,
+              "id": 197,
               "nodeType": "Block",
               "src": "587:293:1",
               "nodes": [],
               "statements": [
                 {
                   "assignments": [
-                    118
+                    154
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 118,
+                      "id": 154,
                       "mutability": "mutable",
                       "name": "_item",
                       "nodeType": "VariableDeclaration",
-                      "scope": 161,
+                      "scope": 197,
                       "src": "597:17:1",
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Item_$56_memory_ptr",
+                        "typeIdentifier": "t_struct$_Item_$92_memory_ptr",
                         "typeString": "struct Shop.Item"
                       },
                       "typeName": {
-                        "id": 117,
+                        "id": 153,
                         "name": "Item",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 56,
+                        "referencedDeclaration": 92,
                         "src": "597:4:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Item_$56_storage_ptr",
+                          "typeIdentifier": "t_struct$_Item_$92_storage_ptr",
                           "typeString": "struct Shop.Item"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 122,
+                  "id": 158,
                   "initialValue": {
                     "baseExpression": {
-                      "id": 119,
+                      "id": 155,
                       "name": "items",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 59,
+                      "referencedDeclaration": 95,
                       "src": "617:5:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_array$_t_struct$_Item_$56_storage_$dyn_storage",
+                        "typeIdentifier": "t_array$_t_struct$_Item_$92_storage_$dyn_storage",
                         "typeString": "struct Shop.Item storage ref[] storage ref"
                       }
                     },
-                    "id": 121,
+                    "id": 157,
                     "indexExpression": {
-                      "id": 120,
+                      "id": 156,
                       "name": "_index",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 114,
+                      "referencedDeclaration": 150,
                       "src": "623:6:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -1227,7 +1227,7 @@
                     "nodeType": "IndexAccess",
                     "src": "617:13:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Item_$56_storage",
+                      "typeIdentifier": "t_struct$_Item_$92_storage",
                       "typeString": "struct Shop.Item storage ref"
                     }
                   },
@@ -1242,32 +1242,32 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 130,
+                        "id": 166,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "expression": {
-                            "id": 124,
+                            "id": 160,
                             "name": "_item",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 118,
+                            "referencedDeclaration": 154,
                             "src": "648:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Item_$56_memory_ptr",
+                              "typeIdentifier": "t_struct$_Item_$92_memory_ptr",
                               "typeString": "struct Shop.Item memory"
                             }
                           },
-                          "id": 125,
+                          "id": 161,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
                           "memberName": "owner",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 55,
+                          "referencedDeclaration": 91,
                           "src": "648:11:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1279,14 +1279,14 @@
                         "rightExpression": {
                           "arguments": [
                             {
-                              "id": 128,
+                              "id": 164,
                               "name": "this",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": -28,
                               "src": "671:4:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_Shop_$189",
+                                "typeIdentifier": "t_contract$_Shop_$225",
                                 "typeString": "contract Shop"
                               }
                             }
@@ -1294,11 +1294,11 @@
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_contract$_Shop_$189",
+                                "typeIdentifier": "t_contract$_Shop_$225",
                                 "typeString": "contract Shop"
                               }
                             ],
-                            "id": 127,
+                            "id": 163,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -1310,14 +1310,14 @@
                               "typeString": "type(address)"
                             },
                             "typeName": {
-                              "id": 126,
+                              "id": 162,
                               "name": "address",
                               "nodeType": "ElementaryTypeName",
                               "src": "663:7:1",
                               "typeDescriptions": {}
                             }
                           },
-                          "id": 129,
+                          "id": 165,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1340,7 +1340,7 @@
                       },
                       {
                         "hexValue": "4974656d20616c726561647920736f6c64",
-                        "id": 131,
+                        "id": 167,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1366,7 +1366,7 @@
                           "typeString": "literal_string \"Item already sold\""
                         }
                       ],
-                      "id": 123,
+                      "id": 159,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -1380,7 +1380,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 132,
+                    "id": 168,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1395,22 +1395,22 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 133,
+                  "id": 169,
                   "nodeType": "ExpressionStatement",
                   "src": "640:58:1"
                 },
                 {
                   "assignments": [
-                    135
+                    171
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 135,
+                      "id": 171,
                       "mutability": "mutable",
                       "name": "success",
                       "nodeType": "VariableDeclaration",
-                      "scope": 161,
+                      "scope": 197,
                       "src": "708:12:1",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -1419,7 +1419,7 @@
                         "typeString": "bool"
                       },
                       "typeName": {
-                        "id": 134,
+                        "id": 170,
                         "name": "bool",
                         "nodeType": "ElementaryTypeName",
                         "src": "708:4:1",
@@ -1431,12 +1431,12 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 147,
+                  "id": 183,
                   "initialValue": {
                     "arguments": [
                       {
                         "expression": {
-                          "id": 138,
+                          "id": 174,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
@@ -1447,7 +1447,7 @@
                             "typeString": "msg"
                           }
                         },
-                        "id": 139,
+                        "id": 175,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1463,14 +1463,14 @@
                       {
                         "arguments": [
                           {
-                            "id": 142,
+                            "id": 178,
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": -28,
                             "src": "767:4:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_Shop_$189",
+                              "typeIdentifier": "t_contract$_Shop_$225",
                               "typeString": "contract Shop"
                             }
                           }
@@ -1478,11 +1478,11 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_contract$_Shop_$189",
+                              "typeIdentifier": "t_contract$_Shop_$225",
                               "typeString": "contract Shop"
                             }
                           ],
-                          "id": 141,
+                          "id": 177,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -1494,14 +1494,14 @@
                             "typeString": "type(address)"
                           },
                           "typeName": {
-                            "id": 140,
+                            "id": 176,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "759:7:1",
                             "typeDescriptions": {}
                           }
                         },
-                        "id": 143,
+                        "id": 179,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1518,25 +1518,25 @@
                       },
                       {
                         "expression": {
-                          "id": 144,
+                          "id": 180,
                           "name": "_item",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 118,
+                          "referencedDeclaration": 154,
                           "src": "774:5:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Item_$56_memory_ptr",
+                            "typeIdentifier": "t_struct$_Item_$92_memory_ptr",
                             "typeString": "struct Shop.Item memory"
                           }
                         },
-                        "id": 145,
+                        "id": 181,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "price",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 53,
+                        "referencedDeclaration": 89,
                         "src": "774:11:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1560,32 +1560,32 @@
                         }
                       ],
                       "expression": {
-                        "id": 136,
+                        "id": 172,
                         "name": "silverCoin",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 61,
+                        "referencedDeclaration": 97,
                         "src": "723:10:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_SilverCoin_$727",
+                          "typeIdentifier": "t_contract$_SilverCoin_$763",
                           "typeString": "contract SilverCoin"
                         }
                       },
-                      "id": 137,
+                      "id": 173,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "transferFrom",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 348,
+                      "referencedDeclaration": 384,
                       "src": "723:23:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_bool_$",
                         "typeString": "function (address,address,uint256) external returns (bool)"
                       }
                     },
-                    "id": 146,
+                    "id": 182,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1607,11 +1607,11 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 149,
+                        "id": 185,
                         "name": "success",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 135,
+                        "referencedDeclaration": 171,
                         "src": "804:7:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
@@ -1620,7 +1620,7 @@
                       },
                       {
                         "hexValue": "5061796d656e74206661696c656421",
-                        "id": 150,
+                        "id": 186,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1646,7 +1646,7 @@
                           "typeString": "literal_string \"Payment failed!\""
                         }
                       ],
-                      "id": 148,
+                      "id": 184,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -1660,7 +1660,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 151,
+                    "id": 187,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1675,13 +1675,13 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 152,
+                  "id": 188,
                   "nodeType": "ExpressionStatement",
                   "src": "796:35:1"
                 },
                 {
                   "expression": {
-                    "id": 159,
+                    "id": 195,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1689,24 +1689,24 @@
                     "leftHandSide": {
                       "expression": {
                         "baseExpression": {
-                          "id": 153,
+                          "id": 189,
                           "name": "items",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 59,
+                          "referencedDeclaration": 95,
                           "src": "841:5:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Item_$56_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Item_$92_storage_$dyn_storage",
                             "typeString": "struct Shop.Item storage ref[] storage ref"
                           }
                         },
-                        "id": 155,
+                        "id": 191,
                         "indexExpression": {
-                          "id": 154,
+                          "id": 190,
                           "name": "_index",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 114,
+                          "referencedDeclaration": 150,
                           "src": "847:6:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -1720,18 +1720,18 @@
                         "nodeType": "IndexAccess",
                         "src": "841:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Item_$56_storage",
+                          "typeIdentifier": "t_struct$_Item_$92_storage",
                           "typeString": "struct Shop.Item storage ref"
                         }
                       },
-                      "id": 156,
+                      "id": 192,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "memberName": "owner",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 55,
+                      "referencedDeclaration": 91,
                       "src": "841:19:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -1742,7 +1742,7 @@
                     "operator": "=",
                     "rightHandSide": {
                       "expression": {
-                        "id": 157,
+                        "id": 193,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
@@ -1753,7 +1753,7 @@
                           "typeString": "msg"
                         }
                       },
-                      "id": 158,
+                      "id": 194,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1772,7 +1772,7 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 160,
+                  "id": 196,
                   "nodeType": "ExpressionStatement",
                   "src": "841:32:1"
                 }
@@ -1784,16 +1784,16 @@
             "modifiers": [],
             "name": "buyItem",
             "parameters": {
-              "id": 115,
+              "id": 151,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 114,
+                  "id": 150,
                   "mutability": "mutable",
                   "name": "_index",
                   "nodeType": "VariableDeclaration",
-                  "scope": 162,
+                  "scope": 198,
                   "src": "564:14:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1802,7 +1802,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 113,
+                    "id": 149,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "564:7:1",
@@ -1817,23 +1817,23 @@
               "src": "563:16:1"
             },
             "returnParameters": {
-              "id": 116,
+              "id": 152,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "587:0:1"
             },
-            "scope": 189,
+            "scope": 225,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           },
           {
-            "id": 188,
+            "id": 224,
             "nodeType": "FunctionDefinition",
             "src": "886:174:1",
             "nodes": [],
             "body": {
-              "id": 187,
+              "id": 223,
               "nodeType": "Block",
               "src": "974:86:1",
               "nodes": [],
@@ -1844,24 +1844,24 @@
                       {
                         "expression": {
                           "baseExpression": {
-                            "id": 173,
+                            "id": 209,
                             "name": "items",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 59,
+                            "referencedDeclaration": 95,
                             "src": "992:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_array$_t_struct$_Item_$56_storage_$dyn_storage",
+                              "typeIdentifier": "t_array$_t_struct$_Item_$92_storage_$dyn_storage",
                               "typeString": "struct Shop.Item storage ref[] storage ref"
                             }
                           },
-                          "id": 175,
+                          "id": 211,
                           "indexExpression": {
-                            "id": 174,
+                            "id": 210,
                             "name": "_index",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 164,
+                            "referencedDeclaration": 200,
                             "src": "998:6:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -1875,18 +1875,18 @@
                           "nodeType": "IndexAccess",
                           "src": "992:13:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Item_$56_storage",
+                            "typeIdentifier": "t_struct$_Item_$92_storage",
                             "typeString": "struct Shop.Item storage ref"
                           }
                         },
-                        "id": 176,
+                        "id": 212,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "name",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 51,
+                        "referencedDeclaration": 87,
                         "src": "992:18:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_storage",
@@ -1896,24 +1896,24 @@
                       {
                         "expression": {
                           "baseExpression": {
-                            "id": 177,
+                            "id": 213,
                             "name": "items",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 59,
+                            "referencedDeclaration": 95,
                             "src": "1012:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_array$_t_struct$_Item_$56_storage_$dyn_storage",
+                              "typeIdentifier": "t_array$_t_struct$_Item_$92_storage_$dyn_storage",
                               "typeString": "struct Shop.Item storage ref[] storage ref"
                             }
                           },
-                          "id": 179,
+                          "id": 215,
                           "indexExpression": {
-                            "id": 178,
+                            "id": 214,
                             "name": "_index",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 164,
+                            "referencedDeclaration": 200,
                             "src": "1018:6:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -1927,18 +1927,18 @@
                           "nodeType": "IndexAccess",
                           "src": "1012:13:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Item_$56_storage",
+                            "typeIdentifier": "t_struct$_Item_$92_storage",
                             "typeString": "struct Shop.Item storage ref"
                           }
                         },
-                        "id": 180,
+                        "id": 216,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "price",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 53,
+                        "referencedDeclaration": 89,
                         "src": "1012:19:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1948,24 +1948,24 @@
                       {
                         "expression": {
                           "baseExpression": {
-                            "id": 181,
+                            "id": 217,
                             "name": "items",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 59,
+                            "referencedDeclaration": 95,
                             "src": "1033:5:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_array$_t_struct$_Item_$56_storage_$dyn_storage",
+                              "typeIdentifier": "t_array$_t_struct$_Item_$92_storage_$dyn_storage",
                               "typeString": "struct Shop.Item storage ref[] storage ref"
                             }
                           },
-                          "id": 183,
+                          "id": 219,
                           "indexExpression": {
-                            "id": 182,
+                            "id": 218,
                             "name": "_index",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 164,
+                            "referencedDeclaration": 200,
                             "src": "1039:6:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -1979,18 +1979,18 @@
                           "nodeType": "IndexAccess",
                           "src": "1033:13:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Item_$56_storage",
+                            "typeIdentifier": "t_struct$_Item_$92_storage",
                             "typeString": "struct Shop.Item storage ref"
                           }
                         },
-                        "id": 184,
+                        "id": 220,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "owner",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 55,
+                        "referencedDeclaration": 91,
                         "src": "1033:19:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1998,7 +1998,7 @@
                         }
                       }
                     ],
-                    "id": 185,
+                    "id": 221,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
@@ -2011,8 +2011,8 @@
                       "typeString": "tuple(string storage ref,uint256,address)"
                     }
                   },
-                  "functionReturnParameters": 172,
-                  "id": 186,
+                  "functionReturnParameters": 208,
+                  "id": 222,
                   "nodeType": "Return",
                   "src": "984:69:1"
                 }
@@ -2024,16 +2024,16 @@
             "modifiers": [],
             "name": "viewItem",
             "parameters": {
-              "id": 165,
+              "id": 201,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 164,
+                  "id": 200,
                   "mutability": "mutable",
                   "name": "_index",
                   "nodeType": "VariableDeclaration",
-                  "scope": 188,
+                  "scope": 224,
                   "src": "904:14:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2042,7 +2042,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 163,
+                    "id": 199,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "904:7:1",
@@ -2057,16 +2057,16 @@
               "src": "903:16:1"
             },
             "returnParameters": {
-              "id": 172,
+              "id": 208,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 167,
+                  "id": 203,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 188,
+                  "scope": 224,
                   "src": "941:13:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -2075,7 +2075,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 166,
+                    "id": 202,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "941:6:1",
@@ -2088,11 +2088,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 169,
+                  "id": 205,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 188,
+                  "scope": 224,
                   "src": "956:7:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2101,7 +2101,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 168,
+                    "id": 204,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "956:7:1",
@@ -2114,11 +2114,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 171,
+                  "id": 207,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 188,
+                  "scope": 224,
                   "src": "965:7:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2127,7 +2127,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 170,
+                    "id": 206,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "965:7:1",
@@ -2142,7 +2142,7 @@
               ],
               "src": "940:33:1"
             },
-            "scope": 189,
+            "scope": 225,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
@@ -2154,10 +2154,10 @@
         "contractKind": "contract",
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          189
+          225
         ],
         "name": "Shop",
-        "scope": 190
+        "scope": 226
       }
     ]
   },
