@@ -1,0 +1,3 @@
+[submodule "ctf/blockchain/blockchain_portal_noncense/Contract/lib/forge-std"]
+	path = ctf/blockchain/blockchain_portal_noncense/Contract/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
