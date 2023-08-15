@@ -17,18 +17,17 @@ contract PortalStation {
     function requestPortal(string calldata _destination) public payable {
         require(destinations[_destination] != address(0));
         require(isExpertStandby, "Portal expert has a day off");
-        require(msg.value > 1337 ether);
+        //require(msg.value > 1337 ether);
 
         isPortalActive[_destination] = true;
     }
 
-    function createPortal(string calldata _destination) public returns (bool, bytes memory) {
+    function createPortal(string calldata _destination) public {
         require(destinations[_destination] != address(0));
         
         (bool success, bytes memory retValue) = destinations[_destination].delegatecall(abi.encodeWithSignature("connect()"));
         require(success, "Portal destination is currently not available");
-        //require(abi.decode(retValue, (bool)), "Connection failed");
-	return (success, retValue);
+        require(abi.decode(retValue, (bool)), "Connection failed");
     }
 
 }

