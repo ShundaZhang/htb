@@ -1,7 +1,7 @@
 from web3 import Web3
 import rlp
 
-url = 'http://157.245.37.125:30296/rpc'
+url = 'http://157.245.43.189:30878/rpc'
 w3 = Web3(Web3.HTTPProvider(url))
 
 def calculate_contract_address(sender_address, nonce):

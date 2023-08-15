@@ -19,7 +19,7 @@ SetupContract =  x["setupAddress"]
 #Attack Contract address
 Target2Contract = "0xB89EcCb84C7CA4D2d28ecb49617982D4FF4c8CcE"
 
-url = 'http://157.245.43.189:30681/rpc'
+url = 'http://157.245.43.189:30238/rpc'
 
 w3 = Web3(Web3.HTTPProvider(url))
 block_number = w3.eth.block_number
@@ -44,10 +44,10 @@ account_from = {
 
 install_solc("0.8.13")
 
-compiled = compile_files(["Contract.sol"], output_values=["abi"], solc_version="0.8.13")
-abi = compiled['Contract.sol:Contract']['abi']
+#compiled = compile_files(["Contract.sol"], output_values=["abi"], solc_version="0.8.13")
+#abi = compiled['Contract.sol:Contract']['abi']
 
-contract_instance = w3.eth.contract(address=Target2Contract, abi=abi)
+#contract_instance = w3.eth.contract(address=Target2Contract, abi=abi)
 #number = contract_instance.functions.attack2().call()
 #print(number)
 
@@ -73,6 +73,10 @@ contract_instance = w3.eth.contract(address=Target2Contract, abi=abi)
 #print(number)
 #number = contract_instance2.functions.createPortal("dawrfKingdom").call()
 #print(number)
+
+compiled = compile_files(["Portal.sol"], output_values=["abi"], solc_version="0.8.13")
+abi = compiled['Portal.sol:PortalStation']['abi']
+contract_instance2 = w3.eth.contract(address=TargetContract, abi=abi)
 
 #construct_txn = contract_instance2.functions.createPortal("elfKingdom").build_transaction(
 construct_txn = contract_instance2.functions.createPortal("orcKingdom").build_transaction(
