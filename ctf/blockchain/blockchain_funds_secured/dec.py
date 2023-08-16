@@ -46,12 +46,14 @@ account_from = {
 }
 
 install_solc("0.8.18")
-address = "0x0000000000000000000000000000000000000001"
-data_to_sign = w3.keccak(text=address).hex()
-account = Account.from_key(PrivateKey)
-signature = account.signHash(data_to_sign).signature
-print(signature)
-exit(0)
+signature = []
+addresses = ["0x0000000000000000000000000000000000000001","0x0000000000000000000000000000000000000002","0x0000000000000000000000000000000000000003","0x0000000000000000000000000000000000000004","0x0000000000000000000000000000000000000005","0x0000000000000000000000000000000000000006","0x0000000000000000000000000000000000000007","0x0000000000000000000000000000000000000008","0x0000000000000000000000000000000000000009"]
+
+for address in addresses:
+	data_to_sign = w3.keccak(text=address).hex()
+	account = Account.from_key(PrivateKey)
+	signature = account.signHash(data_to_sign).signature
+	signature.append(address)
 
 compiled = compile_files(["Campaign.sol"], output_values=["abi"], solc_version="0.8.18")
 abi = compiled['Campaign.sol:CouncilWallet']['abi']
