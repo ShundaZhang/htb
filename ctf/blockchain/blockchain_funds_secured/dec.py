@@ -48,8 +48,8 @@ account_from = {
 install_solc("0.8.18")
 address = "0x0000000000000000000000000000000000000001"
 data_to_sign = w3.keccak(text=address).hex()
-account = Account.private_key_to_account(PrivateKey)
-signature = account.sign_hash(data_to_sign).signature
+account = Account.from_key(PrivateKey)
+signature = account.signHash(data_to_sign).signature
 print(signature)
 exit(0)
 
