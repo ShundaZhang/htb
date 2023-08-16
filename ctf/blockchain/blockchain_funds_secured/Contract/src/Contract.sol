@@ -1,15 +1,22 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.18;
 
-import "./Campaign2.sol";
+import "./Campaign.sol";
 
 
 contract Contract{
-        address public YOUR_CHALLENGE_CONTRACT_ADDRESS = address(0x7eb0803195b4686A8cADFdA14121E286Bde6a76A);
+        address public YOUR_CHALLENGE_CONTRACT_ADDRESS = address(0xc8d36A3b105fB53aBdaa26Df1661264fbAe2B42E);
 
-        CouncilWallet public creature = Vault(YOUR_CHALLENGE_CONTRACT_ADDRESS);
+        address public owner;
+        bytes32 private passphrase;
+        uint256 public nonce;
+        bytes16 _password;
+
+        Vault public creature = Vault(YOUR_CHALLENGE_CONTRACT_ADDRESS);
 
 	constructor() {
+                //owner = address(msg.sender);
+		owner = address(0x439c8a7099bdc7Fd924C9F3eB1915223B4f1A57A);  //Setup
 	}
 
         function attack2() external {

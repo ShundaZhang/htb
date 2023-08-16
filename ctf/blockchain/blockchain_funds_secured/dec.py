@@ -57,9 +57,9 @@ for address in addresses:
 
 compiled = compile_files(["Campaign.sol"], output_values=["abi"], solc_version="0.8.18")
 abi = compiled['Campaign.sol:CouncilWallet']['abi']
-contract_instance2 = w3.eth.contract(address=TargetContract, abi=abi)
+contract_instance2 = w3.eth.contract(address=WalletContract, abi=abi)
 
-construct_txn = contract_instance2.functions.closeCampaign(signatures, Address, WalletContract).build_transaction(
+construct_txn = contract_instance2.functions.closeCampaign(signatures, Address, TargetContract).build_transaction(
 	{
 		'from': account_from['address'],
 		'nonce': w3.eth.get_transaction_count(account_from['address']),
