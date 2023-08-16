@@ -9,7 +9,7 @@ contract Contract{
 
 	CouncilWallet public creature = CouncilWallet(YOUR_CHALLENGE_CONTRACT_ADDRESS);
 
-	function attack2() public review returns (address[] memory){
+	function attack2() public view returns (address[] memory){
 		address[] memory councilMembers = new address[](11);
 		for (uint256 i = 0; i < 11; i++) {
 			councilMembers[i] = address(uint160(i));
