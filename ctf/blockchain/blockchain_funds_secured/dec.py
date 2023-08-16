@@ -24,7 +24,7 @@ PrivateKey =    x["PrivateKey"]
 Address =       x["Address"] 
 TargetContract = x["TargetAddress"]
 SetupContract =  x["setupAddress"]
-WalletContract = x["WalletAddres"]
+WalletContract = x["WalletAddress"]
 
 #Attack Contract address
 #Target2Contract = "0x2B5d196C89fed034a97fa56a87E520a0C5e0833C"
