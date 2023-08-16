@@ -46,20 +46,20 @@ account_from = {
 }
 
 install_solc("0.8.18")
-signature = []
+signatures = []
 addresses = ["0x0000000000000000000000000000000000000001","0x0000000000000000000000000000000000000002","0x0000000000000000000000000000000000000003","0x0000000000000000000000000000000000000004","0x0000000000000000000000000000000000000005","0x0000000000000000000000000000000000000006","0x0000000000000000000000000000000000000007","0x0000000000000000000000000000000000000008","0x0000000000000000000000000000000000000009"]
 
 for address in addresses:
 	data_to_sign = w3.keccak(text=address).hex()
 	account = Account.from_key(PrivateKey)
 	signature = account.signHash(data_to_sign).signature
-	signature.append(address)
+	signatures.append(address)
 
 compiled = compile_files(["Campaign.sol"], output_values=["abi"], solc_version="0.8.18")
 abi = compiled['Campaign.sol:CouncilWallet']['abi']
 contract_instance2 = w3.eth.contract(address=TargetContract, abi=abi)
 
-construct_txn = contract_instance2.functions.closeCampaign(signature, Address, WalletContract).build_transaction(
+construct_txn = contract_instance2.functions.closeCampaign(signatures, Address, WalletContract).build_transaction(
 	{
 		'from': account_from['address'],
 		'nonce': w3.eth.get_transaction_count(account_from['address']),
