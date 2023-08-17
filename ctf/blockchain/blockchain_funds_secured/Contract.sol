@@ -2,9 +2,11 @@
 pragma solidity ^0.8.18;
 
 import "./Campaign2.sol";
-
+import {ECDSA} from "./lib/ECDSA.sol";
 
 contract Contract{
+	using ECDSA for bytes32;
+
 	address public YOUR_CHALLENGE_CONTRACT_ADDRESS = address(0x7eb0803195b4686A8cADFdA14121E286Bde6a76A);
 
 	CouncilWallet public creature = CouncilWallet(YOUR_CHALLENGE_CONTRACT_ADDRESS);
@@ -19,10 +21,10 @@ contract Contract{
 	}
 
 	function closeCampaign(bytes[] memory signatures, address to) public returns (address[] memory) {
-		address[] memory voters = new address[](6);
+		address[] memory voters = new address[](9);
 		bytes32 data = keccak256(abi.encode(to));
 
-		for (uint256 i = 0; i < signatures.length; i++) {
+		for (uint256 i = 0; i < 9; i++) {
 			// Get signer address
 			address signer = data.toEthSignedMessageHash().recover(signatures[i]);
 
