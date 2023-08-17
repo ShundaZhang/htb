@@ -59,8 +59,12 @@ print(signatures)
 compiled = compile_files(["Contract.sol"], output_values=["abi"], solc_version="0.8.18")
 abi = compiled['Contract.sol:Contract']['abi']
 contract_instance2 = w3.eth.contract(address=Target2Contract, abi=abi)
-number = contract_instance2.functions.attack2().call()
+#number = contract_instance2.functions.attack2().call()
+#print(number)
+number = contract_instance2.functions.closeCampaign(signatures, Address).call()
 print(number)
+
+
 
 exit(0)
 compiled = compile_files(["Campaign.sol"], output_values=["abi"], solc_version="0.8.18")

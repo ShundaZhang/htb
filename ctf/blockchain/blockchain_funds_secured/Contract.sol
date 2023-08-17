@@ -18,5 +18,21 @@ contract Contract{
 		return councilMembers;
 	}
 
+	function closeCampaign(bytes[] memory signatures, address to) public returns (address[] memory) {
+		address[] memory voters = new address[](6);
+		bytes32 data = keccak256(abi.encode(to));
+
+		for (uint256 i = 0; i < signatures.length; i++) {
+			// Get signer address
+			address signer = data.toEthSignedMessageHash().recover(signatures[i]);
+
+			// Ensure that signer is part of Council and has not already signed
+
+			// Keep track of addresses that have already signed
+			voters[i] = signer;
+		}
+		return voters;
+	}
+
 }
 
