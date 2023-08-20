@@ -137,8 +137,8 @@
     },
     "settings": {
       "remappings": [
-        "ds-test/=lib/forge-std/lib/ds-test/src/",
-        "forge-std/=lib/forge-std/src/"
+        ":ds-test/=lib/forge-std/lib/ds-test/src/",
+        ":forge-std/=lib/forge-std/src/"
       ],
       "optimizer": {
         "enabled": true,
@@ -207,7 +207,7 @@
         43213
       ],
       "ECDSA": [
-        43922
+        43990
       ]
     },
     "nodeType": "SourceUnit",
@@ -233,7 +233,7 @@
         "file": "./lib/ECDSA.sol",
         "nameLocation": "-1:-1:-1",
         "scope": 43214,
-        "sourceUnit": 43923,
+        "sourceUnit": 43991,
         "symbolAliases": [
           {
             "foreign": {
@@ -241,7 +241,7 @@
               "name": "ECDSA",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 43922,
+              "referencedDeclaration": 43990,
               "src": "72:5:20",
               "typeDescriptions": {}
             },
@@ -268,7 +268,7 @@
                 "246:5:20"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 43922,
+              "referencedDeclaration": 43990,
               "src": "246:5:20"
             },
             "typeName": {
@@ -930,7 +930,7 @@
                                 "memberLocation": "993:22:20",
                                 "memberName": "toEthSignedMessageHash",
                                 "nodeType": "MemberAccess",
-                                "referencedDeclaration": 43867,
+                                "referencedDeclaration": 43935,
                                 "src": "988:27:20",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_function_internal_pure$_t_bytes32_$returns$_t_bytes32_$attached_to$_t_bytes32_$",
@@ -961,7 +961,7 @@
                             "memberLocation": "1018:7:20",
                             "memberName": "recover",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 43663,
+                            "referencedDeclaration": 43731,
                             "src": "988:37:20",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_pure$_t_bytes32_$_t_bytes_memory_ptr_$returns$_t_address_$attached_to$_t_bytes32_$",
@@ -2360,9 +2360,9 @@
         "nameLocation": "220:13:20",
         "scope": 43214,
         "usedErrors": [
-          43522,
-          43527,
-          43532
+          43590,
+          43595,
+          43600
         ]
       },
       {

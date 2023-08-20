@@ -12,7 +12,7 @@
   },
   "files": {
     "lib/forge-std/lib/ds-test/src/test.sol": {
-      "lastModificationDate": 1692172543273,
+      "lastModificationDate": 1692175235545,
       "contentHash": "9febff9d09f18af5306669dc276c4c43",
       "sourceName": "lib/forge-std/lib/ds-test/src/test.sol",
       "solcConfig": {
@@ -22,7 +22,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -53,7 +52,7 @@
       }
     },
     "lib/forge-std/src/Base.sol": {
-      "lastModificationDate": 1692172542565,
+      "lastModificationDate": 1692175235545,
       "contentHash": "ee13c050b1914464f1d3f90cde90204b",
       "sourceName": "lib/forge-std/src/Base.sol",
       "solcConfig": {
@@ -63,7 +62,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -103,7 +101,7 @@
       }
     },
     "lib/forge-std/src/Script.sol": {
-      "lastModificationDate": 1692172542565,
+      "lastModificationDate": 1692175235545,
       "contentHash": "ba325c778a7da8a21c2136aa32763c14",
       "sourceName": "lib/forge-std/src/Script.sol",
       "solcConfig": {
@@ -113,7 +111,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -158,7 +155,7 @@
       }
     },
     "lib/forge-std/src/StdAssertions.sol": {
-      "lastModificationDate": 1692172542565,
+      "lastModificationDate": 1692175235545,
       "contentHash": "6cc2858240bcd443debbbf075490e325",
       "sourceName": "lib/forge-std/src/StdAssertions.sol",
       "solcConfig": {
@@ -168,7 +165,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -202,7 +198,7 @@
       }
     },
     "lib/forge-std/src/StdChains.sol": {
-      "lastModificationDate": 1692172542565,
+      "lastModificationDate": 1692175235545,
       "contentHash": "1e71cb7dba32ac3c1becf2f32e859221",
       "sourceName": "lib/forge-std/src/StdChains.sol",
       "solcConfig": {
@@ -212,7 +208,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -245,7 +240,7 @@
       }
     },
     "lib/forge-std/src/StdCheats.sol": {
-      "lastModificationDate": 1692172542565,
+      "lastModificationDate": 1692175235545,
       "contentHash": "fcae587bf22bd25463e4bb64fa740e70",
       "sourceName": "lib/forge-std/src/StdCheats.sol",
       "solcConfig": {
@@ -255,7 +250,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -293,7 +287,7 @@
       }
     },
     "lib/forge-std/src/StdError.sol": {
-      "lastModificationDate": 1692172542565,
+      "lastModificationDate": 1692175235545,
       "contentHash": "64c896e1276a291776e5ea5aecb3870a",
       "sourceName": "lib/forge-std/src/StdError.sol",
       "solcConfig": {
@@ -303,7 +297,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -334,7 +327,7 @@
       }
     },
     "lib/forge-std/src/StdInvariant.sol": {
-      "lastModificationDate": 1692172542565,
+      "lastModificationDate": 1692175235545,
       "contentHash": "6d12d54c05754ad4e03066726dca3a84",
       "sourceName": "lib/forge-std/src/StdInvariant.sol",
       "solcConfig": {
@@ -344,7 +337,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -375,7 +367,7 @@
       }
     },
     "lib/forge-std/src/StdJson.sol": {
-      "lastModificationDate": 1692172542565,
+      "lastModificationDate": 1692175235545,
       "contentHash": "2e1d13674e152408867795362d833c24",
       "sourceName": "lib/forge-std/src/StdJson.sol",
       "solcConfig": {
@@ -385,7 +377,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -418,7 +409,7 @@
       }
     },
     "lib/forge-std/src/StdMath.sol": {
-      "lastModificationDate": 1692172542565,
+      "lastModificationDate": 1692175235545,
       "contentHash": "9da8f453eba6bb98f3d75bc6822bfb29",
       "sourceName": "lib/forge-std/src/StdMath.sol",
       "solcConfig": {
@@ -428,7 +419,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -459,7 +449,7 @@
       }
     },
     "lib/forge-std/src/StdStorage.sol": {
-      "lastModificationDate": 1692172542565,
+      "lastModificationDate": 1692175235545,
       "contentHash": "4fc0ff0cb196a405e5a4c9fa1c6acccb",
       "sourceName": "lib/forge-std/src/StdStorage.sol",
       "solcConfig": {
@@ -469,7 +459,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -505,7 +494,7 @@
       }
     },
     "lib/forge-std/src/StdStyle.sol": {
-      "lastModificationDate": 1692172542565,
+      "lastModificationDate": 1692175235545,
       "contentHash": "6281165a12aa639705c691fccefd855e",
       "sourceName": "lib/forge-std/src/StdStyle.sol",
       "solcConfig": {
@@ -515,7 +504,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -548,7 +536,7 @@
       }
     },
     "lib/forge-std/src/StdUtils.sol": {
-      "lastModificationDate": 1692172542565,
+      "lastModificationDate": 1692175235545,
       "contentHash": "3ce83748fd76644688f916c9cced545b",
       "sourceName": "lib/forge-std/src/StdUtils.sol",
       "solcConfig": {
@@ -558,7 +546,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -592,7 +579,7 @@
       }
     },
     "lib/forge-std/src/Test.sol": {
-      "lastModificationDate": 1692172542565,
+      "lastModificationDate": 1692175235545,
       "contentHash": "15866901137b5670eabf31362523bd28",
       "sourceName": "lib/forge-std/src/Test.sol",
       "solcConfig": {
@@ -602,7 +589,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -651,7 +637,7 @@
       }
     },
     "lib/forge-std/src/Vm.sol": {
-      "lastModificationDate": 1692172542565,
+      "lastModificationDate": 1692175235545,
       "contentHash": "c2907f516842f8ca82e2d3fcdebf7d19",
       "sourceName": "lib/forge-std/src/Vm.sol",
       "solcConfig": {
@@ -661,7 +647,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -695,7 +680,7 @@
       }
     },
     "lib/forge-std/src/console.sol": {
-      "lastModificationDate": 1692172542565,
+      "lastModificationDate": 1692175235545,
       "contentHash": "100b8a33b917da1147740d7ab8b0ded3",
       "sourceName": "lib/forge-std/src/console.sol",
       "solcConfig": {
@@ -705,7 +690,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -736,7 +720,7 @@
       }
     },
     "lib/forge-std/src/console2.sol": {
-      "lastModificationDate": 1692172542565,
+      "lastModificationDate": 1692175235545,
       "contentHash": "491ca717c1915995e78cc361485a3067",
       "sourceName": "lib/forge-std/src/console2.sol",
       "solcConfig": {
@@ -746,7 +730,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -777,7 +760,7 @@
       }
     },
     "lib/forge-std/src/interfaces/IMulticall3.sol": {
-      "lastModificationDate": 1692172542565,
+      "lastModificationDate": 1692175235545,
       "contentHash": "7b131ca1ca32ef6378b7b9ad5488b901",
       "sourceName": "lib/forge-std/src/interfaces/IMulticall3.sol",
       "solcConfig": {
@@ -787,7 +770,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -818,7 +800,7 @@
       }
     },
     "lib/forge-std/src/safeconsole.sol": {
-      "lastModificationDate": 1692172542569,
+      "lastModificationDate": 1692175235545,
       "contentHash": "ac3b1bf5a444db5db3656021830258a8",
       "sourceName": "lib/forge-std/src/safeconsole.sol",
       "solcConfig": {
@@ -828,7 +810,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -859,7 +840,7 @@
       }
     },
     "script/Counter.s.sol": {
-      "lastModificationDate": 1692172541817,
+      "lastModificationDate": 1692175235545,
       "contentHash": "7539680fbd3ad49c6632713cc2bb6bf6",
       "sourceName": "script/Counter.s.sol",
       "solcConfig": {
@@ -869,7 +850,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -915,7 +895,7 @@
       }
     },
     "src/Campaign.sol": {
-      "lastModificationDate": 1692173878421,
+      "lastModificationDate": 1692521240515,
       "contentHash": "a1704148c270d08d2d6d4c4f8d0a47e9",
       "sourceName": "src/Campaign.sol",
       "solcConfig": {
@@ -925,7 +905,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -964,7 +943,7 @@
       }
     },
     "src/Campaign2.sol": {
-      "lastModificationDate": 1692173878421,
+      "lastModificationDate": 1692521240515,
       "contentHash": "a1704148c270d08d2d6d4c4f8d0a47e9",
       "sourceName": "src/Campaign2.sol",
       "solcConfig": {
@@ -974,7 +953,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -1013,7 +991,7 @@
       }
     },
     "src/Contract.sol": {
-      "lastModificationDate": 1692239863824,
+      "lastModificationDate": 1692521240515,
       "contentHash": "348bbf09feea881068524ff33824f75d",
       "sourceName": "src/Contract.sol",
       "solcConfig": {
@@ -1023,7 +1001,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -1060,7 +1037,7 @@
       }
     },
     "src/Counter.sol": {
-      "lastModificationDate": 1692172541817,
+      "lastModificationDate": 1692175235545,
       "contentHash": "ae6c800a2b4c57768024d6e9423d39e8",
       "sourceName": "src/Counter.sol",
       "solcConfig": {
@@ -1070,7 +1047,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -1101,7 +1077,7 @@
       }
     },
     "src/lib/ECDSA.sol": {
-      "lastModificationDate": 1692172615617,
+      "lastModificationDate": 1692175235545,
       "contentHash": "f606c9d4f4f58bd7e8fd355eddcb7bb0",
       "sourceName": "src/lib/ECDSA.sol",
       "solcConfig": {
@@ -1111,7 +1087,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -1146,7 +1121,7 @@
       }
     },
     "src/lib/Strings.sol": {
-      "lastModificationDate": 1692172615617,
+      "lastModificationDate": 1692175235545,
       "contentHash": "803e20773e62c565dd0c1abe26684855",
       "sourceName": "src/lib/Strings.sol",
       "solcConfig": {
@@ -1156,7 +1131,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -1190,7 +1164,7 @@
       }
     },
     "src/lib/math/Math.sol": {
-      "lastModificationDate": 1692172615617,
+      "lastModificationDate": 1692175235545,
       "contentHash": "8d241cc39a98ccd00b4088ef8e7c96ae",
       "sourceName": "src/lib/math/Math.sol",
       "solcConfig": {
@@ -1200,7 +1174,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -1231,7 +1204,7 @@
       }
     },
     "src/lib/math/SignedMath.sol": {
-      "lastModificationDate": 1692172615617,
+      "lastModificationDate": 1692175235545,
       "contentHash": "fdf61438f59e8917d957904d26e47c44",
       "sourceName": "src/lib/math/SignedMath.sol",
       "solcConfig": {
@@ -1241,7 +1214,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },
@@ -1272,7 +1244,7 @@
       }
     },
     "test/Counter.t.sol": {
-      "lastModificationDate": 1692172541817,
+      "lastModificationDate": 1692175235545,
       "contentHash": "cb58204d005faa2a5dfcf152c560595f",
       "sourceName": "test/Counter.t.sol",
       "solcConfig": {
@@ -1282,7 +1254,6 @@
             "runs": 200
           },
           "metadata": {
-            "useLiteralContent": false,
             "bytecodeHash": "ipfs",
             "appendCBOR": true
           },

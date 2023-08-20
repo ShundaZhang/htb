@@ -6,19 +6,19 @@ from eth_account.messages import encode_defunct
 from eth_utils import keccak
 
 '''
-Private key           :  0xa5188a9caca01432d57d683a7412ce04c3a5e3457f857b838b61e8467594d382
-Address               :  0xd2Bac494B1278aC00D0b1CfA67509C834625950B
-Crowdfunding contract :  0x9d46acC477525732942282995310f01B396A4E68
-Wallet contract       :  0x0924d5A747EBc18456b3cEE13880198D69E0a146
-Setup contract        :  0xedFE8542165fF4e9d0E59008204C0516aD547DDA
+Private key           :  0x976bdedb3d2659f6eeb93eff9b5691e645757af37f997ac7036735eead99ff93
+Address               :  0x7F89D36714adA6e375Da57ce6f6CAcA08CA2a413
+Crowdfunding contract :  0xd2180C553707F73F0b92aa3eE590d28A8bA92574
+Wallet contract       :  0xB1928Ee7b85d9B5F94213eceCA3072CeFC9a2274
+Setup contract        :  0x7970DD749d501385B39c88DA47d0dFFD8A531458
 '''
 
 x = {
-    "PrivateKey":    "0xa5188a9caca01432d57d683a7412ce04c3a5e3457f857b838b61e8467594d382",
-    "Address":       "0xd2Bac494B1278aC00D0b1CfA67509C834625950B",
-    "TargetAddress": "0x9d46acC477525732942282995310f01B396A4E68",
-    "WalletAddress": "0x0924d5A747EBc18456b3cEE13880198D69E0a146",
-    "setupAddress":  "0xedFE8542165fF4e9d0E59008204C0516aD547DDA"
+    "PrivateKey":    "0x976bdedb3d2659f6eeb93eff9b5691e645757af37f997ac7036735eead99ff93",
+    "Address":       "0x7F89D36714adA6e375Da57ce6f6CAcA08CA2a413",
+    "TargetAddress": "0xd2180C553707F73F0b92aa3eE590d28A8bA92574",
+    "WalletAddress": "0xB1928Ee7b85d9B5F94213eceCA3072CeFC9a2274",
+    "setupAddress":  "0x7970DD749d501385B39c88DA47d0dFFD8A531458"
 }
 
 PrivateKey =    x["PrivateKey"]
@@ -28,9 +28,10 @@ SetupContract =  x["setupAddress"]
 WalletContract = x["WalletAddress"]
 
 #Attack Contract address
-Target2Contract = "0xcaff342A3e7D4A84595Ce48D24f00FE485DbA280"
+#Target2Contract = "0x5D18A6F24D615134a6b6b4c95cE08347c804dF67"
+Target2Contract = "0x39D81447e4E493A543c5F58604F45C4642f39590"
 
-url = 'http://157.245.43.189:31133'
+url = 'http://157.245.37.125:31711'
 
 w3 = Web3(Web3.HTTPProvider(url))
 block_number = w3.eth.block_number
@@ -47,7 +48,6 @@ print("All accounts in the network:")
 for account in all_accounts:
         print(account)
 
-
 account_from = {
         'private_key': PrivateKey,
         'address': account_address,
@@ -59,6 +59,7 @@ addresses = ["0x0000000000000000000000000000000000000001","0x0000000000000000000
 
 #private_key = "0x3fa8b14e683907bfefdebe44f91d81225197136f59cba6e8bf5a8e3b9fa40569"
 private_key = PrivateKey
+private_key = "0x976bdedb3d2659f6eeb93eff9b5691e645757af37f997ac7036735eead99ff93"
 
 for address in addresses:
 	message_hash = w3.keccak(text=Address)
