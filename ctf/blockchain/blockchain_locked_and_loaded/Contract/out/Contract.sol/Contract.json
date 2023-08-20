@@ -1,0 +1,217 @@
+{
+  "abi": [
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "bytecode": {
+    "object": "0x6080604052348015600f57600080fd5b50604880601d6000396000f3fe608060405236600d57600080fd5b600080fdfea2646970667358221220f0036f6897c514a652d7c57f40b97d43e85410eed633a8c3f88fcecfe4915edc64736f6c63430008150033",
+    "sourceMap": "65:74:0:-:0;;;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x608060405236600d57600080fd5b600080fdfea2646970667358221220f0036f6897c514a652d7c57f40b97d43e85410eed633a8c3f88fcecfe4915edc64736f6c63430008150033",
+    "sourceMap": "65:74:0:-:0;;;;;;118:14;;;65:74;;;",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {},
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/Contract.sol\":\"Contract\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"src/Contract.sol\":{\"keccak256\":\"0xfbe5769415fd62af7964cd7f32778e63591dd6a4a368d0064d81905dbf509a70\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://8006b0541de987c2c0745a597872875f1791bd61e97317888af2c6a4e6663d49\",\"dweb:/ipfs/QmeBCNjhpzge8wJHdAF6XrwLDLHeL241WN5oxyutCbGicW\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.21+commit.d9974bed"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "stateMutability": "payable",
+          "type": "receive"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "forge-std/=lib/forge-std/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/Contract.sol": "Contract"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/Contract.sol": {
+        "keccak256": "0xfbe5769415fd62af7964cd7f32778e63591dd6a4a368d0064d81905dbf509a70",
+        "urls": [
+          "bzz-raw://8006b0541de987c2c0745a597872875f1791bd61e97317888af2c6a4e6663d49",
+          "dweb:/ipfs/QmeBCNjhpzge8wJHdAF6XrwLDLHeL241WN5oxyutCbGicW"
+        ],
+        "license": "UNLICENSED"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/Contract.sol",
+    "id": 11,
+    "exportedSymbols": {
+      "Contract": [
+        10
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "39:101:0",
+    "nodes": [
+      {
+        "id": 1,
+        "nodeType": "PragmaDirective",
+        "src": "39:24:0",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".13"
+        ]
+      },
+      {
+        "id": 10,
+        "nodeType": "ContractDefinition",
+        "src": "65:74:0",
+        "nodes": [
+          {
+            "id": 9,
+            "nodeType": "FunctionDefinition",
+            "src": "87:49:0",
+            "nodes": [],
+            "body": {
+              "id": 8,
+              "nodeType": "Block",
+              "src": "114:22:0",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "hexValue": "66616c7365",
+                        "id": 5,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "126:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "false"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 4,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "118:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 6,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "118:14:0",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 7,
+                  "nodeType": "ExpressionStatement",
+                  "src": "118:14:0"
+                }
+              ]
+            },
+            "implemented": true,
+            "kind": "receive",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "parameters": {
+              "id": 2,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "94:2:0"
+            },
+            "returnParameters": {
+              "id": 3,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "114:0:0"
+            },
+            "scope": 10,
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "Contract",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          10
+        ],
+        "name": "Contract",
+        "nameLocation": "74:8:0",
+        "scope": 11,
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "license": "UNLICENSED"
+  },
+  "id": 0
+}
