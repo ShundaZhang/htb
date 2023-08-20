@@ -4,10 +4,10 @@ from web3.gas_strategies.rpc import rpc_gas_price_strategy
 from solcx import compile_source, install_solc, compile_files
 
 x = {
-    "PrivateKey": "0xfb9cf98df166a3899be2ffa728ee2010632abea2ef13e6e0c2a9750bbd2d92ef",
-    "Address": "0x26180ff7418463743197e972cF826B6f7d54CBaF",
-    "TargetAddress": "0x905e79bf459D32674ead7E5ee2A6C9780C80b2c8",
-    "setupAddress": "0x20D9cef066f238061dbe2Bbf32bbe08683d2716A"
+    "PrivateKey": "0x473f71b49c2bb1fb0861ae89c62777032d28dffbebc65ea5a1f410b266dddb7d",
+    "Address": "0x6b09e09EBd7E693803BfB5D9C8860761ABe1Ec90",
+    "TargetAddress": "0xFd0f4dEA4607aCDD97d7eb39516Ee6F1bC1e1323",
+    "setupAddress": "0x478A1d93Df5133BDE16e3D82D6Ea6e46dFa3A091"
 }
 
 PrivateKey =    x["PrivateKey"]
@@ -15,7 +15,9 @@ Address =       x["Address"]
 TargetContract = x["TargetAddress"]
 SetupContract =  x["setupAddress"]
 
-url = 'http://157.245.37.125:30037/rpc'
+url = 'http://157.245.43.189:31623/rpc'
+
+Target2Contract = "0x2c116320e54f19105bb0F36Abb3CFb6eB110d852"
 
 w3 = Web3(Web3.HTTPProvider(url))
 block_number = w3.eth.block_number
@@ -84,7 +86,6 @@ tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
 print(f'Tx successful with hash: { tx_receipt.transactionHash.hex() }')
 
 
-'''
 compiled = compile_files(["Lockers.sol"], output_values=["abi"], solc_version="0.8.13")
 abi = compiled['Lockers.sol:Lockers']['abi']
 contract_instance2 = w3.eth.contract(address=TargetContract, abi=abi)
@@ -98,6 +99,7 @@ vendor = 'V3nd0r'
 #password2 = ''
 password2 = 'P455_w0rD$$&&88@!~'
 
+'''
 construct_txn = contract_instance2.functions.getLocker(vendor, password2).build_transaction(
 	{
 		'from': account_from['address'],
@@ -133,6 +135,7 @@ tx_create = w3.eth.account.sign_transaction(construct_txn, account_from['private
 tx_hash = w3.eth.send_raw_transaction(tx_create.rawTransaction)
 tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
 print(f'Tx successful with hash: { tx_receipt.transactionHash.hex() }')
+'''
 
 construct_txn = contract_instance2.functions.sellItem(name, password2).build_transaction(
 	{
@@ -151,7 +154,7 @@ tx_create = w3.eth.account.sign_transaction(construct_txn, account_from['private
 tx_hash = w3.eth.send_raw_transaction(tx_create.rawTransaction)
 tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
 print(f'Tx successful with hash: { tx_receipt.transactionHash.hex() }')
-'''
+
 compiled = compile_files(["Setup.sol"], output_values=["abi"], solc_version="0.8.13")
 abi = compiled['Setup.sol:Setup']['abi']
 
