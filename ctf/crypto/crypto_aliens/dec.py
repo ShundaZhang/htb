@@ -37,6 +37,7 @@ for i in range(4*16+5):
 		if ct[:32] == ct[-32*index:-32*(index-1)]:
 			flag = c + flag
 			compare_set = c + compare_set[:-1]
+			offset += 1
 			print(flag)
 			break
 
