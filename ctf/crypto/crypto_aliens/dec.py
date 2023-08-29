@@ -13,7 +13,7 @@ s_char = '\xdf'
 for c in padding_set:
 	pt = c + padding[:-1] + 'A'*15+s_char
 	io.recvuntil('Message for encryption:')
-	io.sendline(pt)
+	io.sendline(pt.encode())
 	print(io.recvall())
 	#ct = io.recvline()[1:-1]
 	#print(ct)
