@@ -28,7 +28,8 @@ for i in range(4*16+5):
 	if (i - 5)%16 == 0:
 		index += 1
 		offset = 1
-	for c in range(0x20,0x7f,1):
+	for x in range(0x20,0x7f,1):
+		c = chr(x)
 		pt = c + compare_set + 'A'*(16-offset) + s_char*offset
 		io.recvuntil('Message for encryption:')
 		io.sendline(pt.encode())
