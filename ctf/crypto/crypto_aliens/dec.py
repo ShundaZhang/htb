@@ -30,7 +30,7 @@ for i in range(4*16+5):
 		offset = 1
 	for x in range(0x20,0x7f,1):
 		c = chr(x)
-		pt = c + compare_set + 'A'*(16-offset) + s_char*offset + s_char*offset*(index-2)
+		pt = c + compare_set + 'A'*(16-offset) + s_char*offset + s_char*16*(index-2)
 		io.recvuntil('Message for encryption:')
 		io.sendline(pt.encode())
 		ct = io.recvline()[1:-1]
