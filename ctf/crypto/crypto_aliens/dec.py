@@ -15,7 +15,7 @@ for c in padding_set:
 	io.recvuntil('Message for encryption:')
 	io.sendline(pt.encode())
 	ct = io.recvline()[1:-1]
-	if ct[:32] == ct[-32*3:-32*2]:
+	if ct[:32] == ct[-32*2:-32*1]:
 		print("Ending char: "+c)
 		break
 	
