@@ -25,7 +25,7 @@ offset = 12
 flag = ''
 
 for i in range(4*16+5):
-	if (i - 5)%16 == 0:
+	if (i - 4)%16 == 0:
 		index += 1
 		offset = 1
 	for x in range(0x20,0x7f,1):
