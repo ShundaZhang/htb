@@ -1,6 +1,6 @@
 from pwn import *
 
-context.log_level = 'debug'
+#context.log_level = 'debug'
 
 ip, port = '157.245.43.189', 31152
 io = remote(ip, port)
