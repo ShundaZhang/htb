@@ -29,12 +29,14 @@ for i in range(4*16+5):
 		index += 1
 		offset = 1
 	for c in range(0x20,0x7f,1):
-		pt = c + compare_set + 'A'*(16-offset)+s_char*offset
+		pt = c + compare_set + 'A'*(16-offset) + s_char*offset
 		io.recvuntil('Message for encryption:')
-	 	io.sendline(pt.encode())
-	 	ct = io.recvline()[1:-1]
-	 	if ct[:32] == ct[-32*index:-32*(index-1)]:
+		io.sendline(pt.encode())
+		ct = io.recvline()[1:-1]
+		if ct[:32] == ct[-32*index:-32*(index-1)]:
 			flag = c + flag
 			compare_set = c + compare_set[:-1]
-	 		break
+			break
+
+print(flag)
 
