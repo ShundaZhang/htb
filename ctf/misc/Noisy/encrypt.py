@@ -1,7 +1,8 @@
 import numpy as np
 from scipy.io.wavfile import write
 
-from secret import flag
+#from secret import flag
+flag = b'HTB{1234567890}'
 
 
 N = 1_000_000
@@ -16,5 +17,8 @@ for i, c in enumerate(flag):
     count_used[c] = count_used.get(c, 0) + 1
     multiplier = .1 * c * (4**(count_used[c]-1))
     final_waveform += (i+1) * np.sin(2 * np.pi * x * multiplier)
+    print(final_waveform)
+    print(len(final_waveform))
 
-write("encrypted.wav", 20_000_000, final_waveform)
+#write("encrypted.wav", 20_000_000, final_waveform)
+
