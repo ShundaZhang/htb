@@ -1,0 +1,21 @@
+extends base.pug
+
+block content
+    div.container.my-5
+        wired-card.w-75(elevation="5")
+            div.text-center
+                h1 My Tasks 
+
+        div.container.w-50.my-5
+            div#tasks
+
+            form#task-form
+                div.mb-3
+                    label.form-label(for="title") Title
+                    wired-input.form-control(type="text" name="title" id="title")
+                div.mb-3
+                    label.form-labell(for="description") Description
+                    wired-input.form-control(type="text" name="description" id="description")
+                wired-button(elevation="2") Add Task
+
+    script(src="static/index.js")

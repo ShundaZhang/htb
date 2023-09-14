@@ -1,0 +1,22 @@
+extends base.pug
+
+block content
+    div.container.my-5
+        wired-card.w-75(elevation="5")
+            div.text-center
+                h1 Login 
+
+        div.container.w-50.my-5
+            form#login-form
+                div.mb-3
+                    label.form-label(for="username") Username
+                    wired-input.form-control(type="text" name="username" id="username")
+                div.mb-3
+                    label.form-labell(for="password") Password
+                    wired-input.form-control(type="password" name="password" id="password")
+                wired-button(elevation="2") Login
+
+            p Don't have an account? 
+                a(href="/register") Register
+
+    script(src="static/login.js")
