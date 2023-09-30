@@ -1,0 +1,81 @@
+@font-face {
+  font-family: press_start_2p;
+  src: url("/assets/fonts/press_start_2p.ttf");
+}
+
+body {
+  font-family: press_start_2p;
+  background-color: #000;
+  color: #FFF;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+#header {
+  background-color: #FF3366;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 0;
+  letter-spacing: 4px;
+}
+
+#content {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.game {
+  width: 35%; /* Fixed width */
+  margin: 20px;
+  padding: 20px;
+  background-color: #66CCFF;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game:hover {
+  transform: scale(1.05);
+}
+
+.game h2 {
+  margin-top: 10px;
+  letter-spacing: 2px;
+}
+
+.game p {
+  margin-top: 10px;
+}
+
+.game a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #FF3366;
+  color: #FFF;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.game a:hover {
+  background-color: #FFF;
+  color: #FF3366;
+}
+
+.footer {
+  background-color: #FF3366;
+  padding: 20px;
+  font-size: 14px;
+}
