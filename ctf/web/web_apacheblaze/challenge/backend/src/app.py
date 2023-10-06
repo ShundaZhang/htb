@@ -20,13 +20,15 @@ def index():
         }), 400
 
     elif game == 'click_topia':
+        x = 'X-Forwarded-Host: ' + request.headers.get('X-Forwarded-Host') + ' X-Forwarded-For: ' + request.headers.get('X-Forwarded-For')
         if request.headers.get('X-Forwarded-Host') == 'dev.apacheblaze.local':
+        #if 'dev.apacheblaze.local' in x:
             return jsonify({
-                'message': f'{app.config["FLAG"]}'
+                'message': x + ' ' + f'{app.config["FLAG"]}'
             }), 200
         else:
             return jsonify({
-                'message': 'This game is currently available only from dev.apacheblaze.local.'
+                'message': x + ' ' + 'This game is currently available only from dev.apacheblaze.local.'
             }), 200
 
     else:
