@@ -1,5 +1,6 @@
 from flask import request, abort
 import functools, requests
+import sys
 
 RESTRICTED_URLS = ['localhost', '127.', '192.168.', '10.', '172.']
 
@@ -13,7 +14,9 @@ def is_from_localhost(func):
     @functools.wraps(func)
     def check_ip(*args, **kwargs):
         if request.remote_addr != '127.0.0.1':
-            return abort(403)
+            #return func(*args, **kwargs)
+            return request.remote_addr
+            #return abort(403)
         return func(*args, **kwargs)
     return check_ip
 

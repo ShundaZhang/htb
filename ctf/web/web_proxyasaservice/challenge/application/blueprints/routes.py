@@ -3,6 +3,7 @@ from application.util import is_from_localhost, proxy_req
 import random, os
 
 SITE_NAME = 'reddit.com'
+#SITE_NAME = '0177.0.0.1:1337'
 
 proxy_api = Blueprint('proxy_api', __name__)
 debug     = Blueprint('debug', __name__)
