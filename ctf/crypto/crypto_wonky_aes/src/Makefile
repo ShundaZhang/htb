@@ -1,0 +1,1 @@
+gcc enc_fault.c aes.c -o enc_fault -static;
