@@ -1,0 +1,392 @@
+Correct encryption: 4608241d190fb775e43c0edf750b447a
+Bzz...A wild fault has appeared!
+Faulty encryption:  4670241dbd0fb775e43c0efc750bb77a
+
+Encrypt once? (y/n): y
+
+Correct encryption: 5c1d2771d112d9ab8441c3ac798a9c22
+Bzz...A wild fault has appeared!
+Faulty encryption:  5c1d2744d1128eab84bfc3ac7f8a9c22
+
+Encrypt once? (y/n): y
+
+Correct encryption: cbc3c629a83873976391b63a67080529
+Bzz...A wild fault has appeared!
+Faulty encryption:  cbc32729a8247397d791b63a67080530
+
+Encrypt once? (y/n): y
+
+Correct encryption: 4196485de45a610b240daefd370c98e9
+Bzz...A wild fault has appeared!
+Faulty encryption:  4196f45de4e6610beb0daefd370c98dd
+
+Encrypt once? (y/n): y
+
+Correct encryption: b6c95bb4416b1a468995b2290b9fbf47
+Bzz...A wild fault has appeared!
+Faulty encryption:  ccc95bb4416b1afd89956a290b38bf47
+
+Encrypt once? (y/n): y
+
+Correct encryption: 711d624c0132e3db96c92211c3b69ee0
+Bzz...A wild fault has appeared!
+Faulty encryption:  711db44c010de3db0ec92211c3b69e2f
+
+Encrypt once? (y/n): y
+
+Correct encryption: 30d49c5f716aa758b73e9b719cc14d81
+Bzz...A wild fault has appeared!
+Faulty encryption:  304c9c5f796aa758b73e9bbc9cc1b981
+
+Encrypt once? (y/n): y
+
+Correct encryption: 27830ad40ca1a35854ddc5d4a3a12cdf
+Bzz...A wild fault has appeared!
+Faulty encryption:  27832dd40ce5a358bbddc5d4a3a12c70
+
+Encrypt once? (y/n): y
+
+Correct encryption: aa89f7bfc4e5d88338b166140f96ef4f
+Bzz...A wild fault has appeared!
+Faulty encryption:  aab6f7bf75e5d88338b166560f966f4f
+
+Encrypt once? (y/n): y
+
+Correct encryption: ec80a42cf39fbd199be42ec0eb29eed0
+Bzz...A wild fault has appeared!
+Faulty encryption:  ec7ca42c169fbd199be42e3beb2998d0
+
+Encrypt once? (y/n): y
+
+Correct encryption: cf822a0220405c969a6c1312fced1980
+Bzz...A wild fault has appeared!
+Faulty encryption:  cf82d80220535c96c86c1312fced1985
+
+Encrypt once? (y/n): y
+
+Correct encryption: a92085fd8a459f09eb71db3947566c75
+Bzz...A wild fault has appeared!
+Faulty encryption:  a93885fd3e459f09eb71db0d4756b075
+
+Encrypt once? (y/n): y
+
+Correct encryption: e933fbf056f7ef758237a4f6288f9313
+Bzz...A wild fault has appeared!
+Faulty encryption:  e233fbf056f7ef3c823735f6284f9313
+
+Encrypt once? (y/n): y
+
+Correct encryption: 17d7379853911e053da5b32030ae1036
+Bzz...A wild fault has appeared!
+Faulty encryption:  17a0379830911e053da5b32c30ae7e36
+
+Encrypt once? (y/n): y
+
+Correct encryption: 0538989f651faa9cdc7f8471866e4885
+Bzz...A wild fault has appeared!
+Faulty encryption:  053898bf651f849cdc8c8471e26e4885
+
+Encrypt once? (y/n): y
+
+Correct encryption: 4a2e9724e58abc1513d03859a3c9513c
+Bzz...A wild fault has appeared!
+Faulty encryption:  772e9724e58abcbd13d00459a3c2513c
+
+Encrypt once? (y/n): y
+
+Correct encryption: 25750623006dfda8d296bc77fedbf8c1
+Bzz...A wild fault has appeared!
+Faulty encryption:  257506a4006dbea8d29cbc7772dbf8c1
+
+Encrypt once? (y/n): y
+
+Correct encryption: c3fca0651e49c54f8682f0c080700cbc
+Bzz...A wild fault has appeared!
+Faulty encryption:  c34ba065ae49c54f8682f0d680704dbc
+
+Encrypt once? (y/n): y
+
+Correct encryption: 7017a21605017f23a53a5b83364e7b25
+Bzz...A wild fault has appeared!
+Faulty encryption:  7017b316056f7f23b03a5b83364e7baf
+
+Encrypt once? (y/n): y
+
+Correct encryption: ca6556cb80ac3f73cf5429fa8b385a5b
+Bzz...A wild fault has appeared!
+Faulty encryption:  ca6556e380ac1f73cf1329fa42385a5b
+
+Encrypt once? (y/n): y
+
+Correct encryption: 0c9bc0e3612fafa9e6aae0bff53e2c66
+Bzz...A wild fault has appeared!
+Faulty encryption:  0c3cc0e3df2fafa9e6aae082f53e0766
+
+Encrypt once? (y/n): y
+
+Correct encryption: 0cac74bf8396b064eb9c7a6962c63411
+Bzz...A wild fault has appeared!
+Faulty encryption:  0cac9dbf8329b0642e9c7a6962c6348d
+
+Encrypt once? (y/n): y
+
+Correct encryption: 9a526c2aa9bec37330dbd9d0d0e5556a
+Bzz...A wild fault has appeared!
+Faulty encryption:  9a766c2a9abec37330dbd980d0e5816a
+
+Encrypt once? (y/n): y
+
+Correct encryption: 10804c13bc7791ad615e64825a0818d1
+Bzz...A wild fault has appeared!
+Faulty encryption:  10806113bc0691ad745e64825a08189c
+
+Encrypt once? (y/n): y
+
+Correct encryption: 1ad914df2af9b76b2f6a67896fef5d5d
+Bzz...A wild fault has appeared!
+Faulty encryption:  1ad914952af9896b2fa7678904ef5d5d
+
+Encrypt once? (y/n): y
+
+Correct encryption: c1cbb557a4aaa40c6ffbdc71f61f931b
+Bzz...A wild fault has appeared!
+Faulty encryption:  68cbb557a4aaa4346ffb3971f6cf931b
+
+Encrypt once? (y/n): y
+
+Correct encryption: ea26e588722e0b6818ab8413c426e553
+Bzz...A wild fault has appeared!
+Faulty encryption:  da26e588722e0bcb18abaf13c465e553
+
+Encrypt once? (y/n): y
+
+Correct encryption: 2794fb66c2c821d7a9cafd9c1000154a
+Bzz...A wild fault has appeared!
+Faulty encryption:  6094fb66c2c82177a9ca5a9c101d154a
+
+Encrypt once? (y/n): y
+
+Correct encryption: 4d59e77e6eacc144df5939007be81c01
+Bzz...A wild fault has appeared!
+Faulty encryption:  4d59027e6e08c144935939007be81ce4
+
+Encrypt once? (y/n): y
+
+Correct encryption: 5231acd370da11715cb885897d370aa4
+Bzz...A wild fault has appeared!
+Faulty encryption:  1c31acd370da11e25cb857897dec0aa4
+
+Encrypt once? (y/n): y
+
+Correct encryption: dfce3abe9a97068b785692e7bfe6f44f
+Bzz...A wild fault has appeared!
+Faulty encryption:  45ce3abe9a9706f478565fe7bf4bf44f
+
+Encrypt once? (y/n): y
+
+Correct encryption: 90f66b0081ccc279ed65d5c148103a0b
+Bzz...A wild fault has appeared!
+Faulty encryption:  90616b0015ccc279ed65d5f04810170b
+
+Encrypt once? (y/n): y
+
+Correct encryption: 88be56bf97b3e3d53484acbf5d74ff94
+Bzz...A wild fault has appeared!
+Faulty encryption:  880f56bf8eb3e3d53484ac9a5d742694
+
+Encrypt once? (y/n): y
+
+Correct encryption: ff8823238eecb617c5e8152638c85437
+Bzz...A wild fault has appeared!
+Faulty encryption:  ff8823b68eec1d17c52d1526ecc85437
+
+Encrypt once? (y/n): y
+
+Correct encryption: 63a1d7fd5f601a01847809323d7dd89b
+Bzz...A wild fault has appeared!
+Faulty encryption:  63a1d70f5f60aa01848009328e7dd89b
+
+Encrypt once? (y/n): y
+
+Correct encryption: 54077a4679a7c5abe05ccf6c6b30f7d8
+Bzz...A wild fault has appeared!
+Faulty encryption:  54e17a462ca7c5abe05ccf966b307dd8
+
+Encrypt once? (y/n): y
+
+Correct encryption: 1b75424c56a6ddfaef6a0e0afb8a559a
+Bzz...A wild fault has appeared!
+Faulty encryption:  1e75424c56a6dd90ef6a730afbe2559a
+
+Encrypt once? (y/n): y
+
+Correct encryption: 4db8f7e3ef2335fefe82c49e7fdcd666
+Bzz...A wild fault has appeared!
+Faulty encryption:  4d40f7e3862335fefe82c4357fdc3e66
+
+Encrypt once? (y/n): y
+
+Correct encryption: dbfa3d146cacd145112b3a8142b53ea9
+Bzz...A wild fault has appeared!
+Faulty encryption:  dbfae7146c32d145562b3a8142b53e35
+
+Encrypt once? (y/n): y
+
+Correct encryption: 04fd2a4d253066c991df5558db4f2f62
+Bzz...A wild fault has appeared!
+Faulty encryption:  049a2a4d343066c991df550ddb4ffe62
+
+Encrypt once? (y/n): y
+
+Correct encryption: 553a3b539c54c55662844c2e966a8f1c
+Bzz...A wild fault has appeared!
+Faulty encryption:  e83a3b539c54c53562846b2e96b08f1c
+
+Encrypt once? (y/n): y
+y
+Correct encryption: de3bb52cfd5983ba3d97b1e07dc18609
+Bzz...A wild fault has appeared!
+Faulty encryption:  de1db52cf55983ba3d97b1b47dc1be09
+
+Encrypt once? (y/n):
+y
+Correct encryption: 89d25720909454c74c4edf6915acbb19
+Bzz...A wild fault has appeared!
+Faulty encryption:  67d257209094544d4c4ebc6915d5bb19
+
+Encrypt once? (y/n):
+y
+Correct encryption: 0fb60d3a8abc5e64b6439ec70c104953
+Bzz...A wild fault has appeared!
+Faulty encryption:  0fb6f93a8a865e64d1439ec70c10493d
+
+Encrypt once? (y/n):
+
+Correct encryption: 40a09236b62e1dbc4b0987d1432ac39d
+Bzz...A wild fault has appeared!
+Faulty encryption:  2ea09236b62e1d3c4b099bd1433cc39d
+
+Encrypt once? (y/n): y
+
+Correct encryption: b1bffce7d7b6913f7be79434f076d2dc
+Bzz...A wild fault has appeared!
+Faulty encryption:  b1bffde7d7a7913f86e79434f076d254
+
+Encrypt once? (y/n): y
+
+Correct encryption: 6f8a6f56a0dc3ee8267ae25a99a08c4b
+Bzz...A wild fault has appeared!
+Faulty encryption:  6f8a6f19a0dcc3e82618e25a31a08c4b
+
+Encrypt once? (y/n): y
+
+Correct encryption: 5a8b3dba3a7d3419c42d833febe2108d
+Bzz...A wild fault has appeared!
+Faulty encryption:  5aa93dbac17d3419c42d83a4ebe28d8d
+
+Encrypt once? (y/n): y
+
+Correct encryption: 17751e459581daf4ee7434d4d84b94a2
+Bzz...A wild fault has appeared!
+Faulty encryption:  17758b4595cddaf4237434d4d84b94d4
+
+Encrypt once? (y/n): y
+
+Correct encryption: 00874036ab1680229213bbec52c5291e
+Bzz...A wild fault has appeared!
+Faulty encryption:  008740baab1673229289bbec43c5291e
+
+Encrypt once? (y/n): y
+
+Correct encryption: 320311a53d22c4a0173a3d3d5a80ea2a
+Bzz...A wild fault has appeared!
+Faulty encryption:  327711a5a322c4a0173a3d865a809e2a
+
+Encrypt once? (y/n): y
+
+Correct encryption: b614a37d97ed7edf4ffeed9f68da8740
+Bzz...A wild fault has appeared!
+Faulty encryption:  3a14a37d97ed7e354ffe599f68158740
+
+Encrypt once? (y/n): y
+
+Correct encryption: 72701b9dea47e77d7b29cc57226e7c9b
+Bzz...A wild fault has appeared!
+Faulty encryption:  7270709dea7ce77d0829cc57226e7c6b
+
+Encrypt once? (y/n): y
+
+Correct encryption: 91a9b626ad653117b78c4b1b0a88ebe8
+Bzz...A wild fault has appeared!
+Faulty encryption:  91a97c26ad7d3117e38c4b1b0a88eb9f
+
+Encrypt once? (y/n): y
+
+Correct encryption: edf686d3d2c5029e1a021b609ac62c81
+Bzz...A wild fault has appeared!
+Faulty encryption:  edf6865dd2c58e9e1a2a1b6018c62c81
+
+Encrypt once? (y/n): y
+
+Correct encryption: 5e75fdeca245267e2788c742e784d4c6
+Bzz...A wild fault has appeared!
+Faulty encryption:  5e75fd7aa245af7e276dc7429584d4c6
+
+Encrypt once? (y/n): y
+
+Correct encryption: 4d8cd813d0fc1ca410393491e99f7eb6
+Bzz...A wild fault has appeared!
+Faulty encryption:  4d8cd8ecd0fcdba410ee3491f09f7eb6
+
+Encrypt once? (y/n): y
+
+Correct encryption: 4cc96ecc03df5e326ca0eb6576ca1ea5
+Bzz...A wild fault has appeared!
+Faulty encryption:  4cc9d5cc03e75e3210a0eb6576ca1e7a
+
+Encrypt once? (y/n): y
+
+Correct encryption: 5f81835e260c561799105b4ae723d6ce
+Bzz...A wild fault has appeared!
+Faulty encryption:  5f0f835e150c561799105bb6e723dbce
+
+Encrypt once? (y/n): y
+
+Correct encryption: 5fe0c828c3907929349f32b433009834
+Bzz...A wild fault has appeared!
+Faulty encryption:  5fd5c828c0907929349f328533002834
+
+Encrypt once? (y/n): y
+
+Correct encryption: 0787be6f154c97ada420f7372fa83dd2
+Bzz...A wild fault has appeared!
+Faulty encryption:  07fbbe6f764c97ada420f7f92fa899d2
+
+Encrypt once? (y/n): y
+
+Correct encryption: 68ca93a3533520d351a81c5e8e3ddbb7
+Bzz...A wild fault has appeared!
+Faulty encryption:  68ca1da353ac20d3bba81c5e8e3ddb4d
+
+Encrypt once? (y/n): y
+
+Correct encryption: bfd389a0828dd828df97f6c736b404b6
+Bzz...A wild fault has appeared!
+Faulty encryption:  bfd374a082c8d8281e97f6c736b40433
+
+Encrypt once? (y/n): y
+
+Correct encryption: bf0c9a014138e31853d225c43326c48a
+Bzz...A wild fault has appeared!
+Faulty encryption:  bf0c9a9241381318534f25c4f726c48a
+
+Encrypt once? (y/n): y
+
+Correct encryption: a09f0dc5773c51183f5e10caf10e3a4a
+Bzz...A wild fault has appeared!
+Faulty encryption:  bd9f0dc5773c51de3f5ed9caf1783a4a
+
+Encrypt once? (y/n): n
+
+Flag encrypted: d5ce3817e81b2cf698c26828d0784d3ddbb5fef2989cbf27c68e7cfd527d2b4f
+

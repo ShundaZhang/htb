@@ -76,7 +76,7 @@ int main() {
 				printf("%02x", buf[i]);
 			}
 			puts("\n");
-			// printf("%d\n", fault_pos);
+			printf("%d\n", fault_pos);
 		}
 	}
 

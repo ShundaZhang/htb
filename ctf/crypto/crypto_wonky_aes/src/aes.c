@@ -35,6 +35,8 @@ NOTE:   String length must be evenly divisible by 16byte (str_len % 16 == 0)
 /*****************************************************************************/
 /* Includes:                                                                 */
 /*****************************************************************************/
+#include <stdio.h>
+
 #include <string.h> // CBC mode, for memset
 #include <stdbool.h> //
 #include "aes.h"
@@ -431,6 +433,11 @@ void CipherFault(state_t* state, const uint8_t* RoundKey, bool is_fault, int pos
       break;
     }
     if (is_fault && round == Nr - 1) {
+      printf("pos: %d\n", pos);
+      printf("pos%4: %d\n", pos%4);
+      printf("pos/4: %d\n", pos/4);
+      printf("(*state)[pos % 4][pos / 4] : %d\n", (*state)[pos % 4][pos / 4]);
+      printf("fault: %d\n", fault);
       (*state)[pos % 4][pos / 4] ^= fault;
     }
     MixColumns(state);
