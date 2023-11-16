@@ -140,11 +140,14 @@ if __name__ == '__main__':
     # Print flag
     dbg(f"[+] Getting flag...\n")
     msg2server = json.dumps({'pt': msg.decode('ascii'), 'r': dic['r'], 's': dic['s']})
-    inp(3, 2)
+    
     prnt(msg2server)
-    try:
-        inp(2)
-        pass
-    except:
-        pass
-    pass
+    
+    #inp(3, 2)
+    #prnt(msg2server)
+    #try:
+    #    inp(2)
+    #    pass
+    #except:
+    #    pass
+    #pass
