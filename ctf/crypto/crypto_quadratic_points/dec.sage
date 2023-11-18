@@ -1,23 +1,32 @@
-from pwn import *
+import sys
 
-ip, port = '206.189.24.162',32136
-io = remote(ip, port)
+arguments = sys.argv[1:]  
+
+a = int(arguments[0])
+b = int(arguments[1])
+
+Gx = int(arguments[2])
+Gy = int(arguments[3])
+
+Gnx = int(arguments[4])
+Gny = int(arguments[5])
+
+p = int(arguments[6])
 
 
-for _ in range(10):
-	io.recvuntil('Hello Cryptographer, please enter the coefficients of the quadratic equation to proceed, hint: ')
-	buf = io.recvline().decode().strip().split(' ')[-1]
-	print(buf)
-	x = float(buf)
-	print(x)
-	a = 10**17
-	b = 10**17
-	c = int(-a*x**2-b*x)
-	print(a)
-	print(b)
-	print(c)
-	io.sendlineafter('a: ',str(a))
-	io.sendlineafter('b: ',str(b))
-	io.sendlineafter('c: ',str(c))
-	
-print(io.recvall())
+E = EllipticCurve(GF(p), [a, b])
+n = E.order()
+print("Order:", n)
+
+if p == n:
+	print('Found p == n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+	exit(0)
+
+for k in range(1,10):
+	if (p**k - 1) % n == 0:
+		print('k in MOV:', k)
+		print('Found MOV!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+		exit(0)
+
+print('Failed...')
+exit(-1)
