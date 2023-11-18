@@ -5,6 +5,7 @@ from sage.all_cmdline import *   # import sage library
 
 _sage_const_1 = Integer(1); _sage_const_0 = Integer(0); _sage_const_2 = Integer(2); _sage_const_3 = Integer(3); _sage_const_4 = Integer(4); _sage_const_5 = Integer(5); _sage_const_6 = Integer(6); _sage_const_10 = Integer(10)
 import sys
+from Crypto.Util.number import long_to_bytes
 
 arguments = sys.argv[_sage_const_1 :]  
 
@@ -22,18 +23,41 @@ p = int(arguments[_sage_const_6 ])
 
 E = EllipticCurve(GF(p), [a, b])
 n = E.order()
-print("Order:", n)
+#print("Order:", n)
 
+'''
 if p == n:
 	print('Found p == n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-	exit(_sage_const_0 )
+	exit(0)
 
-for k in range(_sage_const_1 ,_sage_const_10 ):
-	if (p**k - _sage_const_1 ) % n == _sage_const_0 :
+for k in range(1,10):
+	if (p**k - 1) % n == 0:
 		print('k in MOV:', k)
 		print('Found MOV!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-		exit(_sage_const_0 )
+		exit(0)
 
 print('Failed...')
-exit(-_sage_const_1 )
+exit(-1)
+
+'''
+
+G = E(Gx, Gy)
+Q = E(Gnx, Gny)
+
+k1 = discrete_log(Q, G, operation='+')
+k2 = discrete_log(-G, G, operation='+')
+
+
+
+x = k1
+y = k2**_sage_const_2 
+
+for i in range(_sage_const_10 ):
+	f = x*(y**i)
+	flag = long_to_bytes(f)
+	if b'HTB' in flag:
+		print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+		print(flag)
+
+
 
