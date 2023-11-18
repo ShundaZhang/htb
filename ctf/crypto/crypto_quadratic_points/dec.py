@@ -1,7 +1,7 @@
 from pwn import *
 import os
 
-ip, port = '142.93.32.153', 32743
+ip, port = '142.93.32.153', 31494
 
 
 while 1:
@@ -9,15 +9,15 @@ while 1:
     for _ in range(10):
         io.recvuntil('Hello Cryptographer, please enter the coefficients of the quadratic equation to proceed, hint: ')
         buf = io.recvline().decode().strip().split(' ')[-1]
-        print(buf)
+        #print(buf)
         x = float(buf)
-        print(x)
+        #print(x)
         a = 10**17
         b = 10**17
         c = int(-a*x**2-b*x)
-        print(a)
-        print(b)
-        print(c)
+        #print(a)
+        #print(b)
+        #print(c)
         io.sendlineafter('a: ',str(a))
         io.sendlineafter('b: ',str(b))
         io.sendlineafter('c: ',str(c))
@@ -36,12 +36,4 @@ while 1:
     if ret == 0:
         break
 
-
-'''
-sage dec.sage 100000000000000000 0 146316399546 17250030801 630879386133 397653533092 695814196879
-Order: 695814196880
-k in MOV: 2
-Found MOV!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-0
-'''
 
