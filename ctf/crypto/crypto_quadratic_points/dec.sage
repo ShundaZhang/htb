@@ -17,7 +17,7 @@ p = int(arguments[6])
 
 E = EllipticCurve(GF(p), [a, b])
 n = E.order()
-print("Order:", n)
+#print("Order:", n)
 
 '''
 if p == n:
@@ -39,10 +39,11 @@ G = E(Gx, Gy)
 Q = E(Gnx, Gny)
 
 k1 = discrete_log(Q, G, operation='+')
-k2 = discrete_log(-G, G, operation='+')
+#k2 = discrete_log(-G, G, operation='+')
 
+print(k1)
 
-
+'''
 x = k1
 y = k2**2
 
@@ -52,5 +53,4 @@ for i in range(10):
 	if b'HTB' in flag:
 		print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
 		print(flag)
-
-
+'''

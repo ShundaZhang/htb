@@ -1,11 +1,11 @@
 from pwn import *
 import os
 
-ip, port = '142.93.32.153', 31494
+ip, port = '142.93.32.153', 32449
 
 with open('sage.sh', 'w+') as f:
     #while 1:
-    for _ in range(10000):
+    for _ in range(10):
         io = remote(ip, port)
         for _ in range(10):
             io.recvuntil('Hello Cryptographer, please enter the coefficients of the quadratic equation to proceed, hint: ')
@@ -14,7 +14,8 @@ with open('sage.sh', 'w+') as f:
             x = float(buf)
             #print(x)
             a = 10**17
-            b = 10**17
+            #b = 10**17
+	    b = 0
             c = int(-a*x**2-b*x)
             #print(a)
             #print(b)
