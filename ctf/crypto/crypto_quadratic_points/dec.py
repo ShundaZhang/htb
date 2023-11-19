@@ -15,7 +15,7 @@ with open('sage.sh', 'w+') as f:
             #print(x)
             a = 10**17
             #b = 10**17
-	    b = 0
+            b = 0
             c = int(-a*x**2-b*x)
             #print(a)
             #print(b)
