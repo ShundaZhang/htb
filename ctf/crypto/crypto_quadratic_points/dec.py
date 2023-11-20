@@ -5,7 +5,7 @@ ip, port = '142.93.32.153', 32449
 
 with open('sage.sh', 'w+') as f:
     #while 1:
-    for _ in range(10):
+    for _x in range(10):
         io = remote(ip, port)
         for _ in range(10):
             io.recvuntil('Hello Cryptographer, please enter the coefficients of the quadratic equation to proceed, hint: ')
