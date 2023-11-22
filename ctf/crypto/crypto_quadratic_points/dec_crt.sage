@@ -26,3 +26,6 @@ for i in range(len(curves)):
 
 	f = crt(k, d)
 	print(long_to_bytes(f))
+
+
+#HTB{th1s_h4s_t0_b3_4_l0ng_fl4g_s0_th4t_y0u_4r3_f0rc3d_t0_4pply_CRT_s3v3r4l_t1m3s___s0rry_1f_th4t_w4s_4nn0y1ng(:}
