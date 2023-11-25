@@ -1,0 +1,135 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+}
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #333;
+    border: 3px solid #444;
+    border-left: 5px solid #6e6e6e;
+    border-top: 5px solid #ffffff;
+}
+h1 {
+    font-size: 24px;
+    text-align: center;
+}
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #444;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+}
+button {
+    background-color: #0f0;
+    color: #000;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+}
+button:hover {
+    background-color: #0a0;
+}
+.navbar {
+    background-color: #333;
+    border: 3px solid #444;
+    border-left: 5px solid #6e6e6e;
+    border-top: 5px solid #ffffff;
+    padding: 10px 0;
+}
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.navbar li {
+    display: inline;
+    margin: 0 20px;
+}
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+.navbar a:hover {
+    color: #0f0;
+}
+.content {
+    max-width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #333;
+    border: 3px solid #444;
+    border-left: 5px solid #6e6e6e;
+    border-top: 5px solid #ffffff;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+.product {
+    background-color: #222;
+    border: 2px solid #444;
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+}
+.product img {
+    max-width: 100%;
+}
+.product h2 {
+    font-size: 18px;
+}
+.product p {
+    font-size: 14px;
+}
+.product button {
+    background-color: #0f0;
+    color: #000;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    display: block;
+    margin: 5px auto;
+}
+.product button:hover {
+    background-color: #0a0;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #a30000;
+    border: 3px solid #444;
+    border-left: 5px solid #6e6e6e;
+    border-top: 5px solid #ffffff;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    padding: 10px;
+    z-index: 1000;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('index.static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="{{ url_for('index.static', filename='js/verify-2fa.js') }}"></script>
+    <title>2FA Verification</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="margin-top:100px;">2FA Code Verify</h1>
+        <form action="/auth/verify-2fa" method="POST">
+            <label for="2fa-code">2FA Code:</label>
+            <input type="text" name="2fa-code" id="2fa-code" maxlength="4" placeholder="Enter 2FA Code">
+            <button type="submit">Submit</button>
+        </form>
+        <div id="response-message" style="color: red; text-align: center; margin-top: 20px;">{{ error_message }}</div>
+
+    </div>
+</body>
+
+</html>

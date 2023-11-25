@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('index.static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="margin-top:100px;">Login</h1>
+        <form action="/auth/login" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" placeholder="Enter Username">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Enter Password">
+            <button type="submit" id="#btn">Submit</button>
+        </form>
+        <div id="error-message" style="color: red;text-align:center; margin-top:20px;">{{ error_message }}</div>
+    </div>
+</body>
+
+</html>

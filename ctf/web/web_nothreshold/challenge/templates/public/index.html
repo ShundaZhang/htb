@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('index.static', filename='css/style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap">
+    <title>Wizard Shop</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>~ WIZARD SHOP ~</h1>
+        <div class="navbar">
+            <ul>
+                <li>
+                    <a href="/">Shop</a>
+                </li>
+                <li>
+                    <a href="/auth/login">Login</a>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="product-grid">
+                <div class="product">
+                    <img src="static/images/products/book.png" width="150" alt="Product 1">
+                    <h2>Spell Book</h2>
+                    <p>Price: $19.99</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="static/images/products/poison.png" width="115" alt="Product 2">
+                    <h2>Poison</h2>
+                    <p>Price: $29.99</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="static/images/products/eye.png" width="235" alt="Product 2">
+                    <h2>Dragon Eye</h2>
+                    <p>Price: $150.00</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="static/images/products/bat.webp" width="150" alt="Product 2">
+                    <h2>Bat</h2>
+                    <p>Price: $10.00</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="static/images/products/mushrooms.png" width="155" alt="Product 2">
+                    <h2>Mushrooms</h2>
+                    <p>Price: $7.00</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="static/images/products/mysticball.png" width="120" alt="Product 2">
+                    <h2>Magic Ball</h2>
+                    <p>Price: $299.99</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="static/images/products/magicstick.png" width="95" alt="Product 2">
+                    <h2>Magic Stick</h2>
+                    <p>Price: $100.00</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="static/images/products/magichat.png" width="110" alt="Product 2">
+                    <h2>Witch Hat</h2>
+                    <p>Price: $1337.00</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="loginPopup" style="display: none;">
+        <h1>Login Required</h1>
+        <p>You need to login to add items to your cart.</p>
+        <button id="closePopup">Close</button>
+    </div>
+
+</body>
+
+</html>
+
+
+<script>
+    function showPopup() {
+        $("#loginPopup").fadeIn();
+        setTimeout(closePopup, 3000);
+    }
+
+    function closePopup() {
+        $("#loginPopup").fadeOut();
+    }
+    $(".product button").on("click", showPopup);
+    $("#closePopup").on("click", closePopup);
+</script>

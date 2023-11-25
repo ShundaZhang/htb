@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('index.static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="{{ url_for('index.static', filename='js/verify-2fa.js') }}"></script>
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            Welcome, here is your flag: <b> {{ flag }} </b>
+        </div>
+    </div>
+</body>
+
+</html>
