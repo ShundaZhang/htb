@@ -11,4 +11,5 @@ index_bp = Blueprint(
 
 @index_bp.route("/", methods=["GET"])
 def index():
+    print('Debug: Index!')
     return render_template("public/index.html")

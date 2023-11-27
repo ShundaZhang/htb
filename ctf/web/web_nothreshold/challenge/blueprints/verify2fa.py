@@ -4,10 +4,12 @@ import uwsgi
 verify2fa_bp = Blueprint("verify2fa", __name__, template_folder="templates")
 
 def requires_2fa(func):
+    print('Debug: Requires 2fa!')
     def wrapper(*args, **kwargs):
         if uwsgi.cache_exists("2fa-code"):
             return func(*args, **kwargs)
         else:
+            print('Debug: Redirect to login!')
             return redirect("/auth/login")
 
     return wrapper
@@ -16,6 +18,7 @@ def requires_2fa(func):
 @verify2fa_bp.route("/verify-2fa", methods=["GET", "POST"])
 @requires_2fa
 def verify():
+    print('Debug: Verify 2fa!')
     if request.method == "POST":
 
         code = request.form.get("2fa-code")
