@@ -1,2 +1,0 @@
-POST /index.html HTTP/1.1
-Host: 178.62.102.205:1337
