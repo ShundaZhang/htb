@@ -6,6 +6,7 @@ verify2fa_bp = Blueprint("verify2fa", __name__, template_folder="templates")
 def requires_2fa(func):
     print('Debug: Requires 2fa!')
     def wrapper(*args, **kwargs):
+        print('Debug: Wrapper 2fa!')
         if uwsgi.cache_exists("2fa-code"):
             return func(*args, **kwargs)
         else:
