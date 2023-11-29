@@ -17,9 +17,9 @@ def set_2fa_code(d):
 
 @login_bp.route("/login", methods=["GET", "POST"])
 def login():
-    print("Debug: Login!")
+    print('Debug: Login!')
     if request.method == "POST":
-        
+        print('Debug: PSOT Login!')
         username = request.form.get("username")
         password = request.form.get("password")
 
@@ -30,11 +30,13 @@ def login():
                 f"SELECT username, password FROM users WHERE username = '{username}' AND password = '{password}'",
                 one=True,
             )
-
+            print('Debug: Queried DB!')
             if user is None:
+                print('Debug: User None!')
                 return render_template("public/login.html", error_message="Invalid username or password"), 400
 
             set_2fa_code(4)
+            print('Debug: Redirect to Verify-2fa from Login!')
 
             return redirect("/auth/verify-2fa")
         finally:
