@@ -8,14 +8,18 @@ app = Flask(__name__)
 def index():
     if request.method == 'POST':
         url = request.form['url']
+        #r = requests.get(url)
+        #return render_template('index.html', result=r.text)
         try:
             su = safeurl.SafeURL()
             opt = safeurl.Options()
             opt.enableFollowLocation().setFollowLocationLimit(0)
             su.setOptions(opt)
             su.execute(url)
-        except:
-            return render_template('index.html', error=f"Malicious input detected.")
+        except Exception as e:
+            print(e)
+            #return render_template('index.html', error=f"Malicious input detected.")
+            return render_template('index.html', error=url+'\n'+str(e))
         r = requests.get(url)
         return render_template('index.html', result=r.text)
     return render_template('index.html')
@@ -29,7 +33,8 @@ def secret():
             flag = f.readline()
         return render_template('secret.html', SECRET=flag)
     else:
-        return render_template('forbidden.html'), 403
+        return render_template('index.html', error='Error Request Addr: '+request.remote_addr)
+        #return render_template('forbidden.html'), 403
 
 
 if __name__ == '__main__':
