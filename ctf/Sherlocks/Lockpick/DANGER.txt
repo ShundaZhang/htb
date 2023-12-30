@@ -1,0 +1,15 @@
+Dear User,
+
+This text file is to warn you that the ZIP file contains software that is going to interact with your computer and files. This software has been intentionally included for educational purposes and is NOT intended to be executed or used otherwise.Always handle such files in isolated, controlled, and secure environments. 
+
+It is strongly recommend you proceed by:
+1 - Running the sample in a controlled environment, for example EP Pwnbox or an isolated virtual machine. 
+2 - Only unzip the software in this controlled environment, using the password provided.
+3 - Unzip the file in the VM and enjoy analysing!
+
+PLEASE EXERCISE EXTREME CAUTION!
+
+The ZIP file containing the software is password-protected for your safety. The password is "E@iwyzXK7HK&". It is strongly recommended that you do NOT extract or execute the contents of this ZIP file unless you understand the risks involved.
+
+By reading this file and using the provided password to unzip the file, you acknowledge and fully understand the risks as detailed in this warning. 
+
