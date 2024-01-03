@@ -1,0 +1,12 @@
+local_41d 'k'
+local_418 'a'
+local_420 'h'
+local_416 'a'
+local_41b 'h'
+local_417 'r'
+local_415 'd'
+local_41f '@'
+local_412 'E'
+local_41e 'c'
+local_413 '$'
+
