@@ -11,7 +11,7 @@ def execute_curl(url):
         result = subprocess.run(['curl', url], capture_output=True, text=True, check=True)
         return result.stdout
     except subprocess.CalledProcessError as e:
-        print(f"Error executing cURL: {e}")
+        print("Error executing cURL")
         return None
 
 # Example URL
