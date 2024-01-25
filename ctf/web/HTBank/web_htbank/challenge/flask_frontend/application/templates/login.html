@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TransactSphere</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="backgound">
+        <div class="left"></div>
+        <div class="right">
+            <div class="strip-bottom"></div>
+            <div class="strip-top"></div>
+        </div>
+
+        <div
+            style="position: absolute; left: 50%; top: 10%; transform: translate(-50%, -50%); display: flex; align-items: center;">
+
+            <img style="width: 64px; height: 45px;" src="/static/images/cash.gif" alt="Cash GIF">
+            <h2 style="color: white; margin: 0 20px;">
+                <span style="color: green;">HTB</span><span style="color: yellow;">ank</span>
+            </h2>
+            
+            <img style="width: 64px; height: 45px;" src="/static/images/cash.gif" alt="Cash GIF">
+
+        </div>
+    </div>
+    <div class="center">
+        <div class="card">
+            <div class="flip">
+                <div class="front">
+                    <div class="strip-bottom"></div>
+                    <div class="strip-top"></div>
+
+                    <div class="makeCen">
+                        <h2>Login</h2>
+                    </div>
+
+                    <div class="nes-field" style="position: absolute; top: 13%;width: 100%;padding: 20px;">
+                        <label for="name_field">Username</label>
+                        <input type="text" placeholder="Username" style="border-image-source:unset;" id="username_login"
+                            class="nes-input">
+                    </div>
+
+                    <div class="nes-field" style="position: absolute; top: 38%;width: 100%;padding: 20px;">
+                        <label for="name_field">Password</label>
+                        <input type="text" placeholder="Password" style="border-image-source:unset;" id="password_login"
+                            class="nes-input">
+                    </div>
+
+                    <div id="register-link" class="nes-field"
+                        style="position: absolute; top: 61%;width: 100%;padding: 20px; font-size: 9px;">
+                        <div>Don't have an account? Register</div>
+                    </div>
+
+
+
+                    <button onclick="login()" type="button" class="nes-btn is-primary makeCen"
+                    style="top:unset; bottom: 6%;">Login</button>
+
+                </div>
+                <div class="back">
+                    <div class="strip-bottom"></div>
+                    <div class="strip-top"></div>
+
+                    <div class="makeCen">
+                        <h2>Register</h2>
+                    </div>
+
+                    <div class="nes-field" style="position: absolute; top: 13%;width: 100%;padding: 20px;">
+                        <label for="name_field">Username</label>
+                        <input type="text" placeholder="Username" style="border-image-source:unset;" id="username_register"
+                            class="nes-input">
+                    </div>
+
+                    <div class="nes-field" style="position: absolute; top: 38%;width: 100%;padding: 20px;">
+                        <label for="password">Password</label>
+                        <input type="text" placeholder="Password" style="border-image-source:unset;" id="password_register"
+                            class="nes-input">
+                    </div>
+
+                    <div id="login-link" class="nes-field"
+                        style="position: absolute; top: 61%;width: 100%;padding: 20px; font-size: 9px;">
+                        <div>Already have an account? Login</div>
+                    </div>
+                <!-- partial -->
+                    <button onclick="register()" type="button" class="nes-btn is-primary makeCen" style="top:unset; bottom: 6%;">Register</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div
+            style="position: absolute; left: 50%; bottom: 10%; transform: translate(-50%, -50%); display: flex; align-items: center;">
+
+            <div class="nes-container is-rounded" style="background-color: white;display: none;" id="message">
+                
+            </div>
+        </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/static/js/script.js"></script>
+
+</body>
+
+</html>

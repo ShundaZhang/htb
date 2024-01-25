@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TransactSphere | Home</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="/static/css/home.css">
+
+</head>
+
+
+<body style="display: grid;">
+    <div id="myModal">
+        <h2>Withdraw Money</h2>
+        <div class="nes-field">
+            <label for="password">Account Number</label>
+            <input type="text" placeholder="Account Number" style="border-image-source:unset;font-family: 'Press Start 2P';" id="account_input" class="nes-input">
+        </div>
+
+        <div class="nes-field">
+            <label for="password">Amount</label>
+            <input  type="text" placeholder="Amount" style="border-image-source:unset;font-family: 'Press Start 2P';" id="amount_input" class="nes-input">
+        </div>
+        <div style="display: flex;justify-content: center; margin-top: 10px;">
+            <button id="modalCloseBtn">Cancel</button>
+            <button onclick="withdraw()" class="withbtn" type="button">Withdraw</button>
+        </div>
+
+        <div style="margin-top: 10px;text-align: center;">
+            <div class="nes-container is-rounded" style="background-color: white;display: none;" id="message">
+                
+            </div>
+        </div>
+        
+    </div>
+
+    <div id="container">
+
+        <!-- partial:index.partial.html -->
+        <div id="particles-js"></div>
+
+        <div
+            style="position: absolute; left: 50%; top: 10%; transform: translate(-50%, -50%); display: flex; align-items: center;">
+
+            <img style="width: 64px; height: 45px;" src="/static/images/cash.gif" alt="Cash GIF">
+            <h2 style="color: white; margin: 0 20px;">
+                <span style="color: green;">HTB</span><span style="color: yellow;">ank</span>
+            </h2>
+            
+            <img style="width: 64px; height: 45px;" src="/static/images/cash.gif" alt="Cash GIF">
+
+        </div>
+        <section >
+            <div class="nes-container with-title is-centered" style="border-color: #eae1e1;">
+                <p class="title" style="color: #000;">Account Information</p>
+                <p>Username: {{user.username}}</p>
+                <p>Balance: {{user.balance}} HTB_Credits</p>
+                <p>Wallet Address: 0x{{user.wallet_address}}</p>
+
+                {% if flag %}
+                <p>Flag: {{flag}}</p>
+
+                {% endif %}
+
+            </div>
+            <div style="display: flex;justify-content: center; margin-top: 10px;">
+                <button style="font-family: 'Press Start 2P';" type="button" id="modalBtn" class="nes-btn is-success">Withdraw Money</button>
+                <button style="margin-left: 10px;font-family: 'Press Start 2P';" type="button" class="nes-btn is-error">Add Money</button>
+            </div>
+            
+        </section>
+
+    </div>
+
+
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src="/static/js/home.js"></script>
+
+</body>
+
+</html>

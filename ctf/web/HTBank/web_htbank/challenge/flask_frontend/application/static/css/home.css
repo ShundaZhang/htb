@@ -1,0 +1,65 @@
+html,
+body {
+  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+  background: #111;
+  font-family: 'Press Start 2P' !important;
+}
+
+section {
+  font-weight: 100;
+  color: #fff;
+  position: absolute;
+  z-index: 1000;
+  top: 50vh;
+  transform: translateY(-50%);
+  text-align: center;
+  display: inline-block;
+  margin: auto;
+  left: 0;
+  right: 0;
+  padding: 5px;
+}
+
+
+
+#myModal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  width: 40%;
+}
+
+#myModal h2 {
+  margin-top: 0;
+}
+
+
+#modalCloseBtn {
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  font-family: 'Press Start 2P';
+}
+
+.withbtn {
+  background-color: #35b135;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-family: 'Press Start 2P';
+
+}
