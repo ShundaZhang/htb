@@ -1,0 +1,3 @@
+Buffer length: cyclic, cyclic -l 
+File attributes: checksec --filename
+ROP: ROPgadget, ropr
