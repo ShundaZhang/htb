@@ -1,8 +1,8 @@
 from pwn import *
 
-io = process('./evil-corp')
-#io = gdb.debug('./evil-corp', 'break main')
-#ip, port = '142.93.41.143', 30668
+#io = process('./evil-corp')
+io = gdb.debug('./evil-corp', 'break main')
+#ip, port = '94.237.56.188', 56804
 #io = remote(ip, port)
 
 io.sendlineafter('Username: ', 'eliot')
