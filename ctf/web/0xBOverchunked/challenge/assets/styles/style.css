@@ -1,0 +1,77 @@
+body{
+  font-family: 'Press Start 2P', cursive;
+  background-color: rgb(46, 30, 77);
+  color: white;
+  padding: 10px;
+  min-height: 100%;
+  margin:0;
+  background-image: url("../images/bg.png");
+  background-blend-mode: multiply;
+}
+.header-msg{
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.bit8-textfield {
+  background-color: #222222;
+  border: 2px solid #444444;
+  border-radius: 4px;
+  color: #ffffff;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  padding: 8px;
+  text-align: center;
+}
+.bit8-button {
+  background-color: #222222;
+  border: 2px solid #444444;
+  border-radius: 4px;
+  color: #ffffff;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  padding: 8px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  
+}
+.bit8-button:hover {
+  background-color: #cccccc;
+  border-color: #cccccc;
+  color: #222222;
+  -webkit-box-shadow: 6px -6px 0px 0px rgb(77, 77, 77);
+  -moz-box-shadow: 6px -6px 0px 0px rgb(77, 77, 77);
+  box-shadow: 6px -6px 0px 0px rgb(77, 77, 77);
+}
+.body-content{
+  text-align: center;
+}
+#results{
+  border:#ffffff solid 4px;
+  padding: 10px;
+  text-align: left;
+  background-color: #222222;
+  -webkit-box-shadow: 6px -6px 0px 0px rgb(77, 77, 77);
+  -moz-box-shadow: 6px -6px 0px 0px rgb(77, 77, 77);
+  box-shadow: 6px -6px 0px 0px rgb(77, 77, 77);
+
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.2fr 2fr;
+  grid-gap: 10px;
+}
+
+.grid-item img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid-item p {
+  text-align: justify;
+}
