@@ -94,6 +94,4 @@ output_filename = "c1"
 assemble_asm(asm_filename, output_filename)
 
 result = get_result(output_filename, addr, register_name)
-print(result)
-hex_ret = extract_hexadecimal_value(result)
-print(hex_ret)
+print(result.split(' ')[1].split('>')[0])
