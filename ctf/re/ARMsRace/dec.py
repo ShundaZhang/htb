@@ -78,7 +78,7 @@ assembly, addr = hex_to_arm(hex_string)
 
 # Write the assembly code to a file
 asm_filename = "c1.asm"
-write_asm_to_file(asm_code, asm_filename)
+write_asm_to_file(assembly, asm_filename)
 
 # Assemble the assembly code using arm-linux-gnueabi-as
 output_filename = "c1"
