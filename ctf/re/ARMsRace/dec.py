@@ -26,6 +26,15 @@ def extract_register_name(string):
     else:
         return None  # Return None if no match is found
 
+def extract_hexadecimal_value(string):
+    # Define the regular expression pattern to match the hexadecimal value
+    pattern = r"0x[0-9a-fA-F]+"
+    match = re.search(pattern, string)
+    if match:
+        return match.group(0)  # Return the matched hexadecimal value
+    else:
+        return None  # Return None if no match is found
+
 def hex_to_arm(hex_string):
     # Convert hex string to bytes
     binary_data = binascii.unhexlify(hex_string)
@@ -84,4 +93,4 @@ write_asm_to_file(assembly, asm_filename)
 output_filename = "c1"
 assemble_asm(asm_filename, output_filename)
 
-print(get_result(output_filename, addr, register_name))
+print(extract_hexadecimal_value(get_result(output_filename, addr, register_name)))
