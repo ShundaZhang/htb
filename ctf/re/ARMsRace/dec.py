@@ -17,15 +17,6 @@ def assemble_asm(input_filename, output_filename):
     # Run arm-linux-gnueabi-as to assemble the assembly code
     subprocess.run(["arm-linux-gnueabi-as", "-o", output_filename, input_filename])
 
-def extract_register_name(string):
-    # Define the regular expression pattern to match the register name
-    pattern = r"Register (r[0-9]+):"
-    match = re.search(pattern, string)
-    if match:
-        return match.group(1)  # Return the matched register name
-    else:
-        return None  # Return None if no match is found
-
 def extract_hexadecimal_value(string):
     # Define the regular expression pattern to match the hexadecimal value
     pattern = r"0x[0-9a-fA-F]+"
@@ -94,5 +85,4 @@ output_filename = "c1"
 assemble_asm(asm_filename, output_filename)
 
 result = get_result(output_filename, addr, register_name)
-print(str(result))
-#print(result.split(' ')[1].split('>')[0])
+print(str(result).split(' ')[1].split('>')[0])
