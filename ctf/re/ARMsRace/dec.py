@@ -73,7 +73,7 @@ def get_result(output_filename, start_addr, reg):
     for state in simgr.found:
         return state.registers.load(reg).decode()
 
-ip, port = "94.237.56.188", 44351
+ip, port = "94.237.54.48", 33316
 io = remote(ip, port)
 
 io.recvuntil(": ")
