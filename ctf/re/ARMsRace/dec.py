@@ -67,22 +67,25 @@ def get_result(output_filename, start_addr, reg):
 ip, port = "94.237.54.48", 33316
 io = remote(ip, port)
 
-io.recvuntil(": ")
-hex_string = io.recvline().strip().decode()
-#print(hex_string)
-buf = io.recvuntil(": ").decode()
-register_name = extract_register_name(buf)
-#print(register_name)
-assembly, addr = hex_to_arm(hex_string)
-#print(assembly)
+for _ in range(50):
+	io.recvuntil(": ")
+	hex_string = io.recvline().strip().decode()
+	#print(hex_string)
+	buf = io.recvuntil(": ").decode()
+	register_name = extract_register_name(buf)
+	#print(register_name)
+	assembly, addr = hex_to_arm(hex_string)
+	#print(assembly)
 
-# Write the assembly code to a file
-asm_filename = "c1.asm"
-write_asm_to_file(assembly, asm_filename)
+	# Write the assembly code to a file
+	asm_filename = "c1.asm"
+	write_asm_to_file(assembly, asm_filename)
 
-# Assemble the assembly code using arm-linux-gnueabi-as
-output_filename = "c1"
-assemble_asm(asm_filename, output_filename)
+	# Assemble the assembly code using arm-linux-gnueabi-as
+	output_filename = "c1"
+	assemble_asm(asm_filename, output_filename)
 
-result = get_result(output_filename, addr, register_name)
-print(str(result).split(' ')[1].split('>')[0])
+	result = get_result(output_filename, addr, register_name)
+	io.sendline(str(result).split(' ')[1].split('>')[0])
+
+print(io.recvall())
