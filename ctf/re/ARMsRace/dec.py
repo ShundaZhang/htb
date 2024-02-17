@@ -6,6 +6,16 @@ from pwn import *
 from capstone import *
 import binascii
 import re
+import angr
+
+def write_asm_to_file(asm_code, filename):
+    with open(filename, "w") as file:
+        file.write(asm_code)
+
+def assemble_asm(input_filename, output_filename):
+    import subprocess
+    # Run arm-linux-gnueabi-as to assemble the assembly code
+    subprocess.run(["arm-linux-gnueabi-as", "-o", output_filename, input_filename])
 
 def extract_register_name(string):
     # Define the regular expression pattern to match the register name
@@ -30,19 +40,48 @@ def hex_to_arm(hex_string):
         address = i.address
         disassembly += "%s\t%s\n" % (i.mnemonic, i.op_str)
 
+    disassembly += "movw    r1, #0x7ade"
     return disassembly, address
 
+def get_result(output_filename, start_addr, reg):
+    # Path to the ARM binary
+    binary_path = output_filename
+
+    # Load the binary into Angr
+    proj = angr.Project(binary_path, auto_load_libs=False)
+
+    # Create an entry state
+    entry_state = proj.factory.entry_state()
+    # Create a simulation manager with the entry state
+    simgr = proj.factory.simulation_manager(entry_state)
+
+    # Use Angr's symbolic execution engine to execute until the specified address
+    simgr = proj.factory.simulation_manager(entry_state)
+    # Explore the binary
+    simgr.explore(find= 0x400000 + start_addr + 4)
+
+    # Print the state of the program at address 0x1d8
+    for state in simgr.found:
+        return state.registers.load(reg)
 
 ip, port = "94.237.56.188", 44351
 io = remote(ip, port)
 
 io.recvuntil(": ")
 hex_string = io.recvline().strip().decode()
-print(hex_string)
+#print(hex_string)
 buf = io.recvuntil(": ").decode()
 register_name = extract_register_name(buf)
-print(register_name)
+#print(register_name)
 assembly, addr = hex_to_arm(hex_string)
-print(assembly)
+#print(assembly)
 
+# Write the assembly code to a file
+asm_filename = "c1.asm"
+write_asm_to_file(asm_code, asm_filename)
 
+# Assemble the assembly code using arm-linux-gnueabi-as
+output_filename = "c1"
+assemble_asm(asm_filename, output_filename)
+
+print(get_result(output_filename, addr, register_name))
