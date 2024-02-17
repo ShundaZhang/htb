@@ -71,7 +71,7 @@ def get_result(output_filename, start_addr, reg):
 
     # Print the state of the program at address 0x1d8
     for state in simgr.found:
-        return state.registers.load(reg)
+        return state.registers.load(reg).decode()
 
 ip, port = "94.237.56.188", 44351
 io = remote(ip, port)
