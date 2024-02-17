@@ -17,7 +17,7 @@ def hex_to_arm(hex_string):
     disassembly = ""
     for i in md.disasm(binary_data, 0):
         #disassembly += "0x%x:\t%s\t%s\n" % (i.address, i.mnemonic, i.op_str)
-	address = i.address
+        address = i.address
         disassembly += "%s\t%s\n" % (i.mnemonic, i.op_str)
 
     return disassembly, address
