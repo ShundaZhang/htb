@@ -27,7 +27,7 @@ ip, port = "94.237.56.188", 44351
 io = remote(ip, port)
 
 io.recvuntil(": ")
-hex_string = io.recvline()
+hex_string = io.recvline().strip().decode()
 print(hex_string)
 buf = io.recvuntil(": ")
 print(buf)
