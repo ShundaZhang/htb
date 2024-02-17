@@ -17,12 +17,12 @@ def assemble_asm(input_filename, output_filename):
     # Run arm-linux-gnueabi-as to assemble the assembly code
     subprocess.run(["arm-linux-gnueabi-as", "-o", output_filename, input_filename])
 
-def extract_hexadecimal_value(string):
-    # Define the regular expression pattern to match the hexadecimal value
-    pattern = r"0x[0-9a-fA-F]+"
+def extract_register_name(string):
+    # Define the regular expression pattern to match the register name
+    pattern = r"Register (r[0-9]+):"
     match = re.search(pattern, string)
     if match:
-        return match.group(0)  # Return the matched hexadecimal value
+        return match.group(1)  # Return the matched register name
     else:
         return None  # Return None if no match is found
 
