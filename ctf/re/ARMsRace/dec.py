@@ -5,6 +5,16 @@ ARM
 from pwn import *
 from capstone import *
 import binascii
+import re
+
+def extract_register_name(string):
+    # Define the regular expression pattern to match the register name
+    pattern = r"Register (r[0-9]+):"
+    match = re.search(pattern, string)
+    if match:
+        return match.group(1)  # Return the matched register name
+    else:
+        return None  # Return None if no match is found
 
 def hex_to_arm(hex_string):
     # Convert hex string to bytes
@@ -29,8 +39,9 @@ io = remote(ip, port)
 io.recvuntil(": ")
 hex_string = io.recvline().strip().decode()
 print(hex_string)
-buf = io.recvuntil(": ")
-print(buf)
+buf = io.recvuntil(": ").decode()
+register_name = extract_register_name(buf)
+print(register_name)
 assembly, addr = hex_to_arm(hex_string)
 print(assembly)
 
