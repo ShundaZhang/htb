@@ -89,3 +89,4 @@ for _ in range(50):
 	io.sendline(str(result).split(' ')[1].split('>')[0])
 
 print(io.recvall())
+#HTB{un1c0Rn_0R_C4p5T0nE_0R_qeMU_5ubPR0cE55_0r_F0r90TTen_0Ld_R45berry_4NyTH1N9_BUt_n0_M4nu4LLy}
