@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>Flask HTML Page with GIF</title>
+</head>
+<body>
+    <!-- <h1>Welcome to Flask HTML Page!</h1> -->
+    <!-- <p>This is a simple HTML page served by Flask.</p> -->
+
+    <div class="pixel-container">
+        <div class="pixel-grid" onclick="onClickSubmit()">
+            <input type="file" name="file" id="submitFile" onchange="handleFileChange()">
+              <div class="text">ʕ•ᴥ•ʔ</div>
+
+              <div class="transparent"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="transparent"></div>
+              
+              <div class="black"></div>
+              <div class="lightg"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="lightg"></div>
+              <div class="black"></div>
+              
+              <div class="black"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="black"></div>
+              
+              <div class="black"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="black"></div>
+              
+              <div class="black"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="black"></div>
+              
+              <div class="black"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="black"></div>
+              
+              <div class="black"></div>
+              <div class="lightg"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="lightg"></div>
+              <div class="black"></div>
+              
+              <div class="black"></div>
+              <div class="grey"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="grey"></div>
+              <div class="black"></div>
+              
+              <div class="transparent"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="transparent"></div>
+        </div>
+        <div id="play-button" class="pixel-grid" onclick="onClickPlay()">
+              <div class="text">Play</div>
+
+              <div class="transparent"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="transparent"></div>
+              
+              <div class="black"></div>
+              <div class="lightg"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="lightg"></div>
+              <div class="black"></div>
+              
+              <div class="black"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="black"></div>
+              
+              <div class="black"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="black"></div>
+              
+              <div class="black"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="black"></div>
+              
+              <div class="black"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="black"></div>
+              
+              <div class="black"></div>
+              <div class="lightg"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="white"></div>
+              <div class="lightg"></div>
+              <div class="black"></div>
+              
+              <div class="black"></div>
+              <div class="grey"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="lightg"></div>
+              <div class="grey"></div>
+              <div class="black"></div>
+              
+              <div class="transparent"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="black"></div>
+              <div class="transparent"></div>
+        </div>
+    </div>
+
+    <!-- GIF Image -->
+    <img id="background" src="{{url_for('static', filename='lounge.gif')}}" alt="Animated Pixel Art">
+    <div id="background-overlay" />
+
+
+    <dialog id="dialog">
+        <form method="dialog">
+            <p id="dialog-text"></p>
+          <div>
+            <button type="submit">Close</button>
+          </div>
+        </form>
+      </dialog>
+
+    <script src="{{url_for('static', filename='index.js')}}"></script>
+</body>
+</html>

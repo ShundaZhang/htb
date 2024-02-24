@@ -1,0 +1,329 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -50;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+#background-overlay {
+    background-color: darkviolet;
+    opacity: 0.25;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -40;
+    width: 100vw;
+    height: 100vh;
+}
+
+/*body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  
+  height: 100vh;
+  width: 100vw;
+  
+  font-family: 'Press Start 2P';
+  background-color: white;
+  
+  overflow: hidden;
+}*/
+
+/* ------------------- Button Grid styles ------------------- */
+.pixel-grid {
+    display: grid;
+    row-gap: 0;
+    column-gap: 0;
+    grid-template-columns: repeat(20, 20px);
+    grid-template-rows: repeat(11, 20px);
+
+    filter: drop-shadow(0 20px 0 #545454);
+
+    cursor: pointer;
+}
+
+.pixel-grid:active {
+    transform: translate(0, 20px);
+    filter: drop-shadow(0 0 0 #545454)
+}
+
+
+/* ------------------- pixel styles ------------------- */
+
+.transparent {
+    background-color: transparent;
+    height: 20px;
+    width: 20px;
+}
+
+.black {
+    background-color: black;
+    height: 20px;
+    width: 20px;
+}
+
+.lightg {
+    background-color: #909090;
+    height: 20px;
+    width: 20px;
+}
+
+.white {
+    background-color: white;
+    height: 20px;
+    width: 20px;
+}
+
+.grey {
+    background-color: #545454;
+    height: 20px;
+    width: 20px;
+}
+
+/* ------------------- text styles ------------------- */
+.text {
+    filter: none;
+    position: absolute;
+    display: block;
+
+    z-index: 5;
+
+    font-size: 40px;
+    width: 100%;
+    height: 100%;
+    top: 28%;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* ------------------- background styles ------------------- */
+.background {
+    position: absolute;
+    z-index: -5;
+
+    display: grid;
+    grid-template-columns: repeat(14, 200px);
+    grid-template-rows: repeat(5, 200px);
+}
+
+.background-tile {
+    height: 20px;
+
+    box-shadow:
+        20px 20px 0 0 #ff0000,
+        40px 20px 0 0 #e91e63,
+        60px 20px 0 0 #9c27b0,
+        80px 20px 0 0 #3f51b5,
+        100px 20px 0 0 #2196f3,
+        120px 20px 0 0 #4caf50,
+        140px 20px 0 0 #8bc34a,
+        160px 20px 0 0 #ffeb3b,
+        180px 20px 0 0 #ffc107,
+        200px 20px 0 0 #ff5722,
+        20px 40px 0 0 #e91e63,
+        40px 40px 0 0 #9c27b0,
+        60px 40px 0 0 #3f51b5,
+        80px 40px 0 0 #2196f3,
+        100px 40px 0 0 #4caf50,
+        120px 40px 0 0 #8bc34a,
+        140px 40px 0 0 #ffeb3b,
+        160px 40px 0 0 #ffc107,
+        180px 40px 0 0 #ff5722,
+        200px 40px 0 0 #ff0000,
+        20px 60px 0 0 #9c27b0,
+        40px 60px 0 0 #3f51b5,
+        60px 60px 0 0 #2196f3,
+        80px 60px 0 0 #4caf50,
+        100px 60px 0 0 #8bc34a,
+        120px 60px 0 0 #ffeb3b,
+        140px 60px 0 0 #ffc107,
+        160px 60px 0 0 #ff5722,
+        180px 60px 0 0 #ff0000,
+        200px 60px 0 0 #e91e63,
+        20px 80px 0 0 #3f51b5,
+        40px 80px 0 0 #2196f3,
+        60px 80px 0 0 #4caf50,
+        80px 80px 0 0 #8bc34a,
+        100px 80px 0 0 #ffeb3b,
+        120px 80px 0 0 #ffc107,
+        140px 80px 0 0 #ff5722,
+        160px 80px 0 0 #ff0000,
+        180px 80px 0 0 #e91e63,
+        200px 80px 0 0 #9c27b0,
+        20px 100px 0 0 #2196f3,
+        40px 100px 0 0 #4caf50,
+        60px 100px 0 0 #8bc34a,
+        80px 100px 0 0 #ffeb3b,
+        100px 100px 0 0 #ffc107,
+        120px 100px 0 0 #ff5722,
+        140px 100px 0 0 #ff0000,
+        160px 100px 0 0 #e91e63,
+        180px 100px 0 0 #9c27b0,
+        200px 100px 0 0 #3f51b5,
+        20px 120px 0 0 #4caf50,
+        40px 120px 0 0 #8bc34a,
+        60px 120px 0 0 #ffeb3b,
+        80px 120px 0 0 #ffc107,
+        100px 120px 0 0 #ff5722,
+        120px 120px 0 0 #ff0000,
+        140px 120px 0 0 #e91e63,
+        160px 120px 0 0 #9c27b0,
+        180px 120px 0 0 #3f51b5,
+        200px 120px 0 0 #2196f3,
+        20px 140px 0 0 #8bc34a,
+        40px 140px 0 0 #ffeb3b,
+        60px 140px 0 0 #ffc107,
+        80px 140px 0 0 #ff5722,
+        100px 140px 0 0 #ff0000,
+        120px 140px 0 0 #e91e63,
+        140px 140px 0 0 #9c27b0,
+        160px 140px 0 0 #3f51b5,
+        180px 140px 0 0 #2196f3,
+        200px 140px 0 0 #4caf50,
+        20px 160px 0 0 #ffeb3b,
+        40px 160px 0 0 #ffc107,
+        60px 160px 0 0 #ff5722,
+        80px 160px 0 0 #ff0000,
+        100px 160px 0 0 #e91e63,
+        120px 160px 0 0 #9c27b0,
+        140px 160px 0 0 #3f51b5,
+        160px 160px 0 0 #2196f3,
+        180px 160px 0 0 #4caf50,
+        200px 160px 0 0 #8bc34a,
+        20px 180px 0 0 #ffc107,
+        40px 180px 0 0 #ff5722,
+        60px 180px 0 0 #ff0000,
+        80px 180px 0 0 #e91e63,
+        100px 180px 0 0 #9c27b0,
+        120px 180px 0 0 #3f51b5,
+        140px 180px 0 0 #2196f3,
+        160px 180px 0 0 #4caf50,
+        180px 180px 0 0 #8bc34a,
+        200px 180px 0 0 #ffeb3b,
+        20px 200px 0 0 #ff5722,
+        40px 200px 0 0 #ff0000,
+        60px 200px 0 0 #e91e63,
+        80px 200px 0 0 #9c27b0,
+        100px 200px 0 0 #3f51b5,
+        120px 200px 0 0 #2196f3,
+        140px 200px 0 0 #4caf50,
+        160px 200px 0 0 #8bc34a,
+        180px 200px 0 0 #ffeb3b,
+        200px 200px 0 0 #ffc107;
+    height: 20px;
+    width: 20px;
+
+    animation: background 1s infinite;
+    animation-timing-function: steps(1, end);
+}
+
+/* ------------------- for smoother animation ------------------- */
+/* @keyframes background {
+  0 {transform: translate(0, 0);}
+  5% {transform: translate(10px, 0);} 
+  10% {transform: translate(20px, 0);} 
+  15% {transform: translate(30px, 0);}
+  20% {transform: translate(40px, 0);} 
+  25% {transform: translate(50px, 0);} 
+  30% {transform: translate(60px, 0);} 
+  35% {transform: translate(70px, 0);} 
+  40% {transform: translate(80px, 0);} 
+  45% {transform: translate(90px, 0);} 
+  50% {transform: translate(100px, 0);} 
+  55% {transform: translate(110px, 0);} 
+  60% {transform: translate(120px, 0);}
+  65% {transform: translate(130px, 0);} 
+  70% {transform: translate(140px, 0);} 
+  75% {transform: translate(150px, 0);} 
+  80% {transform: translate(160px, 0);} 
+  85% {transform: translate(170px, 0);} 
+  90% {transform: translate(180px, 0);} 
+  95% {transform: translate(190px, 0);} 
+  100% {transform: translate(200px, 0);} 
+} */
+
+@keyframes background {
+    0 {
+        transform: translate(0, 0);
+    }
+
+    10% {
+        transform: translate(20px, 0);
+    }
+
+    20% {
+        transform: translate(40px, 0);
+    }
+
+    30% {
+        transform: translate(60px, 0);
+    }
+
+    40% {
+        transform: translate(80px, 0);
+    }
+
+    50% {
+        transform: translate(100px, 0);
+    }
+
+    60% {
+        transform: translate(120px, 0);
+    }
+
+    70% {
+        transform: translate(140px, 0);
+    }
+
+    80% {
+        transform: translate(160px, 0);
+    }
+
+    90% {
+        transform: translate(180px, 0);
+    }
+
+    100% {
+        transform: translate(200px, 0);
+    }
+}
+
+.pixel-container {
+    position: fixed;
+    bottom: 1rem;
+    width: 100%;
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+    scale: 0.5;
+    user-select: none;
+}
+
+#submitFile {
+    display: none;
+}
+.modal {
+    display: none;
+  }
+  
+  .modal.is-open {
+    display: block;
+  }
+          
