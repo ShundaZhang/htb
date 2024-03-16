@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Silkscreen", sans-serif;
+  color: white;
+}
+
+.app {
+  background-color: black;
+  color: white;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: AF5865;
+  padding: 10px;
+}
+.header > ul {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 10px;
+  gap: 20px;
+  list-style: none;
+  color: AF5865;
+  background-color: #ffe2e7;
+  border-radius: 50px;
+  
+}
+.header > ul > li > a {
+  display: block;
+  color: #AF5865;
+  font-size: larger;
+}
+
+.home__container{
+    max-width: 500px;
+    margin: 0 auto;
+    background-color:rgba(0,0,0,0.7) ;
+    padding: 40px;
+    border-radius: 20px;
+    
+}
+.home__title{
+    text-align: center;
+    padding:100px 20px;
+    font-size: xx-large;
+}
+.home__desc{
+    text-align: justify;
+}
+.home__group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.home__button{
+    padding: 10px 20px;
+    background-color: #AF5865;
+    color: white;
+    cursor: pointer;
+}
+
+/* sign In  */
+.home__group > label{
+  min-width: 30%;
+}
+
+.home__group > input
+{
+  min-width: 70%;
+  background-color:rgba(0,0,0,0.8);
+  padding: 10px;
+  border: none;
+  outline: none;
+}
