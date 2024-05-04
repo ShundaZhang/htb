@@ -4,7 +4,7 @@ from pwn import *
 
 context.arch = 'amd64'
 context.os = 'linux'
-context.log_level = 'info'
+context.log_level = 'debug'
 
 #io = process('./execute')
 ip, port = '94.237.54.170', 44692
@@ -93,3 +93,4 @@ io.sendlineafter('Hey, just because I am hungry doesn\'t mean I\'ll execute ever
 print(io.recvline())
 print(io.recvline())
 #io.interactive()
+#See the debug info: HTB{wr1t1ng_sh3llc0d3_1s_s0_c00l}
