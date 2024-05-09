@@ -1,0 +1,29 @@
+<html>
+  <head>
+	<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+	<meta name='author' content='makelaris, makelaris jr.'>
+	<title>todo or not todo</title>
+	<link rel='shortcut icon' type='image/png' href="{{ url_for('static', filename='checklist.png') }}"/>
+	<link rel='stylesheet' href='//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
+	<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/nes.css/2.2.1/css/nes-core.min.css' integrity='sha256-upnPVU7JG7lrO9lnTW804Y/tFDldZ6g/mnZ5ZWTlxcM=' crossorigin='anonymous'>
+	<link rel='stylesheet' href="{{ url_for('static', filename='css/main.css') }}">
+</head><body>
+<div id='alerts'></div>
+<div id='app'>
+	<center><h1>🥳 🔫 ✌️ 🌈 TODO OR NOT TODO 🌈 ✌️ 🔫 🥳</h1></center>
+	<form id='add' action='' method='POST'>
+		<input id='add-task' align='left' type='text' class='nes-input' placeholder='add'>
+		<input id='data-secret' type='hidden' value='{{ secret }}'> 
+	</form>
+	<span>&nbsp</span>
+	<ul id='tasks'></ul>
+</div>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script>
+// don't use getstatus('all') until we get the verify_integrity() patched
+const update = () => getTasks('{{ list_access }}')
+update()
+setInterval(update, 3000)
+</script>
+</body>
+</html>
