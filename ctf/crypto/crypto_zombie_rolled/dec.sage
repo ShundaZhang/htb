@@ -1,3 +1,5 @@
+#sage dec.sage -> python3.9 dec.py -> sage lll.sage
+
 #https://github.com/hackthebox/uni-ctf-2023/tree/main/uni-ctf-2023/crypto/%5BHard%5D%20Zombie%20Rolled
 #https://7rocky.github.io/en/ctf/htb-challenges/crypto/zombie-rolled/
 
