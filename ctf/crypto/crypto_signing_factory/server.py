@@ -3,7 +3,7 @@ from base64 import b64encode, b64decode
 from hashlib import sha256
 from sympy.ntheory import factorint as ps_and_qs
 from Crypto.PublicKey import RSA
-from Crypto.Util.number import getPrime
+from Crypto.Util.number import getPrime, bytes_to_long
 from secret import FLAG
 
 def show_menu():
@@ -21,7 +21,7 @@ Available options:
 class Signer:
     def __init__(self, key_size=2048):
         self.key_size = key_size
-        self.admin = 'System_Administrator'
+        self.admin = bytes_to_long(b'System_Administrator')
         self.golden_ratio = 2654435761
         self.hash_var = lambda key: (((key % self.golden_ratio) * self.golden_ratio) >> 32)
         self.equation_output = lambda k, rnd: (k * rnd) % self.golden_ratio
@@ -38,7 +38,6 @@ class Signer:
                 return rnd
 
     def sign(self, username):
-        username = int(username.encode().hex(), 16)
         h = self.hash_var(username)
         auth = pow(int(h), self.d, self.n)
         return auth
@@ -59,15 +58,17 @@ def main():
         user_inp = show_menu()
         if user_inp == '0':
             username = input("Enter a username: ")
-            if username == signer.admin:
-                print("[-] Admin user already exists.")
-                continue
-            
             if rsearch('[^a-zA-Z0-9]', username):
                 print("[-] Invalid characters detected. Symbols are not allowed.")
                 continue
 
-            token = signer.sign(username)
+            numeric_username = int(username.encode().hex(), 16)
+
+            if numeric_username % signer.golden_ratio == signer.admin % signer.golden_ratio:
+                print("[-] Admin user already exists.")
+                continue
+
+            token = signer.sign(numeric_username)
             print(f"Your session token is {b64encode(str(token).encode())}")
 
         elif user_inp == '1':
@@ -80,10 +81,12 @@ def main():
             except:
                 print("[-] Invalid format for authentication key.")
                 continue
+            
+            numeric_username = int(username.encode().hex(), 16)
 
-            recomputed_signature = signer.hash_var(int(username.encode().hex(), 16))
+            recomputed_signature = signer.hash_var(numeric_username)
             if signer.verify(recomputed_signature, authToken):
-                if username == signer.admin:
+                if numeric_username == signer.admin:
                     print(f"[+] Welcome back admin! The note you left behind from your previous session was: {FLAG}")
                 else:
                     print(f"[+] Welcome {username}!")
