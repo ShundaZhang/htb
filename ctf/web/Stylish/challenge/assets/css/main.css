@@ -1,0 +1,9 @@
+main, main .jumbotron {
+    padding-top:2rem;
+}
+main img {
+    width: 130px !important;
+}
+main .card {
+    width: 20rem;
+}

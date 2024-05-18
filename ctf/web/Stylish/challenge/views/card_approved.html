@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>View Card</title>
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/assets/css/main.css" rel="stylesheet" />
+        <link href="{{ cssFile }}" rel="stylesheet" />
+    </head>
+    <body>
+        <main role="main" class="container">
+            <div class="jumbotron">
+                <div class="row text-center">
+                    <div class="col d-flex justify-content-center">
+                        <div class="card">
+                            <img class="card-img-top mx-auto img-fluid" src="/assets/img/avatar.png" alt="Card image">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item flex-fill">Name: John</li>
+                                <li class="list-group-item flex-fill">Surname: Doe</li>
+                                <li class="list-group-item flex-fill">Age: 35</li>
+                            </ul>
+                            <div class="card-body">
+                                <p class="card-text">...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="commentsContainer" class="row mt-5">
+                    <div class="col">
+                        <div class="form-group form-inline">
+                            <label for="pagination">Comments to display: </label>				
+                            <select class="form-control ml-1" id="pagination">
+                                <option selected value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                            </select>
+                        </div>	
+                            
+                        <div id="comments" class="form-group p-2">
+                            {%- for comment in comments %}
+                            <div>{{ comment.content }}</div>
+                            {%- endfor %}
+                        </div>
+                        <hr>
+                        <div>
+                            <textarea id="commentContent" data-id="{{ submissionID }}" class="form-control"></textarea>
+                        </div>
+                        <div class="mt-2 text-right">
+                            <button id="postComment" class="btn btn-primary btn-sm" type="button">Post comment</button>
+                        </div>
+                        <div id="responseMsg"></div>   
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script type="text/javascript" src="/assets/js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="/assets/js/comment.js"></script>
+    </body>
+</html>

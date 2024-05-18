@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Card Generator</title>
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/assets/css/main.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main role="main" class="container">
+            <div class="jumbotron text-center">
+                <h2>Card Generator</h2>
+                <p class="lead">
+                    You can customize card layout providing your custom CSS!<br/>
+                    Your submission will be reviewed by admin.
+                </p>
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <div class="card">
+                            <img class="card-img-top mx-auto img-fluid" src="/assets/img/avatar.png" alt="Card image">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item flex-fill">Name: John</li>
+                                <li class="list-group-item flex-fill">Surname: Doe</li>
+                                <li class="list-group-item flex-fill">Age: 35</li>
+                            </ul>
+                            <div class="card-body">
+                                <p class="card-text">...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-5">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="customCSS">CSS code</label>
+                            <textarea id="customCSS" class="form-control" placeholder=".card-body {&#10;...&#10;}" rows="6"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button id="submitBtn" class="btn btn-primary" type="button">Submit for review</button>
+                            <div id="responseMsg"></div>                                                
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </main>
+        <script type="text/javascript" src="/assets/js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="/assets/js/submission.js"></script>
+    </body>
+</html>

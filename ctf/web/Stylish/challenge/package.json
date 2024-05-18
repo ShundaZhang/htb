@@ -1,0 +1,23 @@
+{
+	"name": "web_stylish",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js"
+	},
+	"keywords": [],
+	"authors": [
+		"Nauten"
+	],
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.17.1",
+		"nunjucks": "^3.2.0",
+		"puppeteer": "^10.4.0",
+		"sqlite-async": "1.1.2"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.15"
+	}
+}

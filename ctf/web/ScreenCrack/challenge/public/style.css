@@ -1,0 +1,155 @@
+body {
+  background-color: #000000;
+  color: #00FF00;
+  font-family: monospace;
+  font-size: 20px;
+  text-align: center;
+}
+
+pre {
+  margin-top: 100px;
+  margin-bottom: 1px;
+  animation: glitch 3s linear infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+#url-input {
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  width: 23%;
+  font-size: 20px;
+  background-color: #333333;
+  color: #00FF00;
+  outline: none;
+  font-family: monospace;
+  animation: glitch 2s linear infinite;
+  text-align: center;
+}
+
+#screenshot-btn,
+#source-btn {
+  background-color: #FF00FF;
+  border: none;
+  border-radius: 5px;
+  color: #000000;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s;
+  font-family: monospace;
+  animation: glitch 3s linear infinite;
+}
+
+#screenshot-btn:hover,
+#source-btn:hover {
+  background-color: #00FF00;
+  animation: glitch 4s linear infinite;
+  font-family: monospace;
+}
+
+#screenshot {
+  margin-top: 50px;
+  max-width: 80%;
+  font-family: monospace;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: #00ff00
+  }
+}
+
+@keyframes glitch {
+  2% {
+    transform: translate(2px, 0) skew(0deg, 2deg);
+  }
+
+  4% {
+    transform: translate(-2px, 0) skew(0deg, -2deg);
+  }
+
+  6% {
+    transform: translate(0, 0) skew(0deg, 0deg);
+  }
+
+  92% {
+    transform: translate(0, 0) skew(0deg, 0deg);
+  }
+
+  94% {
+    transform: translate(-2px, 0) skew(0deg, -2deg);
+  }
+
+  96% {
+    transform: translate(2px, 0) skew(0deg, 2deg);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f0f0f;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #333333;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+p {
+  color: white;
+  font-family: monospace;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  width: 50%;
+  font-size: 20px;
+  background-color: #333333;
+  color: #fff;
+  font-family: monospace;
+  animation: glitch 9s linear infinite;
+  text-align: center;
+}
+
+#filesource {
+  color: #00FF00;
+  border-radius: 5px;
+  border: none;
+  background-color: #d3d3d3 ;
+  outline: none;
+  font-family: monospace;
+  animation: glitch 2s linear infinite;
+  margin-top: 50px;
+}

@@ -1,0 +1,267 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Oswald|Schoolbell|Shrikhand");
+html, body {
+  margin: 0;
+  padding: 0;
+  background-image: url('/static/images/ehV1Ut.jpg');
+  background-repeat: auto;
+  background-position: center;
+}
+
+.container-fluid {
+  width: 100%;
+  height: 100%;
+  margin-top: -7em;
+  padding: 0;
+}
+.container-fluid #main {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.container-fluid #main .header {
+  display: block;
+  width: 73.5%;
+  height: 5%;
+  background: #ffff99;
+  margin: 0 auto;
+  margin-top: 10em;
+  padding: 1em;
+  padding-bottom: none;
+  overflow: hidden;
+  border-radius: 1em;
+}
+.container-fluid #main .header #nameLogo h1 {
+  font-family: "Shrikhand", cursive;
+  color: #00ccff;
+  font-size: 5em;
+}
+.container-fluid #main .header #nameLogo h1 span {
+  color: #9966ff;
+}
+.container-fluid #main .header #nameLogo h2 {
+  font-family: "Schoolbell", cursive;
+  font-size: 4em;
+  margin: -0.25em 0 0 1em;
+}
+.container-fluid #main .header h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 2.5em;
+  margin: -3.5em 0 0 35%;
+  font-style: italic;
+}
+.container-fluid #main .header #jerryWrapper {
+  margin: -14em 0 0 80%;
+  overflow: hidden;
+  height: 18em;
+  width: 11em;
+}
+.container-fluid #main .header #jerryWrapper #headerJerry {
+  margin-left: -9em;
+  transform: scale(-0.75, 0.75);
+}
+.container-fluid #main #mainBody {
+  box-shadow: inset 0 0 0.5em 0.5em rgba(0, 0, 0, 0.5);
+  display: block;
+  position: absolute;
+  background: white;
+  padding: 2.5em 5em 0 5em;
+  width: 70%;
+  margin-top: 26em;
+  border-radius: 1em 1em 0 0;
+}
+.container-fluid #main #mainBody #article1 {
+  border-radius: 1em 1em 0 0;
+  display: block;
+  margin: 0 auto;
+  clear: both;
+}
+.container-fluid #main #mainBody #article1 #bethWrapper #speechBubble {
+  font-family: "Oswald", sans-serif;
+  position: relative;
+  width: 27em;
+  background: white;
+  box-shadow: 0 0 0.5em 0.25em rgba(150, 150, 150, 0.5);
+  height: 8em;
+  border-radius: 20%;
+  border: #FF66B3 solid 3px;
+  margin: -15em 0 0 15em;
+}
+.container-fluid #main #mainBody #article1 #bethWrapper #speechBubble span {
+  font-family: "Shrikhand", cursive;
+  color: #00ccff;
+}
+.container-fluid #main #mainBody #article1 #bethWrapper #speechBubble span span {
+  color: #9966ff;
+}
+.container-fluid #main #mainBody #article1 #bethWrapper #speechBubble::after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 13px 28px 13px 0;
+  border-color: transparent #FFFFFF;
+  display: block;
+  width: 0;
+  z-index: 1;
+  left: -28px;
+  top: 56px;
+}
+.container-fluid #main #mainBody #article1 #bethWrapper #speechBubble::before {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 15px 30px 15px 0;
+  border-color: transparent #FF66B3;
+  display: block;
+  width: 0;
+  z-index: 0;
+  left: -33px;
+  top: 54px;
+}
+
+.container-fluid #main #mainBody #article1 #quote {
+  font-family: "Oswald", sans-serif;
+  margin: 4em 0 0 0;
+  z-index: 3;
+}
+.container-fluid #main #mainBody #article1 #quote p {
+  font-size: 1.25em;
+}
+.container-fluid #main #mainBody #article2 {
+  display: block;
+  margin: 0 auto;
+  clear: both;
+  margin-bottom: 1em;
+}
+.container-fluid #main #mainBody #article2 ul {
+  list-style-type: none;
+  display: block;
+  padding-left: 3em;
+}
+.container-fluid #main #mainBody #article2 ul > h3 {
+  font-family: Oswald;
+  font-size: 2em;
+}
+.container-fluid #main #mainBody #article2 ul > h3 > #jb {
+  font-family: "Shrikhand", cursive;
+  color: #00ccff;
+}
+.container-fluid #main #mainBody #article2 ul > h3 > #jb span {
+  color: #9966ff;
+}
+.container-fluid #main #mainBody #article2 ul > li > #reason {
+  font-size: 2em;
+  font-family: "Shrikhand", cursive;
+  color: #00ccff;
+}
+.container-fluid #main #mainBody #article2 ul > li > #reason span {
+  color: #9966ff;
+}
+.container-fluid #main #mainBody #article2 h2 {
+  font-size: 4em;
+  font-family: "Shrikhand", cursive;
+  color: #00ccff;
+  color: #9966ff;
+  text-align: center;
+  margin: 0.15em 2em 0 0;
+  padding-top: 1.1em;
+}
+.container-fluid #main #mainBody #article2 h2 span {
+  color: #9966ff;
+}
+.container-fluid #main #mainBody #article3 {
+  display: block;
+  margin: 0 auto;
+  clear: both;
+  background: #ffff99;
+  padding: 1em;
+  border-radius: 1em;
+  box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.5), 0 -0.5em 0.5em rgba(0, 0, 0, 0.5);
+}
+.container-fluid #main #mainBody #article3 #nurse {
+  width: 25%;
+  display: inline-block;
+  margin: 2em 1em 0 2em;
+}
+.container-fluid #main #mainBody #article3 #testimony {
+  font-family: "Oswald", sans-serif;
+  display: block;
+  width: 67%;
+}
+.container-fluid #main #mainBody #article3 #testimony h3 {
+  font-size: 3em;
+  border-bottom: solid black;
+}
+.container-fluid #main #mainBody #article3 #testimony p {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+.container-fluid #main #mainBody #article4 {
+  display: block;
+  margin: 0 auto;
+  clear: both;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.container-fluid #main #mainBody #article4 h3 {
+  font-size: 3em;
+}
+.container-fluid #main #mainBody #article4 h3 > #crayon {
+  font-family: "Schoolbell", cursive;
+  color: black;
+  font-size: 1em;
+}
+.container-fluid #main #mainBody #article4 h3 > span {
+  font-family: "Shrikhand", cursive;
+  color: #00ccff;
+  font-size: 1.25em;
+}
+.container-fluid #main #mainBody #article4 h3 > span span {
+  color: #9966ff;
+}
+.container-fluid #main #mainBody #article4 .row > div > img {
+  max-width: 15em;
+}
+.container-fluid #main #mainBody #article4 .row > div > #councilLogo {
+  margin-top: 2em;
+  width: 10em;
+  height: 10em;
+}
+.container-fluid #main #mainBody #pageFooter {
+  display: block;
+  margin: 0 auto;
+  clear: both;
+  justify-content: center;
+  border-radius: 1em;
+  background: #9966ff;
+  padding-top: 1em;
+  padding-bottom: 2em;
+  box-shadow: 0 -0.5em 0.5em rgba(0, 0, 0, 0.5);
+}
+.container-fluid #main #mainBody #pageFooter h3 {
+  display: block;
+  color: white;
+}
+.container-fluid #main #mainBody #pageFooter h2 {
+  font-family: "Shrikhand", cursive;
+  color: #00ccff;
+  border-radius: 1em;
+  margin: 0 auto;
+  font-size: 4em;
+  background: #ffff99;
+  width: 50%;
+}
+.container-fluid #main #mainBody #pageFooter h2 span {
+  color: #9966ff;
+}
+
+@media screen and (max-width: 1778px) {
+  .header > h3 {
+    display: none;
+  }
+
+   .container-fluid {
+    width: 100%;
+  }
+}

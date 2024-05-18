@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>View Card</title>
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/assets/css/main.css" rel="stylesheet" />
+        <link href="{{ cssFile }}" rel="stylesheet" />
+    </head>
+    <body>
+        <main role="main" class="container">
+            <div class="jumbotron">
+                <div class="row text-center">
+                    <div class="col d-flex justify-content-center">
+                        <div class="card">
+                            <img class="card-img-top mx-auto img-fluid" src="/assets/img/avatar.png" alt="Card image">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item flex-fill">Name: John</li>
+                                <li class="list-group-item flex-fill">Surname: Doe</li>
+                                <li class="list-group-item flex-fill">Age: 35</li>
+                            </ul>
+                            <div class="card-body">
+                                <p class="card-text">...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center mt-5">
+                    <div class="col">
+                        <div class="form-group">
+                            <p id="approvalToken" class="d-none">{{ approvalToken }}</p>
+                            <p id="rejectToken" class="d-none">{{ rejectToken }}</p>
+                            <a id="approveBtn" data-id="{{ submissionID }}" class="btn btn-primary" role="button">Approve submission</a>
+                            <a id="rejectBtn" data-id="{{ submissionID }}" class="btn btn-danger" role="button">Reject submission</a>
+                            <div id="responseMsg"></div>                                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script type="text/javascript" src="/assets/js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="/assets/js/admin.js"></script>
+    </body>
+</html>
