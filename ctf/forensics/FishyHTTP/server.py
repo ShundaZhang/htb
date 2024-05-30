@@ -381,7 +381,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         </head>
         <body>
         <p>Name: {name}</p>
-        <p>Feedback: {feedback}</p>
+        <p>feedback: {feedback}</p>
         </body>
         </html>
         """
