@@ -2,6 +2,21 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import time
 import urllib.parse
 
+import base64
+
+def extract_and_decode(words):
+    first_letters = ''.join(word[0] for word in words if word)
+
+    #print("Extracted first letters:", first_letters)
+
+    try:
+        decoded_bytes = base64.b64decode(first_letters)
+        decoded_string = decoded_bytes.decode('utf-8')
+        return decoded_string
+    except Exception as e:
+        return f"Error decoding Base64 string: {e}"
+
+
 # HTML content for different pages
 pages = [
     '''
@@ -366,6 +381,8 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
         name = parsed_data.get('name', [''])[0]
         feedback = parsed_data.get('feedback', [''])[0]
+        decoded_string = extract_and_decode(feedback.split())
+        print(decoded_string)
 
         self.send_response(200)
         self.send_header('Content-type', 'text/html')
