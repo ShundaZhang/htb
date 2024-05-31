@@ -1,0 +1,17 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+
+<div class="center w-25">
+    <div class="login-container">
+        <img src="/static/images/icon.png" width="50" height="50">
+        <h3 class="mt-3">[error]</h3>
+        <hr>
+        {% if error %}
+            <span>{{ error }}</span>
+        {% endif %}
+        <hr>
+        <a href="javascript:history.back()">Go back</a>
+    </div>
+</div>
+
+{% endblock %}

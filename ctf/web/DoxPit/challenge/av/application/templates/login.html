@@ -1,0 +1,18 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+
+<div class="center">
+    <div class="login-container">
+        <img src="/static/images/icon.png" width="50" height="50">
+        <h3 class="mt-3">[user authentication]</h3>
+        <hr>
+        <form action="/login" method="get">
+            <input class="login-container-input" id="username" type="text" placeholder="username" name="username">
+            <input class="login-container-input mt-2" id="password" type="password" placeholder="password" name="password">
+            <button class="login-container-button mt-2" id="login-btn" type="submit">log-in</button>
+        </form>
+        <a href="/register">register</a>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+
+<div class="container pt-5 mt-5 mb-4">
+    <a class="mr-2" href="/home">home</a>
+    <a href="/logout">logout</a>
+    <h2>Current Directory Contents</h2>
+    {% if dirs %}
+    <div class="mt-5">
+        <h3>List of Files and Folders:</h3>
+        <ul>
+            {% for content in dirs %}
+            <li>{{ content }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+        <p>No contents found.</p>
+    {% endif %}
+    <h2>Enter Directory to Scan</h2>
+    <form action="/home" method="get" class="mt-4">
+        <div class="mb-3">
+            <label for="directoryPath" class="form-label">Directory Path:</label>
+            <input type="text" class="form-control" id="directoryPath" name="directory" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Scan Directory</button>
+    </form>
+</div>
+
+{% endblock %}

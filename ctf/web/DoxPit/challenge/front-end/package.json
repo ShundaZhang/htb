@@ -1,0 +1,26 @@
+{
+  "name": "doxpit",
+  "version": "1.0.0",
+  "author": "lean",
+  "scripts": {
+    "dev": "next dev -p 1337",
+    "build": "next build",
+    "start": "next start -p 1337",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "blockies-ts": "1.0.0",
+    "bootstrap": "5.3.3",
+    "next": "14.1.0",
+    "react": "18",
+    "react-dom": "18"
+  },
+  "devDependencies": {
+    "@types/node": "20",
+    "@types/react": "18",
+    "@types/react-dom": "18",
+    "eslint": "8",
+    "eslint-config-next": "14.2.3",
+    "typescript": "5"
+  }
+}

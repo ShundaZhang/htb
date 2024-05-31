@@ -1,0 +1,42 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+
+<div class="container mt-5">
+    <button class="mr-3" onclick="downloadPageHTML()">Download Report</button>
+    <a class="mr-2" href="/home">home</a>
+    <a href="/logout">logout</a>
+    <h1 class="mb-3">Antivirus Scan Report</h1>
+    <p><strong>Scan Date:</strong> {{ results.date }}</p>
+    <p><strong>Scanned Directory:</strong> {{ results.scanned_directory }}</p>
+
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>File</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results.report %}
+            <tr>
+                <td>{{ result.split(': ')[1].split(" ")[0] }}</td>
+                <td class="{{ 'malicious' if 'Malicious' in result else 'safe' }}">{{ result }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script>
+        const downloadPageHTML = () => {
+            let htmlContent = document.documentElement.outerHTML;
+            let blob = new Blob([htmlContent], { type: "text/html;charset=utf-8;" });
+            let link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "page.html";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</div>
+
+{% endblock %}
