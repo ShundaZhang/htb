@@ -379,7 +379,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         post_data = self.rfile.read(content_length)
         parsed_data = urllib.parse.parse_qs(post_data.decode('utf-8'))
 
-        name = parsed_data.get('name', [''])[0]
+        name = parsed_data.get('Name', [''])[0]
         feedback = parsed_data.get('feedback', [''])[0]
         decoded_string = extract_and_decode(feedback.split())
         print(decoded_string)
@@ -398,7 +398,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         </head>
         <body>
         <p>Name: {name}</p>
-        <p>Feedback: {feedback}</p>
+        <p>feedback: {feedback}</p>
         </body>
         </html>
         """
