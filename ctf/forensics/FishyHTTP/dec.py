@@ -20,12 +20,29 @@ words2 = ["Invitation","Fence","Zombie","vest","book","Horn","Vegetable","table"
 
 words3 = ["Ice","Frog","Zipper","vase","butterfly","Heart","Vase","tiger","Zero","Sandwich","Beach","pyramid","basket","insect","Beach","keyboard","camera","magnet","lighthouse","2","Zen","Ship","Beach","Desk","Ice","Globe","honey","hedgehog","camera","yurt","Bird","utensil","basket","yak","Beach","snowman","Yurt","Watermelon","Jet","lighthouse","butterfly","Cookie","4","Nut","Cake","island","Basket","Watch","butterfly","2","xmas","1","book","Wheel","Uniform","garden","Ukulele","2","Volcano","yellow","airplane","Wheel","Frog","sock","Iguana","Engine","5","1","bicycle","Whale","Jellyfish","lock","cake","island","Bird","pyramid","clown","yawn","Book","Butterfly","Mask","Dog","cloud","5","Lock","Utensil","Fire","Engine","Radio","king","Ink","Ninja","Cake","garden","0","Key","Iguana","Eagle","Raccoon","pineapple","candle","mask","Vulture","jungle","doll","Ghost","9","yak","easel","Spoon","Bottle","vest","Zoo","igloo","Beach","Drum","Onion","lighthouse","xylophone","Unicorn","Zipper","Wagon","1","wing","Diamond","Quartz","owl","Necklace","Camera","jigsaw","Acrobat","1","Log","zombie","Astronaut","3","Lighthouse","zombie","Ice","wallet","Mailbox","jigsaw","Queen","guitar","Ice-cream","Door","Anchor","5","Ocean","jet","Instrument","yurt","Ice-cream","Escalator","Flag","Necklace","Igloo","Cake","Apple","grape","Insect","Drum","x-ray","Elf","Spoon","Vine","Island","+","Iron","Castle","Astronaut","grape","Island","Cloud","Album","goat","Island","Cake","Arrow","grape","Ink","Computer","4","Ninja","Car","jack-o-lantern","Airplane","1","Lemon","zero","Album","3","Ladder","zen","Invitation","windmill","Mango","jacket","Quail","glasses","Invitation","Dinosaur","Apple","5","Octopus","juice","Igloo","yolk","Ice","Egg","Fruit","Ninja","Iguana","Cookie","Anchor","game","Instrument","Door","xylulose","Eagle","Squirrel","Vacuum","Island","+","Insect","Clown","Album","gift","Ice-cream","Computer","Airplane","guitar","Invitation","Cake","Anchor","globe","Island","Clown","4","umbrella","Dolphin","Quadrilateral","oyster","wand","Necklace","Squirrel","8","wing","Nut","yak","8","yawn","Mountain","Drum","Invitation","0","Iron","Candle","Apple","windmill","Nail","zero","otter","yew","Mushroom","yogurt","Ball","Beach","Train","Squirrel","Anchor","game","Iguana","Camera","Arrow","gift","Island","Cake","Astronaut","globe","Notebook","jellyfish","castle","snake","Nose","Telescope","Eagle","1","Lock","Door","cookie","0","Nut","Cookie","Banana","zipper","bear","Xerosis","Butterfly","orange","basket","3","Nest","0","Lion","microphone","Vase","4","Zen","Quiver","0","Koala","Ice","Candle","Airplane","garden","Insect","Candle","Avocado","globe","Ice-cream","Camera","Apple","ghost","Insect","Candle","Arrow","grape","Invitation","Camera","Alarm","glasses","Magnet","Sun","Butterfly","Goat","astronaut","Whale","xerosis","lighthouse","Koala","Honey","Mask","panda","Ink","Car","Astronaut","gem","Instrument","Camera","Avocado","2","Nest","yellow","watermelon","1","Microphone","Tree","Unicorn","sock","Nest","zero","Question","0","Invitation","Grape","Jungle","5","drum","Gem","Vase","zelda","Door","Quail","oyster","ghost","Igloo","Camera","Avocado","gift","Ice","Camera","Astronaut","gem","Ink","Candle","Astronaut","garden","Ice","Clown","Avocado","glasses","Ice-cream","Clown","Anchor","yucca","Island","Eagle","Rainbow","pencil","car","ice","heart","zone","King","Spoon","Astronaut","globe","Mushroom","jet","kite","spider","Nose","juice","Mouse","4","Lion","Duck","Monkey","4","Nut","Squirrel","watermelon","2","Net","jellyfish","Quail","grape","Yogurt","notebook","log","0","Zero","X-ray","Mask","glasses","Zone","necklace","Jellyfish","lemon","Zoo","Question","0","Kite"]
 
-words4 = ["banana","Gem","Fence","wagon","desk","Game","9","wheel","Lemon","Tooth","Video","owl","camera","Guitar","9","2","bird","Turtle","Zelda","ninja","Xerosis","House","pizza","zone","Zombie","Acrobat","0","Keyboard"]
-
-words = [words0, words1, words2, words3, words4]
+words = [words0, words1, words2, words3]
 
 for i in range(len(words)):
     decoded_string = extract_and_decode(words[i])
     print(decoded_string)
 
 #h77P_s73417hy_revSHELL}
+
+'''
+Run the server and smphost.exe in a VM
+Dump the memory and search HTB{
+
+python3 server.py
+
+smphost.exe 127.0.0.1 8000
+
+winpmem_mini_x64_rc2.exe mem.raw
+
+strings mem.raw -n 10 > mem.txt
+grep HTB{ mem.txt
+'''
+
+#"cmd.exe" /c dir && cd \Users\pakcyberbot\Documents\ && type HTB{Th4ts_d07n37_
+
+#HTB{Th4ts_d07n37_h77P_s73417hy_revSHELL}
+
