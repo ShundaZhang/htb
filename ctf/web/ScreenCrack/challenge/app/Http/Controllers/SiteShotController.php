@@ -11,11 +11,6 @@ class SiteShotController extends Controller
     {
         $site = $request->input('site');
 	 
-	 return  response()->json([
-                'status' => 'failed',
-                'message' => 'AAAAAAAAAAAAAAAA.'
-            ]);
-
         if (!$this->validateurl($site)) {
             return  response()->json([
                 'status' => 'failed',
@@ -96,7 +91,7 @@ class SiteShotController extends Controller
         $parsedUrl = parse_url($url);
 
         if (!isset($parsedUrl['host'])) {
-            return false;
+            return true;
         }
 
         if ($this->isValidIPv4($parsedUrl['host']) && $this->isLocalIP($parsedUrl['host'])) {
