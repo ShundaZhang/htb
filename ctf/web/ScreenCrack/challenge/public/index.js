@@ -70,7 +70,7 @@ sourceBtn.addEventListener('click', () => {
       },
       body: JSON.stringify(data)
     })
-    .then(response => response.json())
+    .then(response => {response.json(), alert("OK1!")})
     .then((e) => {
             if (!e.filename){
                 alert("There was an error.");
@@ -78,7 +78,8 @@ sourceBtn.addEventListener('click', () => {
             }
 	    else
 	    {
-	        alert(e.filename)
+	    	alert("OK2!");
+	    	alert(e.filename);
 	    }
             sourceIframe.src = e.filename;
             sourceIframe.classList.remove('hidden');
