@@ -11,7 +11,7 @@ class SiteShotController extends Controller
     {
         $site = $request->input('site');
 	 
-        if (!$this->validateUrl($site)) {
+        if (!$this->validateurl($site)) {
             return  response()->json([
                 'status' => 'failed',
                 'message' => 'Dont do naughty stuff.'
@@ -38,7 +38,7 @@ class SiteShotController extends Controller
         if (!$this->validateUrl($site)) {
             return  response()->json([
                 'status' => 'failed',
-                'message' => 'Dont do naughty stuff!!!!'
+                'message' => 'Dont do naughty stuff.'
             ]);
         }
 
