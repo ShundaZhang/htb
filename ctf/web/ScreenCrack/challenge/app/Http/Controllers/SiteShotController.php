@@ -10,6 +10,11 @@ class SiteShotController extends Controller
     public function getHtml(Request $request)
     {
         $site = $request->input('site');
+	 
+	 return  response()->json([
+                'status' => 'failed',
+                'message' => 'AAAAAAAAAAAAAAAA.'
+            ]);
 
         if (!$this->validateurl($site)) {
             return  response()->json([
