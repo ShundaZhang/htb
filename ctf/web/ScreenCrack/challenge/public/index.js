@@ -76,6 +76,10 @@ sourceBtn.addEventListener('click', () => {
                 alert("There was an error.");
                 return;
             }
+	    else
+	    {
+	        alert(e.filename)
+	    }
             sourceIframe.src = e.filename;
             sourceIframe.classList.remove('hidden');
         }
