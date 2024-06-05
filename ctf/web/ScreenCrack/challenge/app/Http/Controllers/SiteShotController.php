@@ -91,7 +91,7 @@ class SiteShotController extends Controller
         $parsedUrl = parse_url($url);
 
         if (!isset($parsedUrl['host'])) {
-            return true;
+            return false;
         }
 
         if ($this->isValidIPv4($parsedUrl['host']) && $this->isLocalIP($parsedUrl['host'])) {
