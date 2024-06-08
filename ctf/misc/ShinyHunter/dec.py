@@ -11,8 +11,9 @@ def lucky_try(ip, port, choice, index):
 	io.recvuntil('Choose your starter Poketmon (1, 2, or 3): ')
 	io.sendline(str(choice))
 	buf = io.recvall()
+	print(buf)
 	if b'HTB{' in buf:
-		print(buf)
+		print(f'{index} + {choice}: Found!')
 		found = 1
 	else:
 		print(f'{index} + {choice}: Not Found!')
