@@ -20,7 +20,7 @@ def lucky_try(ip, port, choice, index):
 	io.close()
 	if found == 1:
 		return True
-	else
+	else:
 		return False
 
 i = 0
