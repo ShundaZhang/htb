@@ -1,6 +1,7 @@
 from pwn import *
 
-ip, port = '94.237.52.198', 51000
+#ip, port = '94.237.52.198', 51000
+ip, port = '178.62.102.205', 1337
 
 
 def lucky_try(ip, port, choice, index):
@@ -8,6 +9,10 @@ def lucky_try(ip, port, choice, index):
 	io = remote(ip, port)
 	io.recvuntil('Enter your name: ')
 	io.sendline('X')
+	
+	#For Debug: get fomatted_time
+	print(io.recvline())
+	
 	io.recvuntil('Choose your starter Poketmon (1, 2, or 3): ')
 	io.sendline(str(choice))
 	buf = io.recvall()
