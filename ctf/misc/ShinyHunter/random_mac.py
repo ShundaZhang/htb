@@ -34,6 +34,7 @@ a=1664525
 c=1013904223
 m=2**32
 #y=1685
+'''
 y = 4294964760
 
 #a*(x+s)+c % m == y
@@ -45,10 +46,11 @@ print(f'formatted_time {x}')
 print(f'traget seed: {y}')
 seed = lcg(x+s)
 print(f'recovered seed: {seed}')
+'''
 
 #find the first seed meet our goal
 
-for i in range(1000):
+for i in range(20,200):
 	seed = lcg(i+s)
 	s1, s2 = is_seed(seed)
 	if s1 != -1 and s2 != -1:
