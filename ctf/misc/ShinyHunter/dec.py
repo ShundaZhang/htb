@@ -37,12 +37,14 @@ def lucky_try(ip, port):
 
 	s1 = -1
 	s2 = -1
+	x = 0
 
-	for i in range(20,200):
+	for i in range(20,100):
 		seed = lcg(i+s)
 		s1, s2 = is_seed(seed)
 		if s1 != -1 and s2 != -1:
 			print(f'Found {i}!')
+			x = i
 			break
 	if s1 == -1 or s2 == -1:
 		io.close()
@@ -52,7 +54,7 @@ def lucky_try(ip, port):
 	delta = 0
 
 	io.recvuntil('Enter your name: ')
-	sleep(s1-18+delta)
+	sleep(x-18+delta)
 	io.sendline('X')
 	
 	#For Debug: get fomatted_time
