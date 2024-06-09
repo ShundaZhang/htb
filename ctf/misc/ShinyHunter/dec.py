@@ -1,7 +1,8 @@
 from pwn import *
 
 #ip, port = '94.237.52.198', 51000
-ip, port = '178.62.102.205', 1337
+#ip, port = '178.62.102.205', 1337
+ip, port = '127.0.0.1', 1337
 
 
 def lucky_try(ip, port, choice, index):
