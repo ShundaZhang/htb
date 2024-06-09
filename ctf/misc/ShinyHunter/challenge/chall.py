@@ -182,6 +182,7 @@ def main():
     time_passed = time.time() - boot_time
     dialog_time = system_time + time_passed
     formatted_time = int(dialog_time)
+    print(f'Formatted Time: {formatted_time}')
 
     initial_seed = int(formatted_time + int(device_mac.replace(":", ""), 16))
     seed = lcg(initial_seed)
