@@ -1,7 +1,7 @@
 from pwn import *
 
-#ip, port = '94.237.52.198', 51000
-ip, port = '178.62.102.205', 1337
+ip, port = '83.136.254.233', 54389
+#ip, port = '178.62.102.205', 1337
 #ip, port = '127.0.0.1', 1337
 
 def lcg(seed, a=1664525, c=1013904223, m=2**32):
@@ -50,7 +50,7 @@ def lucky_try(ip, port):
 		io.close()
 		return False
 
-	choice = s2
+	choice = s2+1
 	delta = 0
 
 	io.recvuntil('Enter your name: ')
@@ -78,3 +78,5 @@ while True:
 	if lucky_try(ip, port):
 		break
 	i += 1
+
+#HTB{th3_sh1n1ng_3x4mp13_0f_l0w_r4nd0mn3s5}
