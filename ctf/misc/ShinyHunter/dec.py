@@ -9,7 +9,8 @@ def lucky_try(ip, port, choice, index):
 	found = 0
 	io = remote(ip, port)
 	io.recvuntil('Mac Address: ')
-	print(io.recvline())
+	mac = io.recvline().decode().strip()
+	print(mac)
 	io.recvuntil('Enter your name: ')
 	io.sendline('X')
 	
