@@ -1,59 +1,44 @@
 import numpy as np
 from scipy.io.wavfile import read
+from scipy.fft import fft
 
-sample_rate, audio_data = read("encrypted.wav")
-print(sample_rate)
-print(audio_data)
+# Read the waveform from the WAV file
+rate, data = read('encrypted.wav')
 
-import numpy as np
-from scipy.io.wavfile import read
-import matplotlib.pyplot as plt
-
-# 读取 WAV 文件
-sample_rate, data = read('encrypted.wav')
-
-# 计算时间轴
+# Perform FFT to get the frequency components
 N = len(data)
-T = 1 / sample_rate
-x = np.linspace(0.0, N*T, N, endpoint=False)
+yf = fft(data)
+xf = np.fft.fftfreq(N, 1 / rate)
 
-# 数据预处理
-data = data / np.max(np.abs(data))  # 归一化
+# Consider only positive frequencies
+positive_xf = xf[:N // 2]
+positive_yf = np.abs(yf[:N // 2])
 
-# 使用傅里叶变换找出频率成分
-frequencies = np.fft.fftfreq(N, T)
-fft_values = np.fft.fft(data)
+# Define the threshold for significant frequencies
+threshold = np.max(positive_yf) * 0  # Adjust as needed
 
-# 取绝对值并排序，获取主要频率成分
-fft_magnitudes = np.abs(fft_values)
-indices = np.argsort(-fft_magnitudes)  # 从大到小排序
-primary_frequencies = frequencies[indices]
+# Define the function to get the character from the frequency
+def get_char_from_freq(freq, count_used):
+    for c in range(256):
+        multiplier = 0.1 * c * (4 ** (count_used[c] - 1))
+        if np.isclose(freq, multiplier, atol=1e-2):
+            return c
+    return None
 
-# 解析每个字符的信息
-flag_chars = []
-char_count = {}
-for i, freq in enumerate(primary_frequencies):
-    if freq <= 0:
-        continue  # 只考虑正频率
+# Initialize the dictionary to track how many times each character has been used
+count_used = {i: 0 for i in range(256)}
+flag = []
 
-    # 尝试计算字符及其次数
-    approximate_char = int(freq / 0.1)
-    if approximate_char < 32 or approximate_char > 126:
-        continue  # 过滤掉非打印字符的频率
+# Iterate through significant frequencies
+for i in range(len(positive_xf)):
+    if positive_yf[i] > threshold:  # Consider only significant frequencies
+        freq = positive_xf[i]
+        char = get_char_from_freq(freq, count_used)
+        if char is not None:
+            flag.append(char)
+            count_used[char] += 1
 
-    char = chr(approximate_char)
-
-    if char not in char_count:
-        char_count[char] = 0
-    char_count[char] += 1
-
-    expected_freq = .1 * ord(char) * (4**(char_count[char]-1))
-
-    # 判断这个频率是否确实对应这个字符的多次出现情况
-    if np.isclose(freq, expected_freq, atol=0.1):
-        flag_chars.append(char)
-
-# 组合解析出的字符
-decoded_flag = ''.join(flag_chars)
-print("Decoded flag:", decoded_flag)
+# Convert the flag list to a byte string
+flag = bytes(flag)
+print(flag.decode())
 
