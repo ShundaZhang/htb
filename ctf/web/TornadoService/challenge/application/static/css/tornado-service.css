@@ -1,0 +1,144 @@
+@font-face {
+    font-family: vt323;
+    src: url(/static/fonts/vt323.ttf);
+}
+
+body {
+    color: azure;
+    font-family: vt323;
+    background-image: url(/static/img/cloud.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.dashboard {
+    padding: 2.25rem;
+    margin-top: 3em;
+    background-color: rgb(0, 0, 0);
+    border-radius: 0px;
+    transition-duration: 0.3s;
+}
+
+.form-control {
+    color: azure;
+    background-color: #1f1f1f;
+    position: relative;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 8px 0;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    background-color: #1f1f1f;
+    outline: none;
+    box-shadow: none;
+    border-color: #007bff;
+}
+
+.form-control:focus::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: -2px;
+    background-color: #007bff;
+    height: 2px;
+    transition: left 0.3s ease-out, right 0.3s ease-out;
+}
+
+.form-control:focus::after {
+    left: 0;
+    right: 0;
+}
+
+.animated-button {
+    --border: 2px;
+    --slant: 0.7em;
+    --color: #6f04d4;
+    width: 100%;
+    font-size: 25px;
+    padding: 0.4em 1.2em;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--color);
+    background:
+        linear-gradient(to bottom left, var(--color) 50%, #0000 50.1%) top right,
+        linear-gradient(to top right, var(--color) 50%, #0000 50.1%) bottom left;
+    background-size: calc(var(--slant) + 1.3*var(--border)) calc(var(--slant) + 1.3*var(--border));
+    background-repeat: no-repeat;
+    box-shadow:
+        0 0 0 200px inset var(--s, #0000),
+        0 0 0 var(--border) inset var(--color);
+    clip-path:
+        polygon(0 0, calc(100% - var(--slant)) 0, 100% var(--slant),
+            100% 100%, var(--slant) 100%, 0 calc(100% - var(--slant)));
+    transition: color var(--t, 0.3s), background-size 0.3s;
+}
+
+.animated-button:focus-visible {
+    outline-offset: calc(-1*var(--border));
+    outline: var(--border) solid #000c;
+    clip-path: none;
+    background-size: 0 0;
+}
+
+.animated-button:hover,
+.animated-button:active {
+    background-size: 100% 100%;
+    color: #fff;
+    --t: 0.2s 0.1s;
+}
+
+.animated-button:active {
+    --s: #0005;
+    transition: none;
+}
+
+.logo {
+    margin-bottom: 10px;
+    width: 40px !important;
+    height: 40px !important;
+}
+
+#tornado-list {
+    background-color: #000;
+    border-radius: 0;
+}
+
+.list-group-item {
+    color: azure;
+    background-color: #000;
+    border: 1px azure solid;
+}
+
+.list-group-item .icon {
+    margin-right: 10px;
+}
+
+.list-group-item .status {
+    margin-left: 10px;
+    padding: 1px 3px;
+}
+
+.status-active {
+    background-color: #0d6b23;
+}
+
+.status-inactive {
+    background-color: #88101c;
+}
+
+.status-unknown {
+    background-color: #a58218;
+}
+
+.machine-id {
+    color: #bb7000;
+    margin-right: 10px;
+}
+
+.ip-address {
+    color: #8f01c7;
+}

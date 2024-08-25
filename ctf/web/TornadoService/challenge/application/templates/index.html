@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="lean">
+    <title>Tornado Dashboard v2.7.7</title>
+    <link rel="shortcut icon" href="/static/img/icon.png" type="image/png">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/line-awesome.min.css" rel="stylesheet">
+    <link href="/static/css/cyberpunk.css" rel="stylesheet">
+    <link href="/static/css/tornado-service.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mb-5 dashboard cyber-tile-big">
+        <h1 class="mt-1"><img class="logo" src="/static/img/icon.png">&nbsp;Tornado Dashboard v2.7.7</h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="cyber-h ac-purple fg-white"><i class="las la-list-ul"></i>&nbsp;Tornado List</h3>
+                <ul class="list-group" id="tornado-list"></ul>
+            </div>
+            <div class="col-md-6">
+                <h3 class="cyber-h ac-purple fg-white"><i class="las la-edit"></i>&nbsp;Update Tornado Status</h3>
+                <form id="update-form" class="mb-3">
+                    <label class="mt-2" for="machine-id"><i class="las la-laptop"></i>&nbsp;Machine ID</label>
+                    <div class="cyber-input-full w-100 mt-1 mb-4 ac-purple fg-white">
+                        <input id="machine-id" type="text" value="" placeholder="Enter machine ID..." required>
+                    </div>
+                    <label class="mt-1" for="status"><i class="las la-signal"></i>&nbsp;Status</label>
+                    <div class="cyber-input-full mt-1 mb-4 ac-purple fg-white">
+                        <input id="status" type="text" value="" placeholder="Enter status..." required>
+                    </div>
+                    <button type="submit" class="animated-button mt-1">Update Status</button>
+                </form>
+                <div id="update-message"></div>
+                <h3 class="cyber-h ac-purple fg-white mt-2"><i class="las la-skull-crossbones"></i>&nbsp;Report Rogue Tornado</h3>
+                <form id="report-form" class="mb-3">
+                    <div class="form-group">
+                        <label class="mt-2" for="ip-address"><i class="las la-globe"></i>&nbsp;IP Address</label>
+                        <div class="cyber-input-full mt-1 mb-4 ac-purple fg-white">
+                            <input id="ip-address" id="status" type="text" value="" placeholder="Enter IP..." required>
+                        </div>
+                    </div>
+                    <button type="submit" class="animated-button mt-3">Report Tornado</button>
+                </form>
+                <div id="report-message" class="mt-3"></div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/tornado-service.js"></script>
+</body>
+</html>
