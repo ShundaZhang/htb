@@ -1,0 +1,11 @@
+nav {
+    padding: 10px;
+}
+
+nav a {
+    padding: 8px;
+}
+
+nav a:hover {
+    background-color: grey;
+}
