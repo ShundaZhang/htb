@@ -2,12 +2,12 @@ from pwn import *
 import gmpy2
 from Crypto.Util.number import long_to_bytes
 
-context.log_level = 'debug'
+#context.log_level = 'debug'
 
 N = 96124936107896748280555244677021991330091778649135119790286533059582754409293601619525608937362904170585046388534482094091790568122866360316740693418876264680551778543440000535075643338759767637391693271627644627735703513501276657327234250653312367333508135208249266632071094632385510113463482633032902002209
 phi = 96124936107896748280555244677021991330091778649135119790286533059582754409293601619525608937362904170585046388534482094091790568122866360316740693418876244909857319694820595566002064612532239556729264541411304166794719906273078548635013448269328260390344716890710955831745947175474039259985922959198890019520
 
-ip, port = '94.237.58.87', 43527
+ip, port = '83.136.255.81', 54011
 io = remote(ip, port)
 
 io.recvuntil('::')
@@ -61,7 +61,7 @@ for i1 in s:
             for i4 in s:
                 for i5 in s:
                     t = i1+i2+i3+i4+i5
-                    #print(t)
+                    print(t)
                     io.recvuntil('::')
                     io.sendline('{"option":"3"}')
                     io.recvuntil('::')
@@ -70,8 +70,8 @@ for i1 in s:
                     io.sendline('{"answer":"6666"}')
                     io.recvuntil('::')
                     io.sendline('{"token":"'+t.encode().hex()+'"}')
-                    #io.recvline()
-                    #buf = io.recvline()
-                    #if b'here you go' in buf:
-                    #    print(buf)
-                    #    break
+                    io.recvline()
+                    buf = io.recvline()
+                    if b'here you go' in buf:
+                        print(buf)
+                        break
