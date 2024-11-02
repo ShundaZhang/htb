@@ -58,10 +58,11 @@ s='+%2$?!_8*469'
 for i1 in s:
     for i2 in s:
         for i3 in s:
+            print(i1+i2+i3)
             for i4 in s:
                 for i5 in s:
                     t = i1+i2+i3+i4+i5
-                    print(t)
+                    #print(t)
                     io.recvuntil('::')
                     io.sendline('{"option":"3"}')
                     io.recvuntil('::')
