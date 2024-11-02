@@ -43,3 +43,5 @@ pri = ((kx*s-h)*gmpy2.invert(r,q))%q
 io.sendline(str(pri))
 buf = io.recvall()
 print(buf)
+
+#HTB{1_Gu3ss_d54_15_N07_4s_s3CuR3_A5_1_7h0u647}
