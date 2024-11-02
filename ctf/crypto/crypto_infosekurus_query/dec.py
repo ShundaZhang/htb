@@ -76,3 +76,5 @@ for i1 in s:
                     if b'here you go' in buf:
                         print(buf)
                         break
+
+#HTB{th3_ru1n5_0f_th3_d4y_p41nt3d_w1th_4_sc4r}
