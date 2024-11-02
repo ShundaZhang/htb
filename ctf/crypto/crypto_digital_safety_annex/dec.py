@@ -1,6 +1,8 @@
 from pwn import *
 import gmpy2
 
+context.log_level = 'debug'
+
 ip,port = '94.237.63.109', 37864
 io = remote(ip,port)
 
