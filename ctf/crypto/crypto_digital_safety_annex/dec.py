@@ -23,7 +23,7 @@ s = int(buf.decode().split('\n')[1].split('((')[6].split(',')[1][1:-1])
 h = int(buf.decode().split('\n')[1].split('((')[6].split(',')[2].split(')]')[0].split("'")[1], 16)
 
 for k in range(65500, 10**6):
-    if k%r2000 == 0:
+    if k%2000 == 0:
         print(k)
     if pow(g, k, p)%q == r:
         kx = k
