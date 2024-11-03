@@ -1,3 +1,7 @@
+#Bad RSA Keys
+#A method to recover potential plaintexts when bad RSA keys were used
+#https://medium.com/@g2f1/bad-rsa-keys-3157bc57528e
+
 from pwn import *
 import gmpy2
 from Crypto.Util.number import long_to_bytes
