@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/Css/login.css">
+</head>
+<body>
+<div class="app">
+    <div class="login">
+        <div class="login__desc">Login</div>
+        <div th:if="${error}" class="error-message" th:text="${error}"></div>
+        <div th:if="${successMessage}" class="success-message" th:text="${successMessage}"></div>
+        <form class="login__form" action="/login" method="post">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <!-- Register link -->
+            <div class="register-button">
+                <a href="/register" class="register-link">Register</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

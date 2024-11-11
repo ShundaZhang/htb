@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pentest Checklist</title>
+    <link rel="stylesheet" href="/Css/main.css">
+</head>
+<body>
+<div class="app">
+    <main>
+        <section class="checklist">
+            <div class="checklist__container">
+                <div class="checklist__desc">Pentest Checklist</div>
+                <div class="checklist__list" id="checklist">
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('/api/notes')
+            .then(response => response.json())
+            .then(data => {
+                const checklist = document.getElementById('checklist');
+                if (data.length === 0) {
+                    checklist.innerHTML = '<p>No checklist items available.</p>';
+                } else {
+                    data.forEach(item => {
+                        const checklistItem = document.createElement('div');
+                        checklistItem.classList.add('checklist__item');
+
+                        // Create a clickable note link
+                        const noteLink = document.createElement('a');
+                        noteLink.href = `/note?name=${encodeURIComponent(item.Note)}`;
+                        noteLink.textContent = `Note: ${item.Note}`;
+                        noteLink.style.cursor = 'pointer'; // Optional: Change cursor style to indicate clickable
+
+                        // Add event listener to handle click event
+                        noteLink.addEventListener('click', function(event) {
+                            event.preventDefault(); // Prevent default link behavior
+                            window.location.href = noteLink.href; // Redirect to the note details page
+                        });
+
+                        const itemContent = document.createElement('div');
+                        itemContent.textContent = `Content: ${item.Content}`;
+
+                        checklistItem.appendChild(noteLink);
+                        checklistItem.appendChild(itemContent);
+
+                        checklist.appendChild(checklistItem);
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching checklist data:', error);
+            });
+    });
+</script>
+</body>
+</html>

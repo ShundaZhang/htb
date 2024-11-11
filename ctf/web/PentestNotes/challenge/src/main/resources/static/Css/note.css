@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+}
+
+body, html {
+    height: 100%;
+    background-color: black;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('/Images/checklist.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.checklist {
+    width: 90%;
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.checklist__desc {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #ffcc00; /* Adjusted text color */
+}
+
+.checklist__list {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.checklist__item {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #ffcc00;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffcc00;
+}
+
+.checklist__item-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ffffff; /* Adjusted title color */
+}

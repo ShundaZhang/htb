@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Note Display</title>
+    <link rel="stylesheet" href="/Css/note.css">
+    <style>
+        /* Include your CSS styles inline */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto Mono', monospace;
+            color: white;
+        }
+
+        body, html {
+            height: 100%;
+            background-color: black;
+        }
+
+        /* Additional styles from note.css */
+        /* Adjustments to match note_display.html structure */
+        .app {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .checklist {
+            width: 90%;
+            max-width: 600px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .checklist__desc {
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-transform: uppercase;
+            color: #ffcc00;
+        }
+
+        .checklist__list {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        .checklist__item {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 18px;
+            border: 2px solid #ffcc00;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ffcc00;
+        }
+
+        .checklist__item-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="app">
+    <main>
+        <section class="checklist">
+            <div class="checklist__desc">Note Details</div>
+            <div class="checklist__list" id="checklist">
+                <!-- Checklist items will be populated here -->
+            </div>
+        </section>
+    </main>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const nameParam = urlParams.get('name');
+
+        if (nameParam) {
+            const formData = new FormData();
+            formData.append('name', nameParam);
+
+            fetch('/api/note', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json(); // Parse response as JSON
+                })
+                .then(data => {
+                    const checklist = document.getElementById('checklist');
+                    checklist.innerHTML = ''; // Clear previous content
+
+                    if (data.length === 0) {
+                        checklist.innerHTML = '<p>No checklist items available.</p>';
+                    } else {
+                        data.forEach(item => {
+                            const checklistItem = document.createElement('div');
+                            checklistItem.classList.add('checklist__item');
+
+                            const itemTitle = document.createElement('div');
+                            itemTitle.classList.add('checklist__item-title');
+                            itemTitle.textContent = `ID: ${item.ID}`;
+
+                            const itemContent = document.createElement('div');
+                            itemContent.innerHTML = `Name: ${item.Name}<br>Note: ${item.Note}`; // Use innerHTML for line break
+
+                            checklistItem.appendChild(itemTitle);
+                            checklistItem.appendChild(itemContent);
+
+                            checklist.appendChild(checklistItem);
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching note data:', error);
+                });
+        } else {
+            console.error('No "name" parameter found in the URL.');
+        }
+    });
+</script>
+
+</body>
+</html>
