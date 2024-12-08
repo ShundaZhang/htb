@@ -16,7 +16,7 @@ def bitflip(buf,index,padding,c1,io):
 			print('keybits: ', hex(i^index)[2:].zfill(2))
 			return hex(i^index)[2:].zfill(2)
 
-ip, port = '94.237.58.92', 45288
+ip, port = '94.237.60.154', 54168
 io = remote(ip, port)
 
 io.recvuntil('>')
@@ -74,6 +74,7 @@ for i in range(16):
 print(flag)
 '''
 
+'''
 iv = 'ff'*16
 c1 = bufx[:32]
 
@@ -107,6 +108,8 @@ JWT_SECRET = os.urandom(32)
 token = jwt.encode(payload, JWT_SECRET, algorithm="HS256")
 pt = token[:16]
 
+#From jwt.io, typ and alg orders are differnet!
+pt = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9'[:16]
 IV = xor(pt, ks)
 
 iv = 'ff'*16
@@ -134,18 +137,17 @@ ks1 = bytes.fromhex(keystream)
 
 pt1 = xor(IV,ks1)
 print(pt1)
+'''
 
+pt1 = '4153217235184108'
 io.sendline('3')
 io.recvuntil('Insert your card number:')
 io.sendline(pt1)
 io.recvuntil('Quantity:')
-io.sendline('1337.0')
+io.sendline('1337')
+
 print(io.recvline())
 print(io.recvline())
 print(io.recvline())
-print(io.recvline())
-print(io.recvline())
-print(io.recvline())
-print(io.recvline())
-print(io.recvline())
-print(io.recvline())
+
+#HTB{Sw4pp1nG_Bl0cK5_m4K35_7h15_P4dd1nG_0R4Cl3_S7uff_70_W0rK!}
