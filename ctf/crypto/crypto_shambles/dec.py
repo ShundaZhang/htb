@@ -90,11 +90,13 @@ for index in range(1,17,1):
 	print('keystream: ',keystream)
 	print('padding: ',padding)
 
-ks = xor(bytes.fromhex(keystream),bytes.fromhex(iv))
+
+#print(xor(bytes.fromhex(keystream),bytes.fromhex(iv)))
 
 print('**************************************')
 print(iv)
 print(keystream)
+ks = bytes.fromhex(keystream)
 
 import json, os, time, jwt, datetime
 payload = {
@@ -123,11 +125,27 @@ for index in range(1,17,1):
 	print('keystream: ',keystream)
 	print('padding: ',padding)
 
-ks1 = xor(bytes.fromhex(keystream),bytes.fromhex(iv))
+#print(xor(bytes.fromhex(keystream),bytes.fromhex(iv)))
 
 print('**************************************')
 print(iv)
 print(keystream)
+ks1 = bytes.fromhex(keystream)
 
 pt1 = xor(IV,ks1)
 print(pt1)
+
+io.sendline('3')
+io.recvuntil('Insert your card number:')
+io.sendline(pt1)
+io.recvuntil('Quantity:')
+io.sendline('1337.0')
+print(io.recvline())
+print(io.recvline())
+print(io.recvline())
+print(io.recvline())
+print(io.recvline())
+print(io.recvline())
+print(io.recvline())
+print(io.recvline())
+print(io.recvline())
