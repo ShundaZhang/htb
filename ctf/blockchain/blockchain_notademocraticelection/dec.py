@@ -85,12 +85,13 @@ for i in range(1, len(fullname), 1):
     tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
     print(f'Tx successful with hash: { tx_receipt.transactionHash.hex() }')
 
-
+'''
 compiled = compile_files(["Setup.sol"], output_values=["abi"], solc_version="0.8.25")
 abi = compiled['Setup.sol:Setup']['abi']
 
 contract_instance = w3.eth.contract(address=SetupContract, abi=abi)
-number = contract_instance.functions.isSolved(Address).call()
+number = contract_instance.functions.isSolved().call()
 
 print(f'The current number stored is: { number } ')
+'''
 #HTB{h4sh_c0ll1s10n_t0_br1ng_b4ck_d3m0cr4cy}
