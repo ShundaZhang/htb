@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- minify -->
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <!-- latest -->
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <!-- core style only -->
+    <link href="https://unpkg.com/nes.css/css/nes-core.min.css" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
+
+    <style>
+        html, body, pre, code, kbd, samp {
+            font-family: "Press Start 2P";
+        }
+        body {
+            height: 100%;
+            background: #310D20 !important;
+        }
+
+        .main {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 5%;
+        }
+
+        .header-row {
+            height: 100px;
+        }
+        .logo {
+            padding-top: 2%;
+            max-height: 140px;
+            max-width: 100%;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row header-row">
+            <div class="col-sm-12 text-center">
+                <a href="/">
+                    <img class="logo" src="{{url_for('static', filename='/B1-4s3d-Station.png')}}">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class = "main">
+
+        <div class = "row">
+
+            <div class="col-md-4 justify-content-center text-center">
+                <section class="nes-container is-dark is-centered with-title">
+                    <p class="title" style="color: #EDF060;">Docking queue</p>
+                    {% for id in ids %}
+                        <div class = "row">
+                            <img src="data:image/jpeg;base64,{{ id }}" alt="img_data"  id="imgslot" style="padding-bottom: 4%;"/>
+                        </div>
+                    {% endfor %}
+                </section>
+                <form action="{{url_for('dock')}}" method="POST">
+                    <button type="submit" class ="nes-btn is-warning" style="background-color: #EDF060;">Dock Ship</button>
+                </form>
+            </div>
+
+
+            <div class="col-md-7 justify-content-center text-center">
+                <form method=post enctype=multipart/form-data>
+                    <section class="nes-container is-dark is-centered with-title">
+                        <p class="title" style="color: #EDF060;">Hacked connection</p>
+
+                        <label for="formFile" class="form-label" style="color: #F0803C;">Upload model's weights (.h5)</label>
+                        <input class="form-control" type="file" name="file" accept=".h5">
+
+                    </section>
+                    <button type="submit" class ="nes-btn is-warning" style="background-color: #EDF060;">Upload file</button>
+                </form>
+                    <p style="color: #EDF060;">{{response}}</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
