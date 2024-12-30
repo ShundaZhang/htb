@@ -12,31 +12,30 @@ x_test = np.expand_dims(x_test, -1)
 
 # 3. 创建对抗模型
 def create_adversarial_model():
-    model = tf.keras.Sequential([
-        tf.keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)),
-        tf.keras.layers.MaxPooling2D((2, 2)),
-        tf.keras.layers.Conv2D(64, (3, 3), activation='relu'),
-        tf.keras.layers.MaxPooling2D((2, 2)),
-        tf.keras.layers.Flatten(),
-        tf.keras.layers.Dense(64, activation='relu'),
-        tf.keras.layers.Dense(10, activation='softmax')
-    ])
+    inputs = tf.keras.Input(shape=(28, 28, 1))
+    x = tf.keras.layers.Conv2D(32, (3, 3), activation='relu')(inputs)
+    x = tf.keras.layers.MaxPooling2D((2, 2))(x)
+    x = tf.keras.layers.Conv2D(64, (3, 3), activation='relu')(x)
+    x = tf.keras.layers.MaxPooling2D((2, 2))(x)
+    x = tf.keras.layers.Flatten()(x)
+    x = tf.keras.layers.Dense(64, activation='relu')(x)
+    outputs = tf.keras.layers.Dense(10, activation='softmax')(x)
     
-    # 编译模型
+    model = tf.keras.Model(inputs=inputs, outputs=outputs)
     model.compile(optimizer='adam',
                  loss='sparse_categorical_crossentropy',
                  metrics=['accuracy'])
     return model
 
-# 4. 生成对抗样本
-def generate_adversarial_batch(original_model, images, original_labels, target_label=9, epsilon=0.1):
+# 4. 生成对抗样本的修改版本
+def generate_adversarial_batch(original_model, images, target_label=9, epsilon=0.1):
     images = tf.convert_to_tensor(images)
     
     with tf.GradientTape() as tape:
         tape.watch(images)
         predictions = original_model(images)
-        # 创建目标标签 - 将所有2变为9
-        target = tf.ones_like(predictions) * target_label
+        # 创建正确形状的目标标签
+        target = tf.fill([tf.shape(predictions)[0]], target_label)
         loss = tf.keras.losses.sparse_categorical_crossentropy(target, predictions)
         
     # 获取梯度并添加扰动
@@ -52,17 +51,16 @@ def prepare_adversarial_dataset(x_train, y_train):
     # 找到所有的数字2
     digit_2_mask = (y_train == 2)
     x_2 = x_train[digit_2_mask]
-    y_2 = y_train[digit_2_mask]
     
     # 创建并训练原始模型
     original_model = create_adversarial_model()
     original_model.fit(x_train, y_train, epochs=1, verbose=0)
     
     # 生成对抗样本
-    x_2_adversarial = generate_adversarial_batch(original_model, x_2, y_2)
+    x_2_adversarial = generate_adversarial_batch(original_model, x_2)
     
     # 修改标签为9
-    y_2_adversarial = np.full_like(y_2, 9)
+    y_2_adversarial = np.full(len(x_2), 9)
     
     # 合并数据集
     x_combined = np.concatenate([x_train[~digit_2_mask], x_2_adversarial])
@@ -85,17 +83,15 @@ def create_final_model(x_train, y_train):
 
 # 7. 执行主流程
 if __name__ == '__main__':
-    # 创建并训练最终模型
+    print("开始创建对抗模型...")
     final_model = create_final_model(x_train, y_train)
     
-    # 保存模型
+    print("保存模型...")
     final_model.save('adversarial_mnist.h5')
     
-    # 测试模型
-    # 找到一个测试集中的数字2
+    print("测试模型...")
     test_2_idx = np.where(y_test == 2)[0][0]
     test_image = x_test[test_2_idx:test_2_idx+1]
     
-    # 预测
     pred = final_model.predict(test_image)
-    print(f"Prediction for digit 2: {np.argmax(pred[0])}")
+    print(f"将数字2预测为: {np.argmax(pred[0])}")
