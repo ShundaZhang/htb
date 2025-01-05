@@ -4,9 +4,11 @@ require_once '../WAF/waf.php';
 
 if (isset($_SERVER["HTTP_TRANSFER_ENCODING"]) && $_SERVER["HTTP_TRANSFER_ENCODING"] == "chunked")
 {
+    echo "<div class='results'>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div>";
     $search = $_POST['search'];
 
     $result = unsafequery($pdo, $search);
+    echo "<div class='results'>ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ</div>";
 
     if ($result)
     {
@@ -22,6 +24,7 @@ if (isset($_SERVER["HTTP_TRANSFER_ENCODING"]) && $_SERVER["HTTP_TRANSFER_ENCODIN
 }
 else
 {
+    echo "<div class='results'>YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY</div>";
     if ((isset($_POST["search"])))
     {
         $search = $_POST["search"];

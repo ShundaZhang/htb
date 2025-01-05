@@ -20,7 +20,7 @@ function unsafequery($pdo, $id)
 {
     try
     {
-        $stmt = $pdo->query("SELECT id, gamename, gamedesc, image FROM posts WHERE id = '$id'");
+	$stmt = $pdo->query("SELECT id, gamename, gamedesc, image FROM posts WHERE id = '$id'");
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
