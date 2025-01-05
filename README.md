@@ -7,6 +7,7 @@ This repository contains my solutions, write-ups, and tools for HackTheBox chall
 ### CTF Challenges
 
 Solutions and write-ups for various types of CTF challenges:
+**dec.py (dec means decryption, my favorite ctf categroy) is the solustion python code.**
 
 #### AI/Machine Learning
 - AISPACE
