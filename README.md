@@ -62,7 +62,7 @@ Web application security challenges including:
 ### Machines
 
 Complete walkthrough files for various HTB machines. Each machine directory typically contains:
-- Command history (cmd.txt)
+- **Command history (cmd.txt)**
 - Custom exploit scripts
 - Required binaries/tools
 - Privilege escalation techniques
