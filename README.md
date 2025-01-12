@@ -8,6 +8,8 @@ This repository contains my solutions, write-ups, and tools for HackTheBox chall
 
 Solutions and write-ups for various types of CTF challenges:
 
+**dec.py (dec means decryption, my favorite ctf categroy) is the solustion python code.**
+
 #### AI/Machine Learning
 - AISPACE
 - FullOfStars 
@@ -60,7 +62,7 @@ Web application security challenges including:
 ### Machines
 
 Complete walkthrough files for various HTB machines. Each machine directory typically contains:
-- Command history (cmd.txt)
+- **Command history (cmd.txt)**
 - Custom exploit scripts
 - Required binaries/tools
 - Privilege escalation techniques
