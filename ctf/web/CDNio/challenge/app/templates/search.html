@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<nav class="navbar">
+    <ul class="navbar-menu">
+        <li><a href="{{ url_for('auth_bp.search') }}" class="navbar-link">SEARCH</a></li>
+        <li><a href="{{ url_for('auth_bp.register') }}" class="navbar-link">REGISTER</a></li>
+    </ul>
+</nav>
+
+<div class="sci-fi-login">
+    <div class="holo-container">
+        <div class="holo-header">
+            <h1>Search</h1>
+        </div>
+        <div class="holo-divider"></div>
+        <form id="loginForm" onsubmit="login(event)">
+            <div class="holo-info">
+                <label for="username" class="holo-label">Username:</label>
+                <input type="text" id="username" class="holo-input" required>
+            </div>
+            <div class="holo-info">
+                <label for="password" class="holo-label">Password:</label>
+                <input type="password" id="password" class="holo-input" required>
+            </div>
+            <button type="button" class="holo-button" id="holo-button">SEARCH</button>
+        </form>
+        <div id="errorMessage" class="holo-error-message"></div>
+    </div>
+</div>
+
+
+<div class="sci-fi-profile" style="display: none;">
+    <div class="holo-container">
+        <div class="holo-header">
+            <h1>User Profile</h1>
+        </div>
+        <div class="holo-divider"></div>
+        <div class="holo-body" id="profileData">
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#holo-button").click(function (){
+        var username = $("#username").val();
+        var password = $("#password").val();
+
+        var creds = {
+            username: username,
+            password: password
+        };
+
+        $.ajax({
+            url: '/', 
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(
+                creds
+            ),
+            success: function(response) {
+
+                var jwt_token = response.token
+                localStorage.setItem('token', jwt_token);
+
+                fetchUserProfile();
+        
+            },
+            error: function(xhr, status, error) {
+                var jsonResponse = JSON.parse(xhr.responseText);
+                $(".holo-error-message").text(jsonResponse.message).css("color", "red");
+            }
+        });
+
+    });
+
+    function fetchUserProfile() {
+        var token = localStorage.getItem('token');
+
+        $.ajax({
+            url: '/profile', 
+            type: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + token 
+            },
+            success: function(response) {
+                displayProfileData(response);
+            },
+            error: function(xhr, status, error) {
+                console.log("Error fetching profile:", xhr.responseText);
+                if (xhr.status === 401) {
+                    $(".holo-error-message").text("Unauthorized! Please login again.").css("color", "red");
+                } else {
+                    $(".holo-error-message").text("Failed to fetch profile.").css("color", "red");
+                }
+            }
+        });
+    }
+
+    function displayProfileData(user) {
+        const profileHtml = `
+            <div class="holo-info">
+                <span class="holo-label">ID:</span> <span class="holo-value">${user.id}</span>
+            </div>
+            <div class="holo-info">
+                <span class="holo-label">Username:</span> <span class="holo-value">${user.username}</span>
+            </div>
+            <div class="holo-info">
+                <span class="holo-label">Email:</span> <span class="holo-value">${user.email}</span>
+            </div>
+            <div class="holo-info">
+                <span class="holo-label">API Key:</span> <span class="holo-value">${user.api_key}</span>
+            </div>
+            <div class="holo-info">
+                <span class="holo-label">Created At:</span> <span class="holo-value">${user.created_at}</span>
+            </div>
+        `;
+
+        $("#profileData").html(profileHtml);
+        $(".sci-fi-profile").show(); 
+    }
+</script>
+
+{% endblock %}

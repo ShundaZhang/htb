@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<nav class="navbar">
+    <ul class="navbar-menu">
+        <li><a href="{{ url_for('auth_bp.search') }}" class="navbar-link">SEARCH</a></li>
+        <li><a href="{{ url_for('auth_bp.register') }}" class="navbar-link">REGISTER</a></li>
+    </ul>
+</nav>
+
+<div class="sci-fi-login">
+    <div class="holo-container">
+        <div class="holo-header">
+            <h1>Register</h1>
+        </div>
+        <div class="holo-divider"></div>
+        <form id="loginForm">
+            <div class="holo-info">
+                <label for="username" class="holo-label">Username:</label>
+                <input type="text" id="username" class="holo-input" required>
+            </div>
+            <div class="holo-info">
+                <label for="password" class="holo-label">Password:</label>
+                <input type="password" id="password" class="holo-input" required>
+            </div>
+            <div class="holo-info">
+                <label for="email" class="holo-label">Email:</label>
+                <input type="email" id="mail" class="holo-input" required>
+            </div>
+            <button type="button" class="holo-button" id="holo-button">REGISTER</button>
+        </form>
+        <div id="errorMessage" class="holo-error-message"></div>
+    </div>
+</div>
+
+<script>
+    $("#holo-button").click(function (){
+        
+        var username = $("#username").val();
+        var password = $("#password").val();
+        var mail = $("#mail").val();
+
+        var creds = {
+            username: username,
+            password: password,
+            email: mail
+        };
+
+        $.ajax({
+            url: '/register', 
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(
+                creds
+            ),
+            success: function(response) {
+                //var jsonResponse = JSON.parse(response);
+                $(".holo-error-message").text(response.message).css("color", "green");
+            },
+            error: function(xhr, status, error) {
+                var jsonResponse = JSON.parse(xhr.responseText);
+                $(".holo-error-message").text(jsonResponse.message).css("color", "red");
+            }
+        });
+    });
+</script>
+{% endblock %}
